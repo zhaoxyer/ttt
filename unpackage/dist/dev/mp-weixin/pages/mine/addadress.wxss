@@ -1,0 +1,75 @@
+
+.setinput ._div {
+  padding: 0 30rpx;
+}
+.setinput>._div>._span,
+.setinput>._div>._input,
+.setinput>._div>._textarea {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 24rpx;
+  line-height: 80rpx;
+  min-height: 80rpx;
+  margin-top: 20rpx;
+  height: 80rpx;
+}
+.setinput>._div {
+  border-bottom: 1rpx solid #C8C8C8;
+}
+.setinput>._div>._span {
+  width: 80rpx;
+}
+.setinput>._div>._textarea {
+  width: 500rpx;
+  margin-top: 38rpx;
+  line-height: 40rpx;
+}
+.setinput>._div>._input {
+  width: 300rpx;
+}
+.submit {
+  background: #F6C11B;
+  color: white;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.xieyi {
+  padding: 40rpx 0;
+}
+.xieyi ._span {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  padding: 0 30rpx;
+}
+.xieyi ._span:first-child image {
+  width: 30rpx;
+  height: 30rpx;
+}
+.xieyi .active {
+  color: #F6C11B!important;
+  border: 1rpx solid #F6C11B!important;
+}
+.getcode {
+  float: right;
+  color: #F6C11B;
+  width: 200rpx;
+  text-align: center;
+  border-left: 1rpx solid #C8C8C8;
+  height: 30rpx;
+  line-height: 30rpx;
+  margin-top: 45rpx;
+  min-height: 30rpx;
+  font-size: 24rpx;
+}
+.tip {
+  line-height: 60rpx;
+  text-align: right;
+  font-size: 24rpx;
+}

@@ -1,0 +1,64 @@
+<template name="2d994fa4">
+  <view class="_div data-v-07a9f4f8">
+    <view class="_div data-v-07a9f4f8 serch" bindtap="handleProxy" data-eventid="{{'5aR-0'}}" data-comkey="{{$k}}">
+      <image src="../../static/index/serch.png" class="_image data-v-07a9f4f8"></image>
+      <label class="_span data-v-07a9f4f8">寻找商品、店铺</label>
+    </view>
+    <view class="_div data-v-07a9f4f8 section">
+      <view class="_nav data-v-07a9f4f8">
+        <view class="_div data-v-07a9f4f8 active">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+        <view class="_div data-v-07a9f4f8">门框类五金</view>
+      </view>
+      <view class="_div data-v-07a9f4f8 list">
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+        <view class="_div data-v-07a9f4f8">
+          <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
+          <view class="_div data-v-07a9f4f8">
+            <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>
+            <view class="_p data-v-07a9f4f8">地址：通州区建材城二层</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</template>

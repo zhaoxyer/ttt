@@ -1,0 +1,78 @@
+<template name="14934e97">
+  <view class="_div data-v-3cf79d31">
+    <view class="_div data-v-3cf79d31 userinf">
+      <view class="_h1 data-v-3cf79d31">服务种类</view>
+      <view class="_div data-v-3cf79d31 type">
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <image src="../../static/mine/check.jpg" class="_image data-v-3cf79d31"></image>
+          <label class="_span data-v-3cf79d31">补漏疏通</label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-3cf79d31 userinf">
+      <view class="_div data-v-3cf79d31 inf">
+        <view class="_div data-v-3cf79d31">
+          <label class="_span data-v-3cf79d31">服务范围</label>
+          <view class="_div data-v-3cf79d31">
+            <label class="_span data-v-3cf79d31">请选择</label>
+            <image src="../../static/select.png" class="_image data-v-3cf79d31"></image>
+          </view>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <label class="_span data-v-3cf79d31">姓      名</label>
+          <view class="_div data-v-3cf79d31">
+            <input type="text" placeholder="请输入姓名" class="_input data-v-3cf79d31" />
+          </view>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <label class="_span data-v-3cf79d31">性      别</label>
+          <view class="_div data-v-3cf79d31">
+            <label class="_span data-v-3cf79d31">请选择</label>
+            <image src="../../static/select.png" class="_image data-v-3cf79d31"></image>
+          </view>
+        </view>
+        <view class="_div data-v-3cf79d31">
+          <label class="_span data-v-3cf79d31">联系电话</label>
+          <view class="_div data-v-3cf79d31">
+            <input type="number" placeholder="请输入联系电话" class="_input data-v-3cf79d31" />
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-3cf79d31 tip">
+      <view class="_p data-v-3cf79d31">请保持电话畅通，木斗客服3个工作日内会和您联系，</view>
+      <view class="_p data-v-3cf79d31">通知您来面试。</view>
+    </view>
+    <view class="_div data-v-3cf79d31 apply">
+      <view class="_div data-v-3cf79d31">提交申请</view>
+    </view>
+  </view>
+</template>

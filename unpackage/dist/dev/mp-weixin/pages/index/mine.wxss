@@ -1,0 +1,52 @@
+
+.userinf ._div {
+  width: 33.333%;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 24rpx;
+  line-height: 30rpx;
+}
+.userinf image {
+  width: 90rpx;
+  height: 90rpx;
+}
+.userinf ._h1 {
+  font-size: 28rpx;
+  text-indent: 30rpx;
+  line-height: 75rpx;
+}
+.userinf {
+  border-bottom: 1rpx solid #CCCCCC;
+}
+.userinf ._p {
+  margin-bottom: 15rpx;
+  line-height: 54rpx;
+}
+.header {
+  height: 266rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  font-size: 28rpx;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  border-bottom: 1rpx solid #CCCCCC;
+}
+.header image {
+  width: 145rpx;
+  height: 145rpx;
+  border-radius: 50%;
+  margin-bottom: 30rpx;
+}
+._div>.userinf:last-child {
+  border-bottom: none;
+}

@@ -1,0 +1,19 @@
+<template name="ac98ca44">
+  <view class="_view data-v-e44dc0f8 list">
+    <view wx:key="item" key="{{item}}" wx:for="{{server}}" wx:for-index="index" wx:for-item="item" class="_div data-v-e44dc0f8">
+      <view class="_div data-v-e44dc0f8 title">
+        <label class="_span data-v-e44dc0f8 bg0">{{item.type}}</label>
+      </view>
+      <view class="_div data-v-e44dc0f8 youhui leftright">
+        <view class="_div data-v-e44dc0f8 server">
+          <view wx:key="listindex" key="{{listindex}}" bindtap="handleProxy" data-eventid="{{'de1-0-'+index+'-'+listindex}}" data-comkey="{{$k}}" wx:for="{{item.list}}" wx:for-index="listindex" wx:for-item="list" class="_div data-v-e44dc0f8">
+            <image src="{{list.image}}" mode="widthFix" class="_image data-v-e44dc0f8"></image>
+            <view class="_p data-v-e44dc0f8">{{list.adress}}</view>
+            <view class="_p data-v-e44dc0f8">{{list.type}}</view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-e44dc0f8 bggray"></view>
+    </view>
+  </view>
+</template>

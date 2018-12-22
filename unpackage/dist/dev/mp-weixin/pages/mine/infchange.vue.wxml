@@ -1,0 +1,30 @@
+<template name="03e2a00c">
+  <view class="_view data-v-afd3bcd8">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'9HK-0'}}" data-comkey="{{$k}}">
+      <label class="_span data-v-afd3bcd8">个人信息</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 columlist">
+      <label class="_span data-v-afd3bcd8">换绑手机</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 columlist">
+      <label class="_span data-v-afd3bcd8">登录密码</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 columlist">
+      <label class="_span data-v-afd3bcd8">支付设置</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 bggray"></view>
+    <view class="_div data-v-afd3bcd8 columlist">
+      <label class="_span data-v-afd3bcd8">安全中心</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 columlist">
+      <label class="_span data-v-afd3bcd8">通用</label>
+      <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
+    </view>
+    <view class="_div data-v-afd3bcd8 outinf">退出账户</view>
+  </view>
+</template>

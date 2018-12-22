@@ -1,0 +1,32 @@
+<template name="0e994f00">
+  <view class="_div data-v-ba8a6bcc setinput">
+    <view class="_div data-v-ba8a6bcc">
+      <label class="_span data-v-ba8a6bcc">姓名</label>
+      <input type="text" placeholder="最少2个,最多15个字" class="_input data-v-ba8a6bcc" />
+    </view>
+    <view class="_div data-v-ba8a6bcc">
+      <label class="_span data-v-ba8a6bcc">电话</label>
+      <input type="text" placeholder="请输入手机号" class="_input data-v-ba8a6bcc" />
+    </view>
+    <view class="_div data-v-ba8a6bcc">
+      <label class="_span data-v-ba8a6bcc">地区</label>
+      <input type="text" placeholder="最少2个,最多15个字" class="_input data-v-ba8a6bcc" />
+    </view>
+    <view class="_div data-v-ba8a6bcc">
+      <label class="_span data-v-ba8a6bcc">地址</label>
+      <input type="text" placeholder="请填写详细地址,5~60个字" class="_input data-v-ba8a6bcc" />
+    </view>
+    <view class="_div data-v-ba8a6bcc">
+      <label class="_span data-v-ba8a6bcc">邮编</label>
+      <input type="text" placeholder="6位邮政编码" class="_input data-v-ba8a6bcc" />
+    </view>
+    <view class="_p data-v-ba8a6bcc xieyi">
+      <label bindtap="handleProxy" data-eventid="{{'BJe-0'}}" data-comkey="{{$k}}" class="_span data-v-ba8a6bcc">
+        <image src="../../static/mine/check.jpg" wx:if="{{!check}}" class="_image data-v-ba8a6bcc"></image>
+        <image src="../../static/mine/uncheck.jpg" wx:if="{{check}}" class="_image data-v-ba8a6bcc"></image>
+      </label>
+      <label class="_span data-v-ba8a6bcc">设置成默认地址</label>
+    </view>
+    <view class="_p data-v-ba8a6bcc submit"> 保存 </view>
+  </view>
+</template>

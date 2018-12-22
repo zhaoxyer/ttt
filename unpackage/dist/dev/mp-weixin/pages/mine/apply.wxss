@@ -1,0 +1,86 @@
+
+.userinf {
+  padding: 0 30rpx;
+  border-bottom: 1rpx solid #CCCCCC;
+}
+.userinf ._h1 {
+  font-size: 28rpx;
+  line-height: 75rpx;
+}
+.type ._div {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+}
+.type ._div image,
+.type ._div ._span {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.type ._div image {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+  margin-bottom: 30rpx;
+}
+.inf {
+  font-size: 24rpx;
+  line-height: 30rpx;
+  margin-top: 30rpx;
+}
+.inf>._div {
+  margin-bottom: 30rpx;
+}
+.inf>._div ._div,
+.inf>._div ._span {
+  display: inline-block;
+  vertical-align: top;
+}
+.inf>._div>._span {
+  width: 104rpx;
+}
+.inf>._div ._div {
+  width: 340rpx;
+  border: 1rpx solid #5d5c5c;
+  height: 30rpx;
+  margin-left: 70rpx;
+  padding: 0 10rpx;
+}
+.inf>._div ._div image {
+  width: 20rpx;
+  height: 20rpx;
+  float: right;
+  margin-top: 5rpx;
+}
+.inf>._div ._div ._input {
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  font-size: 24rpx;
+  min-height: 30rpx;
+}
+.tip {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999999;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+.apply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+.apply ._div {
+  display: inline-block;
+  width: 500rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: white;
+  background: #F6C11B;
+  font-size: 28rpx;
+}

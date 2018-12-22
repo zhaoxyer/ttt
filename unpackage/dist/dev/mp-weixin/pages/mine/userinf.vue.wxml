@@ -1,0 +1,25 @@
+<template name="2c48c9c2">
+  <view class="_view data-v-eb32a98e">
+    <view class="_div data-v-eb32a98e columlist columlist1">
+      <label class="_span data-v-eb32a98e">头像</label>
+      <view class="_div data-v-eb32a98e">
+        <image src="../../static/index/herder.png" class="_image data-v-eb32a98e header"></image>
+        <image src="../../static/right.jpg" class="_image data-v-eb32a98e"></image>
+      </view>
+    </view>
+    <view class="_div data-v-eb32a98e columlist">
+      <label class="_span data-v-eb32a98e">昵称</label>
+      <view class="_div data-v-eb32a98e">
+        <label class="_span data-v-eb32a98e">向阳花</label>
+        <image src="../../static/right.jpg" class="_image data-v-eb32a98e"></image>
+      </view>
+    </view>
+    <view class="_div data-v-eb32a98e columlist">
+      <label class="_span data-v-eb32a98e">收货地址</label>
+      <view class="_div data-v-eb32a98e">
+        <label class="_span data-v-eb32a98e">修改/添加</label>
+        <image src="../../static/right.jpg" class="_image data-v-eb32a98e"></image>
+      </view>
+    </view>
+  </view>
+</template>

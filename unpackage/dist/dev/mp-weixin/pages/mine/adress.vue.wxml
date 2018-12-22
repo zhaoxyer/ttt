@@ -1,0 +1,47 @@
+<template name="3cf2cec6">
+  <view class="_div data-v-74a7c57a">
+    <view class="_div data-v-74a7c57a adress">
+      <view class="_div data-v-74a7c57a adressli">
+        <view class="_div data-v-74a7c57a">
+          <view class="_div data-v-74a7c57a">张先生</view>
+          <view class="_div data-v-74a7c57a">1863599999</view>
+        </view>
+        <view class="_div data-v-74a7c57a">北京市通州区春元街撒娇就小区</view>
+        <view class="_div data-v-74a7c57a edit">
+          <view class="_div data-v-74a7c57a">
+            <image src="../../static/mine/uncheck.jpg" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">设为默认</label>
+          </view>
+          <view class="_div data-v-74a7c57a">
+            <image src="../../static/mine/edit.png" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">编辑</label>
+            <image src="../../static/mine/del.png" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">删除</label>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-74a7c57a adressli">
+        <view class="_div data-v-74a7c57a">
+          <view class="_div data-v-74a7c57a">张先生</view>
+          <view class="_div data-v-74a7c57a">1863599999</view>
+        </view>
+        <view class="_div data-v-74a7c57a">北京市通州区春元街撒娇就小区</view>
+        <view class="_div data-v-74a7c57a edit">
+          <view class="_div data-v-74a7c57a">
+            <image src="../../static/mine/check.jpg" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">设为默认</label>
+          </view>
+          <view class="_div data-v-74a7c57a">
+            <image src="../../static/mine/edit.png" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">编辑</label>
+            <image src="../../static/mine/del.png" class="_image data-v-74a7c57a"></image>
+            <label class="_span data-v-74a7c57a">删除</label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-74a7c57a apply">
+      <view bindtap="handleProxy" data-eventid="{{'R2Z-0'}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">新建收货地址</view>
+    </view>
+  </view>
+</template>

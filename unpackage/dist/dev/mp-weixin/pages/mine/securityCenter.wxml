@@ -1,0 +1,1 @@
+<import src="/pages/mine/securityCenter.vue.wxml" /><template is="5235035c" data="{{ ...$root['0'], $root }}"/>

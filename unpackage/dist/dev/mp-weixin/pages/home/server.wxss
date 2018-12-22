@@ -1,0 +1,54 @@
+
+.title {
+  text-align: center;
+  margin-top: 40rpx;
+  height: 50rpx;
+}
+.title ._span {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 50rpx;
+  font-size: 20rpx;
+  width: 200rpx;
+  font-size: 20rpx;
+  text-align: center;
+  color: white;
+  border-radius: 25rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  box-shadow: 0 4rpx 0 #CCCCCC;
+}
+.bg0 {
+  background: #FEC200;
+}
+.server {
+  padding: 0 30rpx;
+  margin-top: 40rpx;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.server ._p {
+  text-align: center;
+  line-height: 40rpx;
+}
+.server ._div {
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 30rpx;
+}
+.server ._div:nth-child(4n) {
+  margin-right: 0;
+}
+.server ._div:nth-last-child(n+5) {
+  margin-bottom: 30rpx;
+}
+.server image {
+  width: 150rpx;
+}
+.bggray {
+  background: #e5e5e5;
+  height: 40rpx;
+}
+.list>._div:last-child .bggray {
+  display: none;
+}

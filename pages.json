@@ -1,0 +1,151 @@
+{
+    "pages" : [
+        //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+        {
+            "path" : "pages/index/index",
+            "style" : {
+                "navigationBarTitleText" : "首页"
+            }
+        },
+        {
+            "path" : "pages/index/build",
+            "style" : {
+                "navigationBarTitleText" : "建材城"
+            }
+        },
+        {
+            "path" : "pages/index/order",
+            "style" : {
+                "navigationBarTitleText" : "订单"
+            }
+        },
+        {
+            "path" : "pages/index/shopcart",
+            "style" : {
+                "navigationBarTitleText" : "购物车"
+            }
+        },
+        {
+            "path" : "pages/index/mine",
+            "style" : {
+                "navigationBarTitleText" : "我的"
+            }
+        },
+        {
+            "path" : "pages/build/build2",
+            "style" : {
+                "navigationBarTitleText" : "五金建材"
+            }
+        },
+        {
+            "path" : "pages/build/serch",
+            "style" : {
+                "navigationBarTitleText" : "五金建材"
+            }
+        },
+        {
+            "path" : "pages/mine/infchange",
+            "style" : {
+                "navigationBarTitleText" : "信息修改"
+            }
+        },
+        {
+            "path" : "pages/mine/login",
+            "style" : {
+                "navigationBarTitleText" : "登录"
+            }
+        },
+        {
+            "path" : "pages/mine/register",
+            "style" : {
+                "navigationBarTitleText" : "注册"
+            }
+        },
+        {
+            "path" : "pages/mine/apply",
+            "style" : {
+                "navigationBarTitleText" : "木斗工匠"
+            }
+        },
+        {
+            "path" : "pages/mine/userinf",
+            "style" : {
+                "navigationBarTitleText" : "个人信息"
+            }
+        },
+		{
+			"path" : "pages/mine/adress",
+			"style" : {
+				"navigationBarTitleText" : "管理地址"
+			}
+		},
+		{
+			"path" : "pages/mine/addadress",
+			"style" : {
+				"navigationBarTitleText" : "新建收获地址"
+			}
+		},
+		{
+			"path" : "pages/mine/securityCenter",
+			"style" : {
+				"navigationBarTitleText" : "安全中心"
+			}
+		},
+        {
+            "path" : "pages/home/server",
+            "style" : {
+                "navigationBarTitleText" : "补漏疏通"
+            }
+        },
+        {
+            "path" : "pages/home/serverinf",
+            "style" : {
+                "navigationBarTitleText" : "卫生间疏通"
+            }
+        }
+    ],
+    "globalStyle" : {
+        "navigationBarTextStyle" : "white",
+        "navigationBarTitleText" : "uni-app",
+        "navigationBarBackgroundColor" : "#FEC200",
+        "backgroundColor" : "#FEC200"
+    },
+    "tabBar" : {
+        "color" : "#7A7E83",
+        "selectedColor" : "#FEC200",
+        "borderStyle" : "black",
+        "backgroundColor" : "#ffffff",
+        "list" : [
+            {
+                "pagePath" : "pages/index/index",
+                "text" : "首页",
+                "iconPath" : "static/tabbar0.png",
+                "selectedIconPath" : "static/_tabbar0.png"
+            },
+            {
+                "pagePath" : "pages/index/build",
+                "text" : "建材城",
+                "iconPath" : "static/tabbar1.png",
+                "selectedIconPath" : "static/_tabbar1.png"
+            },
+            {
+                "pagePath" : "pages/index/order",
+                "text" : "全部订单",
+                "iconPath" : "static/tabbar2.png",
+                "selectedIconPath" : "static/_tabbar2.png"
+            },
+            {
+                "pagePath" : "pages/index/shopcart",
+                "text" : "购物车",
+                "iconPath" : "static/tabbar3.png",
+                "selectedIconPath" : "static/_tabbar3.png"
+            },
+            {
+                "pagePath" : "pages/index/mine",
+                "text" : "我的",
+                "iconPath" : "static/tabbar4.png",
+                "selectedIconPath" : "static/_tabbar4.png"
+            }
+        ]
+    }
+}

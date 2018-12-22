@@ -1,0 +1,56 @@
+
+.setinput {
+  padding: 0 70rpx;
+}
+.submit {
+  background: #F6C11B;
+  color: white;
+  line-height: 80rpx;
+  text-align: center;
+  border-radius: 10rpx;
+  font-size: 28rpx;
+  margin-top: 90rpx;
+}
+.logo {
+  padding: 40rpx 0;
+  text-align: center;
+}
+.logo image {
+  display: inline-block;
+  vertical-align: top;
+  width: 300rpx;
+  height: 300rpx;
+}
+.setinput>._div>image,
+.setinput>._div>._input {
+  display: inline-block;
+  vertical-align: top;
+}
+.setinput>._div {
+  border-bottom: 1rpx solid #C8C8C8;
+}
+.setinput>._div>._input {
+  line-height: 90rpx;
+  height: 90rpx;
+  font-size: 24rpx;
+}
+.setinput>._div>image {
+  width: 35rpx;
+  height: 35rpx;
+  margin-top: 27.5rpx;
+  margin-right: 30rpx;
+}
+.qlogin>image {
+  width: 100%;
+  margin-top: 75rpx;
+}
+.qlogin>._div {
+  text-align: center;
+}
+.qlogin>._div image {
+  width: 150rpx;
+  height: 150rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 50rpx;
+}
