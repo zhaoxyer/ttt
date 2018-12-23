@@ -1,0 +1,52 @@
+<template name="ccf8f8c6">
+  <view class="_div data-v-73feb0b7">
+    <view class="_div data-v-73feb0b7 adress">
+      <view class="_div data-v-73feb0b7 adressli" bindtap="handleProxy" data-eventid="{{'Uqw-0'}}" data-comkey="{{$k}}">
+        <view class="_div data-v-73feb0b7">姓      名：张先生</view>
+        <view class="_div data-v-73feb0b7">联系方式：1863599999</view>
+        <view class="_div data-v-73feb0b7 adressinf">
+          <view class="_div data-v-73feb0b7">
+            <view class="_div data-v-73feb0b7">
+              <image src="../../static/index/blackadress.png" class="_image data-v-73feb0b7"></image>
+            </view>
+            <label class="_span data-v-73feb0b7">收货地址：北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区</label>
+          </view>
+          <image src="../../static/right.jpg" class="_image data-v-73feb0b7"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-73feb0b7 bggray"></view>
+    <view class="_div data-v-73feb0b7 payinf">
+      <view class="_h1 data-v-73feb0b7">卫生间疏通</view>
+      <view class="_div data-v-73feb0b7">
+        <image src="../../static/index/fuwu.jpg" class="_image data-v-73feb0b7"></image>
+        <view class="_div data-v-73feb0b7">
+          <label class="_span data-v-73feb0b7">马桶疏通</label>
+          <label class="_span data-v-73feb0b7">￥98.00</label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-73feb0b7 payinf time">
+      <view class="_h1 data-v-73feb0b7">卫生间疏通</view>
+      <view class="_p data-v-73feb0b7">
+        <label class="_span data-v-73feb0b7">2018</label>
+        <label class="_span data-v-73feb0b7">年</label>
+        <label class="_span data-v-73feb0b7">6</label>
+        <label class="_span data-v-73feb0b7">月</label>
+        <label class="_span data-v-73feb0b7">20</label>
+        <label class="_span data-v-73feb0b7">日</label>
+        <label class="_span data-v-73feb0b7">10</label>
+      </view>
+    </view>
+    <view class="_div data-v-73feb0b7 tip">
+      <view class="_div data-v-73feb0b7">注意事项:</view>
+      <view class="_div data-v-73feb0b7">
+        <view class="_p data-v-73feb0b7">1.本次付款为部分定金支付；</view>
+        <view class="_p data-v-73feb0b7">2.生活邦服务完工后，需进行尾款支付；</view>
+      </view>
+    </view>
+    <view class="_div data-v-73feb0b7 apply">
+      <view class="_div data-v-73feb0b7">确认支付</view>
+    </view>
+  </view>
+</template>

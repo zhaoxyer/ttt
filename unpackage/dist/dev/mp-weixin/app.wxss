@@ -9,3 +9,7 @@ swiper image {
 swiper {
   height: 300rpx;
 }
+.bggray {
+  background: #e5e5e5;
+  height: 40rpx;
+}

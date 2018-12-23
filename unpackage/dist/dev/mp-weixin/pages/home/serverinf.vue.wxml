@@ -5,5 +5,48 @@
         <image src="{{item}}" class="_image data-v-2858cd8d"></image>
       </swiper-item>
     </swiper>
+    <view class="_div data-v-2858cd8d servertype">
+      <view class="_div data-v-2858cd8d serverinf">
+        <view class="_div data-v-2858cd8d">
+          <image src="../../static/home/share.png" class="_image data-v-2858cd8d"></image>
+          <label class="_span data-v-2858cd8d">分享</label>
+        </view>
+        <view class="_div data-v-2858cd8d">
+          <label class="_span data-v-2858cd8d">质保期：</label>
+          <label class="_span data-v-2858cd8d">30天</label>
+        </view>
+      </view>
+      <view class="_div data-v-2858cd8d typelist">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'vbi-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
+          <view class="_div data-v-2858cd8d">
+            <view class="_p data-v-2858cd8d">{{list.name}}</view>
+            <view class="_p data-v-2858cd8d">￥{{list.money}}/个</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-2858cd8d evaluate">
+      <view class="_div data-v-2858cd8d evanum">
+        <view class="_div data-v-2858cd8d">评价（6）</view>
+        <view class="_div data-v-2858cd8d">
+          <label class="_span data-v-2858cd8d">查看全部</label>
+          <image src="../../static/right.jpg" class="_image data-v-2858cd8d"></image>
+        </view>
+      </view>
+      <view class="_div data-v-2858cd8d gobuild">
+        <label bindtap="handleProxy" data-eventid="{{'BNt-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
+      </view>
+      <view class="_div data-v-2858cd8d tip">以上标准价格为上门费，如需材料请点击建材城</view>
+    </view>
+    <view class="_div data-v-2858cd8d bggray"></view>
+    <image src="../../static/home/liucheng.jpg" mode="widthFix" class="_image data-v-2858cd8d liucheng"></image>
+    <view style="height: 100rpx;" class="_div data-v-2858cd8d"></view>
+    <view class="_div data-v-2858cd8d footer">
+      <view class="_div data-v-2858cd8d">
+        <label class="_span data-v-2858cd8d">预约费</label>
+        <label class="_span data-v-2858cd8d">￥30.00</label>
+      </view>
+      <view bindtap="handleProxy" data-eventid="{{'xl1-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+    </view>
   </view>
 </template>

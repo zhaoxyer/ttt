@@ -1,0 +1,134 @@
+
+.servertype {
+  padding: 0 30rpx 10rpx 30rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+}
+.serverinf {
+  line-height: 30rpx;
+  font-size: 28rpx;
+  padding: 30rpx 0;
+  position: relative;
+}
+.serverinf>._div:first-child {
+  position: absolute;
+  right: 0;
+}
+.serverinf>._div:last-child ._span:nth-child(2) {
+  color: #FEC300;
+}
+.serverinf>._div ._span,
+.serverinf>._div image {
+  display: inline-block;
+  vertical-align: top;
+}
+.serverinf>._div image {
+  width: 25rpx;
+  height: 30rpx;
+}
+.serverinf>._div ._span:last-child {
+  margin-left: 20rpx;
+}
+.typelist>._div {
+  width: 30%;
+  font-size: 24rpx;
+  background: #C9C9C9;
+  color: white;
+  text-align: center;
+  line-height: 40rpx;
+  display: inline-block;
+  vertical-align: top;
+  margin-bottom: 20rpx;
+}
+.typelist>._div ._div {
+  padding: 10rpx 0;
+}
+.typelist>._div.active ._div {
+  color: #FEC300;
+  border: 1rpx solid #FEC300;
+  background: white;
+}
+.typelist>._div:nth-child(3n-1) {
+  margin: 0 5%;
+}
+.evaluate {
+  padding: 0 30rpx;
+}
+.evanum {
+  height: 80rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  font-size: 24rpx;
+}
+.evanum image {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 20rpx;
+}
+.evanum>._div:first-child {
+  font-size: 35rpx;
+}
+.gobuild {
+  text-align: center;
+  font-size: 24rpx;
+}
+.gobuild ._span {
+  width: 200rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  background: #FEC200;
+  color: white;
+  border-radius: 25rpx;
+}
+.evaluate .tip {
+  color: #b4b4b4;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 24rpx;
+}
+.bggray {
+  background: #e5e5e5;
+  height: 40rpx;
+}
+.liucheng {
+  width: 100%;
+}
+.footer {
+  position: fixed;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  width: 100%;
+  height: 100rpx;
+  bottom: 0;
+  line-height: 100rpx;
+  background: white;
+  border-top: 1rpx solid #dadada;
+  font-size: 24rpx;
+}
+.footer>._div:first-child {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  text-align: right;
+}
+.footer>._div:first-child ._span {
+  display: inline-block;
+  vertical-align: top;
+}
+.footer>._div:first-child ._span:last-child {
+  padding: 0 30rpx 0 20rpx;
+  color: #FEC200;
+}
+.footer>._div:last-child {
+  width: 250rpx;
+  color: white;
+  background: #FEC200;
+  text-align: center;
+}

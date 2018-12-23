@@ -24,4 +24,8 @@
 	swiper{
 		height: 300px;
 	}
+	.bggray {
+		background: #e5e5e5;
+		height: 40px;
+	}
 </style>

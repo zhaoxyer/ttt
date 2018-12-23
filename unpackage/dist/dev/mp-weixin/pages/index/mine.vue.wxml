@@ -1,20 +1,20 @@
 <template name="13cdbd0f">
   <view class="_div data-v-1d136aef">
-    <view class="_div data-v-1d136aef header" bindtap="handleProxy" data-eventid="{{'SlT-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-1d136aef header" bindtap="handleProxy" data-eventid="{{'Owv-0'}}" data-comkey="{{$k}}">
       <image src="../../static/index/herder.png" class="_image data-v-1d136aef"></image>
       <view class="_p data-v-1d136aef">木斗斗</view>
     </view>
     <view class="_div data-v-1d136aef userinf">
       <view class="_h1 data-v-1d136aef">个人信息</view>
-      <view bindtap="handleProxy" data-eventid="{{'gbi-1'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
+      <view bindtap="handleProxy" data-eventid="{{'tMS-1'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
         <image src="../../static/index/userinf0.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">信息修改</view>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'NQa-2'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
+      <view bindtap="handleProxy" data-eventid="{{'q4W-2'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
         <image src="../../static/index/userinf1.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">收获地址</view>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'lAv-3'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
+      <view bindtap="handleProxy" data-eventid="{{'I4n-3'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
         <image src="../../static/index/userinf2.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">安全中心</view>
       </view>
@@ -29,14 +29,14 @@
         <image src="../../static/index/helper1.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">常见问题</view>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'Q15-4'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
+      <view bindtap="handleProxy" data-eventid="{{'zbf-4'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
         <image src="../../static/index/helper2.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">联系客服</view>
       </view>
     </view>
     <view class="_div data-v-1d136aef userinf">
       <view class="_h1 data-v-1d136aef">木斗招募</view>
-      <view bindtap="handleProxy" data-eventid="{{'Oi3-5'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
+      <view bindtap="handleProxy" data-eventid="{{'oHI-5'}}" data-comkey="{{$k}}" class="_div data-v-1d136aef">
         <image src="../../static/index/recruit0.png" class="_image data-v-1d136aef"></image>
         <view class="_p data-v-1d136aef">木斗工匠</view>
       </view>

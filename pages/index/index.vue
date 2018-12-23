@@ -16,8 +16,8 @@
 			</div>
 		</div>
 		<div class="buju">
-			<button></button>
-			<button></button>
+			<button @click="go_home_reform"></button>
+			<button @click="go_home_reform1"></button>
 			<image src="../../static/index/buju.jpg" mode="widthFix"></image>
 		</div>
 		<div class="title1 bg0">推荐服务</div>
@@ -88,6 +88,16 @@
 			go_home_serverinf(){
 				wx.navigateTo({
 					url: '../home/serverinf'
+				})
+			},
+			go_home_reform(){
+				wx.navigateTo({
+					url: '../home/reform'
+				})
+			},
+			go_home_reform1(){
+				wx.navigateTo({
+					url: '../home/reform1'
 				})
 			}
 		}

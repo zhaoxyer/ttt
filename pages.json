@@ -102,7 +102,25 @@
             "style" : {
                 "navigationBarTitleText" : "卫生间疏通"
             }
-        }
+        },
+		{
+			"path" : "pages/home/reform",
+			"style" : {
+				"navigationBarTitleText" : "局部改造"
+			}
+		},
+		{
+			"path" : "pages/home/reform1",
+			"style" : {
+				"navigationBarTitleText" : "整体改造"
+			}
+		},
+		{
+			"path" : "pages/home/pay",
+			"style" : {
+				"navigationBarTitleText" : "确认订单"
+			}
+		}
     ],
     "globalStyle" : {
         "navigationBarTextStyle" : "white",
