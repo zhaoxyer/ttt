@@ -17,6 +17,11 @@
 					<p>质量验收</p>
 					<p>及付尾款</p>
 				</div>
+				<div>
+					<image   src="../../static/order/ordertype2.jpg"  mode="widthFix"></image>
+					<p>技术服务</p>
+					<p>申请质保</p>
+				</div>
 			</div>
 		</div>
 		<div class='userinf'>
@@ -28,17 +33,18 @@
 				</div>
 				<div>
 					<image   src="../../static/order/ordertype4.jpg"  mode="widthFix"></image>
-					<p>配送议价</p>
-					<p>确认及付款</p>
+					<p>确认付款</p>
+					<p>及商品验收</p>
 				</div>
 				<div>
 					<image   src="../../static/order/ordertype5.jpg"  mode="widthFix"></image>
-					<p>商品验收</p>
+					<p>搬运议价</p>
+					<p>确认</p>
 				</div>
 				<div>
 					<image   src="../../static/order/ordertype6.jpg"  mode="widthFix"></image>
-					<p>搬运议价</p>
-					<p>确认</p>
+					<p>建材商品</p>
+					<p>类退换</p>
 				</div>
 			</div>
 		</div>
@@ -60,26 +66,16 @@
 					<p>质量验收</p>
 					<p>及付尾款</p>
 				</div>
+				<div>
+					<image   src="../../static/order/ordertype9.jpg"  mode="widthFix"></image>
+					<p>定金商品</p>
+					<p>售后质保</p>
+				</div>
 			</div>
 		</div>
 		<div class='userinf'>
 			<h1>综合</h1>
 			<div class='server'>
-				<div>
-					<image   src="../../static/order/ordertype10.jpg"  mode="widthFix"></image>
-					<p>技术服务</p>
-					<p>申请质保</p>
-				</div>
-				<div>
-					<image   src="../../static/order/ordertype11.jpg"  mode="widthFix"></image>
-					<p>建材商品</p>
-					<p>类退换</p>
-				</div>
-				<div>
-					<image   src="../../static/order/ordertype12.jpg"  mode="widthFix"></image>
-					<p>定金商品</p>
-					<p>类售后质保</p>
-				</div>
 				<div>
 					<image   src="../../static/order/ordertype13.jpg"  mode="widthFix"></image>
 					<p>订单评价</p>
