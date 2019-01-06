@@ -1,6 +1,6 @@
 <template name="2d994fa4">
   <view class="_div data-v-07a9f4f8">
-    <view class="_div data-v-07a9f4f8 serch" bindtap="handleProxy" data-eventid="{{'4Eq-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-07a9f4f8 serch" bindtap="handleProxy" data-eventid="{{'YfO-0'}}" data-comkey="{{$k}}">
       <image src="../../static/index/serch.png" class="_image data-v-07a9f4f8"></image>
       <label class="_span data-v-07a9f4f8">寻找商品、店铺</label>
     </view>
@@ -16,7 +16,7 @@
         <view class="_div data-v-07a9f4f8">门框类五金</view>
       </view>
       <view class="_div data-v-07a9f4f8 list">
-        <view bindtap="handleProxy" data-eventid="{{'LwW-1'}}" data-comkey="{{$k}}" class="_div data-v-07a9f4f8">
+        <view bindtap="handleProxy" data-eventid="{{'Yuq-1'}}" data-comkey="{{$k}}" class="_div data-v-07a9f4f8">
           <image src="../../static/build/tetant.png" class="_image data-v-07a9f4f8"></image>
           <view class="_div data-v-07a9f4f8">
             <view class="_p data-v-07a9f4f8">盛丰五金建材器铺</view>

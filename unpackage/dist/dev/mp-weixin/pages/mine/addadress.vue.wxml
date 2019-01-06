@@ -21,7 +21,7 @@
       <input type="text" placeholder="6位邮政编码" class="_input data-v-ba8a6bcc" />
     </view>
     <view class="_p data-v-ba8a6bcc xieyi">
-      <label bindtap="handleProxy" data-eventid="{{'YFo-0'}}" data-comkey="{{$k}}" class="_span data-v-ba8a6bcc">
+      <label bindtap="handleProxy" data-eventid="{{'DoG-0'}}" data-comkey="{{$k}}" class="_span data-v-ba8a6bcc">
         <image src="../../static/mine/check.jpg" wx:if="{{!check}}" class="_image data-v-ba8a6bcc"></image>
         <image src="../../static/mine/uncheck.jpg" wx:if="{{check}}" class="_image data-v-ba8a6bcc"></image>
       </label>

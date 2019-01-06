@@ -19,18 +19,18 @@
       </swiper-item>
     </swiper>
     <view class="_div data-v-2ea1dd66 server">
-      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'Ncf-0-'+index}}" data-comkey="{{$k}}" wx:for="{{8}}" wx:for-index="index" wx:for-item="item" class="_div data-v-2ea1dd66">
+      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'cVT-0-'+index}}" data-comkey="{{$k}}" wx:for="{{8}}" wx:for-index="index" wx:for-item="item" class="_div data-v-2ea1dd66">
         <image src="{{'../../static/index/servertype'+index+'.jpg'}}" mode="widthFix" class="_image data-v-2ea1dd66"></image>
       </view>
     </view>
     <view class="_div data-v-2ea1dd66 buju">
-      <button bindtap="handleProxy" data-eventid="{{'PcT-1'}}" data-comkey="{{$k}}" class="_button data-v-2ea1dd66"></button>
-      <button bindtap="handleProxy" data-eventid="{{'6y8-2'}}" data-comkey="{{$k}}" class="_button data-v-2ea1dd66"></button>
+      <button bindtap="handleProxy" data-eventid="{{'pi9-1'}}" data-comkey="{{$k}}" class="_button data-v-2ea1dd66"></button>
+      <button bindtap="handleProxy" data-eventid="{{'wab-2'}}" data-comkey="{{$k}}" class="_button data-v-2ea1dd66"></button>
       <image src="../../static/index/buju.jpg" mode="widthFix" class="_image data-v-2ea1dd66"></image>
     </view>
     <view class="_div data-v-2ea1dd66 title1 bg0">推荐服务</view>
     <view class="_div data-v-2ea1dd66 fuwu leftright">
-      <view bindtap="handleProxy" data-eventid="{{'Gtd-3'}}" data-comkey="{{$k}}" class="_div data-v-2ea1dd66">
+      <view bindtap="handleProxy" data-eventid="{{'Xzv-3'}}" data-comkey="{{$k}}" class="_div data-v-2ea1dd66">
         <image src="../../static/index/fuwu.jpg" class="_image data-v-2ea1dd66"></image>
         <view class="_p data-v-2ea1dd66">电脑维修：
           <label class="_span data-v-2ea1dd66">50</label>起/每次</view>

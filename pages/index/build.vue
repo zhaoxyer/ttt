@@ -19,7 +19,7 @@
 			<span>•</span><span class="bg0">最新优惠</span><span>•</span>
 		</div>
 		<div class="youhui leftright">
-			<div>
+			<div @click="go_build_mallinf">
 				<div>智能门锁</div>
 				<div>
 					<image src="../../static/index/youhui.png"></image>
@@ -52,7 +52,7 @@
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
 		</div>
 		<div class="recom leftright">
-			<div>
+			<div @click="go_build_mallinf">
 				<div>
 					<p>各式沙发</p>
 					<p>500元起/每套</p>
@@ -114,6 +114,11 @@
 			go_build_serch(){
 				wx.navigateTo({
 					url: '../build/serch'
+				})
+			},
+			go_build_mallinf(){
+				wx.navigateTo({
+					url: '../build/mallinf'
 				})
 			}
 		}

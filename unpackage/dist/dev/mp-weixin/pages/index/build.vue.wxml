@@ -5,7 +5,7 @@
         <image src="../../static/index/blackadress.png" class="_image data-v-0b424d02"></image>
         <label class="_span data-v-0b424d02">通州</label>
       </view>
-      <view class="_div data-v-0b424d02 serch" bindtap="handleProxy" data-eventid="{{'LU4-0'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-0b424d02 serch" bindtap="handleProxy" data-eventid="{{'jM2-0'}}" data-comkey="{{$k}}">
         <label class="_span data-v-0b424d02">请输入所需材料</label>
         <image src="../../static/index/serch.png" class="_image data-v-0b424d02"></image>
       </view>
@@ -19,7 +19,7 @@
       </swiper-item>
     </swiper>
     <view class="_div data-v-0b424d02 server">
-      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'M4q-1-'+index}}" data-comkey="{{$k}}" wx:for="{{8}}" wx:for-index="index" wx:for-item="item" class="_div data-v-0b424d02">
+      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'x4t-1-'+index}}" data-comkey="{{$k}}" wx:for="{{8}}" wx:for-index="index" wx:for-item="item" class="_div data-v-0b424d02">
         <image src="{{'../../static/index/server'+index+'.png'}}" mode="widthFix" class="_image data-v-0b424d02"></image>
       </view>
     </view>
@@ -29,7 +29,7 @@
       <label class="_span data-v-0b424d02">•</label>
     </view>
     <view class="_div data-v-0b424d02 youhui leftright">
-      <view class="_div data-v-0b424d02">
+      <view bindtap="handleProxy" data-eventid="{{'aS0-2'}}" data-comkey="{{$k}}" class="_div data-v-0b424d02">
         <view class="_div data-v-0b424d02">智能门锁</view>
         <view class="_div data-v-0b424d02">
           <image src="../../static/index/youhui.png" class="_image data-v-0b424d02"></image>
@@ -76,7 +76,7 @@
       <label class="_span data-v-0b424d02">•</label>
     </view>
     <view class="_div data-v-0b424d02 recom leftright">
-      <view class="_div data-v-0b424d02">
+      <view bindtap="handleProxy" data-eventid="{{'EuT-3'}}" data-comkey="{{$k}}" class="_div data-v-0b424d02">
         <view class="_div data-v-0b424d02">
           <view class="_p data-v-0b424d02">各式沙发</view>
           <view class="_p data-v-0b424d02">500元起/每套</view>

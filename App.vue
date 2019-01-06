@@ -33,5 +33,12 @@
 	  height: 0;
 	  color: transparent;
 	}
-
+  .pop{
+		background:rgba(0,0,0,0.5);
+		position: fixed;
+		top:0;
+		bottom: 102px;
+		width: 100%;
+		z-index: 999;
+	}
 </style>

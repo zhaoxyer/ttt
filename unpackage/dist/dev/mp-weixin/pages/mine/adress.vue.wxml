@@ -41,7 +41,7 @@
       </view>
     </view>
     <view class="_div data-v-74a7c57a apply">
-      <view bindtap="handleProxy" data-eventid="{{'hoh-0'}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">新建收货地址</view>
+      <view bindtap="handleProxy" data-eventid="{{'jja-0'}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">新建收货地址</view>
     </view>
   </view>
 </template>

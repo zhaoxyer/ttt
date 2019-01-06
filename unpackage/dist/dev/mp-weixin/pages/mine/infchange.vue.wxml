@@ -1,6 +1,6 @@
 <template name="03e2a00c">
   <view class="_view data-v-afd3bcd8">
-    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'mLH-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'S0Z-0'}}" data-comkey="{{$k}}">
       <label class="_span data-v-afd3bcd8">个人信息</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
