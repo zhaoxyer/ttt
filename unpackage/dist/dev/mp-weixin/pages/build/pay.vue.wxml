@@ -1,0 +1,63 @@
+<template name="018944b8">
+  <view class="_div data-v-43e65ad8">
+    <view class="_div data-v-43e65ad8 adress">
+      <view class="_div data-v-43e65ad8 adressli" bindtap="handleProxy" data-eventid="{{'B7l-0'}}" data-comkey="{{$k}}">
+        <view class="_div data-v-43e65ad8">姓      名：张先生</view>
+        <view class="_div data-v-43e65ad8">联系方式：1863599999</view>
+        <view class="_div data-v-43e65ad8 adressinf">
+          <view class="_div data-v-43e65ad8">
+            <view class="_div data-v-43e65ad8"></view>
+            <label class="_span data-v-43e65ad8">收货地址：北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区</label>
+          </view>
+          <image src="../../static/right.jpg" class="_image data-v-43e65ad8"></image>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-43e65ad8 payinf">
+      <view class="_div data-v-43e65ad8">
+        <image src="../../static/index/fuwu.jpg" class="_image data-v-43e65ad8"></image>
+        <view class="_div data-v-43e65ad8">
+          <view class="_view data-v-43e65ad8">
+            <label class="_span data-v-43e65ad8">马桶疏通</label>
+            <label class="_span data-v-43e65ad8">￥98.00</label>
+          </view>
+          <view class="_view data-v-43e65ad8">
+            <label class="_span data-v-43e65ad8">马桶疏通</label>
+            <label class="_span data-v-43e65ad8">￥98.00</label>
+          </view>
+          <view class="_view data-v-43e65ad8">
+            <label class="_span data-v-43e65ad8">马桶疏通</label>
+            <label class="_span data-v-43e65ad8">￥98.00</label>
+          </view>
+          <view class="_view data-v-43e65ad8">
+            <label class="_span data-v-43e65ad8">马桶疏通</label>
+            <label class="_span data-v-43e65ad8">￥98.00</label>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-43e65ad8 payinf time">
+      <view class="_h1 data-v-43e65ad8">配送时间选择</view>
+      <view class="_p data-v-43e65ad8">
+        <label class="_span data-v-43e65ad8">2018</label>
+        <label class="_span data-v-43e65ad8">年</label>
+        <label class="_span data-v-43e65ad8">6</label>
+        <label class="_span data-v-43e65ad8">月</label>
+        <label class="_span data-v-43e65ad8">20</label>
+        <label class="_span data-v-43e65ad8">日</label>
+        <label class="_span data-v-43e65ad8">10</label>
+      </view>
+    </view>
+    <view class="_div data-v-43e65ad8 tip">
+      <view class="_div data-v-43e65ad8">注意事项:</view>
+      <view class="_div data-v-43e65ad8">
+        <view class="_p data-v-43e65ad8">1.本次付款为部分定金支付；</view>
+        <view class="_p data-v-43e65ad8">2.生活邦服务完工后，需进行尾款支付；</view>
+      </view>
+    </view>
+    <view class="_div data-v-43e65ad8 apply">
+      <view class="_div data-v-43e65ad8">确认支付</view>
+      <view class="_div data-v-43e65ad8">确认支付</view>
+    </view>
+  </view>
+</template>

@@ -1,0 +1,120 @@
+
+.adressli {
+  padding: 30rpx;
+  font-size: 26rpx;
+  border-bottom: 1rpx solid #E5E5E5;
+  line-height: 26rpx;
+}
+.adressli ._div>._div {
+  display: inline-block;
+}
+.adressli>._div:nth-child(1) {
+  font-size: 30rpx;
+}
+.adressli>._div:nth-child(2) {
+  margin-bottom: 30rpx;
+  margin-top: 25rpx;
+}
+.adressinf {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
+.adressinf image {
+  width: 20rpx;
+  height: 30rpx;
+}
+.adressinf ._div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  line-height: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.adressinf ._div ._span {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  line-height: 30rpx;
+}
+.payinf {
+  padding: 0 30rpx;
+}
+.payinf ._h1 {
+  font-size: 28rpx;
+  line-height: 80rpx;
+}
+.payinf>._div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  font-size: 24rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 40rpx;
+}
+.payinf>._div image {
+  width: 150rpx;
+  height: 120rpx;
+}
+.payinf>._div ._div {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+.payinf>._div ._div ._span {
+  margin-left: 20rpx;
+}
+.payinf>._div ._div ._span:last-child {
+  color: #FEC200;
+}
+.tip {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  padding: 0 30rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
+  font-size: 24rpx;
+}
+.tip ._div:last-child {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+  margin-left: 10rpx;
+}
+.apply {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  text-align: center;
+}
+.apply ._div {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: white;
+  background: #F6C11B;
+  font-size: 28rpx;
+}
+.time {
+  border-bottom: 1rpx solid #E5E5E5;
+  border-top: 1rpx solid #E5E5E5;
+}
+.time ._p {
+  text-align: center;
+  line-height: 100rpx;
+  font-size: 28rpx;
+}
+.time ._p ._span:nth-child(2n+1) {
+  color: #FEC200;
+}
