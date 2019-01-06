@@ -28,4 +28,10 @@
 		background: #e5e5e5;
 		height: 40px;
 	}
+	::-webkit-scrollbar {
+	  width: 0;
+	  height: 0;
+	  color: transparent;
+	}
+
 </style>

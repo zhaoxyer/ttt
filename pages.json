@@ -43,6 +43,18 @@
                 "navigationBarTitleText" : "五金建材"
             }
         },
+		{
+			"path" : "pages/build/mallinf",
+			"style" : {
+				"navigationBarTitleText" : "盛丰五金建材"
+			}
+		},
+		{
+			"path" : "pages/build/pay",
+			"style" : {
+				"navigationBarTitleText" : "确认订单"
+			}
+		},
         {
             "path" : "pages/mine/infchange",
             "style" : {

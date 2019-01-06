@@ -13,7 +13,7 @@
 				<div>门框类五金</div>
 			</nav>
 			<div class="list">
-				<div>
+				<div @click="go_build_mallinf">
 					<image src="../../static/build/tetant.png" ></image>
 					<div>
 						<p>盛丰五金建材器铺</p>
@@ -74,6 +74,11 @@
 			go_build_serch(){
 				wx.navigateTo({
 					url: '../build/serch'
+				})
+			},
+			go_build_mallinf(){
+				wx.navigateTo({
+					url: '../build/mallinf'
 				})
 			}
 		}

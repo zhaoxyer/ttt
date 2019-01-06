@@ -1,8 +1,74 @@
 <template name="3efe0f5c">
   <view class="_view data-v-517cb632">
-    <view class="_div data-v-517cb632">
-      <view class="_h1 data-v-517cb632">盛丰五金建材</view>
-      <view class="_div data-v-517cb632"></view>
+    <view class="_div data-v-517cb632 shopping-car">
+      <view class="_div data-v-517cb632 shopping-options-wrap">
+        <view class="_ul data-v-517cb632 shopping-options">
+          <view class="_li data-v-517cb632 shopping-option-item shopping-collect">移入购物车</view>
+          <view class="_li data-v-517cb632 shopping-option-item">删除</view>
+        </view>
+      </view>
+      <view class="_div data-v-517cb632 shopping-goods-container">
+        <view class="_div data-v-517cb632 shopping-goods-list">
+          <view class="_div data-v-517cb632 shopping-seller">龙源五金建材</view>
+          <view class="_div data-v-517cb632 shopping-goods-item">
+            <radio class="_input data-v-517cb632" />
+            <view class="_div data-v-517cb632 shopping-goods-img"></view>
+            <view class="_div data-v-517cb632 shopping-good-info">
+              <view class="_p data-v-517cb632 shopping-good-name">全铜淋浴花洒套装</view>
+              <view class="_div data-v-517cb632 shopping-good-type">规格: 全铜花洒</view>
+              <view class="_div data-v-517cb632 shopping-good-price">
+                <label class="_span data-v-517cb632">¥ 590</label>
+                <view class="_ul data-v-517cb632 shopping-num-container">
+                  <view class="_li data-v-517cb632 shopping-option">-</view>
+                  <view class="_li data-v-517cb632">
+                    <input type="number" class="_input data-v-517cb632" />
+                  </view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="_div data-v-517cb632 shopping-goods-item">
+            <radio class="_input data-v-517cb632" />
+            <view class="_div data-v-517cb632 shopping-goods-img"></view>
+            <view class="_div data-v-517cb632 shopping-good-info">
+              <view class="_p data-v-517cb632 shopping-good-name">全铜淋浴花洒套装</view>
+              <view class="_div data-v-517cb632 shopping-good-type">规格: 全铜花洒</view>
+              <view class="_div data-v-517cb632 shopping-good-price">
+                <label class="_span data-v-517cb632">¥ 590</label>
+                <view class="_ul data-v-517cb632 shopping-num-container">
+                  <view class="_li data-v-517cb632 shopping-option">-</view>
+                  <view class="_li data-v-517cb632">
+                    <input type="number" class="_input data-v-517cb632" />
+                  </view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class="_div data-v-517cb632 shopping-goods-list">
+          <view class="_div data-v-517cb632 shopping-seller">龙源五金建材</view>
+          <view class="_div data-v-517cb632 shopping-goods-item">
+            <radio class="_input data-v-517cb632" />
+            <view class="_div data-v-517cb632 shopping-goods-img"></view>
+            <view class="_div data-v-517cb632 shopping-good-info">
+              <view class="_p data-v-517cb632 shopping-good-name">全铜淋浴花洒套装</view>
+              <view class="_div data-v-517cb632 shopping-good-type">规格: 全铜花洒</view>
+              <view class="_div data-v-517cb632 shopping-good-price">
+                <label class="_span data-v-517cb632">¥ 590</label>
+                <view class="_ul data-v-517cb632 shopping-num-container">
+                  <view class="_li data-v-517cb632 shopping-option">-</view>
+                  <view class="_li data-v-517cb632">
+                    <input type="number" class="_input data-v-517cb632" />
+                  </view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add">+</view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
     </view>
   </view>
 </template>
