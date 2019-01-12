@@ -1,7 +1,7 @@
 <template>
 	<view class="list">
 		<div class="yiji">
-			<span v-for="(item,index) in server" :key="item" class="{{'active',index==activeindex}}">{{item.name}}</span>
+			<span v-for="(item,index) in server" :key="index" >{{item.name}}</span>
 		</div>
 		<div class="bggray"></div>
 		<div v-for="item in server" :key="item" >
