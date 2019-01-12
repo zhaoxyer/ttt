@@ -12,7 +12,7 @@
 		</swiper>
 		<div class='server'>
 			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id)'>
-				<image   :src="static+list.picture"   mode="widthFix"></image>
+				<image   :src="static+list.picture"   mode="widthFix" class="noimage"></image>
 				<view>{{list.name}}</view>
 			</div>
 		</div>
@@ -23,7 +23,7 @@
 			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in newlist" :key='index'>
 				<div>{{list.name}}</div>
 				<div>
-					<image :src="static +list.picture"></image>
+					<image :src="static +list.picture" class="noimage"></image>
 				</div>
 				<div><span>{{list.price}}</span><span>元每套</span></div>
 			</div>			
@@ -31,7 +31,16 @@
 		<div class="title">
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
 		</div>
-		<div class="recom leftright">
+		<div class="youhui leftright">
+			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
+				<div>{{list.name}}</div>
+				<div>
+					<image :src="static +list.picture" class="noimage"></image>
+				</div>
+				<div><span>{{list.price}}</span><span>元每套</span></div>
+			</div>			
+		</div>
+		<!-- <div class="recom leftright">
 			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
 				<div>
 					<p>{{list.name}}</p>
@@ -39,32 +48,8 @@
 				</div>
 				<image :src="static +list.picture"></image>
 				<image src="../../static/index/tuijian.png"></image>
-			</div>
-			<div>
-				<div>
-					<p>各式沙发</p>
-					<p>500元起/每套</p>
-				</div>
-				<image src="../../static/index/_tuijian.png"></image>
-				<image src="../../static/index/tuijian.png"></image>
-			</div>
-			<div>
-				<div>
-					<p>各式沙发</p>
-					<p>500元起/每套</p>
-				</div>
-				<image src="../../static/index/_tuijian.png"></image>
-				<image src="../../static/index/tuijian.png"></image>
-			</div>
-			<div>
-				<div>
-					<p>各式沙发</p>
-					<p>500元起/每套</p>
-				</div>
-				<image src="../../static/index/_tuijian.png"></image>
-				<image src="../../static/index/tuijian.png"></image>
-			</div>
-		</div>
+			</div>			
+		</div> -->
 	</view>
 </template>
 
@@ -279,7 +264,7 @@
 	}
 	.youhui>div div:nth-child(1){
 		width: 70px;
-		height: 188px;
+		height: 168px;
 		writing-mode:tb-rl;
 		text-align: center;
 		line-height: 70px;
@@ -287,6 +272,7 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow:ellipsis;
+		padding: 10px 0;
 	}
 	.youhui>div div:nth-child(3) span:first-child{
 		writing-mode:lr-tb;

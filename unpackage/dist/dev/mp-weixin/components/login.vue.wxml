@@ -1,5 +1,5 @@
 <template name="70150cfd">
   <view class="_div data-v-640b0904 login">
-    <button open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'8Ah-0'}}" data-comkey="{{$k}}" class="_button data-v-640b0904"></button>
+    <button open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'EU0-0'}}" data-comkey="{{$k}}" class="_button data-v-640b0904"></button>
   </view>
 </template>

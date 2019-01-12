@@ -3,30 +3,35 @@
     <view class="_div data-v-517cb632 shopping-car">
       <view class="_div data-v-517cb632 shopping-options-wrap">
         <view class="_ul data-v-517cb632 shopping-options">
-          <view class="_li data-v-517cb632 shopping-option-item shopping-collect">移入购物车</view>
-          <view class="_li data-v-517cb632 shopping-option-item">删除</view>
+          <view class="_li data-v-517cb632 shopping-option-item shopping-collect" bindtap="handleProxy" data-eventid="{{'Ugd-0'}}" data-comkey="{{$k}}">删除</view>
         </view>
       </view>
       <view class="_div data-v-517cb632 shopping-goods-container">
-        <view class="_div data-v-517cb632 shopping-goods-list" wx:key="index" key="{{index}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">
-          <view class="_div data-v-517cb632 shopping-seller">{{list.name}}</view>
-          <view class="_div data-v-517cb632 shopping-goods-item" wx:key="itemindex" key="{{itemindex}}" wx:for="{{list.mall}}" wx:for-index="itemindex" wx:for-item="item">
-            <radio class="_input data-v-517cb632" />
+        <view class="_div data-v-517cb632 shopping-goods-list" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">
+          <view class="_div data-v-517cb632 shopping-seller">{{list.storename}}</view>
+          <view class="_div data-v-517cb632 shopping-goods-item" wx:key="item" key="{{item}}" wx:for="{{list.cartlist}}" wx:for-index="itemindex" wx:for-item="item">
+            <radio readonly="true" wx:if="{{!item.checked}}" bindtap="handleProxy" data-eventid="{{'PUV-2-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
+            <radio checked wx:else bindtap="handleProxy" data-eventid="{{'AM3-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
             <view class="_div data-v-517cb632 shopping-goods-img">
-              <image src="{{item.picture}}" class="_image data-v-517cb632"></image>
+              <image src="{{item.picture}}" class="_image data-v-517cb632 noimage"></image>
             </view>
             <view class="_div data-v-517cb632 shopping-good-info">
-              <view class="_p data-v-517cb632 shopping-good-name">{{item.name}}</view>
-              <view class="_div data-v-517cb632 shopping-good-type" wx:if="{{item.type}}">规格: {{item.type}}</view>
+              <view class="_p data-v-517cb632 shopping-good-name">{{item.goodsName}}</view>
+              <view class="_div data-v-517cb632 shopping-good-type" wx:if="{{item.goodsSpecName}}">规格: {{item.goodsSpecName}}</view>
               <view class="_div data-v-517cb632 shopping-good-price">
                 <label class="_span data-v-517cb632">¥ {{item.price}}</label>
                 <view class="_ul data-v-517cb632 shopping-num-container">
-                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'6OL-0-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
+                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'l0D-3-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
                   <view class="_li data-v-517cb632">{{item.num}}</view>
-                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'1ku-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'cMz-4-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
                 </view>
               </view>
             </view>
+          </view>
+          <view class="_div data-v-517cb632 shopping-all" wx:if="{{list.allnum}}">
+            <label class="_span data-v-517cb632">合计：</label>
+            <label class="_span data-v-517cb632">￥{{list.allmoneynum}}</label>
+            <label class="_span data-v-517cb632">结算（{{list.allnum}}）</label>
           </view>
         </view>
       </view>

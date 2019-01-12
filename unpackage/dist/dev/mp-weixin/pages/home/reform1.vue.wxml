@@ -4,12 +4,12 @@
       <view class="_view data-v-753b0929 list">
         <view class="_div data-v-753b0929">
           <view class="_div data-v-753b0929 reformtype">
-            <label bindtap="handleProxy" data-eventid="{{'1aX-0'}}" data-comkey="{{$k}}" class="_span data-v-753b0929 {{[reformtype == 0 ? 'active' : '']}}">家居装修</label>
-            <label bindtap="handleProxy" data-eventid="{{'l3v-1'}}" data-comkey="{{$k}}" class="_span data-v-753b0929 {{[reformtype == 1 ? 'active' : '']}}">二次装修</label>
+            <label bindtap="handleProxy" data-eventid="{{'VQC-0'}}" data-comkey="{{$k}}" class="_span data-v-753b0929 {{[reformtype == 0 ? 'active' : '']}}">家居装修</label>
+            <label bindtap="handleProxy" data-eventid="{{'NqJ-1'}}" data-comkey="{{$k}}" class="_span data-v-753b0929 {{[reformtype == 1 ? 'active' : '']}}">二次装修</label>
           </view>
           <view class="_div data-v-753b0929 youhui leftright">
             <view class="_div data-v-753b0929 server">
-              <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'evt-2-'+index}}" data-comkey="{{$k}}" wx:for="{{server}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
+              <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'WdY-2-'+index}}" data-comkey="{{$k}}" wx:for="{{server}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
                 <image src="{{list.image}}" mode="widthFix" class="_image data-v-753b0929"></image>
                 <view class="_p data-v-753b0929">{{list.adress}}</view>
                 <view class="_p data-v-753b0929">{{list.type}}</view>
@@ -23,7 +23,7 @@
       <view class="_div data-v-753b0929 userinf">
         <view class="_h1 data-v-753b0929">户型</view>
         <view class="_div data-v-753b0929 type">
-          <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'32Z-3-'+index}}" data-comkey="{{$k}}" wx:for="{{homeType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
+          <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'qx8-3-'+index}}" data-comkey="{{$k}}" wx:for="{{homeType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
             <image src="../../static/mine/check.jpg" wx:if="{{index!=check}}" class="_image data-v-753b0929"></image>
             <image src="../../static/mine/uncheck.jpg" wx:else class="_image data-v-753b0929"></image>
             <label class="_span data-v-753b0929">{{list.name}}</label>
@@ -34,7 +34,7 @@
       <view class="_div data-v-753b0929 userinf">
         <view class="_h1 data-v-753b0929">面积</view>
         <view class="_div data-v-753b0929 type bigType">
-          <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'P8G-4-'+index}}" data-comkey="{{$k}}" wx:for="{{bigType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
+          <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'w1I-4-'+index}}" data-comkey="{{$k}}" wx:for="{{bigType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-753b0929">
             <image src="../../static/mine/check.jpg" wx:if="{{index!=check1}}" class="_image data-v-753b0929"></image>
             <image src="../../static/mine/uncheck.jpg" wx:else class="_image data-v-753b0929"></image>
             <label class="_span data-v-753b0929">{{list.type}}</label>

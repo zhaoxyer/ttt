@@ -12,7 +12,7 @@
 		</swiper>
 		<div class='server'>
 			<div v-for="(list,index) in classlist" :key='index' @click="go_home_server(list.id)">
-				<image   :src="static+list.picture"   mode="widthFix"></image>
+				<image   :src="static+list.picture"   mode="widthFix" class="noimage"></image>
 				<view>{{list.name}}</view>
 			</div>
 		</div>
@@ -24,14 +24,14 @@
 		<div class="title1 bg0">推荐服务</div>
 		<div class="fuwu leftright">
 			<div @click="go_home_serverinf(list.classId)" v-for="(list,index) in recomlist" :key='index'>
-				<image :src="static +list.picture"></image>
+				<image :src="static +list.picture" class="noimage"></image>
 				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
 		</div>
 		<div class="title1 bg1">最新优惠</div>
 		<div class="fuwu leftright">
 			<div  @click="go_home_serverinf(list.classId)" v-for="(list,index) in newlist" :key='index' >
-				<image :src="static +list.picture"></image>
+				<image :src="static +list.picture" class="noimage"></image>
 				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
 		</div>

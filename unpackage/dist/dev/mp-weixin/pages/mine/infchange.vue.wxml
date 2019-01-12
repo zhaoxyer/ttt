@@ -1,6 +1,6 @@
 <template name="03e2a00c">
   <view class="_view data-v-afd3bcd8">
-    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'7xe-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'UsR-0'}}" data-comkey="{{$k}}">
       <label class="_span data-v-afd3bcd8">个人信息</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
@@ -25,6 +25,6 @@
       <label class="_span data-v-afd3bcd8">通用</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
-    <view class="_div data-v-afd3bcd8 outinf" bindtap="handleProxy" data-eventid="{{'GDg-1'}}" data-comkey="{{$k}}">退出账户</view>
+    <view class="_div data-v-afd3bcd8 outinf" bindtap="handleProxy" data-eventid="{{'JeP-1'}}" data-comkey="{{$k}}">退出账户</view>
   </view>
 </template>

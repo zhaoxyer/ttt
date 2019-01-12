@@ -29,8 +29,8 @@
 				<div :class="{'active':type==index}" v-for="(item,index) in typeList" :key="item" @click='cg_type(index)'>{{item.name}}</div>
 			</scroll-view>
 			<scroll-view class="list" scroll-y='true'>
-				<div @click="go_build_mallinf" class='mall1inf' v-for="(item,index) in malllist" :key="item">
-					<image :src="item.img" ></image>
+				<div @click="go_build_mallinf(item.id)" class='mall1inf' v-for="(item,index) in malllist" :key="item">
+					<image :src="static+item.picture" ></image>
 					<div>
 						<p>{{item.name}}</p>
 						<p>月销{{item.num}}笔</p>
@@ -64,6 +64,7 @@
 	export default {
 		data() {
 			return {
+				static:'',
 				type:0,
 				malllist:[
 				],
@@ -77,18 +78,7 @@
 			}
 		},
 		onLoad(opt) {
-			var malllist=[
-				{img:'../../static/build/mall.png',price:38,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:11.22,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:1000.31,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:38.23,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:38.53,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:138.42,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:48,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:19.22,name:'不锈钢加厚荷叶',num:'300'},
-				{img:'../../static/build/mall.png',price:38.99,name:'不锈钢加厚荷叶',num:'300'}
-			];
-			this.malllist=this.malllistmap(malllist);
+			this.static=ut.static;
 			this.classid=opt.classid;
 			this.storeid=opt.storeid;
 			this.req_storeclasslist()
@@ -102,15 +92,17 @@
 			},
 			cg_type(type){
 				this.type=type;
+				this.class_id=this.typeList[type].id;
+				this.req_goodslist();
 			},
 			go_build_pay(){
 				wx.navigateTo({
 					url: '../build/pay'
 				})
 			},
-			go_build_mallinf(){
+			go_build_mallinf(id){
 				wx.navigateTo({
-					url: '../build/mallinf'
+					url: `../build/mallinf?_id=${id}`
 				})
 			},
 			minus(index){
@@ -147,7 +139,9 @@
 					url: "goods/storeclasslist"
 				}).then(data=>{
 					this.typeList=data;
-					this.class_id=data[0].id;
+					if(data[0]){
+						this.class_id=data[0].id;
+					}
 				}).then(data=>{
 					this.req_goodslist();
 				})
@@ -161,7 +155,10 @@
 					},
 					url: "goods/goodslist"
 				}).then(data=>{
-					//this.malllist=data;
+					data.forEach(item=>{
+						item.num=0;
+					})
+					this.malllist=data;
 				})
 			}
 		}
