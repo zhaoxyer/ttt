@@ -49,6 +49,34 @@ ut.createRandom = function(num, min, max) {
 	res.length = num;
 	return res;
 }
+//设置页面title
+ut.settitle = function(title) {
+	wx.setNavigationBarTitle({
+		title: title
+	})
+}
+//弹出消息
+ut.showToast = function(title) {
+	wx.showToast({
+		title: title,
+		icon: 'none',
+		color: 'red',
+		duration: 2000
+	})
+}
+//校验手机号
+ut.checkmobile = function(str) {
+	var myreg = /^[1][3,4,5,6.7,8,9][0-9]{9}$/;
+	if (!myreg.test(str)) {
+		return false;
+	} else {
+		return true;
+	}
+}
+//清除用户信息
+ut.loginout =function(){
+	wx.setStorageSync('token','');
+}
 ut.request=function(parm){
 	parm.data=parm.data||{};
 	var c='application/x-www-form-urlencoded';

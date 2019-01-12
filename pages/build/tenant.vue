@@ -60,6 +60,7 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
@@ -76,10 +77,13 @@
 				],
 				mallnum:0,
 				mallprice:0,
-				pop:false
+				pop:false,
+				storeid:'',
+				classid:'',
+				class_id:''
 			}
 		},
-		onLoad() {
+		onLoad(opt) {
 			var malllist=[
 				{img:'../../static/build/mall.png',price:38,name:'不锈钢加厚荷叶',num:'300'},
 				{img:'../../static/build/mall.png',price:11.22,name:'不锈钢加厚荷叶',num:'300'},
@@ -92,6 +96,9 @@
 				{img:'../../static/build/mall.png',price:38.99,name:'不锈钢加厚荷叶',num:'300'}
 			];
 			this.malllist=this.malllistmap(malllist);
+			this.classid=opt.classid;
+			this.storeid=opt.storeid;
+			this.req_storeclasslist()
 		},
 		methods: {
 			cg_pop(){
@@ -138,6 +145,31 @@
 				this.mallprice=0;
 				this.malllist=this.malllistmap(this.malllist);
 				this.pop=false;
+			},
+			req_storeclasslist(){
+				ut.request({
+					data: {
+						storeid:this.storeid
+					},
+					url: "goods/storeclasslist"
+				}).then(data=>{
+					this.typeList=data;
+					this.class_id=data[0].id;
+				}).then(data=>{
+					this.req_goodslist();
+				})
+			},
+			req_goodslist(){
+				ut.request({
+					data: {
+						storeid:this.storeid,
+						classid:this.classid,
+						class_id:this.class_id
+					},
+					url: "goods/goodslist"
+				}).then(data=>{
+					//this.malllist=data;
+				})
 			}
 		}
 	}

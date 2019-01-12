@@ -6,7 +6,7 @@
 				<div v-for="(list,index) in classlist" :key="list"  :class="{'active':index==activeindex}" @click="cg_activeindex(index,list.id)">{{list.name}}</div>
 			</nav>
 			<div class="list">
-				<div @click="go_build_tenant" v-for="(list,index) in storelist" :key="index">
+				<div @click="go_build_tenant(list.id)" v-for="(list,index) in storelist" :key="index">
 					<image :src="static+list.picture" ></image>
 					<div>
 						<p>{{list.name}}</p>
@@ -76,9 +76,9 @@
 					url: '../build/serch'
 				})
 			},
-			go_build_tenant(){
+			go_build_tenant(storeid){
 				wx.navigateTo({
-					url: '../build/tenant'
+					url: `../build/tenant?storeid=${storeid}&classid=${this.classlist[this.activeindex].id}`
 				})
 			},
 			cg_activeindex(index,classid){

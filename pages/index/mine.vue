@@ -1,8 +1,8 @@
 <template>
 	<div>
-		<div class="header" @click="go_mine_register">
-			<image src="../../static/index/herder.png"/>
-			<p>木斗斗</p>
+		<div class="header" @click="checkinf">
+			<image :src="userinf.img||'../../static/logo.jpg'"/>
+			<p>{{userinf.nickname||userinf.name||'木斗生活'}}</p>
 		</div>
 		<div class='userinf'>
 			<h1>个人信息</h1>
@@ -66,20 +66,36 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
-				tel:function () {
-				  wx.makePhoneCall({
-					phoneNumber: '18234038009',
-				  })
-				}
+				userinf:{}
 			}
 		},
 		onLoad() {
 
 		},
+		onShow() {		
+			if(wx.getStorageSync('token')){
+				this.req_userinfo();
+			}else{
+				this.userinf={};
+			}
+		},
 		methods: {
+			tel() {
+				wx.makePhoneCall({
+				phoneNumber: '18234038009',
+				})
+			},
+			checkinf(){
+				if(wx.getStorageSync('token')){
+					this.go_mine_infchange();
+					return;
+				}
+				this.go_mine_register();
+			},
 			go_mine_infchange(){
 				wx.navigateTo({
 					url: '../mine/infchange'
@@ -103,6 +119,14 @@
 			go_mine_securityCenter(){
 				wx.navigateTo({
 					url: '../mine/securityCenter'
+				})
+			},
+			req_userinfo(){
+				ut.request({
+					url: "user/info",
+					method:'get'
+				}).then(data=>{
+					this.userinf=data
 				})
 			}
 		}

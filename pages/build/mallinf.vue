@@ -15,14 +15,14 @@
 				<span :class="{'active':type==index}" v-for="(item,index) in guigetype" :key="index" @click='cg_type(index)'>{{item.name}}</span>
 			</div>
 			<div class="add">
-				<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{mallinf.mallnum}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span>数量</span>
+				<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{mallinf.num}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span>数量</span>
 			</div>
 		</div>
 		<div class="bggray"></div>
 		<div class='footer'>
 			<div class="edit"><span>加入购物车</span><span @click="go_build_pay">购买</span></div>
-			<span class="mallnum" v-show='mallnum'>{{mallnum}}</span>
-			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='mallnum'>￥{{mallprice}}</span>
+			<span class="num" v-show='num'>{{num}}</span>
+			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='num'>￥{{mallprice}}</span>
 		</div>
 		<div class="pop" v-if='pop' @click="cg_pop">
 			<div class="popcont">
@@ -31,7 +31,7 @@
 				</div>
 				<div class='barlist'>
 					<div class="add" v-for="(item,index) in barlist" :key="index">
-						<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{item.mallnum}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span class="barname">{{item.name}}</span><span class="barmoney">￥{{item.price}}</span>
+						<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{item.num}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span class="barname">{{item.name}}</span><span class="barmoney">￥{{item.price}}</span>
 					</div>
 				</div>
 			</div>
@@ -49,7 +49,7 @@
 				malllist:[
 				],
 				guigetype:[],
-				mallnum: 0,
+				num: 0,
 				mallinf: {},
 				mallprice:0,
 				barlist:[],
@@ -64,10 +64,10 @@
 		methods: {
 			cg_type(type){
 				this.type=type;
-				this.mallinf =data.clientGoodsSpecList[type]
+				this.mallinf =this.guigetype[type]
 			},
 			cg_pop(){
-				if(!this.pop&&!this.mallnum){
+				if(!this.pop&&!this.num){
 					return;
 				}
 				this.pop=!this.pop;
@@ -78,25 +78,25 @@
 				})
 			},
 			minus(index){
-				if(this.mallnum==0)return;
-				this.mallnum-=1;
-				this.mallinf.mallnum-=1;
+				if(this.num==0)return;
+				this.num-=1;
+				this.mallinf.num-=1;
 				this.mallprice=(Number(this.mallprice)-Number(this.mallinf.price)).toFixed(2);
 				this.barlist[index||0]=this.mallinf;
-				if(this.mallinf.mallnum==0){
+				if(this.mallinf.num==0){
 					this.barlist.splice(index||0,1);
 					this.pop=false;
 				}
 			},
 			add(index){
-				this.mallnum+=1;
-				this.mallinf.mallnum+=1;
+				this.num+=1;
+				this.mallinf.num+=1;
 				this.mallprice=(Number(this.mallprice)+Number(this.mallinf.price)).toFixed(2);
 				this.barlist[index||0]=this.mallinf;
 			},
 			cleanbar(){
-				this.mallnum=0;
-				this.mallinf.mallnum=0;
+				this.num=0;
+				this.mallinf.num=0;
 				this.mallprice=0;
 				this.barlist[0]=[];
 				this.pop=false;
@@ -111,12 +111,23 @@
 					this.clientGoods=data.clientGoods;
 					if(data.clientGoodsSpecList[0]){
 						data.clientGoodsSpecList.forEach(item =>{
-							item.mallnum=0;
+							item.num=0;
 						})
 						this.mallinf =data.clientGoodsSpecList[0]
 					}
 					this.guigetype=data.clientGoodsSpecList;
 				})
+			},
+			req_cartadd(){
+				ut.request({
+					data: {
+						goodsid:goodsid,
+						id:'',
+						num:'',
+						specId:''
+					},
+					url: "cart/add"
+				}).then(data=>{})
 			}
 		}
 	}
@@ -160,7 +171,7 @@
 		flex-direction: row;
 		display: flex;
 	}
-	.mallnum{
+	.num{
 		width: 45px;
 		font-size: 20px;
 		text-align: center;

@@ -69,8 +69,8 @@
 					ut.totast('请输入姓名');
 					return;
 				}
-				if(!this.userinf.phone){
-					ut.totast('请输入手机号');
+				if(!ut.checkmobile(this.userinf.phone)){
+					ut.totast('请输入正确的手机号');
 					return;
 				}
 				if(!this.userinf.vCode){

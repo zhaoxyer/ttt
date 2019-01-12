@@ -57,7 +57,7 @@
   display: -webkit-flex;
   display: flex;
 }
-.mallnum.data-v-07f02cfd {
+.num.data-v-07f02cfd {
   width: 45rpx;
   font-size: 20rpx;
   text-align: center;

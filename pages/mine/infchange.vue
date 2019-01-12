@@ -19,11 +19,12 @@
 		<div class="columlist">
 			<span>通用</span><image src="../../static/right.jpg"></image>
 		</div>
-		<div class="outinf">退出账户</div>
+		<div class="outinf" @click='loginout'>退出账户</div>
 	</view>
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
@@ -37,6 +38,10 @@
 				wx.navigateTo({
 					url: '../mine/userinf'
 				})
+			},
+			loginout(){
+				ut.loginout();
+				wx.navigateBack();
 			}
 		}
 	}
