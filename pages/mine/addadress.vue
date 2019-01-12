@@ -88,7 +88,7 @@
 					ut.totast('请选择所在城市');
 					return;
 				}
-				if(!this.adressinf.adress){
+				if(!this.adressinf.address){
 					ut.totast('请输入详细地址');
 					return;
 				}
