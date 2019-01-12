@@ -1,15 +1,12 @@
 <template>
 	<div>
 		<div class="mallinf1">
-			<div class="otherinf">
-				<div class="mallname"></div>
-			</div>
 			<image :src="static+mallinf.picture" class="mallimage"></image>
 		</div>
 		<div class="mallinf2">
 			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png"></image></div>
-			<div>多类牌合页</div>
-			<div class="mallinf2s"><span>月销：50笔</span><span>评价﹀</span><span>北京通州</span></div>
+			<div>{{clientGoods.name}}</div>
+			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span>评价﹀</span><span>北京通州</span></div>
 		</div>
 		<div class="bggray"></div>
 		<div class="guige">
@@ -53,10 +50,11 @@
 				],
 				guigetype:[],
 				mallnum: 0,
-				mallinf: {img:'../../static/build/mall.png',price:22.11,name:'不锈钢加厚荷叶',num:'300',mallnum:0},
+				mallinf: {},
 				mallprice:0,
 				barlist:[],
-				pop:false
+				pop:false,
+				clientGoods:{}
 			}
 		},
 		onLoad(opt) {
@@ -66,6 +64,7 @@
 		methods: {
 			cg_type(type){
 				this.type=type;
+				this.mallinf =data.clientGoodsSpecList[type]
 			},
 			cg_pop(){
 				if(!this.pop&&!this.mallnum){
@@ -109,7 +108,13 @@
 					},
 					url: "goods/goodsdetail"
 				}).then(data=>{
-					this.mallinf=data.clientGoods;
+					this.clientGoods=data.clientGoods;
+					if(data.clientGoodsSpecList[0]){
+						data.clientGoodsSpecList.forEach(item =>{
+							item.mallnum=0;
+						})
+						this.mallinf =data.clientGoodsSpecList[0]
+					}
 					this.guigetype=data.clientGoodsSpecList;
 				})
 			}

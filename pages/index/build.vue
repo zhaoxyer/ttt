@@ -26,28 +26,7 @@
 					<image :src="static +list.picture"></image>
 				</div>
 				<div><span>{{list.price}}</span><span>元每套</span></div>
-			</div>
-			<div>
-				<div>智能门锁</div>
-				<div>
-					<image src="../../static/index/youhui.png"></image>
-				</div>
-				<div><span>500</span><span>元每套</span></div>
-			</div>
-			<div>
-				<div>智能门锁</div>
-				<div>
-					<image src="../../static/index/youhui.png"></image>
-				</div>
-				<div><span>500</span><span>元每套</span></div>
-			</div>
-			<div>
-				<div>智能门锁</div>
-				<div>
-					<image src="../../static/index/youhui.png"></image>
-				</div>
-				<div><span>500</span><span>元每套</span></div>
-			</div>
+			</div>			
 		</div>
 		<div class="title">
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>

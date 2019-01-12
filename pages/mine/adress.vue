@@ -5,7 +5,7 @@
 				<div>
 					<div>{{item.name}}</div><div>{{item.phone}}</div>
 				</div>
-				<div>{{item.address}}</div>
+				<div>{{item.provinceName+item.countyAreaName+item.cityName+item.address}}</div>
 				<div class="edit">
 					<div v-if="item.defaultType!=1" @click="req_setDef(item)"><image src="../../static/mine/check.jpg" ></image><span>默认</span></div>
 					<div v-else  @click="req_setDef(item)"><image src="../../static/mine/uncheck.jpg"></image><span>设为默认</span></div>

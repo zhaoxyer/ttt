@@ -7,7 +7,14 @@
 			<span>电话</span><input type="text" placeholder="请输入手机号" v-model="adressinf.phone"/>
 		</div>
 		<div>
-			<span>地区</span><input type="text" placeholder="最少2个,最多15个字" />
+			<span>地区</span><div class="inputall">
+				<picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
+						    <view class="picker">
+						      {{adressinf.provinceName||''}}，{{adressinf.countyAreaName||''}}，{{adressinf.cityName||''}}
+						    </view>
+				</picker>
+				{{adressinf.provinceName+adressinf.countyAreaName+adressinf.cityName||'请选择所在城市'}}
+			</div>
 		</div>
 		<div>
 			<span>地址</span><input type="text" placeholder="请填写详细地址,5~60个字" v-model="adressinf.address"/>
@@ -32,15 +39,15 @@
 			return {
 				adressinf:{
 					"address": "",
-					"cityCode": "11",
-					"cityName": "北京",
-					"countyAreaCode": "12",
-					"countyAreaName": "天安门",
+					"cityCode": "",
+					"cityName": "",
+					"countyAreaCode": "",
+					"countyAreaName": "",
 					"defaultType": 0,
 					"name": "",
 					"phone": "",
-					"provinceCode": "22",
-					"provinceName": "撒旦"
+					"provinceCode": "",
+					"provinceName": ""
 				},
 				id:''
 			}
@@ -52,6 +59,11 @@
 			}
 		},
 		methods: {
+			bindRegionChange: function (e) {
+			 	this.adressinf.provinceName=e.target.value[0];
+			 	this.adressinf.countyAreaName=e.target.value[1];
+			 	this.adressinf.cityName=e.target.value[2];
+			},
 			cg_active(){
 				if(this.adressinf.defaultType){
 					this.adressinf.defaultType=0;
@@ -63,6 +75,22 @@
 				let url="address/add";
 				if(this.id){
 					url="address/update"
+				}
+				if(!this.adressinf.name){
+					ut.totast('请输入姓名');
+					return;
+				}
+				if(!this.adressinf.phone){
+					ut.totast('请输入手机号');
+					return;
+				}
+				if(!this.adressinf.provinceName){
+					ut.totast('请选择所在城市');
+					return;
+				}
+				if(!this.adressinf.adress){
+					ut.totast('请输入详细地址');
+					return;
 				}
 				ut.request({
 					data:this.adressinf,
@@ -90,7 +118,7 @@
 	.setinput div{
 		padding: 0 30px;
 	}
-	.setinput>div>span,.setinput>div>input,.setinput>div>textarea{
+	.setinput>div>span,.setinput>div>input,.setinput>div>textarea,.setinput>div>.inputall{
 		display: inline-block;
 		vertical-align: top;
 		font-size: 24px;
@@ -98,6 +126,7 @@
 		min-height: 80px;
 		margin-top: 20px;
 		height: 80px;
+		padding: 0!important;
 	}
 	.setinput>div{
 		border-bottom: 1px solid #C8C8C8;
@@ -160,4 +189,5 @@
 		text-align: right;
 		font-size: 24px;
 	}
+	.regionpicker{position: absolute;background: transparent;color: transparent;width: 100%;z-index: 3;}
 </style>

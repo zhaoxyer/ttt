@@ -4,7 +4,8 @@
 }
 .setinput>._div>._span,
 .setinput>._div>._input,
-.setinput>._div>._textarea {
+.setinput>._div>._textarea,
+.setinput>._div>.inputall {
   display: inline-block;
   vertical-align: top;
   font-size: 24rpx;
@@ -12,6 +13,7 @@
   min-height: 80rpx;
   margin-top: 20rpx;
   height: 80rpx;
+  padding: 0!important;
 }
 .setinput>._div {
   border-bottom: 1rpx solid #C8C8C8;
@@ -72,4 +74,11 @@
   line-height: 60rpx;
   text-align: right;
   font-size: 24rpx;
+}
+.regionpicker {
+  position: absolute;
+  background: transparent;
+  color: transparent;
+  width: 100%;
+  z-index: 3;
 }
