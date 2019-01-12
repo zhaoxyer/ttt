@@ -13,41 +13,6 @@
 						<p>地址：{{list.address}}</p>
 					</div>
 				</div>
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
-					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
-					</div>
-				</div>
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
-					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
-					</div>
-				</div>
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
-					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
-					</div>
-				</div>
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
-					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
-					</div>
-				</div>
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
-					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
-					</div>
-				</div>
 			</div>
 		</div>
 	</div>

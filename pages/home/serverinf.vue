@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
+		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
 			<swiper-item>
 				<image :src="static+serverinf.picture"/>
 			</swiper-item>
@@ -47,13 +47,6 @@
 		data() {
 			return {
 				static:'',
-				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
-				indicatorDots: true,
-				indicatorcolor: 'white',
-				autoplay: true,
-				interval: 5000,
-				duration: 1000,
-				circular: true,
 				typeindex:0,
 				typelist:[],
 				serverinf:{},

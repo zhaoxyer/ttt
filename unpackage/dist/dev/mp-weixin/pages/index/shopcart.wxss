@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .shopping-car {
   background: #efefef;

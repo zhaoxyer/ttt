@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .userinf image {
   width: 90rpx;

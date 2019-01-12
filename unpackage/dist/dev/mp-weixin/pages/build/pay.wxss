@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .adressli {
   padding: 30rpx;

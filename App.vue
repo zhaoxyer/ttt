@@ -14,6 +14,7 @@
 
 <style>
 	/*每个页面公共css */
+	@import url("components/mpvue-wxparse/src/wxParse.css");
 	page{
 		color: #5d5c5c;
 	}

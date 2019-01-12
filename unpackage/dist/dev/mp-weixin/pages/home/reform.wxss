@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .userinf {
   padding: 0 30rpx;

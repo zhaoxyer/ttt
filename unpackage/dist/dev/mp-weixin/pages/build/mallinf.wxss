@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .mallimage.data-v-07f02cfd {
   width: 100%;
@@ -203,4 +204,7 @@
   height: 400rpx;
   padding: 0 30rpx;
   position: relative;
+}
+.detail.data-v-07f02cfd {
+  padding: 0 30rpx;
 }

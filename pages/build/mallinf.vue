@@ -19,6 +19,9 @@
 			</div>
 		</div>
 		<div class="bggray"></div>
+		<div v-if='detailinf' class="detail">
+			<wxParse :content="detailinf"/>
+		</div>
 		<div class='footer'>
 			<div class="edit"><span @click='req_cartadd'>加入购物车</span><span @click="go_build_pay">购买</span></div>
 			<span class="num" v-show='num'>{{num}}</span>
@@ -41,6 +44,8 @@
 
 <script>
 	import ut from '../../utils/index.js';
+	import marked from '../../components/marked'
+	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
 	export default {
 		data() {
 			return {
@@ -54,8 +59,12 @@
 				mallprice:0,
 				barlist:[],
 				pop:false,
-				clientGoods:{}
+				clientGoods:{},
+				detailinf:''
 			}
+		},
+		components: {
+			wxParse
 		},
 		onLoad(opt) {
 			this.static=ut.static;
@@ -109,6 +118,7 @@
 					url: "goods/goodsdetail"
 				}).then(data=>{
 					this.clientGoods=data.clientGoods;
+					this.detailinf=marked(this.clientGoods.detail)
 					if(data.clientGoodsSpecList[0]){
 						data.clientGoodsSpecList.forEach(item =>{
 							item.num=0;
@@ -119,25 +129,28 @@
 				})
 			},
 			filterdate(){
-				let data=[];
+				let parm=[];
 				console.log(this.barlist)
-				for(let i=0;i<=this.barlist.length;i++){
-					console.log(this.barlist[i])
-					data[i]={
-						goodsid:this.barlist[i].goodsId,
+				for(let i=0;i<this.barlist.length;i++){
+					parm[i]={
+						goodsId:this.barlist[i].goodsId,
 						num:this.barlist[i].num,
 						specId:this.barlist[i].id
 					}
 				}
-				return data;
+				return parm;
 			},
 			req_cartadd(){
-				console.log(this.barlist)
-				const data=this.filterdate();
+				const parm=this.filterdate();
+				console.log(JSON.stringify(parm))
 				ut.request({
-					data: data,
-					url: "cart/add"
-				}).then(data=>{})
+					data:parm,
+					url: "cart/add",
+					c:true
+				}).then(data=>{
+					this.cleanbar();
+					ut.totast('加入购物车成功');
+				})
 			}
 		}
 	}
@@ -317,5 +330,7 @@
 		padding: 0 30px;
 		position: relative;
 	}
-	
+	.detail{
+		padding: 0 30px;
+	}
 </style>

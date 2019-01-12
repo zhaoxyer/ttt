@@ -67,14 +67,7 @@
 				type:0,
 				malllist:[
 				],
-				typeList:[
-					{name:'合页系列'},
-					{name:'铰链系列'},
-					{name:'插销系列'},
-					{name:'合页系列'},
-					{name:'合页系列'},
-					{name:'合页系列'}
-				],
+				typeList:[],
 				mallnum:0,
 				mallprice:0,
 				pop:false,

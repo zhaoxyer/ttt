@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .mallinf1 {
   position: relative;

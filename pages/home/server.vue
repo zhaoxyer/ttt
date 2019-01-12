@@ -1,5 +1,9 @@
 <template>
 	<view class="list">
+		<div class="yiji">
+			<span v-for="(item,index) in server" :key="item" class="{{'active',index==activeindex}}">{{item.name}}</span>
+		</div>
+		<div class="bggray"></div>
 		<div v-for="item in server" :key="item" >
 			<div class="title">
 				<span class="bg0">{{item.name}}</span>
@@ -31,83 +35,8 @@
 				interval: 5000,
 				duration: 1000,
 				circular: true,
-				server:[
-					{
-						type:"室内补漏",
-						list:[
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							}
-						]
-					},
-					{
-						type:"室外补漏",
-						list:[
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							}
-						]
-					},
-					{
-						type:"卫生间补漏",
-						list:[
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							},
-							{
-								type:'防水补漏',
-								adress:'卫生间',
-								image:'../../static/index/fuwu.jpg'
-							}
-						]
-					}
-				]
+				server:[],
+				activeindex:0
 			}
 		},
 		onLoad(opt) {
@@ -134,6 +63,17 @@
 </script>
 
 <style>
+	.yiji{
+		height: 100px;
+		text-align: center;
+	}
+	.yiji span{
+		display: inline-block;
+		vertical-align: top;
+		border: 5px solid #FEC200;
+		color: #FEC200;
+	}
+	
 	.title{
 		text-align: center;
 		margin-top: 40px;

@@ -1,0 +1,51 @@
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate10.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
+<template name="0396358a">
+  <view class="_view data-v-0564c3af">
+    <block wx:if="{{node.node == 'element'}}">
+      <block wx:if="{{node.tag == 'button'}}">
+        <button type="default" size="mini" class="_button data-v-0564c3af">
+          <block wx:key="index" key="{{index}}" wx:for="{{node.nodes}}" wx:for-index="index" wx:for-item="node">
+            <template data="{{...$root['0'], ...$root[$kk+'Py9-0-'+index],$root}}" is="8a8710e6"></template>
+          </block>
+        </button>
+      </block>
+      <block wx:elif="{{node.tag == 'li'}}">
+        <view class="_view data-v-0564c3af {{node.classStr}}" style=" {{node.styleStr}}">
+          <block wx:key="index" key="{{index}}" wx:for="{{node.nodes}}" wx:for-index="index" wx:for-item="node">
+            <template data="{{...$root['0'], ...$root[$kk+'kOC-1-'+index],$root}}" is="8a8710e6"></template>
+          </block>
+        </view>
+      </block>
+      <block wx:elif="{{node.tag == 'video'}}">
+        <template data="{{...$root['0'], ...$root[$kk+'WkH-2'],$root}}" is="a55b6a92"></template>
+      </block>
+      <block wx:elif="{{node.tag == 'audio'}}">
+        <template data="{{...$root['0'], ...$root[$kk+'G53-3'],$root}}" is="6916ac92"></template>
+      </block>
+      <block wx:elif="{{node.tag == 'img'}}">
+        <template data="{{...$root['0'], ...$root[$kk+'LdD-4'],$root}}" is="e7363a02"></template>
+      </block>
+      <block wx:elif="{{node.tag == 'a'}}">
+        <view bindtap="handleProxy" data-href="{{node.attr.href}}" data-eventid="{{'NpQ-0'}}" data-comkey="{{$k}}" class="_view data-v-0564c3af {{node.classStr}}" style=" {{node.styleStr}}">
+          <block wx:key="index" key="{{index}}" wx:for="{{node.nodes}}" wx:for-index="index" wx:for-item="node">
+            <template data="{{...$root['0'], ...$root[$kk+'3FH-5-'+index],$root}}" is="8a8710e6"></template>
+          </block>
+        </view>
+      </block>
+      <block wx:elif="{{node.tag == 'br'}}">
+        <text class="_text data-v-0564c3af">\n</text>
+      </block>
+      <block wx:else>
+        <view class="_view data-v-0564c3af {{node.classStr}}" style=" {{node.styleStr}}">
+          <block wx:key="index" key="{{index}}" wx:for="{{node.nodes}}" wx:for-index="index" wx:for-item="node">
+            <template data="{{...$root['0'], ...$root[$kk+'rpM-6-'+index],$root}}" is="8a8710e6"></template>
+          </block>
+        </view>
+      </block>
+    </block>
+    <block wx:elif="{{node.node == 'text'}}">{{node.text}}</block>
+  </view>
+</template>

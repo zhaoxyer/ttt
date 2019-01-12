@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 .userinf ._div {
   width: 33.333%;

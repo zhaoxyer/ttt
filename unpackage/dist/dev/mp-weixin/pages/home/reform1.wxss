@@ -1,3 +1,4 @@
+@import "../../common/vendor.wxss";
 
 scroll-view {
   position: absolute;
