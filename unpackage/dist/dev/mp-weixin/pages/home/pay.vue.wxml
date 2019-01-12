@@ -1,7 +1,7 @@
 <template name="ccf8f8c6">
   <view class="_div data-v-73feb0b7">
     <view class="_div data-v-73feb0b7 adress">
-      <view class="_div data-v-73feb0b7 adressli" bindtap="handleProxy" data-eventid="{{'e64-0'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-73feb0b7 adressli" bindtap="handleProxy" data-eventid="{{'Mts-0'}}" data-comkey="{{$k}}">
         <view class="_div data-v-73feb0b7">姓      名：张先生</view>
         <view class="_div data-v-73feb0b7">联系方式：1863599999</view>
         <view class="_div data-v-73feb0b7 adressinf">

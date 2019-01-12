@@ -2,7 +2,7 @@
 	<view class="list">
 		<div v-for="item in server" :key="item" >
 			<div class="title">
-				<span class="bg0">{{item.type}}</span>
+				<span class="bg0">{{item.name}}</span>
 			</div>
 			<div class="youhui leftright">
 				<div class='server'>
@@ -19,6 +19,7 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
@@ -109,13 +110,23 @@
 				]
 			}
 		},
-		onLoad() {
-
+		onLoad(opt) {
+			this.req_recom(opt._id)
 		},
 		methods: {
 			go_home_serverinf(){
 				wx.navigateTo({
 					url: '../home/serverinf'
+				})
+			},
+			req_recom(id){
+				ut.request({
+					data: {
+						parentid:id
+					},
+					url: "service/classlist"
+				}).then(data=>{
+					this.server=data
 				})
 			}
 		}

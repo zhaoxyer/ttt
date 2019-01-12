@@ -3,21 +3,14 @@
 		<div class="serch" @click="go_build_serch"><image src="../../static/index/serch.png" ></image><span>寻找商品、店铺</span></div>
 		<div class="section">
 			<nav>
-				<div class="active">门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
-				<div>门框类五金</div>
+				<div v-for="(list,index) in classlist" :key="list"  :class="{'active':index==activeindex}" @click="cg_activeindex(index,list.id)">{{list.name}}</div>
 			</nav>
 			<div class="list">
-				<div @click="go_build_tenant">
-					<image src="../../static/build/tetant.png" ></image>
+				<div @click="go_build_tenant" v-for="(list,index) in storelist" :key="index">
+					<image :src="static+list.picture" ></image>
 					<div>
-						<p>盛丰五金建材器铺</p>
-						<p>地址：通州区建材城二层</p>
+						<p>{{list.name}}</p>
+						<p>地址：{{list.address}}</p>
 					</div>
 				</div>
 				<div>
@@ -61,14 +54,21 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
-				
+				static:'',
+				activeindex:0,
+				classlist:[],
+				storelist:[],
+				id:''
 			}
 		},
-		onLoad() {
-
+		onLoad(opt) {
+			this.static=ut.static;
+			this.id=opt._id;
+			this.req_class(opt._id)
 		},
 		methods: {
 			go_build_serch(){
@@ -80,7 +80,37 @@
 				wx.navigateTo({
 					url: '../build/tenant'
 				})
-			}
+			},
+			cg_activeindex(index,classid){
+				this.activeindex=index;
+				this.req_storelist(classid)
+			},
+			req_class(id){
+				ut.request({
+					data: {
+						parentid:id
+					},
+					url: "goods/class"
+				}).then(data=>{
+					this.classlist=data;
+					return {
+						classid:data[0].id
+					}
+				}).then(data=>{
+					this.req_storelist(data.classid)
+				})
+			},
+			req_storelist(classid){
+				ut.request({
+					data: {
+						classid:classid,
+						id:this.id
+					},
+					url: "goods/storelist"
+				}).then(data=>{
+					this.storelist=data;
+				})
+			},
 		}
 	}
 </script>

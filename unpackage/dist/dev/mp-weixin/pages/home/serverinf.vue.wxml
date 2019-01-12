@@ -17,7 +17,7 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d typelist">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'GdD-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'VbA-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
           <view class="_div data-v-2858cd8d">
             <view class="_p data-v-2858cd8d">{{list.name}}</view>
             <view class="_p data-v-2858cd8d">￥{{list.money}}/个</view>
@@ -34,7 +34,7 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d gobuild">
-        <label bindtap="handleProxy" data-eventid="{{'Wcc-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
+        <label bindtap="handleProxy" data-eventid="{{'yUh-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
       </view>
       <view class="_div data-v-2858cd8d tip">以上标准价格为上门费，如需材料请点击建材城</view>
     </view>
@@ -46,7 +46,7 @@
         <label class="_span data-v-2858cd8d">预约费</label>
         <label class="_span data-v-2858cd8d">￥30.00</label>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'zqo-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+      <view bindtap="handleProxy" data-eventid="{{'5Gp-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
     </view>
   </view>
 </template>

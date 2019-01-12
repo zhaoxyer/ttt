@@ -11,10 +11,12 @@
 				<image src="../../static/mine/pas.jpg"></image><input type="password" placeholder="请输入密码" v-model="password"/>
 			</div>
 			<p class="submit" @click="req_login">
+				
 				登陆
 			</p>
 		</div>
 		<div class="qlogin">
+			<login></login>
 			<image src="../../static/mine/qlogin.jpg" mode="widthFix"></image>
 			<div>
 				<image src="../../static/mine/wx.jpg"></image>
@@ -24,6 +26,7 @@
 </template>
 
 <script>
+	import login from '../../components/login.vue'
 	import ut from '../../utils/index.js';
 	export default {
 		data() {
@@ -59,11 +62,14 @@
 				ut.request({
 					data: {
 						username:this.username,
-						password:this.password
+						password:this.password,
+						code:1
 					},
 					url: "user/login"
 				}).then(data=>{
-					console.log(1)
+					console.log(data.token)
+					wx.setStorageSync('token',data.token)
+					wx.navigateBack()
 				})
 			}
 		}

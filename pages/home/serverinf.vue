@@ -38,6 +38,7 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
@@ -70,8 +71,8 @@
 				]
 			}
 		},
-		onLoad() {
-
+		onLoad(opt) {
+			this.req_detail(opt._id)
 		},
 		methods: {
 			back_index_build(){
@@ -85,6 +86,16 @@
 			go_home_pay(){
 				wx.navigateTo({
 					url: '../home/pay'
+				})
+			},
+			req_detail(id){
+				ut.request({
+					data: {
+						classid:id
+					},
+					url: "service/detail"
+				}).then(data=>{
+					this.recomlist=data
 				})
 			}
 		}

@@ -1,24 +1,24 @@
 <template>
 	<div class="setinput">
 		<div>
-			<span>姓名</span><input type="text" placeholder="最少2个,最多15个字"/>
+			<span>姓名</span><input type="text" placeholder="最少2个,最多15个字" v-model="adressinf.name"/>
 		</div>
 		<div>
-			<span>电话</span><input type="text" placeholder="请输入手机号"/>
+			<span>电话</span><input type="text" placeholder="请输入手机号" v-model="adressinf.phone"/>
 		</div>
 		<div>
-			<span>地区</span><input type="text" placeholder="最少2个,最多15个字"/>
+			<span>地区</span><input type="text" placeholder="最少2个,最多15个字" />
 		</div>
 		<div>
-			<span>地址</span><input type="text" placeholder="请填写详细地址,5~60个字" />
+			<span>地址</span><input type="text" placeholder="请填写详细地址,5~60个字" v-model="adressinf.address"/>
 		</div>
 		<div>
 			<span>邮编</span><input type="text" placeholder="6位邮政编码"/>
 		</div>
 		<p class="xieyi">
-			<span @click="cg_active"><image src="../../static/mine/check.jpg" v-if="!check"></image><image src="../../static/mine/uncheck.jpg" v-if="check"></image></span><span>设置成默认地址</span>
+			<span @click="cg_active"><image src="../../static/mine/check.jpg" v-if="!adressinf.defaultType"></image><image src="../../static/mine/uncheck.jpg" v-if="adressinf.defaultType"></image></span><span>设置成默认地址</span>
 		</p>
-		<p class="submit">
+		<p class="submit" @click="req_addaddress()">
 			保存
 		</p>
 	</div>
@@ -30,14 +30,57 @@
 	export default {
 		data() {
 			return {
-				check:false
+				adressinf:{
+					"address": "",
+					"cityCode": "11",
+					"cityName": "北京",
+					"countyAreaCode": "12",
+					"countyAreaName": "天安门",
+					"defaultType": 0,
+					"name": "",
+					"phone": "",
+					"provinceCode": "22",
+					"provinceName": "撒旦"
+				},
+				id:''
 			}
 		},
-		onLoad() {
+		onLoad(opt) {
+			if(opt._id){
+				this.id=opt._id;
+				this.req_addressInf(opt._id);
+			}
 		},
 		methods: {
 			cg_active(){
-				this.check=!this.check;
+				if(this.adressinf.defaultType){
+					this.adressinf.defaultType=0;
+					return;
+				}
+				this.adressinf.defaultType=1;
+			},
+			req_addaddress(){
+				let url="address/add";
+				if(this.id){
+					url="address/update"
+				}
+				ut.request({
+					data:this.adressinf,
+					url: url,
+					c:true
+				}).then(data=>{
+					wx.navigateBack()
+				})
+			},
+			req_addressInf(id){
+				ut.request({
+					data:{
+					id: id
+					},
+					url: "address/detail"
+				}).then(data => {
+					this.adressinf=data;
+				})
 			}
 		}
 	}

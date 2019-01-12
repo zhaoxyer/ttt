@@ -1,50 +1,72 @@
 <template>
 	<div>
 		<div class='adress'>
-			<div class="adressli">
+			<div class="adressli" v-for="(item,index) in list" :key="index">
 				<div>
-					<div>张先生</div><div>1863599999</div>
+					<div>{{item.name}}</div><div>{{item.phone}}</div>
 				</div>
-				<div>北京市通州区春元街撒娇就小区</div>
+				<div>{{item.address}}</div>
 				<div class="edit">
-					<div><image src="../../static/mine/uncheck.jpg"></image><span>设为默认</span></div>
-					<div><image src="../../static/mine/edit.png"></image><span>编辑</span><image src="../../static/mine/del.png"></image><span>删除</span></div>
-				</div>
-			</div>
-			<div class="adressli">
-				<div>
-					<div>张先生</div><div>1863599999</div>
-				</div>
-				<div>北京市通州区春元街撒娇就小区</div>
-				<div class="edit">
-					<div><image src="../../static/mine/check.jpg"></image><span>设为默认</span></div>
-					<div><image src="../../static/mine/edit.png"></image><span>编辑</span><image src="../../static/mine/del.png"></image><span>删除</span></div>
+					<div v-if="item.defaultType!=1" @click="req_setDef(item)"><image src="../../static/mine/check.jpg" ></image><span>默认</span></div>
+					<div v-else  @click="req_setDef(item)"><image src="../../static/mine/uncheck.jpg"></image><span>设为默认</span></div>
+					<div><image src="../../static/mine/edit.png" @click="go_mine_addadress(item.id)"></image><span  @click="go_mine_addadress(item.id)">编辑</span><image src="../../static/mine/del.png" @click="req_del(item,index)"></image><span @click="req_del(item,index)">删除</span></div>
 				</div>
 			</div>
 		</div>
 		<div class="apply">
-			<div @click='go_mine_addadress'>新建收货地址</div>
+			<div @click='go_mine_addadress()'>新建收货地址</div>
 		</div>					
 	</div>
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
-				
+				list:[]
 			}
 		},
-		onLoad() {
-
+		onShow() {
+			this.req_getAdress();
 		},
 		methods: {
-			go_mine_addadress(){
+			go_mine_addadress(id){
+				id=id||''
 				wx.navigateTo({
-					url: '../mine/addadress'
+					url: '../mine/addadress?_id='+id
 				})
-			}			
+			},
+			req_getAdress(){
+				console.log(this.list)
+				ut.request({
+					url: "address/list"
+				}).then(data => {
+					this.list=data;
+				})
+			},
+			req_setDef(item){
+				ut.request({
+					data:{
+					  id: item.id
+					},
+					url: "address/setAttr"
+				}).then(data => {
+					this.req_getAdress();
+				})
+			},
+			req_del(item,index){
+				ut.request({
+					data:{
+					id: item.id
+					},
+					url: "address/delete"
+				}).then(data => {
+					this.req_getAdress();
+				})
+			}
 		}
+		
 	}
 </script>
 

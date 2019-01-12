@@ -11,8 +11,9 @@
 			</swiper-item>
 		</swiper>
 		<div class='server'>
-			<div v-for="item in 8" :key="item" @click="go_home_server">
-				<image   :src="'../../static/index/servertype'+index+'.jpg'"   mode="widthFix"></image>
+			<div v-for="(list,index) in classlist" :key='index' @click="go_home_server(list.id)">
+				<image   :src="static+list.picture"   mode="widthFix"></image>
+				<view>{{list.name}}</view>
 			</div>
 		</div>
 		<div class="buju">
@@ -22,40 +23,16 @@
 		</div>
 		<div class="title1 bg0">推荐服务</div>
 		<div class="fuwu leftright">
-			<div @click="go_home_serverinf">
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
+			<div @click="go_home_serverinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
+				<image :src="static +list.picture"></image>
+				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
 		</div>
 		<div class="title1 bg1">最新优惠</div>
 		<div class="fuwu leftright">
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
-			</div>
-			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
-				<p>电脑维修：<span>50</span>起/每次</p>
+			<div  @click="go_home_serverinf(list.id)" v-for="(list,index) in newlist" :key='index' >
+				<image :src="static +list.picture"></image>
+				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
 		</div>
 	</view>
@@ -66,6 +43,7 @@
 	export default {
 		data() {
 			return {
+				static:'',
 				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
 				indicatorDots: true,
 				indicatorcolor: 'white',
@@ -73,21 +51,28 @@
 				autoplay: true,
 				interval: 5000,
 				duration: 1000,
-				circular: true
+				circular: true,
+				newlist: [],
+				recomlist: [],
+				classlist:[]
 			}
 		},
 		onLoad() {
-
+			this.static=ut.static;
+			this.req_class();
+			this.req_new();
+			this.req_recom();
 		},
 		methods: {
-			go_home_server(){
+			go_home_server(_id){
+				console.log(_id)
 				wx.navigateTo({
-					url: '../home/server'
+					url: '../home/server?_id='+_id
 				})
 			},
-			go_home_serverinf(){
+			go_home_serverinf(_id){
 				wx.navigateTo({
-					url: '../home/serverinf'
+					url: '../home/serverinf?_id='+_id
 				})
 			},
 			go_home_reform(){
@@ -98,6 +83,36 @@
 			go_home_reform1(){
 				wx.navigateTo({
 					url: '../home/reform1'
+				})
+			},
+			req_class(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "service/class"
+				}).then(data=>{
+					this.classlist=data;
+				})
+			},
+			req_new(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "service/newlist"
+				}).then(data=>{
+					this.newlist=data
+				})
+			},
+			req_recom(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "service/recommendlist"
+				}).then(data=>{
+					this.recomlist=data
 				})
 			}
 		}
@@ -155,6 +170,8 @@
 		display: inline-block;
 		vertical-align: top;
 		margin-right: 96px;
+		font-size: 24px;
+		text-align: center;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
@@ -164,6 +181,8 @@
 	}
 	.server image{
 		width: 100px;
+		height: 100px;
+		border-radius: 50%;
 	}
 	.title1{
 		width: 180px;

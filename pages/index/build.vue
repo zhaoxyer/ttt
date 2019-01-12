@@ -11,20 +11,21 @@
 			</swiper-item>
 		</swiper>
 		<div class='server'>
-			<div v-for="item in 8" :key="item" @click='go_build_build2'>
-				<image   :src="'../../static/index/server'+index+'.png'"   mode="widthFix"></image>
+			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id)'>
+				<image   :src="static+list.picture"   mode="widthFix"></image>
+				<view>{{list.name}}</view>
 			</div>
 		</div>
 		<div class="title">
 			<span>•</span><span class="bg0">最新优惠</span><span>•</span>
 		</div>
 		<div class="youhui leftright">
-			<div @click="go_build_mallinf">
-				<div>智能门锁</div>
+			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in newlist" :key='index'>
+				<div>{{list.name}}</div>
 				<div>
-					<image src="../../static/index/youhui.png"></image>
+					<image :src="static +list.picture"></image>
 				</div>
-				<div><span>500</span><span>元每套</span></div>
+				<div><span>{{list.price}}</span><span>元每套</span></div>
 			</div>
 			<div>
 				<div>智能门锁</div>
@@ -52,12 +53,12 @@
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
 		</div>
 		<div class="recom leftright">
-			<div @click="go_build_mallinf">
+			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
 				<div>
-					<p>各式沙发</p>
-					<p>500元起/每套</p>
+					<p>{{list.name}}</p>
+					<p>{{list.price}}元起/每套</p>
 				</div>
-				<image src="../../static/index/_tuijian.png"></image>
+				<image :src="static +list.picture"></image>
 				<image src="../../static/index/tuijian.png"></image>
 			</div>
 			<div>
@@ -89,9 +90,11 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
+				static:"",
 				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
 				indicatorDots: true,
 				indicatorcolor: 'white',
@@ -99,16 +102,22 @@
 				autoplay: true,
 				interval: 5000,
 				duration: 1000,
-				circular: true
+				circular: true,
+				newlist: [],
+				recomlist: [],
+				classlist:[]
 			}
 		},
 		onLoad() {
-
+			this.static=ut.static;
+			this.req_class();
+			this.req_new();
+			this.req_recom();
 		},
 		methods: {
-			go_build_build2(){
+			go_build_build2(_id){
 				wx.navigateTo({
-					url: '../build/build2'
+					url: `../build/build2?_id=${_id}`
 				})
 			},
 			go_build_serch(){
@@ -116,9 +125,40 @@
 					url: '../build/serch'
 				})
 			},
-			go_build_mallinf(){
+			go_build_mallinf(_id){
 				wx.navigateTo({
-					url: '../build/mallinf'
+					url: `../build/mallinf?_id=${_id}`
+				})
+			},
+			req_class(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "goods/class"
+				}).then(data=>{
+					console.log(data)
+					this.classlist=data;
+				})
+			},
+			req_new(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "goods/newlist"
+				}).then(data=>{
+					this.newlist=data
+				})
+			},
+			req_recom(){
+				ut.request({
+					data: {
+						parentid:0
+					},
+					url: "goods/recommendlist"
+				}).then(data=>{
+					this.recomlist=data
 				})
 			}
 		}
@@ -175,6 +215,8 @@
 		display: inline-block;
 		vertical-align: top;
 		margin-right: 96px;
+		font-size: 24px;
+		text-align: center;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
@@ -184,6 +226,8 @@
 	}
 	.server image{
 		width: 100px;
+		height: 100px;
+		border-radius: 50%;
 	}
 	.title{
 		text-align: center;
@@ -261,6 +305,9 @@
 		text-align: center;
 		line-height: 70px;
 		letter-spacing: 4px;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow:ellipsis;
 	}
 	.youhui>div div:nth-child(3) span:first-child{
 		writing-mode:lr-tb;
@@ -308,6 +355,11 @@
 		text-align: center;
 		font-size: 22px;
 		line-height: 32px;
+	}
+	.recom>div div p{
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow:ellipsis;
 	}
 	.recom>div:nth-last-child(-n+2) div{
 		margin-left: 0;

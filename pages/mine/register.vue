@@ -52,7 +52,7 @@
 		},
 		methods: {
 			go_mine_login(){
-				wx.navigateTo({
+				wx.redirectTo({
 					url: '../mine/login'
 				})
 			},
@@ -87,9 +87,10 @@
 				}
 				ut.request({
 					data: this.userinf,
-					url: "user/register"
+					url: "user/register",
+					c:true
 				}).then(data=>{
-					console.log(1)
+					this.go_mine_login();
 				})
 			},
 			req_sendCode(){
@@ -101,9 +102,7 @@
 				let codenum=120;
 				let timer=setInterval(()=>{
 					codenum--;
-					console.log(2222222)
 					this.codemsg=codenum+'s后重新获取';
-					console.log(11111)
 					if(codenum==0){
 						clearInterval(timer);
 						this.codemsg="重新获取";
@@ -115,7 +114,6 @@
 					},
 					url: "user/sendCode"
 				}).then(data=>{
-					console.log(1)
 				}).catch(data=>{
 					clearInterval(timer);
 					this.codemsg="重新获取";

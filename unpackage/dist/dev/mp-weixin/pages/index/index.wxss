@@ -63,6 +63,8 @@
   display: inline-block;
   vertical-align: top;
   margin-right: 96rpx;
+  font-size: 24rpx;
+  text-align: center;
 }
 .server ._div:nth-child(4n) {
   margin-right: 0;
@@ -72,6 +74,8 @@
 }
 .server image {
   width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
 }
 .title1 {
   width: 180rpx;

@@ -4,7 +4,7 @@
 			<div class="otherinf">
 				<div class="mallname"></div>
 			</div>
-			<image src="../../static/build/mall.jpg" class="mallimage"></image>
+			<image :src="static+mallinf.picture" class="mallimage"></image>
 		</div>
 		<div class="mallinf2">
 			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png"></image></div>
@@ -43,20 +43,15 @@
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
+				static:'',
 				type:0,
 				malllist:[
 				],
-				guigetype:[
-					{name:'803固态'},
-					{name:'703固态'},
-					{name:'603固态'},
-					{name:'903固态'},
-					{name:'803固态'},
-					{name:'803固态'},
-				],
+				guigetype:[],
 				mallnum: 0,
 				mallinf: {img:'../../static/build/mall.png',price:22.11,name:'不锈钢加厚荷叶',num:'300',mallnum:0},
 				mallprice:0,
@@ -64,7 +59,10 @@
 				pop:false
 			}
 		},
-		onLoad() {},
+		onLoad(opt) {
+			this.static=ut.static;
+			this.req_detail(opt._id)
+		},
 		methods: {
 			cg_type(type){
 				this.type=type;
@@ -103,7 +101,17 @@
 				this.mallprice=0;
 				this.barlist[0]=[];
 				this.pop=false;
-				
+			},
+			req_detail(id){
+				ut.request({
+					data: {
+						goodsid:id
+					},
+					url: "goods/goodsdetail"
+				}).then(data=>{
+					this.mallinf=data.clientGoods;
+					this.guigetype=data.clientGoodsSpecList;
+				})
 			}
 		}
 	}
@@ -205,7 +213,7 @@
 		font-size: 28px;
 	}
 	.guigetype span{
-		width: 150px;
+		min-width: 150px;
 		height: 60px;
 		line-height: 60px;
 		border-radius: 10px;
