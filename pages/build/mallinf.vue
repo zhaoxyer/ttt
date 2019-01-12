@@ -20,7 +20,7 @@
 		</div>
 		<div class="bggray"></div>
 		<div class='footer'>
-			<div class="edit"><span>加入购物车</span><span @click="go_build_pay">购买</span></div>
+			<div class="edit"><span @click='req_cartadd'>加入购物车</span><span @click="go_build_pay">购买</span></div>
 			<span class="num" v-show='num'>{{num}}</span>
 			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='num'>￥{{mallprice}}</span>
 		</div>
@@ -118,14 +118,24 @@
 					this.guigetype=data.clientGoodsSpecList;
 				})
 			},
+			filterdate(){
+				let data=[];
+				console.log(this.barlist)
+				for(let i=0;i<=this.barlist.length;i++){
+					console.log(this.barlist[i])
+					data[i]={
+						goodsid:this.barlist[i].goodsId,
+						num:this.barlist[i].num,
+						specId:this.barlist[i].id
+					}
+				}
+				return data;
+			},
 			req_cartadd(){
+				console.log(this.barlist)
+				const data=this.filterdate();
 				ut.request({
-					data: {
-						goodsid:goodsid,
-						id:'',
-						num:'',
-						specId:''
-					},
+					data: data,
 					url: "cart/add"
 				}).then(data=>{})
 			}

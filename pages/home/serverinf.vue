@@ -1,19 +1,19 @@
 <template>
 	<view>
 		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
-			<swiper-item v-for="item in swipeList" :key="item">
-				<image :src="item"/>
+			<swiper-item>
+				<image :src="static+serverinf.picture"/>
 			</swiper-item>
 		</swiper>
 		<div class="servertype">
 			<div class="serverinf">
-				<div><image src="../../static/home/share.png"/><span>分享</span></div><div><span>质保期：</span><span>30天</span></div>
+				<div><image src="../../static/home/share.png"/><span>分享</span></div><div><span>质保期：</span><span>{{serverinf.qualityGuaPeriod}}天</span></div>
 			</div>
 			<div class="typelist">
 				<div v-for="(list,index) in typelist" :key="index" :class="{'active':typeindex==index}" @click="cg_typeindex(index)">
 					<div>
 						<p>{{list.name}}</p>
-						<p>￥{{list.money}}/个</p>
+						<p>￥{{list.price}}/个</p>
 					</div>
 				</div>
 			</div>
@@ -28,51 +28,44 @@
 			<div class="tip">以上标准价格为上门费，如需材料请点击建材城</div>
 		</div>
 		<div class="bggray"></div>
-		<image src="../../static/home/liucheng.jpg" mode="widthFix" class="liucheng"></image>
+		<div v-if='serverinf.detail' class="detail">
+			<wxParse :content="detailinf"/>
+		</div>
 		<div style="height: 100rpx;">
 		</div>
 		<div class="footer">
-			<div><span>预约费</span><span>￥30.00</span></div><div @click="go_home_pay">立即预约</div>
+			<div><span>预约费</span><span>￥{{serverinf.bookPrice}}</span></div><div @click="go_home_pay">立即预约</div>
 		</div>
 	</view>
 </template>
 
 <script>
 	import ut from '../../utils/index.js';
+	import marked from '../../components/marked'
+	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
 	export default {
 		data() {
 			return {
+				static:'',
 				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
 				indicatorDots: true,
 				indicatorcolor: 'white',
-				indicatoractivecolor:'#FEC200',
 				autoplay: true,
 				interval: 5000,
 				duration: 1000,
 				circular: true,
 				typeindex:0,
-				typelist:[
-					{
-						name:'马桶疏通',
-						money:"100.00"
-					},
-					{
-						name:'马桶疏通',
-						money:"100.00"
-					},
-					{
-						name:'马桶疏通',
-						money:"100.00"
-					},
-					{
-						name:'马桶疏通',
-						money:"100.00"
-					}
-				]
+				typelist:[],
+				serverinf:{},
+				detailinf: ''
 			}
 		},
+		components: {
+			wxParse
+		},
 		onLoad(opt) {
-			this.req_detail(opt._id)
+			this.static=ut.static;
+			this.req_detail(opt._id);
 		},
 		methods: {
 			back_index_build(){
@@ -82,6 +75,8 @@
 			},
 			cg_typeindex(index){
 				this.typeindex=index;
+				this.serverinf=this.typelist[index];
+				this.detailinf=marked(this.serverinf.detail);
 			},
 			go_home_pay(){
 				wx.navigateTo({
@@ -95,7 +90,9 @@
 					},
 					url: "service/detail"
 				}).then(data=>{
-					this.recomlist=data
+					this.serverinf=data[0]
+					this.typelist=data;
+					this.detailinf=marked(data[0].detail)
 				})
 			}
 		}
@@ -103,6 +100,7 @@
 </script>
 
 <style>
+	@import url("../../components/mpvue-wxparse/src/wxParse.css");
 	.servertype{
 		padding: 0 30px 10px 30px;
 		border-bottom: 1px solid #E5E5E5;
@@ -169,7 +167,7 @@
 		margin-left: 20px;
 	}
 	.evanum>div:first-child{
-		font-size: 35px;
+		font-size: 28px;
 	}
 	.gobuild{
 		text-align: center;
@@ -224,5 +222,8 @@
 		color: white;
 		background: #FEC200;
 		text-align: center;
+	}
+	.detail{
+		padding: 0 30px;
 	}
 </style>

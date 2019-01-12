@@ -6,13 +6,13 @@
       </view>
       <view class="_div data-v-523593ac">
         <image src="../../static/mine/user.jpg" class="_image data-v-523593ac"></image>
-        <input type="text" placeholder="请输入手机号" value="{{username}}" bindinput="handleProxy" data-eventid="{{'twA-0'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
+        <input type="text" placeholder="请输入手机号" value="{{username}}" bindinput="handleProxy" data-eventid="{{'OOf-0'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
       </view>
       <view class="_div data-v-523593ac">
         <image src="../../static/mine/pas.jpg" class="_image data-v-523593ac"></image>
-        <input type="password" placeholder="请输入密码" value="{{password}}" bindinput="handleProxy" data-eventid="{{'cAf-1'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
+        <input type="password" placeholder="请输入密码" value="{{password}}" bindinput="handleProxy" data-eventid="{{'F31-1'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
       </view>
-      <view class="_p data-v-523593ac submit" bindtap="handleProxy" data-eventid="{{'BrK-2'}}" data-comkey="{{$k}}"> 登陆 </view>
+      <view class="_p data-v-523593ac submit" bindtap="handleProxy" data-eventid="{{'F3U-2'}}" data-comkey="{{$k}}"> 登陆 </view>
     </view>
     <view class="_div data-v-523593ac qlogin">
       <login class="_login data-v-523593ac"></login>

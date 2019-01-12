@@ -1,8 +1,9 @@
+<import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <template name="7e515bf3">
   <view class="_view data-v-2858cd8d">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatoractivecolor}}" indicator-color="{{indicatorcolor}}" class="_swiper data-v-2858cd8d">
-      <swiper-item wx:key="item" key="{{item}}" wx:for="{{swipeList}}" wx:for-index="index" wx:for-item="item" class="_swiper-item data-v-2858cd8d">
-        <image src="{{item}}" class="_image data-v-2858cd8d"></image>
+      <swiper-item class="_swiper-item data-v-2858cd8d">
+        <image src="{{static+serverinf.picture}}" class="_image data-v-2858cd8d"></image>
       </swiper-item>
     </swiper>
     <view class="_div data-v-2858cd8d servertype">
@@ -13,14 +14,14 @@
         </view>
         <view class="_div data-v-2858cd8d">
           <label class="_span data-v-2858cd8d">质保期：</label>
-          <label class="_span data-v-2858cd8d">30天</label>
+          <label class="_span data-v-2858cd8d">{{serverinf.qualityGuaPeriod}}天</label>
         </view>
       </view>
       <view class="_div data-v-2858cd8d typelist">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'k1u-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'FNP-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
           <view class="_div data-v-2858cd8d">
             <view class="_p data-v-2858cd8d">{{list.name}}</view>
-            <view class="_p data-v-2858cd8d">￥{{list.money}}/个</view>
+            <view class="_p data-v-2858cd8d">￥{{list.price}}/个</view>
           </view>
         </view>
       </view>
@@ -34,19 +35,21 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d gobuild">
-        <label bindtap="handleProxy" data-eventid="{{'bgZ-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
+        <label bindtap="handleProxy" data-eventid="{{'DTm-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
       </view>
       <view class="_div data-v-2858cd8d tip">以上标准价格为上门费，如需材料请点击建材城</view>
     </view>
     <view class="_div data-v-2858cd8d bggray"></view>
-    <image src="../../static/home/liucheng.jpg" mode="widthFix" class="_image data-v-2858cd8d liucheng"></image>
+    <view wx:if="{{serverinf.detail}}" class="_div data-v-2858cd8d detail">
+      <template data="{{...$root['0'], ...$root[$kk+'596-1'],$root}}" is="745fb98c"></template>
+    </view>
     <view style="height: 100rpx;" class="_div data-v-2858cd8d"></view>
     <view class="_div data-v-2858cd8d footer">
       <view class="_div data-v-2858cd8d">
         <label class="_span data-v-2858cd8d">预约费</label>
-        <label class="_span data-v-2858cd8d">￥30.00</label>
+        <label class="_span data-v-2858cd8d">￥{{serverinf.bookPrice}}</label>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'rQP-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+      <view bindtap="handleProxy" data-eventid="{{'lKz-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
     </view>
   </view>
 </template>

@@ -21,9 +21,9 @@
               <view class="_div data-v-517cb632 shopping-good-price">
                 <label class="_span data-v-517cb632">¥ {{item.price}}</label>
                 <view class="_ul data-v-517cb632 shopping-num-container">
-                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'pPb-0-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
+                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'6OL-0-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
                   <view class="_li data-v-517cb632">{{item.num}}</view>
-                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'JqE-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'1ku-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
                 </view>
               </view>
             </view>
