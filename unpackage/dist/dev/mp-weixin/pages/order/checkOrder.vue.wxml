@@ -6,7 +6,7 @@
     </view>
     <view class="_div data-v-eb3d3974">
       <view wx:key="index" key="{{index}}" wx:for="{{order_list}}" wx:for-index="index" wx:for-item="item" class="_div data-v-eb3d3974">
-        <template data="{{...$root['0'], ...$root[$kk+'1cQ-0-'+index],$root}}" is="28a55315"></template>
+        <template data="{{...$root['0'], ...$root[$kk+'d9p-0-'+index],$root}}" is="28a55315"></template>
       </view>
     </view>
   </view>

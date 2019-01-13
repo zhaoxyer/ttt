@@ -3,7 +3,7 @@
     <view class="_div data-v-339102a4 cancel-order-condition">
       <view class="_div data-v-339102a4 cancel-order-title"> 取消原因 </view>
       <view class="_div data-v-339102a4 cancel-order-check-wrap">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'Vie-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == key ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'4Sg-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == key ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
           <view class="_div data-v-339102a4 check-box"></view>
           <view class="_div data-v-339102a4 check-label">{{item.context}}</view>
         </view>
@@ -19,6 +19,6 @@
         </view>
       </view>
     </view>
-    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'yCE-1'}}" data-comkey="{{$k}}">确认取消</button>
+    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'YtP-1'}}" data-comkey="{{$k}}">确认取消</button>
   </view>
 </template>

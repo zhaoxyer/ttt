@@ -14,12 +14,12 @@
 					
 				</div>
 				<div class="mallname">
-					<p>盛丰</p>
-					<p>五金</p>
+					<p>{{mallname}}</p>
+					<p>{{mallname1}}</p>
 				</div>
 				<div class="malladress">
-					<view>盛丰五金建材</view>
-					<view>通州区运河西大道</view>
+					<view>{{tenant.name}}</view>
+					<view>{{tenant.address}}</view>
 				</div>
 			</div>
 			<image src="../../static/build/mall.jpg" class="mallimage"></image>
@@ -74,10 +74,18 @@
 				pop:false,
 				storeid:'',
 				classid:'',
-				class_id:''
+				class_id:'',
+				tenant:{},
+				mallname:'',
+				mallname1:''
 			}
 		},
 		onLoad(opt) {
+			this.tenant=wx.getStorageSync('tenant');
+			const length=this.tenant.name.split('').length;
+			this.mallname=this.tenant.name.substring(0,parseInt(length/2));
+			this.mallname1=this.tenant.name.substring(parseInt(length/2),length)
+			wx.setStorageSync('tenant','');
 			this.static=ut.static;
 			this.classid=opt.classid;
 			this.storeid=opt.storeid;
@@ -169,7 +177,7 @@
 	.mallinf1{position: relative;}
 	.otherinf{position: absolute;width: 100%;bottom: 0;}
 	.otherinf>div{display: inline-block;vertical-align: bottom;}
-	.mallname{width: 150px;height: 150px;background: #FEC200;color: white;border-radius: 20px;font-size: 33px;margin-left:30px;margin-bottom: -20px;text-align: center;}
+	.mallname{width: 150px;height: 150px;background: #FEC200;color: white;border-radius: 20px;font-size: 24px;margin-left:30px;margin-bottom: -20px;text-align: center;}
 	.mallname p{margin-top: 30px;}
 	.mallname p:nth-child(2){
 		margin-top: 12px;

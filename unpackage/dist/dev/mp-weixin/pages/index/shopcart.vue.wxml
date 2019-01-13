@@ -3,15 +3,15 @@
     <view class="_div data-v-517cb632 shopping-car">
       <view class="_div data-v-517cb632 shopping-options-wrap">
         <view class="_ul data-v-517cb632 shopping-options">
-          <view class="_li data-v-517cb632 shopping-option-item shopping-collect" bindtap="handleProxy" data-eventid="{{'tii-0'}}" data-comkey="{{$k}}">删除</view>
+          <view class="_li data-v-517cb632 shopping-option-item shopping-collect" bindtap="handleProxy" data-eventid="{{'Mxf-0'}}" data-comkey="{{$k}}">删除</view>
         </view>
       </view>
       <view class="_div data-v-517cb632 shopping-goods-container">
         <view class="_div data-v-517cb632 shopping-goods-list" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">
           <view class="_div data-v-517cb632 shopping-seller">{{list.storename}}</view>
           <view class="_div data-v-517cb632 shopping-goods-item" wx:key="item" key="{{item}}" wx:for="{{list.cartlist}}" wx:for-index="itemindex" wx:for-item="item">
-            <radio readonly="true" wx:if="{{!item.checked}}" bindtap="handleProxy" data-eventid="{{'D35-2-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
-            <radio checked wx:else bindtap="handleProxy" data-eventid="{{'9rE-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
+            <radio readonly="true" wx:if="{{!item.checked}}" bindtap="handleProxy" data-eventid="{{'X31-2-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
+            <radio checked wx:else bindtap="handleProxy" data-eventid="{{'faD-1-'+index+'-'+itemindex}}" data-comkey="{{$k}}" class="_input data-v-517cb632" />
             <view class="_div data-v-517cb632 shopping-goods-img">
               <image src="{{item.picture}}" class="_image data-v-517cb632 noimage"></image>
             </view>
@@ -21,9 +21,9 @@
               <view class="_div data-v-517cb632 shopping-good-price">
                 <label class="_span data-v-517cb632">¥ {{item.price}}</label>
                 <view class="_ul data-v-517cb632 shopping-num-container">
-                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'vr6-3-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
+                  <view class="_li data-v-517cb632 shopping-option" bindtap="handleProxy" data-eventid="{{'6g6-3-'+index+'-'+itemindex}}" data-comkey="{{$k}}">-</view>
                   <view class="_li data-v-517cb632">{{item.num}}</view>
-                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'Ikg-4-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
+                  <view class="_li data-v-517cb632 shopping-option shopping-add" bindtap="handleProxy" data-eventid="{{'8vU-4-'+index+'-'+itemindex}}" data-comkey="{{$k}}">+</view>
                 </view>
               </view>
             </view>

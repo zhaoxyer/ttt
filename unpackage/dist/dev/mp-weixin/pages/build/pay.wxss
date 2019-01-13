@@ -1,5 +1,62 @@
 @import "../../common/vendor.wxss";
 
+.floor,
+.louceng {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 60rpx;
+  font-size: 24rpx;
+}
+.louceng ._input {
+  border: 1rpx solid #999999;
+  border-radius: 10rpx;
+}
+.floor view {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.floor view view {
+  margin-left: 30rpx;
+}
+.floor view view:nth-child(1) {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 15rpx;
+  padding: 5rpx;
+  border: 1rpx solid #999999;
+}
+.floor view view.active {
+  background: #FEC200;
+}
+.carry {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: 60rpx;
+  font-size: 24rpx;
+}
+.carry image,
+.carry ._span {
+  margin-left: 30rpx;
+}
+.carry image {
+  width: 40rpx;
+  height: 40rpx;
+}
 .adressli {
   padding: 30rpx;
   font-size: 26rpx;
@@ -123,6 +180,7 @@
   background: white;
   line-height: 100rpx;
   font-size: 24rpx;
+  z-index: 10;
 }
 .apply>._span:nth-child(1) {
   -webkit-box-flex: 1;
@@ -190,6 +248,7 @@
   border: 1rpx solid #C9C9C9;
   border-radius: 10rpx;
   margin-bottom: 30rpx;
+  font-size: 24rpx;
 }
 .bgheight {
   height: 120rpx;
