@@ -42,6 +42,7 @@ export default {
 			this.chooseData = data;  
 	  },
 		cancel_order() {
+			
 			ut.request({
 				data: {
 					orderId: this.orderId,
@@ -56,6 +57,10 @@ export default {
 			})
 		},
 	  cancel_confirm() {
+			if(!this.chooseData){
+				ut.totast("请选择取消原因")
+				return;
+			}
 			wx.showModal({
 			title: '',
 			content: '您确定要取消该订单吗？',
