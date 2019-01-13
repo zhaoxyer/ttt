@@ -2,30 +2,30 @@
   <view class="_div data-v-ba8a6bcc setinput">
     <view class="_div data-v-ba8a6bcc">
       <label class="_span data-v-ba8a6bcc">姓名</label>
-      <input type="text" placeholder="最少2个,最多15个字" value="{{adressinf.name}}" bindinput="handleProxy" data-eventid="{{'qtl-0'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
+      <input type="text" placeholder="最少2个,最多15个字" value="{{adressinf.name}}" bindinput="handleProxy" data-eventid="{{'V3x-0'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
     </view>
     <view class="_div data-v-ba8a6bcc">
       <label class="_span data-v-ba8a6bcc">电话</label>
-      <input type="text" placeholder="请输入手机号" value="{{adressinf.phone}}" bindinput="handleProxy" data-eventid="{{'2ms-1'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
+      <input type="text" placeholder="请输入手机号" value="{{adressinf.phone}}" bindinput="handleProxy" data-eventid="{{'Isi-1'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
     </view>
     <view class="_div data-v-ba8a6bcc">
       <label class="_span data-v-ba8a6bcc">地区</label>
       <view class="_div data-v-ba8a6bcc inputall">
-        <picker mode="region" value="请选择所在城市" custom-item="{{customItem}}" class="_picker data-v-ba8a6bcc regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'BiT-2'}}" data-comkey="{{$k}}">
+        <picker mode="region" value="请选择所在城市" custom-item="{{customItem}}" class="_picker data-v-ba8a6bcc regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'IWm-2'}}" data-comkey="{{$k}}">
           <view class="_view data-v-ba8a6bcc picker"> {{adressinf.provinceName||''}}，{{adressinf.countyAreaName||''}}，{{adressinf.cityName||''}} </view>
         </picker> {{adressinf.provinceName+adressinf.countyAreaName+adressinf.cityName||'请选择所在城市'}} </view>
     </view>
     <view class="_div data-v-ba8a6bcc">
       <label class="_span data-v-ba8a6bcc">地址</label>
-      <input type="text" placeholder="请填写详细地址,5~60个字" value="{{adressinf.address}}" bindinput="handleProxy" data-eventid="{{'mwt-3'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
+      <input type="text" placeholder="请填写详细地址,5~60个字" value="{{adressinf.address}}" bindinput="handleProxy" data-eventid="{{'ky4-3'}}" data-comkey="{{$k}}" class="_input data-v-ba8a6bcc" />
     </view>
     <view class="_p data-v-ba8a6bcc xieyi">
-      <label bindtap="handleProxy" data-eventid="{{'gEK-4'}}" data-comkey="{{$k}}" class="_span data-v-ba8a6bcc">
+      <label bindtap="handleProxy" data-eventid="{{'zfr-4'}}" data-comkey="{{$k}}" class="_span data-v-ba8a6bcc">
         <image src="../../static/mine/check.jpg" wx:if="{{!adressinf.defaultType}}" class="_image data-v-ba8a6bcc"></image>
         <image src="../../static/mine/uncheck.jpg" wx:if="{{adressinf.defaultType}}" class="_image data-v-ba8a6bcc"></image>
       </label>
       <label class="_span data-v-ba8a6bcc">设置成默认地址</label>
     </view>
-    <view class="_p data-v-ba8a6bcc submit" bindtap="handleProxy" data-eventid="{{'6Cc-5'}}" data-comkey="{{$k}}"> 保存 </view>
+    <view class="_p data-v-ba8a6bcc submit" bindtap="handleProxy" data-eventid="{{'ydD-5'}}" data-comkey="{{$k}}"> 保存 </view>
   </view>
 </template>

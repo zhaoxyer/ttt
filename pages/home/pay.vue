@@ -72,6 +72,7 @@
 		onLoad() {
 			this.req_getdefaddress();
 			this.serverinf=wx.getStorageSync('serverinf');
+			console.log(JSON.stringify(this.serverinf))
 			wx.setStorageSync('serverinf','');
 		},
 		onShow(){
