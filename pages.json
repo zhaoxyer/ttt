@@ -166,7 +166,7 @@
 		{
 			"path" : "pages/order/checkOrder",
 			"style" : {
-				"navigationBarTitleText" : "查看订单"
+				"navigationBarTitleText" : ""
 			}
 		}
     ],

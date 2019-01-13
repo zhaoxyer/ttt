@@ -1,18 +1,18 @@
 <template>
-	<div data-slot="action-sheet-main" class="cancel-order-modal">
+	<div class="cancel-order-modal">
 		<div class="cancel-order-condition">
 			<div class="cancel-order-title">
 			取消原因
 			</div>
 			<div class="cancel-order-check-wrap">
-				<div v-for="(item,index) in reason" :key="index" :class="chooseData==key ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
+				<div v-for="(item,index) in reason" :key="index" :class="chooseData==item.id ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
 					<div class="check-box"></div>
 					<div class="check-label">{{item.context}}</div>
 				</div>
 			</div>
-			<div class="cancel-order-des">取消说明</div>
+			<textarea v-model="detail" class="cancel-order-des"></textarea>
 		</div>
-		<div class="cancel-order-status">
+		<!-- <div class="cancel-order-status">
 			<div class="cancel-order-title">
 			取消订单声明
 			</div>
@@ -22,39 +22,53 @@
 					<span class="cancel-label">不需要了</span>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<button class="cancel-button" @click="cancel_confirm">确认取消</button>
 	</div>
 </template>
 
 <script>
+import ut from '../utils/index.js';
 export default {
-  props: ["reason"],
+  props: ["reason","orderId","reload","changeVisibileModal"],
   data() { 
 	  return {
-		  chooseData: null
+		  chooseData: null,
+			detail: ''
 	  }
   },
   methods: {
 	  choose(data){
 			this.chooseData = data;  
 	  },
+		cancel_order() {
+			ut.request({
+				data: {
+					orderId: this.orderId,
+					reasonId: this.chooseData,
+					detail: this.detail
+				},
+				url: "service/order/cancelOrder"
+			}).then(data=>{
+				this.$parent.changeVisibileModal(false)
+				this.$emit('reload');
+				ut.totast("订单取消成功")
+			})
+		},
 	  cancel_confirm() {
 			wx.showModal({
 			title: '',
 			content: '您确定要取消该订单吗？',
-			success: function (sm) {
+			success: (sm) => {
 				if (sm.confirm) {
 					// 用户点击了确定 可以调用删除方法了
+						this.cancel_order();
 					} else if (sm.cancel) {
 					return;
 					}
 				}
 			})
 	  },
-		getCancelReason() {
-			
-		}
   }
 }
 </script>
@@ -125,7 +139,6 @@ export default {
 		border: 1px solid #B4B4B4;
 		border-radius: 3px;
 		line-height: 150px;
-		text-align: center;
 		box-sizing: border-box;
 	}
 	.cancel-radio-wrap {

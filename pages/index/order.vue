@@ -3,25 +3,25 @@
 		<div class='userinf'>
 			<h1>技术服务类</h1>
 			<div class='server'>
-				<div @click="go_next('../order/checkOrder')">
+				<div @click="go_next('../order/checkOrder?type=1')">
 					<image   src="../../static/order/ordertype0.jpg"  mode="widthFix"></image>
 					<p>查看订单</p>
 				</div>
-				<div>
+				<div @click="go_next('../order/checkOrder?type=2')">
 					<image   src="../../static/order/ordertype1.jpg"  mode="widthFix"></image>
 					<p>确认施工</p>
 					<p>方案及价格</p>
 				</div>
-				<div>
+				<div @click="go_next('../order/checkOrder?type=3')">
 					<image   src="../../static/order/ordertype2.jpg"  mode="widthFix"></image>
 					<p>质量验收</p>
 					<p>及付尾款</p>
 				</div>
-				<div>
+				<!-- <div @click="go_next('../order/checkOrder?type=4')">
 					<image   src="../../static/order/ordertype2.jpg"  mode="widthFix"></image>
 					<p>技术服务</p>
 					<p>申请质保</p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class='userinf'>

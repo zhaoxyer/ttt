@@ -6,23 +6,23 @@
 			<span class="order-status">{{data.statusName}}</span>
 		</div>
 		<div class="order-info">
-			<div class="goods-picture"></div>
+			<image class="goods-picture noimage" :src="static+data.picture"></image>
 			<div class="goods-info-wrap">
 				<div class="goods-info">
 					<p>{{data.serviceName}}</p>
-					<p>¥ 200</p>
+					<p>¥ {{data.price}}</p>
 				</div>
-				<div class="goods-info">
+				<!-- <div class="goods-info">
 					<p>规格</p>
 					<p>{{data.serviceName}} </p>
-				</div>
+				</div> -->
 			</div>
 		</div>
 		<div class="order-time">下单时间：{{data.createTime}}</div>
 		<div class="order-options-wrap">
 			<div class="order-options">
-				<button @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
-				<button @click="go_next" class="order-button">去支付</button>
+				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
+				<button v-if="data.status == 1" @click="go_next" class="order-button">去支付</button>
 			</div>
 		</div>
 	  </div>
@@ -31,8 +31,8 @@
 			<order-status></order-status>
 		</t-modal>
 		
-		<t-modal :reason="reason"  :visibile="cancel_order_visibile" @changeVisible = "changeCancelModal">
-			<cancel-modal></cancel-modal>
+		<t-modal  :visibile="cancel_order_visibile" @changeVisible = "changeCancelModal">
+			<cancel-modal @reload="reloadData" :orderId="data.id" :reason="reason"></cancel-modal>
 		</t-modal>
 		
 	</div>
@@ -41,13 +41,15 @@
 <script>
 import TModal from './tmodal.vue';
 import OrderStatus from './orderStatus.vue';
-import CancelModal from './cancelModal.vue'
+import CancelModal from './cancelModal.vue';
+import ut from '../utils/index.js';
 export default {
-  props: ["data","reason"],
+  props: ["data","reason","reload"],
   data() {
 	return {
 		order_status_visibile: false,
-		cancel_order_visibile: false
+		cancel_order_visibile: false,
+		static:ut.static
 	}  
   },
   components: {
@@ -60,6 +62,9 @@ export default {
 			wx.navigateTo({
 				url: `../home/pay`
 			})
+		},
+		reloadData() {
+			this.$emit('reload');
 		},
 		changeOrderStatusModal(status) {
 			if(typeof status != 'undefined'){
@@ -93,14 +98,13 @@ export default {
 		flex: 1;
 	}
 	.order-status {
-		width: 100px;
+		width: 120px;
 		text-align: right;
 		color: #fec200;
 	}
 	.goods-picture {
 		width: 200px;
 		height: 152px;
-		background: #f60;
 	}
 	.goods-info-wrap {
 		flex: 1;

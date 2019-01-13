@@ -3,7 +3,7 @@
 	  <div class="action-main-wrap" @click.stop="cancelVisibileModal">
 		  <div class="action-main">
 			  <div @click.stop="changeVisibileModal(false)" class="action-close">&times;</div>
-			  <slot></slot>
+			  <slot v-if="visibile"></slot>
 		  </div>
 	  </div>
 	</div>

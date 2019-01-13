@@ -1,11 +1,14 @@
 <template>
 	<div>
 		<div class="order-tip">
-			<p class="order-tip-text">您可以在此页面查看您已付上门费的订单和“查看状态”</p>
+			<p v-if="type==1" class="order-tip-text">您可以在此页面查看您已付上门费的订单和“查看状态”</p>
+			<p v-if="type==2" class="order-tip-text">待木斗工匠上门与您协商后，您可在此页面找到相应订单，选择“请确认方案”“放弃此订单”“重新生成订单”</p>
+			<p v-if="type==3" class="order-tip-text">木斗工匠已完工并且您已现场验收后请找到相应订单点击“请验收”确认支付尾款，完成方案并对“图文评价”并发布</p>
+			<p v-if="type==4" class="order-tip-text">您可以在此页面查看您已付上门费的订单和“查看状态”</p>
 		</div>
-		<div>
+		<div v-if="order_list.length>0">
 			<div v-for="(item, index) in order_list" :key="index">
-				<order-item :data="item" :reason="cancel_reason"></order-item>
+				<order-item :data="item" :reason="cancel_reason" @reload="init"></order-item>
 			</div>
 		</div>
 	</div>
@@ -21,18 +24,36 @@
 		data() {
 			return {
 				order_list: [],
-				cancel_reason: []
+				cancel_reason: [],
+				type: ''
 			}
 		},
-		onLoad() {
-			this.getOrderList();
-			this.getReasonType();
+		onLoad(option) {
+			this.type = option.type;
+			let barTitle = "查看订单";
+			if(this.type == 1) {
+				barTitle = "查看订单";
+			}else if(this.type == 2) {
+				barTitle = "确认施工方案和价格";
+			}else if(this.type == 3) {
+				barTitle = "质量验收及付尾款";
+			}
+			wx.setNavigationBarTitle({
+			  title: barTitle
+			})
+			this.init();
 		},
 		methods: {
+			init() {
+				this.getOrderList();
+				if(this.type == 1) {
+					this.getReasonType();
+				}
+			},
 			getOrderList() {
 				ut.request({
 					data: {
-						type: 1
+						type: this.type
 					},
 					method: 'get',
 					url: "service/order/list"
