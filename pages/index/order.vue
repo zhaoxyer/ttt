@@ -27,21 +27,21 @@
 		<div class='userinf'>
 			<h1>建材商品类</h1>
 			<div class='server'>
-				<div>
+				<div  @click="go_next('../order/buildingGoods?type=1')">
 					<image   src="../../static/order/ordertype3.jpg"  mode="widthFix"></image>
 					<p>查看订单</p>
 				</div>
-				<div>
+				<div @click="go_next('../order/buildingGoods?type=2')">
 					<image   src="../../static/order/ordertype4.jpg"  mode="widthFix"></image>
 					<p>确认付款</p>
 					<p>及商品验收</p>
 				</div>
-				<div>
+				<div @click="go_next('../order/buildingGoods?type=3')">
 					<image   src="../../static/order/ordertype5.jpg"  mode="widthFix"></image>
 					<p>搬运议价</p>
 					<p>确认</p>
 				</div>
-				<div>
+				<div @click="go_next('../order/buildingGoods?type=4')">
 					<image   src="../../static/order/ordertype6.jpg"  mode="widthFix"></image>
 					<p>建材商品</p>
 					<p>类退换</p>

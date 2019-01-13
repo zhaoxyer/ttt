@@ -30,7 +30,7 @@
 <script>
 import ut from '../utils/index.js';
 export default {
-  props: ["reason","orderId","reload","changeVisibileModal"],
+  props: ["reason","orderId","reload","changeVisibileModal","cancelUrl"],
   data() { 
 	  return {
 		  chooseData: null,
@@ -48,7 +48,7 @@ export default {
 					reasonId: this.chooseData,
 					detail: this.detail
 				},
-				url: "service/order/cancelOrder"
+				url: this.cancelUrl
 			}).then(data=>{
 				this.$parent.changeVisibileModal(false)
 				this.$emit('reload');

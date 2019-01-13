@@ -168,6 +168,12 @@
 			"style" : {
 				"navigationBarTitleText" : ""
 			}
+		},
+		{
+			"path" : "pages/order/buildingGoods",
+			"style" : {
+				"navigationBarTitleText" : ""
+			}
 		}
     ],
     "globalStyle" : {

@@ -9,13 +9,13 @@
 			<image class="goods-picture noimage" :src="static+data.picture"></image>
 			<div class="goods-info-wrap">
 				<div class="goods-info">
-					<p>{{data.serviceName}}</p>
+					<p>{{data.goodsName}}</p>
 					<p>¥ {{data.price}}</p>
 				</div>
-				<!-- <div class="goods-info">
+				<div class="goods-info">
 					<p>规格</p>
-					<p>{{data.serviceName}} </p>
-				</div> -->
+					<p>&times;{{data.number}} </p>
+				</div>
 			</div>
 		</div>
 		<div class="order-time">下单时间：{{data.createTime}}</div>
@@ -32,7 +32,7 @@
 		</t-modal>
 		
 		<t-modal  :visibile="cancel_order_visibile" @changeVisible = "changeCancelModal">
-			<cancel-modal cancelUrl="service/order/cancelOrder" @reload="reloadData" :orderId="data.id" :reason="reason"></cancel-modal>
+			<cancel-modal cancelUrl="goods/order/cancelOrder" @reload="reloadData" :orderId="data.id" :reason="reason"></cancel-modal>
 		</t-modal>
 		
 	</div>
