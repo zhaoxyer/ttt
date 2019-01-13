@@ -48,4 +48,5 @@
 		 background-repeat:no-repeat;
 		 background-size:100% 100%;
 	}
+	.regionpicker{position: absolute;background: transparent;color: transparent;width: 100%;z-index: 3;}
 </style>

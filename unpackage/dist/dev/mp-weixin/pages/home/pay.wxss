@@ -113,11 +113,17 @@
   border-bottom: 1rpx solid #E5E5E5;
   border-top: 1rpx solid #E5E5E5;
 }
-.time ._p {
+.time>._p {
+  text-align: center;
+}
+.time>._p view {
+  display: inline-block;
+  vertical-align: top;
   text-align: center;
   line-height: 100rpx;
   font-size: 24rpx;
+  margin-right: 20rpx;
 }
-.time ._p ._span:nth-child(2n+1) {
+.time ._p view:nth-child(1) ._span:nth-child(2n+1) {
   color: #FEC200;
 }

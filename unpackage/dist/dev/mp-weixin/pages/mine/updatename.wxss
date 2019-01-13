@@ -1,0 +1,26 @@
+@import "../../common/vendor.wxss";
+
+.updatecont {
+  padding: 0 30rpx;
+  line-height: 60rpx;
+  height: 60rpx;
+  font-size: 24rpx;
+}
+.updatecont ._div {
+  line-height: 60rpx;
+  height: 60rpx;
+}
+.updatecont ._input {
+  width: 100%;
+  border-bottom: 2rpx solid #FEC200;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+.submit {
+  background: #ECBA25;
+  color: white;
+  text-align: center;
+  line-height: 100rpx!important;
+  height: 100rpx!important;
+  margin-top: 30rpx;
+}

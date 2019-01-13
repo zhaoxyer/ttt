@@ -18,7 +18,7 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d typelist">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'BhF-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'chE-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
           <view class="_div data-v-2858cd8d">
             <view class="_p data-v-2858cd8d">{{list.name}}</view>
             <view class="_p data-v-2858cd8d">￥{{list.price}}/个</view>
@@ -35,13 +35,13 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d gobuild">
-        <label bindtap="handleProxy" data-eventid="{{'ldp-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
+        <label bindtap="handleProxy" data-eventid="{{'haJ-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
       </view>
       <view class="_div data-v-2858cd8d tip">以上标准价格为上门费，如需材料请点击建材城</view>
     </view>
     <view class="_div data-v-2858cd8d bggray"></view>
     <view wx:if="{{serverinf.detail}}" class="_div data-v-2858cd8d detail">
-      <template data="{{...$root['0'], ...$root[$kk+'9e5-1'],$root}}" is="745fb98c"></template>
+      <template data="{{...$root['0'], ...$root[$kk+'FrM-1'],$root}}" is="745fb98c"></template>
     </view>
     <view style="height: 100rpx;" class="_div data-v-2858cd8d"></view>
     <view class="_div data-v-2858cd8d footer">
@@ -49,7 +49,7 @@
         <label class="_span data-v-2858cd8d">预约费</label>
         <label class="_span data-v-2858cd8d">￥{{serverinf.bookPrice}}</label>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'yja-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+      <view bindtap="handleProxy" data-eventid="{{'nZP-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
     </view>
   </view>
 </template>

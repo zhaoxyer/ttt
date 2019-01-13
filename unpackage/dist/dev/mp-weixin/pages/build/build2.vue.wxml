@@ -1,15 +1,15 @@
 <template name="2d994fa4">
   <view class="_div data-v-07a9f4f8">
-    <view class="_div data-v-07a9f4f8 serch" bindtap="handleProxy" data-eventid="{{'BwD-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-07a9f4f8 serch" bindtap="handleProxy" data-eventid="{{'nMG-0'}}" data-comkey="{{$k}}">
       <image src="../../static/index/serch.png" class="_image data-v-07a9f4f8"></image>
       <label class="_span data-v-07a9f4f8">寻找商品、店铺</label>
     </view>
     <view class="_div data-v-07a9f4f8 section">
       <view class="_nav data-v-07a9f4f8">
-        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'bat-1-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-07a9f4f8 {{[index == activeindex ? 'active' : '']}}">{{list.name}}</view>
+        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'oAf-1-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-07a9f4f8 {{[index == activeindex ? 'active' : '']}}">{{list.name}}</view>
       </view>
       <view class="_div data-v-07a9f4f8 list">
-        <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'CO5-2-'+index}}" data-comkey="{{$k}}" wx:for="{{storelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-07a9f4f8">
+        <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'0Av-2-'+index}}" data-comkey="{{$k}}" wx:for="{{storelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-07a9f4f8">
           <image src="{{static+list.picture}}" class="_image data-v-07a9f4f8"></image>
           <view class="_div data-v-07a9f4f8">
             <view class="_p data-v-07a9f4f8">{{list.name}}</view>

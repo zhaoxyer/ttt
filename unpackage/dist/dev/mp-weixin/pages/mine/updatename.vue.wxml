@@ -1,0 +1,10 @@
+<template name="d49e3b0a">
+  <view class="_view data-v-2c97a421 updatecont">
+    <view class="_div data-v-2c97a421">昵称：</view>
+    <view class="_div data-v-2c97a421">
+      <input type="text" value="{{name}}" bindinput="handleProxy" data-eventid="{{'tZO-0'}}" data-comkey="{{$k}}" class="_input data-v-2c97a421" />
+    </view>
+    <view class="_div data-v-2c97a421">以中文或英文字母开头，限4到16个字符</view>
+    <view class="_div data-v-2c97a421 submit" bindtap="handleProxy" data-eventid="{{'xCN-1'}}" data-comkey="{{$k}}">确定</view>
+  </view>
+</template>

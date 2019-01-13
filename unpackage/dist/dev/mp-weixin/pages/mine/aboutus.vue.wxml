@@ -1,0 +1,10 @@
+<template name="63faa754">
+  <view class="_view data-v-0485b76e">
+    <view class="_div data-v-0485b76e columlist" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">
+      <label class="_span data-v-0485b76e">{{list.content}}</label>
+      <view class="_div data-v-0485b76e">
+        <image src="../../static/right.jpg" class="_image data-v-0485b76e"></image>
+      </view>
+    </view>
+  </view>
+</template>

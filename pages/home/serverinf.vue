@@ -72,6 +72,7 @@
 				this.detailinf=marked(this.serverinf.detail);
 			},
 			go_home_pay(){
+				wx.setStorageSync('serverinf',this.serverinf)
 				wx.navigateTo({
 					url: '../home/pay'
 				})

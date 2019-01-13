@@ -82,8 +82,18 @@
 				this.pop=!this.pop;
 			},
 			go_build_pay(){
+				console.log(this.barlist)
+				let barlist=[];
+				if(this.barlist.length){
+					barlist=this.barlist;
+				}else{
+					let barlist1=this.mallinf;
+					barlist1.num=1;
+					barlist.push(barlist1);
+				}
+				wx.setStorageSync('buildinf',barlist)
 				wx.navigateTo({
-					url: '../build/pay'
+					url: `../build/pay?name=${this.clientGoods.name}`
 				})
 			},
 			minus(index){
@@ -130,7 +140,6 @@
 			},
 			filterdate(){
 				let parm=[];
-				console.log(this.barlist)
 				for(let i=0;i<this.barlist.length;i++){
 					parm[i]={
 						goodsId:this.barlist[i].goodsId,

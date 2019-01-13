@@ -12,15 +12,35 @@
 		</div>
 		<div class="bggray"></div>
 		<div class="payinf">
-			<h1>卫生间疏通</h1>
+			<h1>{{serverinf.name}}</h1>
 			<div>
 				<image src="../../static/index/fuwu.jpg"></image>
-				<div><span>马桶疏通</span><span>￥98.00</span></div>
+				<div><span>{{serverinf.name}}</span><span>￥{{serverinf.bookPrice}}</span></div>
 			</div>
 		</div>
 		<div class="payinf time">
-			<h1>卫生间疏通</h1>
-			<p><span>2018</span><span>年</span><span>6</span><span>月</span><span>20</span><span>日</span><span>10</span></p>
+			<h1>{{serverinf.name}}</h1>
+			<p>
+				<view>
+					<picker mode="date"  value="日期" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="dateChange">
+						<view class="picker">
+							日期
+						</view>
+					</picker>
+					<span v-if='!date'>请选择日期</span>
+					<view v-else><span>{{y}}</span><span>年</span><span>{{m}}</span><span>月</span><span>{{d}}</span><span>日</span></view>
+				</view>
+				<view>
+					<picker mode="time"  value="时间" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="timeChange">
+						<view class="picker">
+							时间
+						</view>
+					</picker>
+					<span>
+						{{time||'请选择时间'}}
+					</span>
+				</view>
+			</p>
 		</div>
 		<div class="tip">
 			<div>注意事项:</div>
@@ -29,17 +49,24 @@
 				<p>2.生活邦服务完工后，需进行尾款支付；</p>
 			</div>
 		</div>
-		<div class="apply">
+		<div class="apply" @click='req_unifiedOrder'>
 			<div>确认支付</div>
 		</div>					
 	</div>
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
-				
+				serverinf:wx.getStorageSync('serverinf'),
+				date:'',
+				time:'',
+				y:"",
+				m:'',
+				d:'',
+				adress:{}
 			}
 		},
 		onLoad() {
@@ -50,7 +77,39 @@
 				wx.navigateTo({
 					url: '../mine/adress'
 				})
-			}			
+			},
+			req_unifiedOrder(){
+				if(!this.date){
+					ut.totast('请选择日期');
+					return;
+				}
+				if(!this.time){
+					ut.totast('请选择时间');
+					return;
+				}
+				ut.request({
+					data: {
+						"addressId": this.adress.id,
+						"makeTime": this.date+this.time,
+						"remark": '',
+						"serviceId": this.serverinf.id
+					},
+					url: "service/order/unifiedOrder",
+					c:true
+				}).then(data=>{
+					ut.totast('下单成功')
+				})
+			},
+			timeChange: function (e) {
+				this.time=e.detail.value;
+			},
+			dateChange: function (e) {
+				this.date=e.detail.value;
+				const date=this.date.split('-');
+				this.y=date[0];
+				this.m=date[1];
+				this.d=date[2];
+			}	
 		}
 	}
 </script>
@@ -142,12 +201,18 @@
 		border-bottom: 1px solid #E5E5E5;;
 		border-top: 1px solid #E5E5E5;;
 	}
-	.time p{
+	.time>p{
+		text-align: center;
+	}
+	.time>p view{
+		display:inline-block ;
+		vertical-align: top;
 		text-align: center;
 		line-height: 100px;
 		font-size: 24px;
+		margin-right: 20px;
 	}
-	.time p span:nth-child(2n+1){
+	.time p view:nth-child(1) span:nth-child(2n+1){
 		color: #FEC200;
 	}
 </style>

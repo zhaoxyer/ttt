@@ -1,7 +1,7 @@
 <template name="018944b8">
   <view class="_div data-v-43e65ad8">
     <view class="_div data-v-43e65ad8 adress">
-      <view class="_div data-v-43e65ad8 adressli" bindtap="handleProxy" data-eventid="{{'O2v-0'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-43e65ad8 adressli" bindtap="handleProxy" data-eventid="{{'kdu-0'}}" data-comkey="{{$k}}">
         <view class="_div data-v-43e65ad8">姓      名：张先生</view>
         <view class="_div data-v-43e65ad8">联系方式：1863599999</view>
         <view class="_div data-v-43e65ad8 adressinf">
@@ -13,25 +13,20 @@
         </view>
       </view>
     </view>
-    <view class="_div data-v-43e65ad8 payinf">
+    <view class="_div data-v-43e65ad8 payinf inff" wx:key="list" key="{{list}}" wx:for="{{buildinf}}" wx:for-index="index" wx:for-item="list">
       <view class="_div data-v-43e65ad8">
         <image src="../../static/index/fuwu.jpg" class="_image data-v-43e65ad8"></image>
         <view class="_div data-v-43e65ad8">
-          <view class="_view data-v-43e65ad8">
-            <label class="_span data-v-43e65ad8">马桶疏通</label>
-            <label class="_span data-v-43e65ad8">￥98.00</label>
-          </view>
-          <view class="_view data-v-43e65ad8">
-            <label class="_span data-v-43e65ad8">马桶疏通</label>
-            <label class="_span data-v-43e65ad8">￥98.00</label>
-          </view>
-          <view class="_view data-v-43e65ad8">
-            <label class="_span data-v-43e65ad8">马桶疏通</label>
-            <label class="_span data-v-43e65ad8">￥98.00</label>
-          </view>
-          <view class="_view data-v-43e65ad8">
-            <label class="_span data-v-43e65ad8">马桶疏通</label>
-            <label class="_span data-v-43e65ad8">￥98.00</label>
+          <view class="_p data-v-43e65ad8">
+            <view class="_view data-v-43e65ad8">{{name}}</view>
+            <view class="_view data-v-43e65ad8">
+              <label class="_span data-v-43e65ad8">规格</label>
+              <label class="_span data-v-43e65ad8">{{list.name}}</label>
+            </view>
+            <view class="_view data-v-43e65ad8">
+              <label class="_span data-v-43e65ad8">数量</label>
+              <label class="_span data-v-43e65ad8">x{{list.num}}</label>
+            </view>
           </view>
         </view>
       </view>
@@ -39,25 +34,53 @@
     <view class="_div data-v-43e65ad8 payinf time">
       <view class="_h1 data-v-43e65ad8">配送时间选择</view>
       <view class="_p data-v-43e65ad8">
-        <label class="_span data-v-43e65ad8">2018</label>
-        <label class="_span data-v-43e65ad8">年</label>
-        <label class="_span data-v-43e65ad8">6</label>
-        <label class="_span data-v-43e65ad8">月</label>
-        <label class="_span data-v-43e65ad8">20</label>
-        <label class="_span data-v-43e65ad8">日</label>
-        <label class="_span data-v-43e65ad8">10</label>
+        <view class="_view data-v-43e65ad8">
+          <picker mode="date" value="日期" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'fCp-1'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-43e65ad8 picker"> 日期 </view>
+          </picker>
+          <label wx:if="{{!date}}" class="_span data-v-43e65ad8">请选择日期</label>
+          <view wx:else class="_view data-v-43e65ad8">
+            <label class="_span data-v-43e65ad8">{{y}}</label>
+            <label class="_span data-v-43e65ad8">年</label>
+            <label class="_span data-v-43e65ad8">{{m}}</label>
+            <label class="_span data-v-43e65ad8">月</label>
+            <label class="_span data-v-43e65ad8">{{d}}</label>
+            <label class="_span data-v-43e65ad8">日</label>
+          </view>
+        </view>
+        <view class="_view data-v-43e65ad8">
+          <picker mode="time" value="时间" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'rwK-2'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-43e65ad8 picker"> 时间 </view>
+          </picker>
+          <label class="_span data-v-43e65ad8"> {{time||'请选择时间'}} </label>
+        </view>
       </view>
     </view>
-    <view class="_div data-v-43e65ad8 tip">
-      <view class="_div data-v-43e65ad8">注意事项:</view>
-      <view class="_div data-v-43e65ad8">
-        <view class="_p data-v-43e65ad8">1.本次付款为部分定金支付；</view>
-        <view class="_p data-v-43e65ad8">2.生活邦服务完工后，需进行尾款支付；</view>
+    <view class="_div data-v-43e65ad8 payinf sendtype">
+      <view class="_h1 data-v-43e65ad8">配送时间选择</view>
+      <view wx:key="index" key="{{index}}" wx:for="{{vehiclelist}}" wx:for-index="index" wx:for-item="list" class="_p data-v-43e65ad8">
+        <label class="_span data-v-43e65ad8 active">{{list.name}}</label>
+        <label class="_span data-v-43e65ad8">起步价￥15</label>
       </view>
     </view>
-    <view class="_div data-v-43e65ad8 apply">
-      <view class="_div data-v-43e65ad8">确认支付</view>
-      <view class="_div data-v-43e65ad8">确认支付</view>
+    <view class="_div data-v-43e65ad8 payinf remake">
+      <view class="_h1 data-v-43e65ad8">订单备注</view>
+      <textarea class="_textarea data-v-43e65ad8" />
+    </view>
+    <view class="_div data-v-43e65ad8 payinf mingxi">
+      <view class="_h1 data-v-43e65ad8">价格明细</view>
+      <view class="_div data-v-43e65ad8 mingxiinf">
+        <view class="_p data-v-43e65ad8">货款：100</view>
+        <view class="_p data-v-43e65ad8">配送费：100</view>
+        <view class="_p data-v-43e65ad8">搬运费：100</view>
+      </view>
+    </view>
+    <view class="_div data-v-43e65ad8 bgheight"></view>
+    <view class="_div data-v-43e65ad8 apply" bindtap="handleProxy" data-eventid="{{'Vpu-3'}}" data-comkey="{{$k}}">
+      <label class="_span data-v-43e65ad8">合计：
+        <label class="_span data-v-43e65ad8">111111</label>
+      </label>
+      <label class="_span data-v-43e65ad8">确认支付</label>
     </view>
   </view>
 </template>
