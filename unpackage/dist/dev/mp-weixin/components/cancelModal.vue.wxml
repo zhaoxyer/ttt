@@ -1,24 +1,15 @@
 <template name="6962e3e7">
-  <view data-slot="action-sheet-main" class="_div data-v-339102a4 cancel-order-modal">
+  <view class="_div data-v-339102a4 cancel-order-modal">
     <view class="_div data-v-339102a4 cancel-order-condition">
       <view class="_div data-v-339102a4 cancel-order-title"> 取消原因 </view>
       <view class="_div data-v-339102a4 cancel-order-check-wrap">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'4Sg-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == key ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'5eR-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == item.id ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
           <view class="_div data-v-339102a4 check-box"></view>
           <view class="_div data-v-339102a4 check-label">{{item.context}}</view>
         </view>
       </view>
-      <view class="_div data-v-339102a4 cancel-order-des">取消说明</view>
+      <textarea value="{{detail}}" bindinput="handleProxy" class="_textarea data-v-339102a4 cancel-order-des" data-eventid="{{'cjR-1'}}" data-comkey="{{$k}}" />
     </view>
-    <view class="_div data-v-339102a4 cancel-order-status">
-      <view class="_div data-v-339102a4 cancel-order-title"> 取消订单声明 </view>
-      <view class="_div data-v-339102a4 cancel-statement-wrap">
-        <view class="_div data-v-339102a4 cancel-radio-wrap">
-          <label class="_span data-v-339102a4 cancel-radio"></label>
-          <label class="_span data-v-339102a4 cancel-label">不需要了</label>
-        </view>
-      </view>
-    </view>
-    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'YtP-1'}}" data-comkey="{{$k}}">确认取消</button>
+    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'jcK-2'}}" data-comkey="{{$k}}">确认取消</button>
   </view>
 </template>

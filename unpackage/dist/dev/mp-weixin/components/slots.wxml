@@ -51,9 +51,9 @@
 <import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
-<template name="data-v-0cc018c8-default-oxB-1">
-  <template data="{{...$root['0'], ...$root[$kk+'xDj-0'],$root}}" is="6b200df4"></template>
+<template name="data-v-0cc018c8-default-RVV-1">
+  <template data="{{...$root['0'], ...$root[$kk+'7sO-0'],$root}}" is="6b200df4"></template>
 </template>
-<template name="data-v-0cc018c8-default-Nj4-3">
-  <template data="{{...$root['0'], ...$root[$kk+'y1A-2'],$root}}" is="6962e3e7"></template>
+<template name="data-v-0cc018c8-default-1UJ-3">
+  <template bindreload="handleProxy" data-eventid="{{'qMI-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'C32-2'],$root}}" is="6962e3e7"></template>
 </template>

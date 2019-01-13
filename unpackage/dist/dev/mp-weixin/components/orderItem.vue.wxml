@@ -9,27 +9,23 @@
         <label class="_span data-v-0cc018c8 order-status">{{data.statusName}}</label>
       </view>
       <view class="_div data-v-0cc018c8 order-info">
-        <view class="_div data-v-0cc018c8 goods-picture"></view>
+        <image class="_image data-v-0cc018c8 goods-picture noimage" src="{{static+data.picture}}"></image>
         <view class="_div data-v-0cc018c8 goods-info-wrap">
           <view class="_div data-v-0cc018c8 goods-info">
             <view class="_p data-v-0cc018c8">{{data.serviceName}}</view>
-            <view class="_p data-v-0cc018c8">¥ 200</view>
-          </view>
-          <view class="_div data-v-0cc018c8 goods-info">
-            <view class="_p data-v-0cc018c8">规格</view>
-            <view class="_p data-v-0cc018c8">{{data.serviceName}} </view>
+            <view class="_p data-v-0cc018c8">¥ {{data.price}}</view>
           </view>
         </view>
       </view>
       <view class="_div data-v-0cc018c8 order-time">下单时间：{{data.createTime}}</view>
       <view class="_div data-v-0cc018c8 order-options-wrap">
         <view class="_div data-v-0cc018c8 order-options">
-          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button border-collapse" data-eventid="{{'Bh9-0'}}" data-comkey="{{$k}}">取消订单</button>
-          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'bTh-1'}}" data-comkey="{{$k}}">去支付</button>
+          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button border-collapse" data-eventid="{{'dPI-0'}}" data-comkey="{{$k}}">取消订单</button>
+          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'pKu-1'}}" data-comkey="{{$k}}">去支付</button>
         </view>
       </view>
     </view>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'AuP-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'oxB-1'],$root, $slotdefault:'data-v-0cc018c8-default-oxB-1'}}" is="2ff378d5"></template>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'1DS-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Nj4-3'],$root, $slotdefault:'data-v-0cc018c8-default-Nj4-3'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'TrB-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'dom-1'],$root, $slotdefault:'data-v-0cc018c8-default-dom-1'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'3u3-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Ozh-3'],$root, $slotdefault:'data-v-0cc018c8-default-Ozh-3'}}" is="2ff378d5"></template>
   </view>
 </template>

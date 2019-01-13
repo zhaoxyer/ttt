@@ -2,37 +2,37 @@
   <view class="_div data-v-f1c654a0 setinput">
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">用户名</label>
-      <input type="text" placeholder="请输入用户名" value="{{userinf.username}}" bindinput="handleProxy" data-eventid="{{'OGg-0'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <input type="text" placeholder="请输入用户名" value="{{userinf.username}}" bindinput="handleProxy" data-eventid="{{'ugw-0'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
     </view>
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">姓名</label>
-      <input type="text" placeholder="请输入真实姓名" value="{{userinf.name}}" bindinput="handleProxy" data-eventid="{{'OJB-1'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <input type="text" placeholder="请输入真实姓名" value="{{userinf.name}}" bindinput="handleProxy" data-eventid="{{'E8y-1'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
     </view>
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">手机号</label>
-      <input type="text" placeholder="请输入手机号" value="{{userinf.phone}}" bindinput="handleProxy" data-eventid="{{'l2e-2'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <input type="text" placeholder="请输入手机号" value="{{userinf.phone}}" bindinput="handleProxy" data-eventid="{{'Jr2-2'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
     </view>
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">验证码</label>
-      <input type="text" placeholder="请输入验证码" value="{{userinf.vCode}}" bindinput="handleProxy" data-eventid="{{'xPO-3'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
-      <label class="_label data-v-f1c654a0 getcode" bindtap="handleProxy" data-eventid="{{'tvA-4'}}" data-comkey="{{$k}}">{{codemsg}}</label>
+      <input type="text" placeholder="请输入验证码" value="{{userinf.vCode}}" bindinput="handleProxy" data-eventid="{{'fBm-3'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <label class="_label data-v-f1c654a0 getcode" bindtap="handleProxy" data-eventid="{{'xl9-4'}}" data-comkey="{{$k}}">{{codemsg}}</label>
     </view>
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">密码</label>
-      <input type="password" placeholder="长度8~32位须包含数字字母符号至少2种元素" value="{{userinf.password}}" bindinput="handleProxy" data-eventid="{{'llQ-5'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <input type="password" placeholder="长度8~32位须包含数字字母符号至少2种元素" value="{{userinf.password}}" bindinput="handleProxy" data-eventid="{{'S5a-5'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
     </view>
     <view class="_div data-v-f1c654a0">
       <label class="_span data-v-f1c654a0">确认密码</label>
-      <input type="password" placeholder="请输入确认密码" value="{{userinf.password1}}" bindinput="handleProxy" data-eventid="{{'Pcy-6'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
+      <input type="password" placeholder="请输入确认密码" value="{{userinf.password1}}" bindinput="handleProxy" data-eventid="{{'fQs-6'}}" data-comkey="{{$k}}" class="_input data-v-f1c654a0" />
     </view>
     <view class="_p data-v-f1c654a0 xieyi">
-      <label bindtap="handleProxy" data-eventid="{{'YEZ-7'}}" data-comkey="{{$k}}" class="_span data-v-f1c654a0 {{[check ? 'active' : '']}}">●</label>
+      <label bindtap="handleProxy" data-eventid="{{'FgM-7'}}" data-comkey="{{$k}}" class="_span data-v-f1c654a0 {{[check ? 'active' : '']}}">●</label>
       <label class="_span data-v-f1c654a0">我已阅读并同意</label>
       <label class="_span data-v-f1c654a0">《用户服务协议》</label>
     </view>
     <view class="_p data-v-f1c654a0 submit">
-      <view bindtap="handleProxy" data-eventid="{{'vny-8'}}" data-comkey="{{$k}}" class="_view data-v-f1c654a0">注册</view>
+      <view bindtap="handleProxy" data-eventid="{{'tYv-8'}}" data-comkey="{{$k}}" class="_view data-v-f1c654a0">注册</view>
     </view>
-    <view class="_p data-v-f1c654a0 tip" bindtap="handleProxy" data-eventid="{{'M9v-9'}}" data-comkey="{{$k}}">已有账号？点击登陆</view>
+    <view class="_p data-v-f1c654a0 tip" bindtap="handleProxy" data-eventid="{{'V8X-9'}}" data-comkey="{{$k}}">已有账号？点击登陆</view>
   </view>
 </template>

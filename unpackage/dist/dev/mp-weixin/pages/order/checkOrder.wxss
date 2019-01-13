@@ -49,14 +49,13 @@
   flex: 1;
 }
 .order-status {
-  width: 100rpx;
+  width: 120rpx;
   text-align: right;
   color: #fec200;
 }
 .goods-picture {
   width: 200rpx;
   height: 152rpx;
-  background: #f60;
 }
 .goods-info-wrap {
   -webkit-box-flex: 1;
@@ -365,7 +364,6 @@
   border: 1rpx solid #B4B4B4;
   border-radius: 3rpx;
   line-height: 150rpx;
-  text-align: center;
   box-sizing: border-box;
 }
 .cancel-radio-wrap {

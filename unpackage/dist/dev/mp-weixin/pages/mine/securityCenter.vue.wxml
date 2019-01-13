@@ -1,6 +1,6 @@
 <template name="5235035c">
   <view class="_view data-v-a212fbfc">
-    <view class="_div data-v-a212fbfc columlist" bindtap="handleProxy" data-eventid="{{'Wek-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-a212fbfc columlist" bindtap="handleProxy" data-eventid="{{'Rf5-0'}}" data-comkey="{{$k}}">
       <label class="_span data-v-a212fbfc">登录密码</label>
       <image src="../../static/right.jpg" class="_image data-v-a212fbfc"></image>
     </view>
