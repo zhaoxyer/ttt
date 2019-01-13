@@ -3,7 +3,7 @@
 		<div class="header">
 			<div class="adress"><image src="../../static/index/whiteadress.jpg" ></image><span>通州</span></div>
 			<div class='serch'><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
-			<div class="tel"><image src="../../static/index/whitetel.jpg" ></image></div>
+			<div class="tel"><image src="../../static/index/whitetel.jpg" @click="call"></image></div>
 		</div>
 		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
 			<swiper-item v-for="item in swipeList" :key="item">
@@ -84,6 +84,9 @@
 				wx.navigateTo({
 					url: '../home/reform1'
 				})
+			},
+			call(){
+				ut.call();
 			},
 			req_class(){
 				ut.request({

@@ -1,6 +1,9 @@
 <template>
 	<view>
-		<div class="columlist">
+		<div class="columlist"  @click="go_mine_updatepass">
+			<span>登录密码</span><image src="../../static/right.jpg"></image>
+		</div>
+<!-- 		<div class="columlist">
 			<span>实名认证</span><div><span>已实名 向阳花</span><image src="../../static/right.jpg"></image></div>
 		</div>
 		<div class="columlist">
@@ -8,7 +11,7 @@
 		</div>
 		<div class="columlist">
 			<span>找回支付密码</span><div><image src="../../static/right.jpg"></image></div>
-		</div>		
+		</div>		 -->
 	</view>
 </template>
 
@@ -22,7 +25,11 @@
 
 		},
 		methods: {
-
+			go_mine_updatepass(){
+				wx.navigateTo({
+					url: '../mine/updatepass'
+				})
+			}
 		}
 	}
 </script>

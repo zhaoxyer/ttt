@@ -1,28 +1,48 @@
 <template>
 	<view>
-		<div class="columlist columlist1">
-			<span>头像</span><div><image src="../../static/index/herder.png" class="header"></image><image src="../../static/right.jpg"></image></div>
+		<div class="columlist columlist1" @click="uploadimg">
+			<span>头像</span><div><image   :src="headurl||'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
 		</div>
-		<div class="columlist">
-			<span>昵称</span><div><span>向阳花</span><image src="../../static/right.jpg"></image></div>
+		<div class="columlist" @click="go_mine_updatename">
+			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image src="../../static/right.jpg"></image></div>
 		</div>
-		<div class="columlist">
+		<div class="columlist" @click="go_mine_adress">
 			<span>收货地址</span><div><span>修改/添加</span><image src="../../static/right.jpg"></image></div>
 		</div>		
 	</view>
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
+				headurl:wx.getStorageSync('headurl'),
+				userinf:{}
 			}
 		},
-		onLoad() {
-
+		onShow() {
+			this.userinf=wx.getStorageSync('userinf')||{}
 		},
 		methods: {
-
+			go_mine_adress(){
+				wx.navigateTo({
+					url: '../mine/adress'
+				})
+			},
+			uploadimg(){
+				ut.uploadimg({
+					callback:res=>{
+						wx.setStorageSync('headurl',res);
+						this.headurl=res;
+					}
+				})
+			},
+			go_mine_updatename(){
+				wx.navigateTo({
+					url: '../mine/updatename'
+				})
+			}
 		}
 	}
 </script>

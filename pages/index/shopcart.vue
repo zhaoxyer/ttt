@@ -109,16 +109,16 @@
 				})
 			},
 			delcart(){
-				this.list .forEach(item=>{
-					item.cartlist.forEach(item=>{
-						if(item.checked){
-							this.req_delete(item.id)
+				this.list .forEach((item,index)=>{
+					item.cartlist.forEach((item1,index1)=>{
+						if(item1.checked){
+							this.req_delete(item1.id,index,index1)
 						}
 					})
 				})
 			},
 			//删除购物车商品
-			req_delete(cartid){
+			req_delete(cartid,index,index1){
 				ut.request({
 					url: "cart/delete",
 					data:{
@@ -126,7 +126,10 @@
 					}
 				}).then(data=>{
 					//this.list=data
-					this.req_cartlist();
+					this.list[index].cartlist.splice(index1,1)
+					if(!this.list[index].cartlist.length){
+						this.list.splice(index,1)
+					}
 				})
 			},
 			req_cartlist(){

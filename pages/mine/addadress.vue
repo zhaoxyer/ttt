@@ -19,9 +19,9 @@
 		<div>
 			<span>地址</span><input type="text" placeholder="请填写详细地址,5~60个字" v-model="adressinf.address"/>
 		</div>
-		<div>
+		<!-- <div>
 			<span>邮编</span><input type="text" placeholder="6位邮政编码"/>
-		</div>
+		</div> -->
 		<p class="xieyi">
 			<span @click="cg_active"><image src="../../static/mine/check.jpg" v-if="!adressinf.defaultType"></image><image src="../../static/mine/uncheck.jpg" v-if="adressinf.defaultType"></image></span><span>设置成默认地址</span>
 		</p>
@@ -115,18 +115,20 @@
 </script>
 
 <style>
-	.setinput div{
+	.setinput>div{
 		padding: 0 30px;
+		display: flex;
 	}
 	.setinput>div>span,.setinput>div>input,.setinput>div>textarea,.setinput>div>.inputall{
-		display: inline-block;
-		vertical-align: top;
 		font-size: 24px;
 		line-height: 80px;
 		min-height: 80px;
 		margin-top: 20px;
 		height: 80px;
 		padding: 0!important;
+	}
+	.setinput>div>input,.setinput>div>textarea,.setinput>div>.inputall{
+		flex: 1;
 	}
 	.setinput>div{
 		border-bottom: 1px solid #C8C8C8;
