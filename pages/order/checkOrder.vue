@@ -4,29 +4,55 @@
 			<p class="order-tip-text">您可以在此页面查看您已付上门费的订单和“查看状态”</p>
 		</div>
 		<div>
-			<order-item></order-item>
-			<order-item></order-item>
-			<order-item></order-item>
+			<div v-for="(item, index) in order_list" :key="index">
+				<order-item :data="item" :reason="cancel_reason"></order-item>
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
 	import orderItem from '../../components/orderItem.vue'
+	import ut from '../../utils/index.js';
 	export default {
 		components: {
             orderItem
         },
 		data() {
 			return {
-				
+				order_list: [],
+				cancel_reason: []
 			}
 		},
 		onLoad() {
-
+			this.getOrderList();
+			this.getReasonType();
 		},
 		methods: {
-			
+			getOrderList() {
+				ut.request({
+					data: {
+						type: 1
+					},
+					method: 'get',
+					url: "service/order/list"
+				}).then(data=>{
+					console.log(data)
+					this.order_list = data;
+				})
+			},
+			getReasonType() {
+				ut.request({
+					data: {
+						type: 1
+					},
+					method: 'get',
+					url: "service/order/cancelReason"
+				}).then(data=>{
+					console.log(data)
+					this.cancel_reason = data;
+				})
+			}
 		}
 	}
 </script>

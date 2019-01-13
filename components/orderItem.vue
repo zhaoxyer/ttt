@@ -2,43 +2,39 @@
 	<div>
 	  <div class="order-item-detail">
 		<div class="order-info">
-			<span class="order-num">订单编号：FW20180816001</span>
-			<span class="order-status">已付款</span>
+			<span class="order-num">订单编号：{{data.orderNumber}}</span>
+			<span class="order-status">{{data.statusName}}</span>
 		</div>
 		<div class="order-info">
 			<div class="goods-picture"></div>
 			<div class="goods-info-wrap">
 				<div class="goods-info">
-					<p>私人定制商铺</p>
+					<p>{{data.serviceName}}</p>
+					<p>¥ 200</p>
 				</div>
 				<div class="goods-info">
-					<p>橱柜</p>
-					<p>¥ 200.00 </p>
-				</div>
-				<div class="goods-info">
-					<p>商家电话</p>
-					<p>11111111111 </p>
-				</div>
-				<div class="goods-info">
-					<p>商家地址</p>
-					<p>通州建材城</p>
+					<p>规格</p>
+					<p>{{data.serviceName}} </p>
 				</div>
 			</div>
 		</div>
-		<div class="order-time">下单时间：20180816 15:30</div>
+		<div class="order-time">下单时间：{{data.createTime}}</div>
 		<div class="order-options-wrap">
 			<div class="order-options">
 				<button @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
-				<button @click="changeOrderStatusModal(true)" class="order-button">订单状态</button>
+				<button @click="go_next" class="order-button">去支付</button>
 			</div>
 		</div>
 	  </div>
-	  <t-modal  :visibile="order_status_visibile" @changeVisible = "changeOrderStatusModal">
-		<order-status></order-status>
-	  </t-modal>
-	  <t-modal  :visibile="cancel_order_visibile" @changeVisible = "changeCancelModal">
-		<cancel-modal></cancel-modal>
-	  </t-modal>
+		
+		<t-modal :reason="reason"  :visibile="order_status_visibile" @changeVisible = "changeOrderStatusModal">
+			<order-status></order-status>
+		</t-modal>
+		
+		<t-modal :reason="reason"  :visibile="cancel_order_visibile" @changeVisible = "changeCancelModal">
+			<cancel-modal></cancel-modal>
+		</t-modal>
+		
 	</div>
 </template>
 
@@ -47,7 +43,7 @@ import TModal from './tmodal.vue';
 import OrderStatus from './orderStatus.vue';
 import CancelModal from './cancelModal.vue'
 export default {
-  props: [],
+  props: ["data","reason"],
   data() {
 	return {
 		order_status_visibile: false,
@@ -56,20 +52,25 @@ export default {
   },
   components: {
   	TModal,
-	OrderStatus,
-	CancelModal
+		OrderStatus,
+		CancelModal
   },
   methods: {
-	changeOrderStatusModal(status) {
-		if(typeof status != 'undefined'){
-			this.order_status_visibile = status;
+		go_next() {
+			wx.navigateTo({
+				url: `../home/pay`
+			})
+		},
+		changeOrderStatusModal(status) {
+			if(typeof status != 'undefined'){
+				this.order_status_visibile = status;
+			}
+		},
+		changeCancelModal(status) {
+			if(typeof status != 'undefined'){
+				this.cancel_order_visibile = status;
+			}
 		}
-	},
-	changeCancelModal(status) {
-		if(typeof status != 'undefined'){
-			this.cancel_order_visibile = status;
-		}
-	}
   }
 }
 </script>

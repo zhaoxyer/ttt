@@ -5,13 +5,9 @@
 			取消原因
 			</div>
 			<div class="cancel-order-check-wrap">
-				<div :class="chooseData==1 ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(1)">
+				<div v-for="(item,index) in reason" :key="index" :class="chooseData==key ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
 					<div class="check-box"></div>
-					<div class="check-label">不需要了</div>
-				</div>
-				<div :class="chooseData==2 ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(2)">
-					<div class="check-box"></div>
-					<div class="check-label">不需要了</div>
+					<div class="check-label">{{item.context}}</div>
 				</div>
 			</div>
 			<div class="cancel-order-des">取消说明</div>
@@ -33,7 +29,7 @@
 
 <script>
 export default {
-  props: [""],
+  props: ["reason"],
   data() { 
 	  return {
 		  chooseData: null
@@ -41,21 +37,24 @@ export default {
   },
   methods: {
 	  choose(data){
-		this.chooseData = data;  
+			this.chooseData = data;  
 	  },
 	  cancel_confirm() {
-		wx.showModal({
-		title: '',
-		content: '您确定要取消该订单吗？',
-		success: function (sm) {
-			if (sm.confirm) {
-				// 用户点击了确定 可以调用删除方法了
-			  } else if (sm.cancel) {
-				return;
-			  }
-			}
-		})
-	  }
+			wx.showModal({
+			title: '',
+			content: '您确定要取消该订单吗？',
+			success: function (sm) {
+				if (sm.confirm) {
+					// 用户点击了确定 可以调用删除方法了
+					} else if (sm.cancel) {
+					return;
+					}
+				}
+			})
+	  },
+		getCancelReason() {
+			
+		}
   }
 }
 </script>
