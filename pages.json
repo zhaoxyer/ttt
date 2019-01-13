@@ -138,6 +138,12 @@
 			"style" : {
 				"navigationBarTitleText" : "确认订单"
 			}
+		},
+		{
+			"path" : "pages/order/checkOrder",
+			"style" : {
+				"navigationBarTitleText" : "查看订单"
+			}
 		}
     ],
     "globalStyle" : {

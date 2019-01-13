@@ -3,7 +3,7 @@
 		<div class='userinf'>
 			<h1>技术服务类</h1>
 			<div class='server'>
-				<div>
+				<div @click="go_next('../order/checkOrder')">
 					<image   src="../../static/order/ordertype0.jpg"  mode="widthFix"></image>
 					<p>查看订单</p>
 				</div>
@@ -97,9 +97,10 @@
 
 		},
 		methods: {
-			go_mine_infchange(){
+			go_next(data){
+				console.log(data);
 				wx.navigateTo({
-					url: '../mine/infchange'
+					url: data
 				})
 			},
 			go_mine_apply(){
