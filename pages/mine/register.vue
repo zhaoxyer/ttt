@@ -13,16 +13,16 @@
 			<span>验证码</span><input type="text" placeholder="请输入验证码" v-model="userinf.vCode"/><label class="getcode" @click="req_sendCode">{{codemsg}}</label>
 		</div>
 		<div>
-			<span>密码</span><input type="password" placeholder="密码长度8~32位,须包含数字字母符号至少2种或以上元素" v-model="userinf.password"/>
+			<span>密码</span><input type="password" placeholder="长度8~32位须包含数字字母符号至少2种元素" v-model="userinf.password"/>
 		</div>
 		<div>
-			<span>确认密码</span><input type="password" placeholder="请确认密码" v-model="userinf.password1"/>
+			<span>确认密码</span><input type="password" placeholder="请输入确认密码" v-model="userinf.password1"/>
 		</div>
 		<p class="xieyi">
 			<span :class="{'active':check}" @click="cg_active">●</span><span>我已阅读并同意</span><span>《用户服务协议》</span>
 		</p>
-		<p class="submit" @click="req_register">
-			注册
+		<p class="submit">
+			<view  @click="req_register">注册</view>
 		</p>
 		<p class="tip" @click="go_mine_login">已有账号？点击登陆</p>
 	</div>
@@ -31,6 +31,7 @@
 
 <script>
 	import ut from '../../utils/index.js';
+	import login from '../../components/login.vue'
 	export default {
 		data() {
 			return {
@@ -47,6 +48,9 @@
 					"vCode": ""//验证码
 				}
 			}
+		},
+		components: {
+			login
 		},
 		onLoad() {
 		},
@@ -83,6 +87,10 @@
 				}
 				if(this.userinf.password!=this.userinf.password1){
 					ut.totast('两次密码输入不一致');
+					return;
+				}
+				if(!this.check){
+					ut.totast('请阅读用户协议');
 					return;
 				}
 				ut.request({
@@ -128,16 +136,18 @@
 		padding: 0 30px;
 	}
 	.setinput>div>span,.setinput>div>input,.setinput>div>textarea{
-		display: inline-block;
-		vertical-align: top;
 		font-size: 24px;
 		line-height: 80px;
 		min-height: 80px;
 		margin-top: 20px;
 		height: 80px;
 	}
+	.setinput>div>input,.setinput>div>textarea{
+		flex: 1;
+	}
 	.setinput>div{
 		border-bottom: 1px solid #C8C8C8;
+		display: flex;
 	}
 	.setinput>div>span{
 		width: 150px;
@@ -157,6 +167,7 @@
 		text-align: center;
 		border-radius: 10px;
 		font-size: 28px;
+		position: relative;
 	}
 	.xieyi{
 		padding: 40px 0;
@@ -201,5 +212,9 @@
 		line-height: 60px;
 		text-align: right;
 		font-size: 24px;
+	}
+	p{
+		position: relative;
+		height: 80px;
 	}
 </style>

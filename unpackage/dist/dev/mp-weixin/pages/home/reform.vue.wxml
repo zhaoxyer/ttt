@@ -4,7 +4,7 @@
       <view class="_div data-v-5e9e7fb8">
         <view class="_div data-v-5e9e7fb8 youhui leftright">
           <view class="_div data-v-5e9e7fb8 server">
-            <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'Ga7-0-'+index}}" data-comkey="{{$k}}" wx:for="{{server}}" wx:for-index="index" wx:for-item="list" class="_div data-v-5e9e7fb8">
+            <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'ZxL-0-'+index}}" data-comkey="{{$k}}" wx:for="{{server}}" wx:for-index="index" wx:for-item="list" class="_div data-v-5e9e7fb8">
               <image src="{{list.image}}" mode="widthFix" class="_image data-v-5e9e7fb8"></image>
               <view class="_p data-v-5e9e7fb8">{{list.adress}}</view>
               <view class="_p data-v-5e9e7fb8">{{list.type}}</view>
@@ -18,7 +18,7 @@
     <view class="_div data-v-5e9e7fb8 userinf">
       <view class="_h1 data-v-5e9e7fb8">户型</view>
       <view class="_div data-v-5e9e7fb8 type">
-        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'RNU-1-'+index}}" data-comkey="{{$k}}" wx:for="{{homeType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-5e9e7fb8">
+        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'GJo-1-'+index}}" data-comkey="{{$k}}" wx:for="{{homeType}}" wx:for-index="index" wx:for-item="list" class="_div data-v-5e9e7fb8">
           <image src="../../static/mine/check.jpg" wx:if="{{index!=check}}" class="_image data-v-5e9e7fb8"></image>
           <image src="../../static/mine/uncheck.jpg" wx:else class="_image data-v-5e9e7fb8"></image>
           <label class="_span data-v-5e9e7fb8">{{list.name}}</label>

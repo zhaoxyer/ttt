@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="header" @click="checkinf">
-			<image :src="userinf.img||'../../static/logo.jpg'"/>
+			<image :src="headurl||'../../static/logo.jpg'"/>
 			<p>{{userinf.nickname||userinf.name||'木斗生活'}}</p>
 		</div>
 		<div class='userinf'>
@@ -21,11 +21,11 @@
 		</div>
 		<div class='userinf'>
 			<h1>木斗帮手</h1>
-			<div>
+			<div @click='go_mine_aboutus'>
 				<image src="../../static/index/helper0.png"/>
 				<p>关于木斗生活</p>
 			</div>
-			<div>
+			<div @click='go_mine_problem'>
 				<image src="../../static/index/helper1.png"/>
 				<p>常见问题</p>
 			</div>
@@ -70,7 +70,8 @@
 	export default {
 		data() {
 			return {
-				userinf:{}
+				userinf:{},
+				headurl:wx.getStorageSync('headurl')
 			}
 		},
 		onLoad() {
@@ -78,16 +79,16 @@
 		},
 		onShow() {		
 			if(wx.getStorageSync('token')){
+				this.headurl=wx.getStorageSync('headurl');
 				this.req_userinfo();
 			}else{
 				this.userinf={};
 			}
+			
 		},
 		methods: {
 			tel() {
-				wx.makePhoneCall({
-				phoneNumber: '18234038009',
-				})
+				ut.call();
 			},
 			checkinf(){
 				if(wx.getStorageSync('token')){
@@ -95,6 +96,11 @@
 					return;
 				}
 				this.go_mine_register();
+			},
+			go_mine_aboutus(){
+				wx.navigateTo({
+					url: '../mine/aboutus'
+				})
 			},
 			go_mine_infchange(){
 				wx.navigateTo({
@@ -121,12 +127,18 @@
 					url: '../mine/securityCenter'
 				})
 			},
+			go_mine_problem(){
+				wx.navigateTo({
+					url: '../mine/problem'
+				})
+			},
 			req_userinfo(){
 				ut.request({
 					url: "user/info",
 					method:'get'
 				}).then(data=>{
 					this.userinf=data
+					wx.setStorageSync('userinf',data)
 				})
 			}
 		}

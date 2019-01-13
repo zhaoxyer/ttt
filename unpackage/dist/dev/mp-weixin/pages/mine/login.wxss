@@ -22,12 +22,15 @@
   width: 300rpx;
   height: 300rpx;
 }
-.setinput>._div>image,
 .setinput>._div>._input {
-  display: inline-block;
-  vertical-align: top;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .setinput>._div {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
   border-bottom: 1rpx solid #C8C8C8;
 }
 .setinput>._div>._input {
@@ -54,20 +57,4 @@
   display: inline-block;
   vertical-align: top;
   margin-top: 50rpx;
-}
-.login {
-  height: 100%;
-  width: 100%;
-  background: transparent;
-  position: absolute;
-  z-index: 1500;
-}
-.login ._button {
-  background: transparent;
-  width: 100%;
-  height: 100%;
-  color: transparent;
-}
-.login ._button:after {
-  border: none;
 }

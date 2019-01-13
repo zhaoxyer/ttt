@@ -8,25 +8,25 @@
         </view>
         <view class="_div data-v-74a7c57a">{{item.provinceName+item.countyAreaName+item.cityName+item.address}}</view>
         <view class="_div data-v-74a7c57a edit">
-          <view wx:if="{{item.defaultType!=1}}" bindtap="handleProxy" data-eventid="{{'Zga-1-'+index}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">
+          <view wx:if="{{item.defaultType!=1}}" bindtap="handleProxy" data-eventid="{{'3cS-1-'+index}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">
             <image src="../../static/mine/check.jpg" class="_image data-v-74a7c57a"></image>
             <label class="_span data-v-74a7c57a">默认</label>
           </view>
-          <view wx:else bindtap="handleProxy" data-eventid="{{'riY-0-'+index}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">
+          <view wx:else bindtap="handleProxy" data-eventid="{{'gyI-0-'+index}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">
             <image src="../../static/mine/uncheck.jpg" class="_image data-v-74a7c57a"></image>
             <label class="_span data-v-74a7c57a">设为默认</label>
           </view>
           <view class="_div data-v-74a7c57a">
-            <image src="../../static/mine/edit.png" bindtap="handleProxy" data-eventid="{{'gcL-2-'+index}}" data-comkey="{{$k}}" class="_image data-v-74a7c57a"></image>
-            <label bindtap="handleProxy" data-eventid="{{'6aX-3-'+index}}" data-comkey="{{$k}}" class="_span data-v-74a7c57a">编辑</label>
-            <image src="../../static/mine/del.png" bindtap="handleProxy" data-eventid="{{'31E-4-'+index}}" data-comkey="{{$k}}" class="_image data-v-74a7c57a"></image>
-            <label bindtap="handleProxy" data-eventid="{{'Rnz-5-'+index}}" data-comkey="{{$k}}" class="_span data-v-74a7c57a">删除</label>
+            <image src="../../static/mine/edit.png" bindtap="handleProxy" data-eventid="{{'iT9-2-'+index}}" data-comkey="{{$k}}" class="_image data-v-74a7c57a"></image>
+            <label bindtap="handleProxy" data-eventid="{{'UTX-3-'+index}}" data-comkey="{{$k}}" class="_span data-v-74a7c57a">编辑</label>
+            <image src="../../static/mine/del.png" bindtap="handleProxy" data-eventid="{{'HUl-4-'+index}}" data-comkey="{{$k}}" class="_image data-v-74a7c57a"></image>
+            <label bindtap="handleProxy" data-eventid="{{'bzi-5-'+index}}" data-comkey="{{$k}}" class="_span data-v-74a7c57a">删除</label>
           </view>
         </view>
       </view>
     </view>
     <view class="_div data-v-74a7c57a apply">
-      <view bindtap="handleProxy" data-eventid="{{'vBJ-6'}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">新建收货地址</view>
+      <view bindtap="handleProxy" data-eventid="{{'aq7-6'}}" data-comkey="{{$k}}" class="_div data-v-74a7c57a">新建收货地址</view>
     </view>
   </view>
 </template>

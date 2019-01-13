@@ -98,15 +98,39 @@
 			}
 		},
 		{
+			"path" : "pages/mine/updatepass",
+			"style" : {
+				"navigationBarTitleText" : "修改密码"
+			}
+		},
+		{
 			"path" : "pages/mine/addadress",
 			"style" : {
 				"navigationBarTitleText" : "新建收获地址"
 			}
 		},
 		{
+			"path" : "pages/mine/updatename",
+			"style" : {
+				"navigationBarTitleText" : "修改昵称"
+			}
+		},
+		{
 			"path" : "pages/mine/securityCenter",
 			"style" : {
 				"navigationBarTitleText" : "安全中心"
+			}
+		},
+		{
+			"path" : "pages/mine/problem",
+			"style" : {
+				"navigationBarTitleText" : "常见问题"
+			}
+		},
+		{
+			"path" : "pages/mine/aboutus",
+			"style" : {
+				"navigationBarTitleText" : "关于我们"
 			}
 		},
         {

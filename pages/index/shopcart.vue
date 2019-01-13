@@ -3,21 +3,22 @@
         <div class="shopping-car">
 			<div class="shopping-options-wrap">
 				<ul class="shopping-options">
-					<li class="shopping-option-item shopping-collect">移入购物车</li>
-					<li class="shopping-option-item">删除</li>
+					<li class="shopping-option-item shopping-collect" @click="delcart">删除</li>
+					<!-- <li class="shopping-option-item"></li> -->
 				</ul>
 			</div>
 			<div class="shopping-goods-container">
-				<div class="shopping-goods-list" v-for="(list,index) in list" :key="index">
-					<div class="shopping-seller">{{list.name}}</div>
-					<div class="shopping-goods-item" v-for="(item,itemindex) in list.mall" :key='itemindex'>
-						<input type="radio"/>
+				<div class="shopping-goods-list" v-for="(list,index) in list" :key="list">
+					<div class="shopping-seller">{{list.storename}}</div>
+					<div class="shopping-goods-item" v-for="(item,itemindex) in list.cartlist" :key='item'>
+						<input type="radio" readonly="true" v-if="!item.checked" @click="checked(index,itemindex)"/>
+						<input type="radio" checked v-else @click="checked(index,itemindex)"/>
 						<div class="shopping-goods-img">
-							<image :src="item.picture"></image>
+							<image :src="item.picture"  class="noimage"></image>
 						</div>
 						<div class="shopping-good-info" >
-							<p class="shopping-good-name">{{item.name}}</p>
-							<div class="shopping-good-type" v-if="item.type">规格: {{item.type}}</div>
+							<p class="shopping-good-name">{{item.goodsName}}</p>
+							<div class="shopping-good-type" v-if="item.goodsSpecName">规格: {{item.goodsSpecName}}</div>
 							<div class="shopping-good-price">
 								<span>¥ {{item.price}}</span>
 								<ul class="shopping-num-container">
@@ -28,6 +29,7 @@
 							</div>
 						</div>
 					</div>
+					<div class="shopping-all" v-if="list.allnum"><span>合计：</span><span>￥{{list.allmoneynum}}</span><span>结算（{{list.allnum}}）</span></div>
 				</div>
 			</div>
 		</div>
@@ -39,81 +41,84 @@
 	export default {
 		data() {
 			return {
-				list:[
-					{
-						name:'大神五金建材',
-						mall:[
-							{
-								num:1,
-								picture:'../../static/build/mall.jpg',
-								price:'40',
-								name:'阿萨达套装',
-								type:"全铜花洒"
-							},
-							{
-								num:12,
-								picture:'../../static/build/mall.jpg',
-								price:'420',
-								type:"全铜花洒"
-							}
-						]
-					},
-					{
-						name:'阿大声道建材',
-						mall:[
-							{
-								num:12,
-								picture:'../../static/build/mall.jpg',
-								price:'410',
-								name:'阿萨达套装',
-								type:"全铜花洒"
-							},
-							{
-								num:1,
-								picture:'../../static/build/mall.jpg',
-								price:'410',
-								name:'阿萨达套装',
-								type:"全铜花洒"
-							}
-						]
-					}
-				]
+				list:[],
+				static:''
 			}
 		},
 		onShow() {
-			this.req_cartlist();
+			this.static=ut.static;
+			if(wx.getStorageSync('token')){
+				this.req_cartlist();
+			}
 		},
 		methods: {
+			error(index,itemindex){
+				this.list[index].cartlist[itemindex].picture='../../static/build/mall.jpg'
+			},
+			checked(index,itemindex){
+				console.log(index,itemindex)
+				this.list[index].cartlist[itemindex].checked=!this.list[index].cartlist[itemindex].checked;
+				this.com();
+			},
+			com(){
+				this.list .forEach(item=>{
+					let allnum=0;
+					let allmoneynum=0;
+					item.cartlist.forEach(item1=>{
+						if(item1.checked){
+							allnum+=item1.num;
+							allmoneynum+=Number(item1.price)*item1.num.toFixed(2);
+						}
+					})
+					item.allnum=allnum;
+					item.allmoneynum=allmoneynum.toFixed(2);
+				})
+			},
 			add(index,itemindex){
-				this.list[index].mall[itemindex].num+=1;
+				this.list[index].cartlist[itemindex].num+=1;
 				this.req_updateNum(index,itemindex);
+				this.com();
 			},
 			del(index,itemindex){
-				this.list[index].mall[itemindex].num-=1;
-				if(this.list[index].mall[itemindex].num==1){
-					this.list[index].mall.splice(itemindex,1)
-					if(!this.list[index].mall.length){
+				
+				if(this.list[index].cartlist[itemindex].num==1){
+					/* this.list[index].cartlist[itemindex].num-=1;
+					this.req_delete(this.list[index].cartlist[itemindex].id);
+					if(this.list[index].cartlist.length==1){
 						this.list.splice(index,1)
-					}
+					}else{
+						this.list[index].cartlist.splice(itemindex,1)
+					} */
+					return;
+				}else{
+					this.list[index].cartlist[itemindex].num-=1;
+					this.req_updateNum(index,itemindex);
+					this.com();
 				}
-				this.req_updateNum(index,itemindex);
 			},
 			//购物车商品数量更新
 			req_updateNum(index,itemindex){
-				return;
 				ut.request({
 					url: "cart/updateNum",
 					data:{
-						cartid:this.list[index].mall[itemindex].id,
-						num:this.list[index].mall[itemindex].num
+						cartid:this.list[index].cartlist[itemindex].id,
+						num:this.list[index].cartlist[itemindex].num
 					}
 				}).then(data=>{
 					//this.list=data
 				})
 			},
+			delcart(){
+				this.list .forEach((item,index)=>{
+					item.cartlist.forEach((item1,index1)=>{
+						if(item1.checked){
+							this.req_delete(item1.id,index,index1)
+						}
+					})
+				})
+			},
 			//删除购物车商品
-			req_delete(cartid){
-				return;
+			req_delete(cartid,index,index1){
 				ut.request({
 					url: "cart/delete",
 					data:{
@@ -121,13 +126,24 @@
 					}
 				}).then(data=>{
 					//this.list=data
+					this.list[index].cartlist.splice(index1,1)
+					if(!this.list[index].cartlist.length){
+						this.list.splice(index,1)
+					}
 				})
 			},
 			req_cartlist(){
 				ut.request({
 					url: "cart/list",
 				}).then(data=>{
-					//this.list=data
+					data.forEach(item=>{
+						item.allnum=0;
+						item.allmoneynum=0;
+						item.cartlist.forEach(item=>{
+							item.checked=false;
+						})
+					})
+					this.list =data;
 				})
 			}
 		}
@@ -149,6 +165,28 @@
 	}
 	.shopping-options:after {
 		overflow: hidden;
+	}
+	.shopping-all{
+		height: 100px;
+		display: flex;
+		font-size: 24px;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.shopping-all span{
+		margin-left: 30px;
+	}
+	.shopping-all span:nth-child(2){
+		color: #FEC200;
+	}
+	.shopping-all span:nth-child(3){
+		background: #FEC200;
+		color: white;
+		padding: 0 10px;
+		line-height: 50px;
+		border-radius: 25px;
+		min-width: 150px;
+		text-align: center;
 	}
 	.shopping-option-item {
 		display: inline-block;

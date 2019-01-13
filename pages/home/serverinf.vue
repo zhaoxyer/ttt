@@ -83,9 +83,13 @@
 					},
 					url: "service/detail"
 				}).then(data=>{
-					this.serverinf=data[0]
-					this.typelist=data;
-					this.detailinf=marked(data[0].detail)
+					if(data[0]){
+						this.serverinf=data[0]
+						this.typelist=data;
+						this.detailinf=marked(data[0].detail)
+					}else{
+						ut.totast('服务信息不存在');
+					}
 				})
 			}
 		}

@@ -152,7 +152,7 @@
 }
 .youhui>._div ._div:nth-child(1) {
   width: 70rpx;
-  height: 188rpx;
+  height: 168rpx;
   -webkit-writing-mode: tb-rl;
   writing-mode: tb-rl;
   text-align: center;
@@ -161,6 +161,7 @@
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+  padding: 10rpx 0;
 }
 .youhui>._div ._div:nth-child(3) ._span:first-child {
   -webkit-writing-mode: lr-tb;

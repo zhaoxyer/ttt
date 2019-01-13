@@ -1,20 +1,28 @@
 @import "../../common/vendor.wxss";
 
-.setinput ._div {
+.setinput>._div {
   padding: 0 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
 }
 .setinput>._div>._span,
 .setinput>._div>._input,
 .setinput>._div>._textarea,
 .setinput>._div>.inputall {
-  display: inline-block;
-  vertical-align: top;
   font-size: 24rpx;
   line-height: 80rpx;
   min-height: 80rpx;
   margin-top: 20rpx;
   height: 80rpx;
   padding: 0!important;
+}
+.setinput>._div>._input,
+.setinput>._div>._textarea,
+.setinput>._div>.inputall {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .setinput>._div {
   border-bottom: 1rpx solid #C8C8C8;

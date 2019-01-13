@@ -6,10 +6,10 @@
 		<div class="columlist">
 			<span>换绑手机</span><image src="../../static/right.jpg"></image>
 		</div>
-		<div class="columlist">
+		<div class="columlist"  @click="go_mine_updatepass">
 			<span>登录密码</span><image src="../../static/right.jpg"></image>
 		</div>
-		<div class="columlist">
+		<!-- <div class="columlist">
 			<span>支付设置</span><image src="../../static/right.jpg"></image>
 		</div>
 		<div class="bggray"></div>
@@ -18,7 +18,7 @@
 		</div>
 		<div class="columlist">
 			<span>通用</span><image src="../../static/right.jpg"></image>
-		</div>
+		</div> -->
 		<div class="outinf" @click='loginout'>退出账户</div>
 	</view>
 </template>
@@ -37,6 +37,11 @@
 			go_mine_userinf(){
 				wx.navigateTo({
 					url: '../mine/userinf'
+				})
+			},
+			go_mine_updatepass(){
+				wx.navigateTo({
+					url: '../mine/updatepass'
 				})
 			},
 			loginout(){

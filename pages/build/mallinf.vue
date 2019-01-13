@@ -141,8 +141,11 @@
 				return parm;
 			},
 			req_cartadd(){
+				if(!this.barlist.length){
+					ut.totast('请先选择商品');
+					return;
+				}
 				const parm=this.filterdate();
-				console.log(JSON.stringify(parm))
 				ut.request({
 					data:parm,
 					url: "cart/add",

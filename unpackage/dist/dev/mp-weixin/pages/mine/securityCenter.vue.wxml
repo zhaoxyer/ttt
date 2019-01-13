@@ -1,23 +1,8 @@
 <template name="5235035c">
   <view class="_view data-v-a212fbfc">
-    <view class="_div data-v-a212fbfc columlist">
-      <label class="_span data-v-a212fbfc">实名认证</label>
-      <view class="_div data-v-a212fbfc">
-        <label class="_span data-v-a212fbfc">已实名 向阳花</label>
-        <image src="../../static/right.jpg" class="_image data-v-a212fbfc"></image>
-      </view>
-    </view>
-    <view class="_div data-v-a212fbfc columlist">
-      <label class="_span data-v-a212fbfc">修改支付密码</label>
-      <view class="_div data-v-a212fbfc">
-        <image src="../../static/right.jpg" class="_image data-v-a212fbfc"></image>
-      </view>
-    </view>
-    <view class="_div data-v-a212fbfc columlist">
-      <label class="_span data-v-a212fbfc">找回支付密码</label>
-      <view class="_div data-v-a212fbfc">
-        <image src="../../static/right.jpg" class="_image data-v-a212fbfc"></image>
-      </view>
+    <view class="_div data-v-a212fbfc columlist" bindtap="handleProxy" data-eventid="{{'3f6-0'}}" data-comkey="{{$k}}">
+      <label class="_span data-v-a212fbfc">登录密码</label>
+      <image src="../../static/right.jpg" class="_image data-v-a212fbfc"></image>
     </view>
   </view>
 </template>
