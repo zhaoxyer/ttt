@@ -1,4 +1,8 @@
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
+<import src="/components/orderItem.vue.wxml" />
+<import src="/components/tmodal.vue.wxml" />
+<import src="/components/orderStatus.vue.wxml" />
+<import src="/components/cancelModal.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseTemplate0.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseTemplate1.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
@@ -47,19 +51,9 @@
 <import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
-<import src="/components/orderItem.vue.wxml" />
-<import src="/components/tmodal.vue.wxml" />
-<import src="/components/orderStatus.vue.wxml" />
-<import src="/components/cancelModal.vue.wxml" />
-<template name="data-v-0cc018c8-default-LlX-1">
-  <template data="{{...$root['0'], ...$root[$kk+'agy-0'],$root}}" is="6b200df4"></template>
+<template name="data-v-0cc018c8-default-oxB-1">
+  <template data="{{...$root['0'], ...$root[$kk+'xDj-0'],$root}}" is="6b200df4"></template>
 </template>
-<template name="data-v-0cc018c8-default-WMe-3">
-  <template data="{{...$root['0'], ...$root[$kk+'qAm-2'],$root}}" is="6962e3e7"></template>
-</template>
-<template name="data-v-0cc018c8-default-S6X-1">
-  <template data="{{...$root['0'], ...$root[$kk+'pIZ-0'],$root}}" is="6b200df4"></template>
-</template>
-<template name="data-v-0cc018c8-default-ZTO-3">
-  <template data="{{...$root['0'], ...$root[$kk+'RPZ-2'],$root}}" is="6962e3e7"></template>
+<template name="data-v-0cc018c8-default-Nj4-3">
+  <template data="{{...$root['0'], ...$root[$kk+'y1A-2'],$root}}" is="6962e3e7"></template>
 </template>

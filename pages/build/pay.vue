@@ -51,14 +51,24 @@
 			<h1>配送方式</h1>
 			<p v-for="(list,index) in vehiclelist" :key='index' @click='cg_vehicleindex(index)'><span :class="{'active':index==vehicleindex}">{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
 		</div>
-		<div class="payinf sendtype">
+		<div class="payinf sendtype sendtype1">
 			<h1>是否搬运上楼</h1>
-			
-			<p v-for="(list,index) in carrylist" :key='index' @click='cg_carryindex(index)'><span :class="{'active':index==carryindex}">{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
+			<p class="carry">
+				<image src="../../static/mine/uncheck.jpg" v-if="requireCarry==1"></image><image src="../../static/mine/check.jpg" v-else @click="cg_requireCarry(1)"></image><span>是</span>
+				<image src="../../static/mine/uncheck.jpg" v-if="requireCarry==2" ></image><image src="../../static/mine/check.jpg" v-else @click="cg_requireCarry(2)"></image><span>否</span>
+			</p>
+			<p class="floor">
+				<view v-for="(list,index) in carrylist" :key='index' @click='cg_carryindex(index)'>
+					<view :class="{'active':index==carryindex}"></view><view>{{list.name}}</view>
+				</view>
+			</p>
+			<p class="louceng" v-if="carrylist.length">
+				<input placeholder="请输入楼层" v-model="floor" type="number"/>层 起步价{{carrylist[carryindex].startPrice}}
+			</p>
 		</div>
 		<div class="payinf remake">
 			<h1>订单备注</h1>
-			<textarea>
+			<textarea v-model="remark">
 				
 			</textarea>
 		</div>
@@ -82,7 +92,7 @@
 	export default {
 		data() {
 			return {
-				buildinf:wx.getStorageSync('buildinf'),
+				buildinf:{},
 				vehiclelist:[],
 				carrylist:[],
 				name:'',
@@ -97,12 +107,16 @@
 				allprice:'',
 				mallprice:'',
 				sendprice:'',
-				carryprice:''
+				carryprice:'',
+				remark:'',
+				requireCarry:1,
+				floor:''
 			}
 		},
 		onLoad(opt) {
 			this.name=opt.name;
-			console.log(wx.getStorageSync('buildinf'))
+			this.buildinf=wx.getStorageSync('buildinf');
+			wx.setStorageSync('buildinf','');
 			this.req_vehiclelist();
 			this.req_carrylist();
 			this.req_getdefaddress();
@@ -110,7 +124,16 @@
 				this.mallprice+=item.price;
 			})
 		},
+		onShow(){
+			if(wx.getStorageSync('adress')){
+				this.adress=wx.getStorageSync('adress');
+				wx.setStorageSync('adress','');
+			}
+		},
 		methods: {
+			cg_requireCarry(type){
+				this.requireCarry=type;
+			},
 			getallprice(){
 				this.allprice=(Number(this.mallprice)+Number(this.sendprice)+Number(this.carryprice)).toFixed(2);
 			},
@@ -126,7 +149,7 @@
 			},
 			go_mine_adress(){
 				wx.navigateTo({
-					url: '../mine/adress'
+					url: '../mine/adress?src=pay'
 				})
 			},
 			timeChange: function (e) {
@@ -140,20 +163,33 @@
 				this.d=date[2];
 			},
 			req_unifiedOrder(){
+				if(!this.date){
+					ut.totast('请选择日期');
+					return;
+				}
+				if(!this.time){
+					ut.totast('请选择时间');
+					return;
+				}
+				if(!this.floor){
+					ut.totast('请选择楼层');
+					return;
+				}
 				ut.request({
 					data: {
 						 "addressId": this.adress.id,
 						  "carryTypeId": this.carrylist[this.carryindex].id,
 							"expressTypeId": this.vehiclelist[this.vehicleindex].id,
 							"expressTime": this.date+this.time,
-							"floor": 8,//楼层
+							"floor": this.floor,//楼层
 							"goodsId": this.buildinf[0].goodsId,
 							"number": this.buildinf[0].num,
-							"remark": "string",
-							"requireCarry": 1,//是否搬运1是2否
+							"remark": this.remark,
+							"requireCarry": this.requireCarry,//是否搬运1是2否
 							"specId": this.buildinf[0].id
 					},
-					url: "goods/order/unifiedOrder"
+					url: "goods/order/unifiedOrder",
+					c:true
 				}).then(data=>{
 					ut.totast('下单成功')
 				})
@@ -188,6 +224,49 @@
 </script>
 
 <style>
+	.floor,.louceng{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 60px;
+		font-size: 24px;
+	}
+	.louceng input{
+		border: 1px solid #999999;
+		border-radius: 10px;
+	}
+	.floor view{
+		display: flex;
+	}
+	.floor view view{
+		margin-left: 30px;
+		
+	}
+	.floor view view:nth-child(1){
+		width:30px;
+		height: 30px;
+		border-radius: 15px;
+		padding: 5px;
+		border: 1px solid #999999;
+	}
+	.floor view view.active{
+		background: #FEC200;
+	}
+
+	.carry{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		height: 60px;
+		font-size: 24px;
+	}
+	.carry image,.carry span{
+		margin-left: 30px;
+	}
+	.carry image{
+		width: 40px;
+		height: 40px;
+	}
 	.adressli{padding: 30px;font-size: 26px;border-bottom: 1px solid #E5E5E5;line-height: 26px;}
 	.adressli div>div{display: inline-block;}
 	.adressli>div:nth-child(1){
@@ -279,6 +358,7 @@
 		background: white;
 		line-height: 100px;
 		font-size: 24px;
+		z-index: 10;
 	}
 	.apply>span:nth-child(1){
 		flex: 1;
@@ -344,6 +424,7 @@
 		border:1px solid #C9C9C9;
 		border-radius: 10px;
 		margin-bottom: 30px;
+		font-size: 24px;
 	}
 	
 	.bgheight{

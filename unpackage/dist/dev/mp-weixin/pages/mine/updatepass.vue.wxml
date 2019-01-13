@@ -2,17 +2,17 @@
   <view class="_view data-v-075c5aa7 updatecont">
     <view class="_div data-v-075c5aa7">当前密码：</view>
     <view class="_div data-v-075c5aa7">
-      <input type="password" value="{{opsd}}" bindinput="handleProxy" data-eventid="{{'is4-0'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
+      <input type="password" value="{{opsd}}" bindinput="handleProxy" data-eventid="{{'kdD-0'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
     </view>
     <view class="_div data-v-075c5aa7">新密码：</view>
     <view class="_div data-v-075c5aa7">
-      <input type="password" value="{{npsd}}" bindinput="handleProxy" data-eventid="{{'G55-1'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
+      <input type="password" value="{{npsd}}" bindinput="handleProxy" data-eventid="{{'YvP-1'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
     </view>
     <view class="_div data-v-075c5aa7">确认密码：</view>
     <view class="_div data-v-075c5aa7">
-      <input type="password" value="{{nqpsd}}" bindinput="handleProxy" data-eventid="{{'7ry-2'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
+      <input type="password" value="{{nqpsd}}" bindinput="handleProxy" data-eventid="{{'Cfl-2'}}" data-comkey="{{$k}}" class="_input data-v-075c5aa7" />
     </view>
     <view class="_div data-v-075c5aa7">长度8~32位须包含数字字母符号至少2种元素</view>
-    <view class="_div data-v-075c5aa7 submit" bindtap="handleProxy" data-eventid="{{'lNN-3'}}" data-comkey="{{$k}}">确定</view>
+    <view class="_div data-v-075c5aa7 submit" bindtap="handleProxy" data-eventid="{{'jCt-3'}}" data-comkey="{{$k}}">确定</view>
   </view>
 </template>

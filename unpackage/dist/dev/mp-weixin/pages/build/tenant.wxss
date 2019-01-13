@@ -18,7 +18,7 @@
   background: #FEC200;
   color: white;
   border-radius: 20rpx;
-  font-size: 33rpx;
+  font-size: 24rpx;
   margin-left: 30rpx;
   margin-bottom: -20rpx;
   text-align: center;

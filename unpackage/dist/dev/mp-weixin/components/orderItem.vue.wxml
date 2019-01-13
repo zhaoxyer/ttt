@@ -24,12 +24,12 @@
       <view class="_div data-v-0cc018c8 order-time">下单时间：{{data.createTime}}</view>
       <view class="_div data-v-0cc018c8 order-options-wrap">
         <view class="_div data-v-0cc018c8 order-options">
-          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button border-collapse" data-eventid="{{'Ge2-0'}}" data-comkey="{{$k}}">取消订单</button>
-          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'LwU-1'}}" data-comkey="{{$k}}">去支付</button>
+          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button border-collapse" data-eventid="{{'Bh9-0'}}" data-comkey="{{$k}}">取消订单</button>
+          <button bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'bTh-1'}}" data-comkey="{{$k}}">去支付</button>
         </view>
       </view>
     </view>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'WFg-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'S6X-1'],$root, $slotdefault:'data-v-0cc018c8-default-S6X-1'}}" is="2ff378d5"></template>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'aBt-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'ZTO-3'],$root, $slotdefault:'data-v-0cc018c8-default-ZTO-3'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'AuP-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'oxB-1'],$root, $slotdefault:'data-v-0cc018c8-default-oxB-1'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'1DS-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Nj4-3'],$root, $slotdefault:'data-v-0cc018c8-default-Nj4-3'}}" is="2ff378d5"></template>
   </view>
 </template>

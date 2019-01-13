@@ -60,7 +60,7 @@
 	export default {
 		data() {
 			return {
-				serverinf:wx.getStorageSync('serverinf'),
+				serverinf:{},
 				date:'',
 				time:'',
 				y:"",
@@ -71,11 +71,19 @@
 		},
 		onLoad() {
 			this.req_getdefaddress();
+			this.serverinf=wx.getStorageSync('serverinf');
+			wx.setStorageSync('serverinf','');
+		},
+		onShow(){
+			if(wx.getStorageSync('adress')){
+				this.adress=wx.getStorageSync('adress');
+				wx.setStorageSync('adress','');
+			}
 		},
 		methods: {
 			go_mine_adress(){
 				wx.navigateTo({
-					url: '../mine/adress'
+					url: '../mine/adress?src=pay'
 				})
 			},
 			req_unifiedOrder(){

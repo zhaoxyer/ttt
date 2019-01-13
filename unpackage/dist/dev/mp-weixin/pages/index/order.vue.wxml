@@ -3,7 +3,7 @@
     <view class="_div data-v-476c9de2 userinf">
       <view class="_h1 data-v-476c9de2">技术服务类</view>
       <view class="_div data-v-476c9de2 server">
-        <view bindtap="handleProxy" data-eventid="{{'v0k-0'}}" data-comkey="{{$k}}" class="_div data-v-476c9de2">
+        <view bindtap="handleProxy" data-eventid="{{'tVg-0'}}" data-comkey="{{$k}}" class="_div data-v-476c9de2">
           <image src="../../static/order/ordertype0.jpg" mode="widthFix" class="_image data-v-476c9de2"></image>
           <view class="_p data-v-476c9de2">查看订单</view>
         </view>
