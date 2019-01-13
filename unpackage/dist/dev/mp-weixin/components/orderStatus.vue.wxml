@@ -1,0 +1,14 @@
+<template name="6b200df4">
+  <view data-slot="action-sheet-main" class="_div data-v-3016ae8a order-status-wrap">
+    <view class="_div data-v-3016ae8a order-status-item">
+      <view class="_div data-v-3016ae8a order-status-time">2018-08-10 13:50</view>
+      <image class="_image data-v-3016ae8a order-status-icon" src="../../static/allOrder/order-status-icon.png"></image>
+      <view class="_div data-v-3016ae8a order-status-text">木豆客服已派单，木豆客服已派单，木豆客服已派单，木豆客服已派单</view>
+    </view>
+    <view class="_div data-v-3016ae8a order-status-item">
+      <view class="_div data-v-3016ae8a order-status-time">2018-08-10 13:50</view>
+      <image class="_image data-v-3016ae8a order-status-icon" src="../../static/allOrder/order-status-icon.png"></image>
+      <view class="_div data-v-3016ae8a order-status-text order-status-last">木豆客服已派单，木豆客服已派单，木豆客服已派单，木豆客服已派单</view>
+    </view>
+  </view>
+</template>

@@ -2,10 +2,10 @@
 	<div>
 		<div class='adress'>
 			<div class="adressli" @click="go_mine_adress">
-				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：张先生</div>
-				<div>联系方式：1863599999</div>
+				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{adress.name}}</div>
+				<div>联系方式：{{adress.phone}}</div>
 				<div class="adressinf">
-					<div><div><image src="../../static/index/blackadress.png"/></div><span>收货地址：北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区</span></div>
+					<div><div><image src="../../static/index/blackadress.png"/></div><span>收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</span></div>
 					<image src="../../static/right.jpg"/>
 				</div>
 			</div>
@@ -70,7 +70,7 @@
 			}
 		},
 		onLoad() {
-
+			this.req_getdefaddress();
 		},
 		methods: {
 			go_mine_adress(){
@@ -109,7 +109,14 @@
 				this.y=date[0];
 				this.m=date[1];
 				this.d=date[2];
-			}	
+			},
+			req_getdefaddress(){
+				ut.request({
+					url: "address/getdefaddress"
+				}).then(data=>{
+					this.adress=data;
+				})
+			}
 		}
 	}
 </script>

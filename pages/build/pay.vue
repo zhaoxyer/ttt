@@ -2,10 +2,10 @@
 	<div>
 		<div class='adress'>
 			<div class="adressli" @click="go_mine_adress">
-				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：张先生</div>
-				<div>联系方式：1863599999</div>
+				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{adress.name}}</div>
+				<div>联系方式：{{adress.phone}}</div>
 				<div class="adressinf">
-					<div><div></div><span>收货地址：北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区北京市通州区春元街撒娇就小区</span></div>
+					<div><div></div><span>收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</span></div>
 					<image src="../../static/right.jpg"/>
 				</div>
 			</div>
@@ -48,8 +48,13 @@
 			</p>
 		</div>
 		<div class="payinf sendtype">
-			<h1>配送时间选择</h1>
-			<p v-for="(list,index) in vehiclelist" :key='index'><span class='active'>{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
+			<h1>配送方式</h1>
+			<p v-for="(list,index) in vehiclelist" :key='index' @click='cg_vehicleindex(index)'><span :class="{'active':index==vehicleindex}">{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
+		</div>
+		<div class="payinf sendtype">
+			<h1>是否搬运上楼</h1>
+			
+			<p v-for="(list,index) in carrylist" :key='index' @click='cg_carryindex(index)'><span :class="{'active':index==carryindex}">{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
 		</div>
 		<div class="payinf remake">
 			<h1>订单备注</h1>
@@ -60,14 +65,14 @@
 		<div class="payinf mingxi">
 			<h1>价格明细</h1>
 			<div class='mingxiinf'>
-				<p>货款：100</p>
-				<p>配送费：100</p>
-				<p>搬运费：100</p>
+				<p>货款：{{mallprice}}</p>
+				<p>配送费：{{sendprice}}</p>
+				<p>搬运费：{{carryprice}}</p>
 			</div>
 		</div>
 		<div class="bgheight"></div>
-		<div class="apply" @click='req_unifiedOrder'>
-			<span>合计：<span>111111</span></span><span>确认支付</span>
+		<div class="apply" >
+			<span>合计：<span>{{allprice}}</span></span><span @click='req_unifiedOrder'>确认支付</span>
 		</div>					
 	</div>
 </template>
@@ -79,21 +84,46 @@
 			return {
 				buildinf:wx.getStorageSync('buildinf'),
 				vehiclelist:[],
+				carrylist:[],
 				name:'',
 				date:'',
 				time:'',
 				y:"",
 				m:'',
 				d:'',
-				adress:{}
+				adress:{},
+				vehicleindex:0,
+				carryindex:0,
+				allprice:'',
+				mallprice:'',
+				sendprice:'',
+				carryprice:''
 			}
 		},
 		onLoad(opt) {
 			this.name=opt.name;
 			console.log(wx.getStorageSync('buildinf'))
 			this.req_vehiclelist();
+			this.req_carrylist();
+			this.req_getdefaddress();
+			this.buildinf.forEach(item=>{
+				this.mallprice+=item.price;
+			})
 		},
 		methods: {
+			getallprice(){
+				this.allprice=(Number(this.mallprice)+Number(this.sendprice)+Number(this.carryprice)).toFixed(2);
+			},
+			cg_vehicleindex(index){
+				this.vehicleindex=index;
+				this.sendprice=this.vehiclelist[index].startPrice;
+				this.getallprice();
+			},
+			cg_carryindex(index){
+				this.carryindex=index;
+				this.carryprice=this.carrylist[index].startPrice;
+				this.getallprice();
+			},
 			go_mine_adress(){
 				wx.navigateTo({
 					url: '../mine/adress'
@@ -112,10 +142,16 @@
 			req_unifiedOrder(){
 				ut.request({
 					data: {
-						 "addressId": 10,
-						  "makeTime": "2018.12.12",
-						  "remark": "快点",
-						  "serviceId": 2
+						 "addressId": this.adress.id,
+						  "carryTypeId": this.carrylist[this.carryindex].id,
+							"expressTypeId": this.vehiclelist[this.vehicleindex].id,
+							"expressTime": this.date+this.time,
+							"floor": 8,//楼层
+							"goodsId": this.buildinf[0].goodsId,
+							"number": this.buildinf[0].num,
+							"remark": "string",
+							"requireCarry": 1,//是否搬运1是2否
+							"specId": this.buildinf[0].id
 					},
 					url: "goods/order/unifiedOrder"
 				}).then(data=>{
@@ -127,8 +163,26 @@
 					url: "order/vehiclelist"
 				}).then(data=>{
 					this.vehiclelist=data;
+					this.sendprice=this.vehiclelist[0].startPrice;
+					this.getallprice();
 				})
-			}			
+			},
+			req_carrylist(){
+				ut.request({
+					url: "order/carrylist"
+				}).then(data=>{
+					this.carrylist=data;
+					this.carryprice=this.carrylist[0].startPrice;
+					this.getallprice();
+				})
+			},		
+			req_getdefaddress(){
+				ut.request({
+					url: "address/getdefaddress"
+				}).then(data=>{
+					this.adress=data;
+				})
+			}
 		}
 	}
 </script>
