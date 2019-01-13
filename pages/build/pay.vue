@@ -49,7 +49,7 @@
 		</div>
 		<div class="payinf sendtype">
 			<h1>配送时间选择</h1>
-			<p v-for="(list,index) in vehiclelist" :key='index'><span class='active'>{{list.name}}</span><span>起步价￥15</span></p>
+			<p v-for="(list,index) in vehiclelist" :key='index'><span class='active'>{{list.name}}</span><span>起步价￥{{list.startPrice}}</span></p>
 		</div>
 		<div class="payinf remake">
 			<h1>订单备注</h1>
@@ -91,6 +91,7 @@
 		onLoad(opt) {
 			this.name=opt.name;
 			console.log(wx.getStorageSync('buildinf'))
+			this.req_vehiclelist();
 		},
 		methods: {
 			go_mine_adress(){
@@ -123,12 +124,6 @@
 			},
 			req_vehiclelist(){
 				ut.request({
-					data: {
-						"addressId": 10,
-							"makeTime": "2018.12.12",
-							"remark": "快点",
-							"serviceId": 2
-					},
 					url: "order/vehiclelist"
 				}).then(data=>{
 					this.vehiclelist=data;
