@@ -7,7 +7,7 @@
 		</swiper>
 		<div class="servertype">
 			<div class="serverinf">
-				<div><image src="../../static/home/share.png"/><span>分享</span></div><div><span>质保期：</span><span>{{serverinf.qualityGuaPeriod}}天</span></div>
+				<div><button type="primary" bindtap="onShareAppMessage" open-type="share" class="shareFriend"></button><image src="../../static/home/share.png"/><span>分享</span></div><div><span>质保期：</span><span>{{serverinf.qualityGuaPeriod}}天</span></div>
 			</div>
 			<div class="typelist">
 				<div v-for="(list,index) in typelist" :key="index" :class="{'active':typeindex==index}" @click="cg_typeindex(index)">
@@ -61,6 +61,18 @@
 			this.req_detail(opt._id);
 		},
 		methods: {
+			onShareAppMessage() {
+				var that = this;
+				return {
+					title:'',
+					success: (res) => {
+						console.log("转发成功", res);
+					},
+					fail: (res) => {
+						console.log("转发失败", res);
+					}
+				}
+			},
 			back_index_build(){
 				wx.reLaunch({
 					url: '../index/build'
@@ -73,9 +85,15 @@
 			},
 			go_home_pay(){
 				wx.setStorageSync('serverinf',this.serverinf)
-				wx.navigateTo({
-					url: '../home/pay'
-				})
+				if(wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../home/pay'
+					})
+				}else{
+					wx.navigateTo({
+						url: '../mine/register'
+					})
+				}
 			},
 			req_detail(id){
 				ut.request({

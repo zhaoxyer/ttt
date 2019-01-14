@@ -3,13 +3,13 @@
     <view class="_div data-v-339102a4 cancel-order-condition">
       <view class="_div data-v-339102a4 cancel-order-title"> 取消原因 </view>
       <view class="_div data-v-339102a4 cancel-order-check-wrap">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'5eR-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == item.id ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'8l9-0-'+index}}" data-comkey="{{$k}}" wx:for="{{reason}}" wx:for-index="index" wx:for-item="item" class="_div data-v-339102a4 {{chooseData == item.id ? 'cancel-order-checked' : 'cancel-order-check-group'}}">
           <view class="_div data-v-339102a4 check-box"></view>
           <view class="_div data-v-339102a4 check-label">{{item.context}}</view>
         </view>
       </view>
-      <textarea value="{{detail}}" bindinput="handleProxy" class="_textarea data-v-339102a4 cancel-order-des" data-eventid="{{'cjR-1'}}" data-comkey="{{$k}}" />
+      <textarea value="{{detail}}" bindinput="handleProxy" class="_textarea data-v-339102a4 cancel-order-des" data-eventid="{{'8aR-1'}}" data-comkey="{{$k}}" />
     </view>
-    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'jcK-2'}}" data-comkey="{{$k}}">确认取消</button>
+    <button class="_button data-v-339102a4 cancel-button" bindtap="handleProxy" data-eventid="{{'UXd-2'}}" data-comkey="{{$k}}">确认取消</button>
   </view>
 </template>

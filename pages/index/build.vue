@@ -1,7 +1,14 @@
 <template>
 	<view>
 		<div class="header">
-			<div class="adress"><image src="../../static/index/blackadress.png" ></image><span>通州</span></div>
+			<div class="adress">
+				<picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
+								<view class="picker">
+									{{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}}
+								</view>
+				</picker>
+				<image src="../../static/index/blackadress.png" ></image><span>{{cityName||'朝阳'}}</span>
+			</div>
 			<div class='serch' @click="go_build_serch"><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
 			<div class="tel"><image src="../../static/index/blacktel.png" @click="call"></image></div>
 		</div>
@@ -69,7 +76,10 @@
 				circular: true,
 				newlist: [],
 				recomlist: [],
-				classlist:[]
+				classlist:[],
+				provinceName:'',
+				countyAreaName:'',
+				cityName:''
 			}
 		},
 		onLoad() {
@@ -79,6 +89,11 @@
 			this.req_recom();
 		},
 		methods: {
+			bindRegionChange: function (e) {
+				this.provinceName=e.target.value[0];
+				this.countyAreaName=e.target.value[1];
+				this.cityName=e.target.value[2];
+			},
 			call(){
 				ut.call();
 			},
@@ -168,6 +183,7 @@
 		font-size: 30px;
 		line-height: 70px;
 		padding: 0 28px 0 0;
+		position: relative;
 	}
 	.header .adress image{
 		width: 20px;

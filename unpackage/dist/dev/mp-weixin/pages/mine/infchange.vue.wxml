@@ -1,17 +1,17 @@
 <template name="03e2a00c">
   <view class="_view data-v-afd3bcd8">
-    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'X24-0'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'CyD-0'}}" data-comkey="{{$k}}">
       <label class="_span data-v-afd3bcd8">个人信息</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
-    <view class="_div data-v-afd3bcd8 columlist">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'LBM-1'}}" data-comkey="{{$k}}">
       <label class="_span data-v-afd3bcd8">换绑手机</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
-    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'fqj-1'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-afd3bcd8 columlist" bindtap="handleProxy" data-eventid="{{'ACj-2'}}" data-comkey="{{$k}}">
       <label class="_span data-v-afd3bcd8">登录密码</label>
       <image src="../../static/right.jpg" class="_image data-v-afd3bcd8"></image>
     </view>
-    <view class="_div data-v-afd3bcd8 outinf" bindtap="handleProxy" data-eventid="{{'Dz8-2'}}" data-comkey="{{$k}}">退出账户</view>
+    <view class="_div data-v-afd3bcd8 outinf" bindtap="handleProxy" data-eventid="{{'sdJ-3'}}" data-comkey="{{$k}}">退出账户</view>
   </view>
 </template>

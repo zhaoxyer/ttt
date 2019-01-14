@@ -4,13 +4,14 @@
 			<div class="otherinf">
 				<div class="share">
 					<div>
+						<button type="primary" bindtap="onShareAppMessage" open-type="share" class="shareFriend"></button>
 						<image src="../../static/home/share.png"></image>
 						<div>分享</div>
 					</div>
-					<div>
+					<!-- <div>
 						<image src="../../static/home/share.png"></image>
 						<div>收藏</div>
-					</div>
+					</div> -->
 					
 				</div>
 				<div class="mallname">

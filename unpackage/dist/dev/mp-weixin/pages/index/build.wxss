@@ -49,6 +49,7 @@
   font-size: 30rpx;
   line-height: 70rpx;
   padding: 0 28rpx 0 0;
+  position: relative;
 }
 .header .adress image {
   width: 20rpx;

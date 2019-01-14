@@ -48,5 +48,6 @@
 		 background-repeat:no-repeat;
 		 background-size:100% 100%;
 	}
-	.regionpicker{position: absolute;background: transparent;color: transparent;width: 100%;z-index: 3;}
+	.regionpicker,.centerbutton,.shareFriend{position: absolute;background: transparent!important;color: transparent!important;width: 100%;z-index: 3;height: 100%;}
+	.shareFriend:after{border:none;}
 </style>

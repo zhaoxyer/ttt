@@ -1,5 +1,6 @@
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <import src="/components/orderItem.vue.wxml" />
+<import src="/components/goodsOrderItem.vue.wxml" />
 <import src="/components/tmodal.vue.wxml" />
 <import src="/components/orderStatus.vue.wxml" />
 <import src="/components/cancelModal.vue.wxml" />
@@ -51,9 +52,27 @@
 <import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
-<template name="data-v-0cc018c8-default-RVV-1">
-  <template data="{{...$root['0'], ...$root[$kk+'7sO-0'],$root}}" is="6b200df4"></template>
+<template name="data-v-4995ddc0-default-XFP-1">
+  <template data="{{...$root['0'], ...$root[$kk+'nD5-0'],$root}}" is="6b200df4"></template>
 </template>
-<template name="data-v-0cc018c8-default-1UJ-3">
-  <template bindreload="handleProxy" data-eventid="{{'qMI-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'C32-2'],$root}}" is="6962e3e7"></template>
+<template name="data-v-4995ddc0-default-qmm-3">
+  <template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'PFS-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'TLr-2'],$root}}" is="6962e3e7"></template>
+</template>
+<template name="data-v-0cc018c8-default-r78-1">
+  <template data="{{...$root['0'], ...$root[$kk+'V0k-0'],$root}}" is="6b200df4"></template>
+</template>
+<template name="data-v-0cc018c8-default-uuv-3">
+  <template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'lTn-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'s62-2'],$root}}" is="6962e3e7"></template>
+</template>
+<template name="data-v-4995ddc0-default-ADl-1">
+  <template data="{{...$root['0'], ...$root[$kk+'J6P-0'],$root}}" is="6b200df4"></template>
+</template>
+<template name="data-v-4995ddc0-default-Akb-3">
+  <template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'1cL-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'BSM-2'],$root}}" is="6962e3e7"></template>
+</template>
+<template name="data-v-0cc018c8-default-MTD-1">
+  <template data="{{...$root['0'], ...$root[$kk+'YRH-0'],$root}}" is="6b200df4"></template>
+</template>
+<template name="data-v-0cc018c8-default-L2a-3">
+  <template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'roN-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Dye-2'],$root}}" is="6962e3e7"></template>
 </template>

@@ -14,7 +14,7 @@
 		<div class="payinf">
 			<h1>{{serverinf.name}}</h1>
 			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
+				<image :src="static+serverinf.picture"></image>
 				<div><span>{{serverinf.name}}</span><span>￥{{serverinf.bookPrice}}</span></div>
 			</div>
 		</div>
@@ -60,6 +60,7 @@
 	export default {
 		data() {
 			return {
+				static:'',
 				serverinf:{},
 				date:'',
 				time:'',
@@ -70,6 +71,7 @@
 			}
 		},
 		onLoad() {
+			this.static=ut.static;
 			this.req_getdefaddress();
 			this.serverinf=wx.getStorageSync('serverinf');
 			console.log(JSON.stringify(this.serverinf))

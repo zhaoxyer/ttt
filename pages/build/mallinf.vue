@@ -71,6 +71,18 @@
 			this.req_detail(opt._id)
 		},
 		methods: {
+			onShareAppMessage() {
+				var that = this;
+				return {
+					title:'',
+					success: (res) => {
+						console.log("转发成功", res);
+					},
+					fail: (res) => {
+						console.log("转发失败", res);
+					}
+				}
+			},
 			cg_type(type){
 				this.type=type;
 				this.mallinf =this.guigetype[type]
@@ -82,7 +94,12 @@
 				this.pop=!this.pop;
 			},
 			go_build_pay(){
-				console.log(this.barlist)
+				if(!wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../mine/register'
+					})
+					return
+				}
 				let barlist=[];
 				if(this.barlist.length){
 					barlist=this.barlist;
@@ -150,6 +167,12 @@
 				return parm;
 			},
 			req_cartadd(){
+				if(!wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../mine/register'
+					})
+					return
+				}
 				if(!this.barlist.length){
 					ut.totast('请先选择商品');
 					return;
