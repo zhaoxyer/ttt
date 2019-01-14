@@ -18,7 +18,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="order-time">下单时间：{{data.createTime}}</div>
+		<div class="goods-info">
+			<div class="order-time">下单时间：{{data.createTime}}</div>
+			<div class="order-time">合计: {{data.price*data.num}}</div>
+		</div>
 		<div class="order-options-wrap">
 			<div class="order-options">
 				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
@@ -98,7 +101,6 @@ export default {
 		flex: 1;
 	}
 	.order-status {
-		width: 120px;
 		text-align: right;
 		color: #fec200;
 	}

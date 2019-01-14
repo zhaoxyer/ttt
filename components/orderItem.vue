@@ -18,11 +18,15 @@
 				</div> -->
 			</div>
 		</div>
-		<div class="order-time">下单时间：{{data.createTime}}</div>
+		<div class="goods-info">
+			<div class="order-time">下单时间：{{data.createTime}}</div>
+			<div class="order-time">合计: {{data.price}}</div>
+		</div>
 		<div class="order-options-wrap">
 			<div class="order-options">
 				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
 				<button v-if="data.status == 1" @click="go_next" class="order-button">去支付</button>
+				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
 			</div>
 		</div>
 	  </div>
@@ -35,6 +39,9 @@
 			<cancel-modal cancelUrl="service/order/cancelOrder" @reload="reloadData" :orderId="data.id" :reason="reason"></cancel-modal>
 		</t-modal>
 		
+		<t-modal  :visibile="confirm_order_visibile" @changeVisible = "changeConfirmModal">
+			<confirm-plan @reload="reloadData" :orderId="data.id"></confirm-plan>
+		</t-modal>
 	</div>
 </template>
 
@@ -42,20 +49,24 @@
 import TModal from './tmodal.vue';
 import OrderStatus from './orderStatus.vue';
 import CancelModal from './cancelModal.vue';
+import ConfirmPlan from './confirmModal.vue';
 import ut from '../utils/index.js';
 export default {
-  props: ["data","reason","reload"],
+  props: ["data","reload","type"],
   data() {
 	return {
 		order_status_visibile: false,
 		cancel_order_visibile: false,
-		static:ut.static
+		confirm_order_visibile: false,
+		static:ut.static,
+		reason: []
 	}  
   },
   components: {
   	TModal,
-		OrderStatus,
-		CancelModal
+	OrderStatus,
+	CancelModal,
+	ConfirmPlan
   },
   methods: {
 		go_next() {
@@ -66,14 +77,48 @@ export default {
 		reloadData() {
 			this.$emit('reload');
 		},
+		getConfirmPlan() {
+			ut.request({
+				data: {
+					orderId: this.data.id
+				},
+				method: 'get',
+				url: "service/order/price"
+			}).then(data=>{
+				console.log(data)
+				//this.cancel_reason = data;
+			})
+		},
+		getReasonType() {
+			ut.request({
+				data: {
+					type: this.type
+				},
+				method: 'get',
+				url: "service/order/cancelReason"
+			}).then(data=>{
+				this.reason = data;
+			})
+		},
 		changeOrderStatusModal(status) {
 			if(typeof status != 'undefined'){
 				this.order_status_visibile = status;
 			}
 		},
 		changeCancelModal(status) {
+			if(status) {
+				this.getReasonType();
+			}
 			if(typeof status != 'undefined'){
 				this.cancel_order_visibile = status;
+			}
+		},
+		changeConfirmModal(status) {
+			if(status) {
+				this.getConfirmPlan()
+			}
+			if(typeof status != 'undefined'){
+				this.confirm_order_visibile = status;
 			}
 		}
   }
@@ -98,7 +143,6 @@ export default {
 		flex: 1;
 	}
 	.order-status {
-		width: 120px;
 		text-align: right;
 		color: #fec200;
 	}

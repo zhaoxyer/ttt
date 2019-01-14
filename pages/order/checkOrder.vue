@@ -8,7 +8,7 @@
 		</div>
 		<div v-if="order_list.length>0">
 			<div v-for="(item, index) in order_list" :key="index">
-				<order-item :data="item" :reason="cancel_reason" @reload="init"></order-item>
+				<order-item :type="type" :data="item" :reason="cancel_reason" @reload="init"></order-item>
 			</div>
 		</div>
 	</div>
@@ -46,9 +46,6 @@
 		methods: {
 			init() {
 				this.getOrderList();
-				if(this.type == 1) {
-					this.getReasonType();
-				}
 			},
 			getOrderList() {
 				ut.request({
@@ -60,18 +57,6 @@
 				}).then(data=>{
 					console.log(data)
 					this.order_list = data;
-				})
-			},
-			getReasonType() {
-				ut.request({
-					data: {
-						type: 1
-					},
-					method: 'get',
-					url: "service/order/cancelReason"
-				}).then(data=>{
-					console.log(data)
-					this.cancel_reason = data;
 				})
 			}
 		}
