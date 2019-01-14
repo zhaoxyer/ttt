@@ -1,8 +1,15 @@
 <template>
 	<view>
 		<div class="header">
-			<div class="adress"><image src="../../static/index/whiteadress.jpg" ></image><span>通州</span></div>
-			<div class='serch'><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
+			<div class="adress">
+				<picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
+								<view class="picker">
+									{{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}}
+								</view>
+				</picker>
+				<image src="../../static/index/whiteadress.jpg" ></image><span>{{cityName||'朝阳'}}</span>
+			</div>
+			<div class='serch' @click="go_home_serch"><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
 			<div class="tel"><image src="../../static/index/whitetel.jpg" @click="call"></image></div>
 		</div>
 		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
@@ -54,7 +61,10 @@
 				circular: true,
 				newlist: [],
 				recomlist: [],
-				classlist:[]
+				classlist:[],
+				provinceName:'',
+				countyAreaName:'',
+				cityName:''
 			}
 		},
 		onLoad() {
@@ -64,6 +74,16 @@
 			this.req_recom();
 		},
 		methods: {
+			bindRegionChange: function (e) {
+				this.provinceName=e.target.value[0];
+				this.countyAreaName=e.target.value[1];
+				this.cityName=e.target.value[2];
+			},
+			go_home_serch(){
+				wx.navigateTo({
+					url: '../home/serch'
+				})
+			},
 			go_home_server(_id){
 				console.log(_id)
 				wx.navigateTo({
@@ -117,6 +137,30 @@
 				}).then(data=>{
 					this.recomlist=data
 				})
+			},
+			//打开授权
+			opensetting(){
+				this.wxgetlocation()
+			},
+			wxgetlocation() {
+				wx.authorize({
+				scope: "scope.userLocation",
+				success:function(){
+					wx.getLocation({
+						type: 'wgs84',
+						success: function(res) {
+							console.log(res)
+							const latitude = res.latitude;
+							const longitude = res.longitude;
+							const speed = res.speed;
+							const accuracy = res.accuracy;
+						}
+					})
+				},
+				fail(){
+					ut.totast('获取地址失败');
+				}
+			})
 			}
 		}
 	}
@@ -159,6 +203,7 @@
 		font-size: 30px;
 		line-height: 70px;
 		padding: 0 28px 0 0;
+		position: relative;
 	}
 	.header .adress image{
 		width: 20px;

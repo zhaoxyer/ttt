@@ -3,7 +3,7 @@
 		<div class="columlist" @click="go_mine_userinf">
 			<span>个人信息</span><image src="../../static/right.jpg"></image>
 		</div>
-		<div class="columlist">
+		<div class="columlist" @click="go_mine_updatephone">
 			<span>换绑手机</span><image src="../../static/right.jpg"></image>
 		</div>
 		<div class="columlist"  @click="go_mine_updatepass">
@@ -42,6 +42,11 @@
 			go_mine_updatepass(){
 				wx.navigateTo({
 					url: '../mine/updatepass'
+				})
+			},
+			go_mine_updatephone(){
+				wx.navigateTo({
+					url: '../mine/updatephone'
 				})
 			},
 			loginout(){

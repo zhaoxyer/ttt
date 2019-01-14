@@ -11,16 +11,10 @@
   display: -webkit-flex;
   display: flex;
   border: 1rpx solid #c8c8c8;
-  color: #CCCCCC;
   font-size: 24rpx;
   -webkit-box-align: center;
   -webkit-align-items: center;
   align-items: center;
-}
-.serch image,
-.serch ._span {
-  display: inline-block;
-  vertical-align: top;
 }
 ._nav {
   margin-bottom: 42rpx;
@@ -42,6 +36,11 @@
   height: 24rpx;
   margin-left: 30rpx;
   margin-right: 30rpx;
+}
+.serch ._input {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
 }
 .section {
   display: -webkit-box;
@@ -152,4 +151,28 @@
 }
 .mallinf .color {
   color: #FEC300;
+}
+.leftright {
+  padding: 0 20rpx;
+  margin-top: 27rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  justify-content: space-between;
+  padding: 0 20rpx;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.fuwu ._div {
+  width: 326rpx;
+  font-size: 22rpx;
+  text-align: center;
+  line-height: 50rpx;
+  margin-bottom: 30rpx;
+}
+.fuwu ._div image {
+  width: 100%;
+  height: 300rpx;
 }

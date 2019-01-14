@@ -1,7 +1,7 @@
 <template name="018944b8">
   <view class="_div data-v-43e65ad8">
     <view class="_div data-v-43e65ad8 adress">
-      <view class="_div data-v-43e65ad8 adressli" bindtap="handleProxy" data-eventid="{{'kfT-0'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-43e65ad8 adressli" bindtap="handleProxy" data-eventid="{{'ex4-0'}}" data-comkey="{{$k}}">
         <view class="_div data-v-43e65ad8">姓      名：{{adress.name}}</view>
         <view class="_div data-v-43e65ad8">联系方式：{{adress.phone}}</view>
         <view class="_div data-v-43e65ad8 adressinf">
@@ -35,7 +35,7 @@
       <view class="_h1 data-v-43e65ad8">配送时间选择</view>
       <view class="_p data-v-43e65ad8">
         <view class="_view data-v-43e65ad8">
-          <picker mode="date" value="日期" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'hB4-1'}}" data-comkey="{{$k}}">
+          <picker mode="date" value="日期" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'lBe-1'}}" data-comkey="{{$k}}">
             <view class="_view data-v-43e65ad8 picker"> 日期 </view>
           </picker>
           <label wx:if="{{!date}}" class="_span data-v-43e65ad8">请选择日期</label>
@@ -49,7 +49,7 @@
           </view>
         </view>
         <view class="_view data-v-43e65ad8">
-          <picker mode="time" value="时间" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'rtQ-2'}}" data-comkey="{{$k}}">
+          <picker mode="time" value="时间" custom-item="{{customItem}}" class="_picker data-v-43e65ad8 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'ZFz-2'}}" data-comkey="{{$k}}">
             <view class="_view data-v-43e65ad8 picker"> 时间 </view>
           </picker>
           <label class="_span data-v-43e65ad8"> {{time||'请选择时间'}} </label>
@@ -58,7 +58,7 @@
     </view>
     <view class="_div data-v-43e65ad8 payinf sendtype">
       <view class="_h1 data-v-43e65ad8">配送方式</view>
-      <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'y8M-3-'+index}}" data-comkey="{{$k}}" wx:for="{{vehiclelist}}" wx:for-index="index" wx:for-item="list" class="_p data-v-43e65ad8">
+      <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'TVM-3-'+index}}" data-comkey="{{$k}}" wx:for="{{vehiclelist}}" wx:for-index="index" wx:for-item="list" class="_p data-v-43e65ad8">
         <label class="_span data-v-43e65ad8 {{[index == vehicleindex ? 'active' : '']}}">{{list.name}}</label>
         <label class="_span data-v-43e65ad8">起步价￥{{list.startPrice}}</label>
       </view>
@@ -67,24 +67,24 @@
       <view class="_h1 data-v-43e65ad8">是否搬运上楼</view>
       <view class="_p data-v-43e65ad8 carry">
         <image src="../../static/mine/uncheck.jpg" wx:if="{{requireCarry==1}}" class="_image data-v-43e65ad8"></image>
-        <image src="../../static/mine/check.jpg" wx:else bindtap="handleProxy" data-eventid="{{'Ghg-4'}}" data-comkey="{{$k}}" class="_image data-v-43e65ad8"></image>
+        <image src="../../static/mine/check.jpg" wx:else bindtap="handleProxy" data-eventid="{{'JAb-4'}}" data-comkey="{{$k}}" class="_image data-v-43e65ad8"></image>
         <label class="_span data-v-43e65ad8">是</label>
         <image src="../../static/mine/uncheck.jpg" wx:if="{{requireCarry==2}}" class="_image data-v-43e65ad8"></image>
-        <image src="../../static/mine/check.jpg" wx:else bindtap="handleProxy" data-eventid="{{'B1q-5'}}" data-comkey="{{$k}}" class="_image data-v-43e65ad8"></image>
+        <image src="../../static/mine/check.jpg" wx:else bindtap="handleProxy" data-eventid="{{'Kfk-5'}}" data-comkey="{{$k}}" class="_image data-v-43e65ad8"></image>
         <label class="_span data-v-43e65ad8">否</label>
       </view>
       <view class="_p data-v-43e65ad8 floor">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'GSw-6-'+index}}" data-comkey="{{$k}}" wx:for="{{carrylist}}" wx:for-index="index" wx:for-item="list" class="_view data-v-43e65ad8">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'9Yh-6-'+index}}" data-comkey="{{$k}}" wx:for="{{carrylist}}" wx:for-index="index" wx:for-item="list" class="_view data-v-43e65ad8">
           <view class="_view data-v-43e65ad8 {{[index == carryindex ? 'active' : '']}}"></view>
           <view class="_view data-v-43e65ad8">{{list.name}}</view>
         </view>
       </view>
       <view class="_p data-v-43e65ad8 louceng" wx:if="{{carrylist.length}}">
-        <input placeholder="请输入楼层" value="{{floor}}" bindinput="handleProxy" type="number" data-eventid="{{'EOB-7'}}" data-comkey="{{$k}}" class="_input data-v-43e65ad8" />层 起步价{{carrylist[carryindex].startPrice}} </view>
+        <input placeholder="请输入楼层" value="{{floor}}" bindinput="handleProxy" type="number" data-eventid="{{'J8t-7'}}" data-comkey="{{$k}}" class="_input data-v-43e65ad8" />层 起步价{{carrylist[carryindex].startPrice}} </view>
     </view>
     <view class="_div data-v-43e65ad8 payinf remake">
       <view class="_h1 data-v-43e65ad8">订单备注</view>
-      <textarea value="{{remark}}" bindinput="handleProxy" data-eventid="{{'l7z-8'}}" data-comkey="{{$k}}" class="_textarea data-v-43e65ad8" />
+      <textarea value="{{remark}}" bindinput="handleProxy" data-eventid="{{'aOD-8'}}" data-comkey="{{$k}}" class="_textarea data-v-43e65ad8" />
     </view>
     <view class="_div data-v-43e65ad8 payinf mingxi">
       <view class="_h1 data-v-43e65ad8">价格明细</view>
@@ -99,7 +99,7 @@
       <label class="_span data-v-43e65ad8">合计：
         <label class="_span data-v-43e65ad8">{{allprice}}</label>
       </label>
-      <label bindtap="handleProxy" data-eventid="{{'al8-9'}}" data-comkey="{{$k}}" class="_span data-v-43e65ad8">确认支付</label>
+      <label bindtap="handleProxy" data-eventid="{{'x8z-9'}}" data-comkey="{{$k}}" class="_span data-v-43e65ad8">确认支付</label>
     </view>
   </view>
 </template>
