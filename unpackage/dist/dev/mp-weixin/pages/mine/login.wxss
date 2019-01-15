@@ -1,5 +1,10 @@
 @import "../../common/vendor.wxss";
 
+.tip {
+  line-height: 60rpx;
+  text-align: right;
+  font-size: 24rpx;
+}
 .setinput {
   padding: 0 70rpx;
 }

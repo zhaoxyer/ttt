@@ -229,6 +229,7 @@
 		line-height: 100px;
 		font-size: 24px;
 		margin-right: 20px;
+		position: relative;
 	}
 	.time p view:nth-child(1) span:nth-child(2n+1){
 		color: #FEC200;

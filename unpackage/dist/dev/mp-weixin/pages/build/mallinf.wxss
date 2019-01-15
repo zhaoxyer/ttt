@@ -5,6 +5,7 @@
   height: 300rpx;
 }
 .footer.data-v-07f02cfd {
+  background: white;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -207,4 +208,5 @@
 }
 .detail.data-v-07f02cfd {
   padding: 0 30rpx;
+  margin-bottom: 100rpx;
 }

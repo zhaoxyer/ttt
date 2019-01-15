@@ -27,6 +27,7 @@
 				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
 				<button v-if="data.status == 1" @click="go_next" class="order-button">去支付</button>
 				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
+				<button v-if="data.status == 8" @click="changeOrderCheck(true)" class="order-button">验收付款</button>
 			</div>
 		</div>
 	  </div>
@@ -40,7 +41,11 @@
 		</t-modal>
 		
 		<t-modal  :visibile="confirm_order_visibile" @changeVisible = "changeConfirmModal">
-			<confirm-plan @reload="reloadData" :orderId="data.id"></confirm-plan>
+			<confirm-plan @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></confirm-plan>
+		</t-modal>
+		
+		<t-modal  :visibile="confirm_ordercheck_visibile"    @changeVisible = "changeOrderCheck">
+			<order-check @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></order-check>
 		</t-modal>
 	</div>
 </template>
@@ -50,6 +55,7 @@ import TModal from './tmodal.vue';
 import OrderStatus from './orderStatus.vue';
 import CancelModal from './cancelModal.vue';
 import ConfirmPlan from './confirmModal.vue';
+import orderCheck from './orderCheck.vue';
 import ut from '../utils/index.js';
 export default {
   props: ["data","reload","type"],
@@ -58,15 +64,18 @@ export default {
 		order_status_visibile: false,
 		cancel_order_visibile: false,
 		confirm_order_visibile: false,
+		confirm_ordercheck_visibile:false,
 		static:ut.static,
-		reason: []
+		reason: [],
+		confirmPlanlist:[]
 	}  
   },
   components: {
   	TModal,
 	OrderStatus,
 	CancelModal,
-	ConfirmPlan
+	ConfirmPlan,
+	orderCheck
   },
   methods: {
 		go_next() {
@@ -86,6 +95,7 @@ export default {
 				url: "service/order/price"
 			}).then(data=>{
 				console.log(data)
+				this.confirmPlanlist=data;
 				//this.cancel_reason = data;
 			})
 		},
@@ -119,6 +129,14 @@ export default {
 			}
 			if(typeof status != 'undefined'){
 				this.confirm_order_visibile = status;
+			}
+		},
+		changeOrderCheck(status) {
+			if(status) {
+				this.getConfirmPlan()
+			}
+			if(typeof status != 'undefined'){
+				this.confirm_ordercheck_visibile = status;
 			}
 		}
   }

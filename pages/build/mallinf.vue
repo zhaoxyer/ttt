@@ -4,7 +4,7 @@
 			<image :src="static+mallinf.picture" class="mallimage"></image>
 		</div>
 		<div class="mallinf2">
-			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png"></image></div>
+			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png" v-if="iii"></image></div>
 			<div>{{clientGoods.name}}</div>
 			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span>评价﹀</span><span>北京通州</span></div>
 		</div>
@@ -96,7 +96,7 @@
 			go_build_pay(){
 				if(!wx.getStorageSync('token')){
 					wx.navigateTo({
-						url: '../mine/register'
+						url: '../mine/login'
 					})
 					return
 				}
@@ -104,7 +104,7 @@
 				if(this.barlist.length){
 					barlist=this.barlist;
 				}else{
-					let barlist1=this.mallinf;
+					let barlist1=Object.assign({},this.mallinf);
 					barlist1.num=1;
 					barlist.push(barlist1);
 				}
@@ -169,7 +169,7 @@
 			req_cartadd(){
 				if(!wx.getStorageSync('token')){
 					wx.navigateTo({
-						url: '../mine/register'
+						url: '../mine/login'
 					})
 					return
 				}
@@ -194,6 +194,7 @@
 <style scoped>
 	.mallimage{width: 100%;height: 300rpx;}
 	.footer{
+		background: white;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
@@ -367,5 +368,6 @@
 	}
 	.detail{
 		padding: 0 30px;
+		margin-bottom: 100px;
 	}
 </style>

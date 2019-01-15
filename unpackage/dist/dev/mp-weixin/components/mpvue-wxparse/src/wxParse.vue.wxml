@@ -2,7 +2,7 @@
 <template name="745fb98c">
   <view class="_div data-v-1640c3db wxParse {{className}}" wx:if="{{!loading}}">
     <block wx:key="index" key="{{index}}" wx:for="{{nodes}}" wx:for-index="index" wx:for-item="node">
-      <template data="{{...$root['0'], ...$root[$kk+'GCl-0-'+index],$root}}" is="0493dc9c"></template>
+      <template data="{{...$root['0'], ...$root[$kk+'HJZ-0-'+index],$root}}" is="0493dc9c"></template>
     </block>
   </view>
 </template>

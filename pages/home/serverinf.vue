@@ -91,7 +91,7 @@
 					})
 				}else{
 					wx.navigateTo({
-						url: '../mine/register'
+						url: '../mine/login'
 					})
 				}
 			},

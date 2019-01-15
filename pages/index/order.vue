@@ -99,6 +99,12 @@
 		methods: {
 			go_next(data){
 				console.log(data);
+				if(!wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../mine/login'
+					})
+					return
+				}
 				wx.navigateTo({
 					url: data
 				})

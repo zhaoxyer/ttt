@@ -123,6 +123,7 @@
   line-height: 100rpx;
   font-size: 24rpx;
   margin-right: 20rpx;
+  position: relative;
 }
 .time ._p view:nth-child(1) ._span:nth-child(2n+1) {
   color: #FEC200;

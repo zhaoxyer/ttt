@@ -1,0 +1,38 @@
+<import src="/components/tmodal.vue.wxml" />
+<import src="/components/orderStatus.vue.wxml" />
+<import src="/components/cancelModal.vue.wxml" />
+<template name="bee37c32">
+  <view class="_div data-v-4995ddc0">
+    <view class="_div data-v-4995ddc0 order-item-detail">
+      <view class="_div data-v-4995ddc0 order-info">
+        <label class="_span data-v-4995ddc0 order-num">订单编号：{{data.orderNumber}}</label>
+        <label class="_span data-v-4995ddc0 order-status">{{data.statusName}}</label>
+      </view>
+      <view class="_div data-v-4995ddc0 order-info">
+        <image class="_image data-v-4995ddc0 goods-picture noimage" src="{{static+data.picture}}"></image>
+        <view class="_div data-v-4995ddc0 goods-info-wrap">
+          <view class="_div data-v-4995ddc0 goods-info">
+            <view class="_p data-v-4995ddc0">{{data.goodsName}}</view>
+            <view class="_p data-v-4995ddc0">¥ {{data.price}}</view>
+          </view>
+          <view class="_div data-v-4995ddc0 goods-info">
+            <view class="_p data-v-4995ddc0">规格</view>
+            <view class="_p data-v-4995ddc0">×{{data.number}} </view>
+          </view>
+        </view>
+      </view>
+      <view class="_div data-v-4995ddc0 goods-info">
+        <view class="_div data-v-4995ddc0 order-time">下单时间：{{data.createTime}}</view>
+        <view class="_div data-v-4995ddc0 order-time">合计: {{data.price*data.num}}</view>
+      </view>
+      <view class="_div data-v-4995ddc0 order-options-wrap">
+        <view class="_div data-v-4995ddc0 order-options">
+          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-4995ddc0 order-button border-collapse" data-eventid="{{'80U-0'}}" data-comkey="{{$k}}">取消订单</button>
+          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-4995ddc0 order-button" data-eventid="{{'37a-1'}}" data-comkey="{{$k}}">去支付</button>
+        </view>
+      </view>
+    </view>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'MJG-2'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'u4C-1'],$root, $slotdefault:'data-v-4995ddc0-default-u4C-1'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'YQd-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'pQb-3'],$root, $slotdefault:'data-v-4995ddc0-default-pQb-3'}}" is="2ff378d5"></template>
+  </view>
+</template>

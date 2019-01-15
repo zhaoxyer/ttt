@@ -13,6 +13,7 @@
 			<p class="submit" @click="req_login">				
 				登陆
 			</p>
+			<p class="tip" @click="go_mine_register">没有账号？立即注册</p>
 		</div>
 		<div class="qlogin">
 			<image src="../../static/mine/qlogin.jpg" mode="widthFix"></image>
@@ -45,6 +46,11 @@
 			cg_active(){
 				console.log(1)
 				this.check=!this.check;
+			},
+			go_mine_register(){
+				wx.redirectTo({
+					url: '../mine/register'
+				})
 			},
 			req_login(){
 				if(!this.username){
@@ -80,6 +86,11 @@
 </script>
 
 <style>
+	.tip{
+		line-height: 60px;
+		text-align: right;
+		font-size: 24px;
+	}
 	.setinput{
 		padding: 0 70px;
 	}

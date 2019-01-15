@@ -1,24 +1,13 @@
 <template>
 	<div class="cancel-order-modal">
-		<div class="cancel-order-condition">
-			<div class="cancel-order-title">
-			技术服务费
+		<div class="cancel-order-condition" v-for="(list,index) in confirmPlanlist" :key="index">
+			<div class="cancel-order-title" v-if="list.type">
+			{{list.type}}
 			</div>
 			<div class="cancel-statement-wrap">
-				<div class="cancel-radio-wrap">
+				<div class="cancel-radio-wrap" v-for="(item,priceIndex) in list.prices" :key="priceIndex">
 					<span class="cancel-radio"></span>
-					<span class="cancel-label">不需要了</span>
-				</div>
-			</div>
-		</div>
-		<div class="cancel-order-condition noborder">
-			<div class="cancel-order-title">
-			材料服务费
-			</div>
-			<div class="cancel-statement-wrap">
-				<div class="cancel-radio-wrap">
-					<span class="cancel-radio"></span>
-					<span class="cancel-label">不需要了</span>
+					<span class="cancel-label">{{item.name+""+item.price}}</span>
 				</div>
 			</div>
 		</div>
@@ -35,7 +24,7 @@
 <script>
 import ut from '../utils/index.js';
 export default {
-  props: ["orderId","reload","changeVisibileModal"],
+  props: ["orderId","reload","changeVisibileModal","confirmPlanlist"],
   data() { 
 	return {
 
