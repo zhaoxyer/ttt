@@ -61,6 +61,11 @@
 					url: "goods/order/goodsOrderList"
 				}).then(data=>{
 					console.log(data)
+					data.forEach(item=>{
+						item.orderGoods.forEach(item=>{
+							if(item.picture)item.picture=item.picture.split(',')[0];
+						})
+					})
 					this.order_list = data;
 				})
 			},

@@ -109,25 +109,6 @@
 					ut.totast('请选择时间');
 					return;
 				}
-				wx.requestPayment({
-					'timeStamp': '1547896015',
-					'nonceStr': 'dVG4QZFIiIejYJS6',
-					'package': 'prepay_id=wx19190655088975f108ef9d5d2143777455',
-					'paySign': 'E362EE860A1A0923C6F7D79805F6005473F0CB4F722BA037B7D201603231B09E',
-					'signType': 'HMAC-SHA256',
-					success: function(res) {
-						
-					},
-					'fail': function(res) {
-						console.log(res)
-					},
-					'complete': function(res) {
-						wx.redirectTo({
-							url: '../order/checkOrder?type=1'
-						})
-					}
-				});
-				return
 				ut.request({
 					data: {
 						"addressId": this.adress.id,
@@ -139,10 +120,10 @@
 					c: true
 				}).then(data => {
 					wx.requestPayment({
-						'timeStamp': '1547896015',
-						'nonceStr': 'dVG4QZFIiIejYJS6',
-						'package': 'prepay_id=wx19190655088975f108ef9d5d2143777455',
-						'paySign': 'E362EE860A1A0923C6F7D79805F6005473F0CB4F722BA037B7D201603231B09E',
+						'timeStamp': data.timeStamp,
+						'nonceStr': data.nonceStr,
+						'package': data.package,
+						'paySign': data.paySign,
 						'signType': 'HMAC-SHA256',
 						success: function(res) {
 							

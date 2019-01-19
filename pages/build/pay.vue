@@ -15,7 +15,7 @@
 		</div>
 		<div class="payinf inff" v-for="list in buildinf" :key='list'>
 			<div>
-				<image src="../../static/index/fuwu.jpg"></image>
+				<image :src="static+list.picture"></image>
 				<div>
 					<p>
 						<view>{{name}}</view>
@@ -113,12 +113,17 @@
 				carryprice:'',
 				remark:'',
 				requireCarry:1,
-				floor:''
+				floor:'',
+				static:''
 			}
 		},
 		onLoad(opt) {
+			this.static=ut.static;
 			this.name=opt.name;
 			this.buildinf=wx.getStorageSync('buildinf');
+			this.buildinf.forEach(item=>{
+				if(item.picture)item.picture=item.picture.split(',')[0];
+			});
 			wx.setStorageSync('buildinf','');
 			this.req_vehiclelist();
 			this.req_carrylist();

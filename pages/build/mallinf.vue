@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-			<swiper-item v-for="item in swipeList" :key="item">
+			<swiper-item v-for="item in swipeList" :key="item" v-if="item">
 				<image :src="static+item"/>
 			</swiper-item>
 		</swiper>
@@ -17,7 +17,7 @@
 				<span :class="{'active':type==index}" v-for="(item,index) in guigetype" :key="index" @click='cg_type(index)'>{{item.name}}</span>
 			</div>
 			<div class="add">
-				<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{mallinf.num}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span>数量</span>
+				<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(type)"></image><span>{{mallinf.num}}</span><image src="../../static/build/add.png" @click.stop="add(type)"></image></div><span>数量</span>
 			</div>
 		</div>
 		<div class="bggray"></div>
@@ -35,7 +35,7 @@
 					<image src="../../static/mine/del.png" @click.stop='cleanbar'></image><span @click.stop='cleanbar'>清空购物车</span>
 				</div>
 				<div class='barlist'>
-					<div class="add" v-for="(item,index) in barlist" :key="index">
+					<div class="add" v-for="(item,index) in guigetype" :key="index" v-if='item.num'>
 						<div class='addedit'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{item.num}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span class="barname">{{item.name}}</span><span class="barmoney">￥{{item.price}}</span>
 					</div>
 				</div>
@@ -105,7 +105,11 @@
 			cg_type(type){
 				this.type=type;
 				this.mallinf =this.guigetype[type]
-				this.swipeList=this.mallinf.picture.split(',')
+				if(this.mallinf.picture){
+					this.swipeList=this.mallinf.picture.split(',')
+				}else{
+					this.swipeList=[this.clientGoods.picture]
+				}
 			},
 			cg_pop(){
 				if(!this.pop&&!this.num){
@@ -120,13 +124,18 @@
 					})
 					return
 				}
-				let barlist=[];
-				if(this.barlist.length){
-					barlist=this.barlist;
+				let barlist=[...this.guigetype];
+				barlist=barlist.filter(item=>{
+					console.log(item.num)
+					return item.num>0
+				})
+				console.log(JSON.stringify(barlist))
+				if(barlist.length){
+					barlist=barlist;
 				}else{
-					let barlist1=Object.assign({},this.mallinf);
-					barlist1.num=1;
-					barlist.push(barlist1);
+					const mallinf=Object.assign({},this.mallinf)
+					barlist.push(mallinf);
+					barlist[0].num=1;
 				}
 				wx.setStorageSync('buildinf',barlist)
 				wx.navigateTo({
@@ -134,21 +143,21 @@
 				})
 			},
 			minus(index){
+				console.log(index)
 				if(this.num==0)return;
+				if(this.guigetype[index].num==0)return;
 				this.num-=1;
-				this.mallinf.num-=1;
-				this.mallprice=(Number(this.mallprice)-Number(this.mallinf.price)).toFixed(2);
-				this.barlist[index||0]=this.mallinf;
-				if(this.mallinf.num==0){
-					this.barlist.splice(index||0,1);
+				this.guigetype[index].num-=1;
+				this.mallprice=(Number(this.mallprice)-Number(this.guigetype[index].price)).toFixed(2);
+				if(this.num==0){
 					this.pop=false;
-				}
+				}				
 			},
 			add(index){
+				console.log(index)
+				this.guigetype[index].num+=1;
 				this.num+=1;
-				this.mallinf.num+=1;
-				this.mallprice=(Number(this.mallprice)+Number(this.mallinf.price)).toFixed(2);
-				this.barlist[index||0]=this.mallinf;
+				this.mallprice=(Number(this.mallprice)+Number(this.guigetype[index].price)).toFixed(2);
 			},
 			cleanbar(){
 				this.num=0;
@@ -172,7 +181,12 @@
 							item.num=0;
 						})
 						this.mallinf =data.clientGoodsSpecList[0]
-						this.swipeList=this.mallinf.picture.split(',')
+						if(this.mallinf.picture){
+							this.swipeList=this.mallinf.picture.split(',')
+						}else{
+							this.swipeList=[this.clientGoods.picture]
+						}
+						
 					}
 					this.guigetype=data.clientGoodsSpecList;
 				})
