@@ -23,7 +23,7 @@
 					<view>{{tenant.address}}</view>
 				</div>
 			</div>
-			<image src="../../static/build/mall.jpg" class="mallimage"></image>
+			<image :src="static+tenant.picture" class="mallimage"></image>
 		</div>
 		<div class="section">
 			<scroll-view scroll-y='true' class="nav">
@@ -35,16 +35,16 @@
 					<div>
 						<p>{{item.name}}</p>
 						<p>月销{{item.num}}笔</p>
-						<p class='add'><div class='addedit'><image src="../../static/build/minus.png" v-if="item.mallnum"  @click.stop="minus(index)"></image><span v-if="item.mallnum">{{item.mallnum}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span>￥{{item.price}}</span></p>
+						<p class='add'><div class='addedit'><image src="../../static/build/minus.png" v-if="item.mallnum" ></image><span v-if="item.mallnum">{{item.mallnum}}</span><image src="../../static/build/add.png" ></image></div><span>￥{{item.price}}</span></p>
 					</div>
 				</div>				
 			</scroll-view>
 		</div>
-		<div class='footer'>
+		<!-- <div class='footer'>
 			<div class="edit"><span>加入购物车</span><span @click="go_build_pay">购买</span></div>
 			<span class="mallnum" v-show='mallnum'>{{mallnum}}</span>
 			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='mallnum'>￥{{mallprice}}</span>
-		</div>
+		</div> -->
 		<div class="pop" v-if='pop' @click="cg_pop" @click.stop='cleanbar'>
 			<div class="popcont">
 				<div class='delbar'>

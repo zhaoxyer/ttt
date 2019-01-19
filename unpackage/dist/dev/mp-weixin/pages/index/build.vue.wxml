@@ -2,18 +2,18 @@
   <view class="_view data-v-0b424d02">
     <view class="_div data-v-0b424d02 header">
       <view class="_div data-v-0b424d02 adress">
-        <picker mode="region" value="请选择所在城市" custom-item="{{customItem}}" class="_picker data-v-0b424d02 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'k4R-0'}}" data-comkey="{{$k}}">
+        <picker mode="region" value="请选择所在城市" custom-item="{{customItem}}" class="_picker data-v-0b424d02 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'Ty8-0'}}" data-comkey="{{$k}}">
           <view class="_view data-v-0b424d02 picker"> {{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}} </view>
         </picker>
         <image src="../../static/index/blackadress.png" class="_image data-v-0b424d02"></image>
         <label class="_span data-v-0b424d02">{{cityName||'朝阳'}}</label>
       </view>
-      <view class="_div data-v-0b424d02 serch" bindtap="handleProxy" data-eventid="{{'CNS-1'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-0b424d02 serch" bindtap="handleProxy" data-eventid="{{'kXX-1'}}" data-comkey="{{$k}}">
         <label class="_span data-v-0b424d02">请输入所需材料</label>
         <image src="../../static/index/serch.png" class="_image data-v-0b424d02"></image>
       </view>
       <view class="_div data-v-0b424d02 tel">
-        <image src="../../static/index/blacktel.png" bindtap="handleProxy" data-eventid="{{'q8m-2'}}" data-comkey="{{$k}}" class="_image data-v-0b424d02"></image>
+        <image src="../../static/index/blacktel.png" bindtap="handleProxy" data-eventid="{{'AW7-2'}}" data-comkey="{{$k}}" class="_image data-v-0b424d02"></image>
       </view>
     </view>
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatoractivecolor}}" indicator-color="{{indicatorcolor}}" class="_swiper data-v-0b424d02">
@@ -22,7 +22,7 @@
       </swiper-item>
     </swiper>
     <view class="_div data-v-0b424d02 server">
-      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'mY3-3-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
+      <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'e2p-3-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
         <image src="{{static+list.picture}}" class="_image data-v-0b424d02 noimage"></image>
         <view class="_view data-v-0b424d02">{{list.name}}</view>
       </view>
@@ -33,7 +33,7 @@
       <label class="_span data-v-0b424d02">•</label>
     </view>
     <view class="_div data-v-0b424d02 youhui leftright">
-      <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'Pug-4-'+index}}" data-comkey="{{$k}}" wx:for="{{newlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
+      <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'DqT-4-'+index}}" data-comkey="{{$k}}" wx:for="{{newlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
         <view class="_div data-v-0b424d02">{{list.name}}</view>
         <view class="_div data-v-0b424d02">
           <image src="{{static +list.picture}}" class="_image data-v-0b424d02 noimage"></image>
@@ -50,7 +50,7 @@
       <label class="_span data-v-0b424d02">•</label>
     </view>
     <view class="_div data-v-0b424d02 youhui leftright">
-      <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'EUe-5-'+index}}" data-comkey="{{$k}}" wx:for="{{recomlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
+      <view bindtap="handleProxy" wx:key="index" key="{{index}}" data-eventid="{{'OYM-5-'+index}}" data-comkey="{{$k}}" wx:for="{{recomlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-0b424d02">
         <view class="_div data-v-0b424d02">{{list.name}}</view>
         <view class="_div data-v-0b424d02">
           <image src="{{static +list.picture}}" class="_image data-v-0b424d02 noimage"></image>

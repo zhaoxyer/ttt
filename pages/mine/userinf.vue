@@ -4,7 +4,7 @@
 			<span>头像</span><div><image   :src="userinf.photo||'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
 		</div>
 		<div class="columlist" @click="go_mine_updatename">
-			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image src="../../static/right.jpg"></image></div>
+			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image  :src="userinf.photo?(static+userinf.photo):'../../static/logo.jpg'"></image></div>
 		</div>
 		<div class="columlist" @click="go_mine_adress">
 			<span>收货地址</span><div><span>修改/添加</span><image src="../../static/right.jpg"></image></div>
@@ -17,10 +17,12 @@
 	export default {
 		data() {
 			return {
-				userinf:{}
+				userinf:{},
+				static:''
 			}
 		},
 		onShow() {
+			this.static=ut.static;
 			this.userinf=wx.getStorageSync('userinf')||{}
 		},
 		methods: {

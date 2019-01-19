@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="header" @click="checkinf">
-			<image :src="userinf.photo||'../../static/logo.jpg'"/>
+			<image :src="userinf.photo?(static+userinf.photo):'../../static/logo.jpg'"/>
 			<p>{{userinf.nickname||userinf.name||'木斗生活'}}</p>
 		</div>
 		<div class='userinf'>
@@ -70,11 +70,12 @@
 	export default {
 		data() {
 			return {
-				userinf:{}
+				userinf:{},
+				static:''
 			}
 		},
 		onLoad() {
-
+			this.static=ut.static;
 		},
 		onShow() {		
 			if(wx.getStorageSync('token')){
@@ -101,6 +102,10 @@
 				})
 			},
 			go_mine_infchange(){
+				if(!wx.getStorageSync('token')){
+					this.go_mine_login();
+					return;
+				}
 				wx.navigateTo({
 					url: '../mine/infchange'
 				})
@@ -120,11 +125,19 @@
 				})
 			},
 			go_mine_adress(){
+				if(!wx.getStorageSync('token')){
+					this.go_mine_login();
+					return;
+				}
 				wx.navigateTo({
 					url: '../mine/adress'
 				})
 			},
 			go_mine_securityCenter(){
+				if(!wx.getStorageSync('token')){
+					this.go_mine_login();
+					return;
+				}
 				wx.navigateTo({
 					url: '../mine/securityCenter'
 				})

@@ -1,8 +1,8 @@
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
+<import src="/components/orderItem.vue.wxml" />
+<import src="/components/goodsOrderItem.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <import src="/components/comment.vue.wxml" />
-<import src="/components/goodsOrderItem.vue.wxml" />
-<import src="/components/orderItem.vue.wxml" />
 <import src="/components/tmodal.vue.wxml" />
 <import src="/components/orderStatus.vue.wxml" />
 <import src="/components/goodscancelModal.vue.wxml" />
@@ -61,27 +61,27 @@
 <import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
-<template name="data-v-4995ddc0-default-3cN-1">
-  <template data="{{...$root['0'], ...$root[$kk+'idK-0'],$root}}" is="6b200df4"></template>
+<template name="data-v-4995ddc0-default-l5m-1">
+  <template data="{{...$root['0'], ...$root[$kk+'Fq2-0'],$root}}" is="6b200df4"></template>
 </template>
-<template name="data-v-4995ddc0-default-5Mm-3">
-  <template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'nBn-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'73L-2'],$root}}" is="738ea34e"></template>
+<template name="data-v-4995ddc0-default-4bw-3">
+  <template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'Lrk-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'bvD-2'],$root}}" is="738ea34e"></template>
 </template>
-<template name="data-v-4995ddc0-default-zUf-5">
-  <template bindreload="handleProxy" data-eventid="{{'JOS-6'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'yof-4'],$root}}" is="308378b7"></template>
+<template name="data-v-4995ddc0-default-si6-5">
+  <template bindreload="handleProxy" data-eventid="{{'K2C-6'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'b0u-4'],$root}}" is="308378b7"></template>
 </template>
-<template name="data-v-4995ddc0-default-VLi-7">
-  <template bindreload="handleProxy" data-eventid="{{'yT4-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'8eC-6'],$root}}" is="46f4e944"></template>
+<template name="data-v-4995ddc0-default-ap6-7">
+  <template bindreload="handleProxy" data-eventid="{{'FZj-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'yhQ-6'],$root}}" is="46f4e944"></template>
 </template>
-<template name="data-v-0cc018c8-default-3cS-1">
-  <template data="{{...$root['0'], ...$root[$kk+'4oj-0'],$root}}" is="6b200df4"></template>
+<template name="data-v-0cc018c8-default-Qyv-1">
+  <template data="{{...$root['0'], ...$root[$kk+'jLt-0'],$root}}" is="6b200df4"></template>
 </template>
-<template name="data-v-0cc018c8-default-qpb-3">
-  <template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'AVw-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'sWf-2'],$root}}" is="6962e3e7"></template>
+<template name="data-v-0cc018c8-default-7j0-3">
+  <template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'NYq-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'brn-2'],$root}}" is="6962e3e7"></template>
 </template>
-<template name="data-v-0cc018c8-default-JMc-5">
-  <template bindreload="handleProxy" data-eventid="{{'A1s-6'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'BNF-4'],$root}}" is="1ac0162e"></template>
+<template name="data-v-0cc018c8-default-dQ9-5">
+  <template bindreload="handleProxy" data-eventid="{{'KIy-6'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'f7o-4'],$root}}" is="1ac0162e"></template>
 </template>
-<template name="data-v-0cc018c8-default-vHL-7">
-  <template bindreload="handleProxy" data-eventid="{{'ixt-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'jVM-6'],$root}}" is="f3f26c14"></template>
+<template name="data-v-0cc018c8-default-fyE-7">
+  <template bindreload="handleProxy" data-eventid="{{'LrV-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'b0v-6'],$root}}" is="f3f26c14"></template>
 </template>

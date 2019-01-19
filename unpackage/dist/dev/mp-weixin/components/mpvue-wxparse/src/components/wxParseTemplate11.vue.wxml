@@ -11,16 +11,16 @@
         <view class="_view data-v-ccd301cc {{node.classStr}}" style=" {{node.styleStr}}"> {{node.text}} </view>
       </block>
       <block wx:elif="{{node.tag == 'video'}}">
-        <template data="{{...$root['0'], ...$root[$kk+'c6t-0'],$root}}" is="a55b6a92"></template>
+        <template data="{{...$root['0'], ...$root[$kk+'Qbv-0'],$root}}" is="a55b6a92"></template>
       </block>
       <block wx:elif="{{node.tag == 'audio'}}">
-        <template data="{{...$root['0'], ...$root[$kk+'krm-1'],$root}}" is="6916ac92"></template>
+        <template data="{{...$root['0'], ...$root[$kk+'I5E-1'],$root}}" is="6916ac92"></template>
       </block>
       <block wx:elif="{{node.tag == 'img'}}">
-        <template data="{{...$root['0'], ...$root[$kk+'zsc-2'],$root}}" is="e7363a02"></template>
+        <template data="{{...$root['0'], ...$root[$kk+'hra-2'],$root}}" is="e7363a02"></template>
       </block>
       <block wx:elif="{{node.tag == 'a'}}">
-        <view bindtap="handleProxy" data-href="{{node.attr.href}}" data-eventid="{{'svF-0'}}" data-comkey="{{$k}}" class="_view data-v-ccd301cc {{node.classStr}}" style=" {{node.styleStr}}"> {{node.text}} </view>
+        <view bindtap="handleProxy" data-href="{{node.attr.href}}" data-eventid="{{'Wi1-0'}}" data-comkey="{{$k}}" class="_view data-v-ccd301cc {{node.classStr}}" style=" {{node.styleStr}}"> {{node.text}} </view>
       </block>
       <block wx:elif="{{node.tag == 'br'}}">
         <text class="_text data-v-ccd301cc">\n</text>

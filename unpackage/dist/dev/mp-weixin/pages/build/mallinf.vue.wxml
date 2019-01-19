@@ -2,7 +2,7 @@
 <template name="044b26dd">
   <view class="_div data-v-07f02cfd">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="_swiper data-v-07f02cfd">
-      <swiper-item wx:key="item" key="{{item}}" wx:for="{{swipeList}}" wx:for-index="index" wx:for-item="item" class="_swiper-item data-v-07f02cfd">
+      <swiper-item wx:key="item" key="{{item}}" wx:if="{{item}}" wx:for="{{swipeList}}" wx:for-index="index" wx:for-item="item" class="_swiper-item data-v-07f02cfd">
         <image src="{{static+item}}" class="_image data-v-07f02cfd"></image>
       </swiper-item>
     </swiper>
@@ -14,50 +14,50 @@
       <view class="_div data-v-07f02cfd">{{clientGoods.name}}</view>
       <view class="_div data-v-07f02cfd mallinf2s">
         <label class="_span data-v-07f02cfd">月销：{{mallinf.sellStock}}笔</label>
-        <label bindtap="handleProxy" data-eventid="{{'ywt-0'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">评价﹀</label>
-        <label class="_span data-v-07f02cfd">北京通州</label>
+        <label bindtap="handleProxy" data-eventid="{{'yNm-0'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">评价﹀</label>
+        <label class="_span data-v-07f02cfd">质保期:{{clientGoods.qualityGuaPeriod}}天</label>
       </view>
     </view>
     <view class="_div data-v-07f02cfd bggray"></view>
     <view class="_div data-v-07f02cfd guige">
       <view class="_h1 data-v-07f02cfd">规格</view>
       <view class="_div data-v-07f02cfd guigetype">
-        <label wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'5o7-1-'+index}}" data-comkey="{{$k}}" wx:for="{{guigetype}}" wx:for-index="index" wx:for-item="item" class="_span data-v-07f02cfd {{[type == index ? 'active' : '']}}">{{item.name}}</label>
+        <label wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'nzC-1-'+index}}" data-comkey="{{$k}}" wx:for="{{guigetype}}" wx:for-index="index" wx:for-item="item" class="_span data-v-07f02cfd {{[type == index ? 'active' : '']}}">{{item.name}}</label>
       </view>
       <view class="_div data-v-07f02cfd add">
         <view class="_div data-v-07f02cfd addedit">
-          <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'4gm-2'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
+          <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'itw-2'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
           <label class="_span data-v-07f02cfd">{{mallinf.num}}</label>
-          <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'nVg-3'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
+          <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'Eij-3'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
         </view>
         <label class="_span data-v-07f02cfd">数量</label>
       </view>
     </view>
     <view class="_div data-v-07f02cfd bggray"></view>
     <view wx:if="{{detailinf}}" class="_div data-v-07f02cfd detail">
-      <template data="{{...$root['0'], ...$root[$kk+'gFH-1'],$root}}" is="745fb98c"></template>
+      <template data="{{...$root['0'], ...$root[$kk+'I7F-1'],$root}}" is="745fb98c"></template>
     </view>
     <view class="_div data-v-07f02cfd footer">
       <view class="_div data-v-07f02cfd edit">
-        <label bindtap="handleProxy" data-eventid="{{'449-4'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">加入购物车</label>
-        <label bindtap="handleProxy" data-eventid="{{'1z3-5'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">购买</label>
+        <label bindtap="handleProxy" data-eventid="{{'VBx-4'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">加入购物车</label>
+        <label bindtap="handleProxy" data-eventid="{{'HtZ-5'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">购买</label>
       </view>
       <label class="_span data-v-07f02cfd num" hidden="{{!(num)}}">{{num}}</label>
-      <image src="../../static/logo.jpg" class="_image data-v-07f02cfd logo" bindtap="handleProxy" data-eventid="{{'reZ-6'}}" data-comkey="{{$k}}"></image>
+      <image src="../../static/logo.jpg" class="_image data-v-07f02cfd logo" bindtap="handleProxy" data-eventid="{{'R7d-6'}}" data-comkey="{{$k}}"></image>
       <label class="_span data-v-07f02cfd money" hidden="{{!(num)}}">￥{{mallprice}}</label>
     </view>
-    <view class="_div data-v-07f02cfd pop" wx:if="{{pop}}" bindtap="handleProxy" data-eventid="{{'tjX-11'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-07f02cfd pop" wx:if="{{pop}}" bindtap="handleProxy" data-eventid="{{'mWp-11'}}" data-comkey="{{$k}}">
       <view class="_div data-v-07f02cfd popcont">
         <view class="_div data-v-07f02cfd delbar">
-          <image src="../../static/mine/del.png" catchtap="handleProxy" data-eventid="{{'aau-7'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
-          <label catchtap="handleProxy" data-eventid="{{'GGu-8'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">清空购物车</label>
+          <image src="../../static/mine/del.png" catchtap="handleProxy" data-eventid="{{'TXR-7'}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
+          <label catchtap="handleProxy" data-eventid="{{'3fS-8'}}" data-comkey="{{$k}}" class="_span data-v-07f02cfd">清空购物车</label>
         </view>
         <view class="_div data-v-07f02cfd barlist">
-          <view class="_div data-v-07f02cfd add" wx:key="index" key="{{index}}" wx:for="{{barlist}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-07f02cfd add" wx:key="index" key="{{index}}" wx:if="{{item.num}}" wx:for="{{guigetype}}" wx:for-index="index" wx:for-item="item">
             <view class="_div data-v-07f02cfd addedit">
-              <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'ikd-9-'+index}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
+              <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'n2b-9-'+index}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
               <label class="_span data-v-07f02cfd">{{item.num}}</label>
-              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'yVV-10-'+index}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
+              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'51j-10-'+index}}" data-comkey="{{$k}}" class="_image data-v-07f02cfd"></image>
             </view>
             <label class="_span data-v-07f02cfd barname">{{item.name}}</label>
             <label class="_span data-v-07f02cfd barmoney">￥{{item.price}}</label>
@@ -66,7 +66,7 @@
       </view>
     </view>
     <view class="_div data-v-07f02cfd pop" hidden="{{!(pop1)}}">
-      <comment bindcgpop="handleProxy" list="{{comlist}}" data-eventid="{{'gyX-12'}}" data-comkey="{{$k}}" class="_comment data-v-07f02cfd"></comment>
+      <comment bindcgpop="handleProxy" list="{{comlist}}" data-eventid="{{'udH-12'}}" data-comkey="{{$k}}" class="_comment data-v-07f02cfd"></comment>
     </view>
   </view>
 </template>

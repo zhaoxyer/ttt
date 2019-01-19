@@ -10,8 +10,8 @@
       </view>
     </view>
     <view class="_div data-v-5cf4a23e agree-plan-wrap">
-      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'ZlM-0'}}" data-comkey="{{$k}}">重新申报</button>
-      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'GQk-1'}}" data-comkey="{{$k}}">同意并付款</button>
+      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'qdf-0'}}" data-comkey="{{$k}}">重新申报</button>
+      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'yEB-1'}}" data-comkey="{{$k}}">同意并付款</button>
     </view>
   </view>
 </template>

@@ -55,10 +55,12 @@
 				server: [],
 				homeType:[],
 				bigType:[],
-				serverIndex:'-1'
+				serverIndex:'-1',
+				static:''
 			}
 		},
 		onLoad() {
+			this.static=ut.static;
 			this.req_class();
 			this.req_bigType();
 			this.req_homeType();

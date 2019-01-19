@@ -8,7 +8,7 @@
 		<div class="mallinf2">
 			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png" v-if="iii"></image></div>
 			<div>{{clientGoods.name}}</div>
-			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span @click='cg_pop1'>评价﹀</span><span>北京通州</span></div>
+			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span @click='cg_pop1'>评价﹀</span><span>质保期:{{clientGoods.qualityGuaPeriod}}天</span></div>
 		</div>
 		<div class="bggray"></div>
 		<div class="guige">
@@ -76,6 +76,7 @@
 		},
 		onLoad(opt) {
 			this.static=ut.static;
+			ut.settitle(opt.title||'商品详情')
 			this.req_detail(opt._id)
 			this.req_comment(opt._id)
 		},

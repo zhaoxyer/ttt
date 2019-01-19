@@ -29,7 +29,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="shopping-all" v-if="list.allnum"><span>合计：</span><span>￥{{list.allmoneynum}}</span><span>结算（{{list.allnum}}）</span></div>
+					<div class="shopping-all" v-if="list.allnum"><span>合计：</span><span>￥{{list.allmoneynum}}</span><span @click='go_build_pay(index)'>结算（{{list.allnum}}）</span></div>
 				</div>
 			</div>
 		</div>
@@ -45,6 +45,12 @@
 				static:''
 			}
 		},
+		onLoad() {
+			if(!wx.getStorageSync('token')){
+				this.go_mine_login();
+				return;
+			}
+		},
 		onShow() {
 			this.static=ut.static;
 			if(wx.getStorageSync('token')){
@@ -54,6 +60,12 @@
 		methods: {
 			error(index,itemindex){
 				this.list[index].cartlist[itemindex].picture='../../static/build/mall.jpg'
+			},
+			go_build_pay(index){
+				wx.setStorageSync('buildinf',this.list[index].cartlist)
+				wx.navigateTo({
+					url: '../build/pay'
+				})
 			},
 			checked(index,itemindex){
 				console.log(index,itemindex)

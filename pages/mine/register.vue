@@ -7,7 +7,7 @@
 			<span>姓名</span><input type="text" placeholder="请输入真实姓名" v-model="userinf.name"/>
 		</div>
 		<div>
-			<span>身份证</span><input type="text" placeholder="请输入身份证号" v-model="userinf.idCard"/>
+			<span>身份证</span><input type="idcard" placeholder="请输入身份证号" v-model="userinf.idCard"/>
 		</div>
 		<div>
 			<span>手机号</span><input type="text" placeholder="请输入手机号" v-model="userinf.phone"/>

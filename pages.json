@@ -88,7 +88,7 @@
         {
             "path" : "pages/mine/apply",
             "style" : {
-                "navigationBarTitleText" : "木斗工匠"
+                "navigationBarTitleText" : ""
             }
         },
         {

@@ -1,7 +1,7 @@
 <template name="2cfcb1f3">
   <view class="_div data-v-09386f8c comment">
     <view class="_div data-v-09386f8c close">
-      <image src="/static/close.png" bindtap="handleProxy" data-eventid="{{'5JT-0'}}" data-comkey="{{$k}}" class="_image data-v-09386f8c"></image>
+      <image src="/static/close.png" bindtap="handleProxy" data-eventid="{{'KuM-0'}}" data-comkey="{{$k}}" class="_image data-v-09386f8c"></image>
     </view>
     <scroll-view class="_scroll-view data-v-09386f8c list" scroll-y="true">
       <view class="_div data-v-09386f8c listcom" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">

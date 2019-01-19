@@ -1,9 +1,11 @@
 <template name="14934e97">
   <view class="_div data-v-3cf79d31">
-    <view class="_div data-v-3cf79d31 userinf">
-      <view class="_h1 data-v-3cf79d31">服务种类</view>
+    <view class="_div data-v-3cf79d31 userinf" wx:if="{{classlist.length}}">
+      <view wx:if="{{type==1}}" class="_h1 data-v-3cf79d31">服务种类</view>
+      <view wx:if="{{type==2||type==5}}" class="_h1 data-v-3cf79d31">经营种类</view>
+      <view wx:if="{{type==3}}" class="_h1 data-v-3cf79d31">选择车辆种类</view>
       <view class="_div data-v-3cf79d31 type">
-        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'aJl-0-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-3cf79d31">
+        <view wx:key="list" key="{{list}}" bindtap="handleProxy" data-eventid="{{'H0h-0-'+index}}" data-comkey="{{$k}}" wx:for="{{classlist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-3cf79d31">
           <image src="{{'../../static/mine/'+((check==index)?'un':'')+'check.jpg'}}" class="_image data-v-3cf79d31"></image>
           <label class="_span data-v-3cf79d31">{{list.name}}</label>
         </view>
@@ -12,7 +14,7 @@
     <view class="_div data-v-3cf79d31 userinf">
       <view class="_div data-v-3cf79d31 inf">
         <view class="_div data-v-3cf79d31">
-          <picker mode="region" value="请选择所在城市" class="_picker data-v-3cf79d31 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'aSk-1'}}" data-comkey="{{$k}}">
+          <picker mode="region" value="请选择所在城市" class="_picker data-v-3cf79d31 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'xVI-1'}}" data-comkey="{{$k}}">
             <view class="_view data-v-3cf79d31 picker" style="line-height: 60rpx"> {{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}} </view>
           </picker>
           <label class="_span data-v-3cf79d31">服务范围</label>
@@ -24,11 +26,11 @@
         <view class="_div data-v-3cf79d31">
           <label class="_span data-v-3cf79d31">姓      名</label>
           <view class="_div data-v-3cf79d31">
-            <input type="text" placeholder="请输入姓名" value="{{name}}" bindinput="handleProxy" data-eventid="{{'wQR-2'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
+            <input type="text" placeholder="请输入姓名" value="{{name}}" bindinput="handleProxy" data-eventid="{{'vgr-2'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
           </view>
         </view>
         <view class="_div data-v-3cf79d31">
-          <picker value="请选择性别" range="{{sexList}}" range-key="type" bindchange="handleProxy" class="_picker data-v-3cf79d31 regionpicker" data-eventid="{{'E8M-3'}}" data-comkey="{{$k}}">
+          <picker value="请选择性别" range="{{sexList}}" range-key="type" bindchange="handleProxy" class="_picker data-v-3cf79d31 regionpicker" data-eventid="{{'keE-3'}}" data-comkey="{{$k}}">
             <view class="_view data-v-3cf79d31 picker" style="line-height: 60rpx"> {{sex||'请选择'}} </view>
           </picker>
           <label class="_span data-v-3cf79d31">性      别</label>
@@ -40,13 +42,13 @@
         <view class="_div data-v-3cf79d31">
           <label class="_span data-v-3cf79d31">联系电话</label>
           <view class="_div data-v-3cf79d31">
-            <input type="number" placeholder="请输入联系电话" value="{{phone}}" bindinput="handleProxy" data-eventid="{{'Prn-4'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
+            <input type="number" placeholder="请输入联系电话" value="{{phone}}" bindinput="handleProxy" data-eventid="{{'hH6-4'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
           </view>
         </view>
         <view wx:if="{{type==2||type==5}}" class="_div data-v-3cf79d31">
           <label class="_span data-v-3cf79d31">店铺地址</label>
           <view class="_div data-v-3cf79d31">
-            <input type="number" placeholder="请输入店铺地址" value="{{adress}}" bindinput="handleProxy" data-eventid="{{'uUg-5'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
+            <input type="number" placeholder="请输入店铺地址" value="{{adress}}" bindinput="handleProxy" data-eventid="{{'pcm-5'}}" data-comkey="{{$k}}" class="_input data-v-3cf79d31" />
           </view>
         </view>
       </view>
@@ -56,7 +58,7 @@
       <view class="_p data-v-3cf79d31">通知您来面试。</view>
     </view>
     <view class="_div data-v-3cf79d31 apply">
-      <view bindtap="handleProxy" data-eventid="{{'8o0-6'}}" data-comkey="{{$k}}" class="_div data-v-3cf79d31">提交申请</view>
+      <view bindtap="handleProxy" data-eventid="{{'Q8j-6'}}" data-comkey="{{$k}}" class="_div data-v-3cf79d31">提交申请</view>
     </view>
   </view>
 </template>

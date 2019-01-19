@@ -25,15 +25,15 @@
       </view>
       <view class="_div data-v-0cc018c8 order-options-wrap">
         <view class="_div data-v-0cc018c8 order-options">
-          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'m8y-0'}}" data-comkey="{{$k}}">取消订单</button>
-          <button wx:if="{{data.status == 5}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'ttR-1'}}" data-comkey="{{$k}}">确认方案</button>
-          <button wx:if="{{data.status == 8}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'glU-2'}}" data-comkey="{{$k}}">验收付款</button>
+          <button wx:if="{{data.status == 1}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'9xU-0'}}" data-comkey="{{$k}}">取消订单</button>
+          <button wx:if="{{data.status == 5}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'ahs-1'}}" data-comkey="{{$k}}">确认方案</button>
+          <button wx:if="{{data.status == 8}}" bindtap="handleProxy" class="_button data-v-0cc018c8 order-button" data-eventid="{{'1Tn-2'}}" data-comkey="{{$k}}">验收付款</button>
         </view>
       </view>
     </view>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'GOF-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'ZOB-1'],$root, $slotdefault:'data-v-0cc018c8-default-ZOB-1'}}" is="2ff378d5"></template>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'g2p-5'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'5ij-3'],$root, $slotdefault:'data-v-0cc018c8-default-5ij-3'}}" is="2ff378d5"></template>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'TsE-7'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'8hu-5'],$root, $slotdefault:'data-v-0cc018c8-default-8hu-5'}}" is="2ff378d5"></template>
-    <template bindchangeVisible="handleProxy" data-eventid="{{'JPx-9'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'oPV-7'],$root, $slotdefault:'data-v-0cc018c8-default-oPV-7'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'ywu-3'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Qyv-1'],$root, $slotdefault:'data-v-0cc018c8-default-Qyv-1'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'Cl7-5'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'7j0-3'],$root, $slotdefault:'data-v-0cc018c8-default-7j0-3'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'F6i-7'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'dQ9-5'],$root, $slotdefault:'data-v-0cc018c8-default-dQ9-5'}}" is="2ff378d5"></template>
+    <template bindchangeVisible="handleProxy" data-eventid="{{'5C3-9'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'fyE-7'],$root, $slotdefault:'data-v-0cc018c8-default-fyE-7'}}" is="2ff378d5"></template>
   </view>
 </template>

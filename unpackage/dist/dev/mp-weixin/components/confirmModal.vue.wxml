@@ -11,10 +11,10 @@
     </view>
     <view class="_div data-v-105eb302 cancel-plan-wrap">
       <button class="_button data-v-105eb302 cancel-plan">放弃维修</button>
-      <button class="_button data-v-105eb302 cancel-plan" bindtap="handleProxy" data-eventid="{{'04x-0'}}" data-comkey="{{$k}}">重新申报方案</button>
+      <button class="_button data-v-105eb302 cancel-plan" bindtap="handleProxy" data-eventid="{{'BIp-0'}}" data-comkey="{{$k}}">重新申报方案</button>
     </view>
     <view class="_div data-v-105eb302 agree-plan-wrap">
-      <button class="_button data-v-105eb302 cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'X9z-1'}}" data-comkey="{{$k}}">同意方案</button>
+      <button class="_button data-v-105eb302 cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'tG2-1'}}" data-comkey="{{$k}}">同意方案</button>
     </view>
   </view>
 </template>

@@ -1,7 +1,9 @@
 <template>
 	<div>
-		<div class='userinf'>
-			<h1>服务种类</h1>
+		<div class='userinf' v-if='classlist.length'>
+			<h1 v-if="type==1">服务种类</h1>
+			<h1 v-if="type==2||type==5">经营种类</h1>
+			<h1 v-if="type==3">选择车辆种类</h1>
 			<div class="type">
 				<div v-for="(list,index) in classlist" :key="list" @click="cg_check(index)">
 					<image :src="'../../static/mine/'+((check==index)?'un':'')+'check.jpg'"></image><span>{{list.name}}</span>
@@ -73,6 +75,24 @@
 		},
 		onLoad(opt) {
 			this.type=opt.type;
+			if(opt.type==1){
+				ut.settitle('申请木斗工匠')
+			}
+			if(opt.type==2){
+				ut.settitle('申请木斗商户')
+			}
+			if(opt.type==3){
+				ut.settitle('申请木斗速递')
+			}
+			if(opt.type==4){
+				ut.settitle('申请木斗搬运')
+			}
+			if(opt.type==5){
+				ut.settitle('申请定制商户')
+			}
+			if(opt.type==6){
+				ut.settitle('申请地区加盟')
+			}
 			this.req_class()
 		},
 		methods: {
@@ -99,9 +119,12 @@
 			},
 			req_class(){
 				let url = "service/class";
-				if(this.type==6)return
-				if(this.type==3||this.type==4){
+				if(this.type==6||this.type==4)return
+				if(this.type==3){
 					url='order/vehiclelist'
+				}
+				if(this.type==2||this.type==5){
+					url='goods/class'
 				}
 				ut.request({
 					data: {

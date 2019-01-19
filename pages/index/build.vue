@@ -27,7 +27,7 @@
 			<span>•</span><span class="bg0">最新优惠</span><span>•</span>
 		</div>
 		<div class="youhui leftright">
-			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in newlist" :key='index'>
+			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in newlist" :key='index'>
 				<div>{{list.name}}</div>
 				<div>
 					<image :src="static +list.picture" class="noimage"></image>
@@ -39,7 +39,7 @@
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
 		</div>
 		<div class="youhui leftright">
-			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
+			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in recomlist" :key='index'>
 				<div>{{list.name}}</div>
 				<div>
 					<image :src="static +list.picture" class="noimage"></image>
@@ -115,9 +115,9 @@
 					url: '../build/serch'
 				})
 			},
-			go_build_mallinf(_id){
+			go_build_mallinf(_id,name){
 				wx.navigateTo({
-					url: `../build/mallinf?_id=${_id}`
+					url: `../build/mallinf?_id=${_id}&&title=${name}`
 				})
 			},
 			req_class(){
