@@ -20,7 +20,7 @@
 		</div>
 		<div class="evaluate">
 			<div class="evanum">
-				<div>评价（6）</div><div><span>查看全部</span><image src="../../static/right.jpg"/></div>
+				<div>评价（{{comlist.length}}）</div><div><span @click="cg_pop">查看全部</span><image src="../../static/right.jpg" @click="cg_pop"/></div>
 			</div>
 			<div class="gobuild">
 				<span @click='back_index_build'>建材城</span>
@@ -36,6 +36,9 @@
 		<div class="footer">
 			<div><span>预约费</span><span>￥{{serverinf.bookPrice}}</span></div><div @click="go_home_pay">立即预约</div>
 		</div>
+		<div class="pop" v-show="pop">
+			<comment @cgpop='cgpop' :list='comlist'></comment>
+		</div>
 	</view>
 </template>
 
@@ -43,6 +46,7 @@
 	import ut from '../../utils/index.js';
 	import marked from '../../components/marked'
 	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
+	import comment from '../../components/comment.vue'
 	export default {
 		data() {
 			return {
@@ -50,17 +54,32 @@
 				typeindex:0,
 				typelist:[],
 				serverinf:{},
-				detailinf: ''
+				detailinf: '',
+				comlist:[],
+				pop:false
 			}
 		},
 		components: {
-			wxParse
+			wxParse,
+			comment
 		},
 		onLoad(opt) {
 			this.static=ut.static;
 			this.req_detail(opt._id);
+			this.req_comment(opt._id)
+			ut.settitle(opt.title||'服务详情');
 		},
 		methods: {
+			cgpop(){
+				this.cg_pop();
+			},
+			cg_pop(){
+				if(!this.comlist.length){
+					ut.totast('暂无评价');
+					return
+				}
+				this.pop=!this.pop;
+			},
 			onShareAppMessage() {
 				var that = this;
 				return {
@@ -81,7 +100,8 @@
 			cg_typeindex(index){
 				this.typeindex=index;
 				this.serverinf=this.typelist[index];
-				this.detailinf=marked(this.serverinf.detail);
+				const reg=new RegExp('/attach/download\\?filePath=','g');
+				this.detailinf=marked(this.serverinf.detail.replace(reg,'src="'+ut.static));
 			},
 			go_home_pay(){
 				wx.setStorageSync('serverinf',this.serverinf)
@@ -105,10 +125,23 @@
 					if(data[0]){
 						this.serverinf=data[0]
 						this.typelist=data;
-						this.detailinf=marked(data[0].detail)
+						const reg=new RegExp('/attach/download\\?filePath=','g');
+						this.detailinf=marked(data[0].detail.replace(reg,ut.static))
+						console.log(this.detailinf)
 					}else{
 						ut.totast('服务信息不存在');
 					}
+				})
+			},
+			req_comment(id){
+				ut.request({
+					data: {
+						proId:id,
+						type:1
+					},
+					url: "comment/list"
+				}).then(data=>{
+					this.comlist=data;
 				})
 			}
 		}

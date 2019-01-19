@@ -1,6 +1,7 @@
 var ut = {};
 ut.url = 'https://mdapi.vertxjava.com/api/v1/client/';
 ut.static = 'https://mdapi.vertxjava.com';
+ut.uploadimgurl = 'https://mdapi.vertxjava.com/api/v1/';
 ut.formatTime = function(data) {
 	var year = date.getFullYear();
 	var month = date.getMonth() + 1;
@@ -91,7 +92,7 @@ ut.request=function(parm){
 	}
 	return new Promise(function(success,fail){
 		wx.request({
-			url: ut.url + parm.url,
+			url: parm.allurl?parm.allurl:(ut.url + parm.url),
 			data: parm.data,
 			method: parm.method || 'post',
 			header: {

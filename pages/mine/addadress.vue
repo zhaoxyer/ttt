@@ -118,6 +118,7 @@
 	.setinput>div{
 		padding: 0 30px;
 		display: flex;
+		position: relative;
 	}
 	.setinput>div>span,.setinput>div>input,.setinput>div>textarea,.setinput>div>.inputall{
 		font-size: 24px;

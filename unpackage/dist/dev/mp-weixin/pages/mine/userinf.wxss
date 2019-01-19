@@ -26,6 +26,7 @@
 .header {
   width: 120rpx!important;
   height: 120rpx!important;
+  border-radius: 50%;
 }
 .bggray {
   background: #e5e5e5;

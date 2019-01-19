@@ -1,12 +1,14 @@
 <template>
 	<div>
-		<div class="mallinf1">
-			<image :src="static+mallinf.picture" class="mallimage"></image>
-		</div>
+		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+			<swiper-item v-for="item in swipeList" :key="item">
+				<image :src="static+item"/>
+			</swiper-item>
+		</swiper>
 		<div class="mallinf2">
 			<div class="mallinf2price"><span>￥{{mallinf.price}}</span><image src="../../static/close.png" v-if="iii"></image></div>
 			<div>{{clientGoods.name}}</div>
-			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span>评价﹀</span><span>北京通州</span></div>
+			<div class="mallinf2s"><span>月销：{{mallinf.sellStock}}笔</span><span @click='cg_pop1'>评价﹀</span><span>北京通州</span></div>
 		</div>
 		<div class="bggray"></div>
 		<div class="guige">
@@ -39,6 +41,9 @@
 				</div>
 			</div>
 		</div>
+		<div class="pop" v-show="pop1">
+			<comment @cgpop='cgpop' :list='comlist'></comment>
+		</div>
 	</div>
 </template>
 
@@ -60,7 +65,10 @@
 				barlist:[],
 				pop:false,
 				clientGoods:{},
-				detailinf:''
+				detailinf:'',
+				comlist:[],
+				pop1:false,
+				swipeList:[]
 			}
 		},
 		components: {
@@ -69,8 +77,19 @@
 		onLoad(opt) {
 			this.static=ut.static;
 			this.req_detail(opt._id)
+			this.req_comment(opt._id)
 		},
 		methods: {
+			cgpop(){
+				this.cg_pop1();
+			},
+			cg_pop1(){
+				if(!this.comlist.length){
+					ut.totast('暂无评价');
+					return;
+				}
+				this.pop1=!this.pop1;
+			},
 			onShareAppMessage() {
 				var that = this;
 				return {
@@ -86,6 +105,7 @@
 			cg_type(type){
 				this.type=type;
 				this.mallinf =this.guigetype[type]
+				this.swipeList=this.mallinf.picture.split(',')
 			},
 			cg_pop(){
 				if(!this.pop&&!this.num){
@@ -145,12 +165,14 @@
 					url: "goods/goodsdetail"
 				}).then(data=>{
 					this.clientGoods=data.clientGoods;
-					this.detailinf=marked(this.clientGoods.detail)
+					const reg=new RegExp('/attach/download\\?filePath=','g');
+					this.detailinf=marked(this.clientGoods.detail.replace(reg,ut.static));
 					if(data.clientGoodsSpecList[0]){
 						data.clientGoodsSpecList.forEach(item =>{
 							item.num=0;
 						})
 						this.mallinf =data.clientGoodsSpecList[0]
+						this.swipeList=this.mallinf.picture.split(',')
 					}
 					this.guigetype=data.clientGoodsSpecList;
 				})
@@ -185,6 +207,17 @@
 				}).then(data=>{
 					this.cleanbar();
 					ut.totast('加入购物车成功');
+				})
+			},
+			req_comment(id){
+				ut.request({
+					data: {
+						proId:id,
+						type:2
+					},
+					url: "comment/list"
+				}).then(data=>{
+					this.comlist=data;
 				})
 			}
 		}

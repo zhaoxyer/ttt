@@ -2,15 +2,15 @@
   <view class="_div data-v-3bc73770 setinput">
     <view class="_div data-v-3bc73770">
       <label class="_span data-v-3bc73770">手机号</label>
-      <input type="text" placeholder="请输入手机号" value="{{userinf.phone}}" bindinput="handleProxy" data-eventid="{{'mu4-0'}}" data-comkey="{{$k}}" class="_input data-v-3bc73770" />
+      <input type="text" placeholder="请输入手机号" value="{{userinf.phone}}" bindinput="handleProxy" data-eventid="{{'iN9-0'}}" data-comkey="{{$k}}" class="_input data-v-3bc73770" />
     </view>
     <view class="_div data-v-3bc73770">
       <label class="_span data-v-3bc73770">验证码</label>
-      <input type="text" placeholder="请输入验证码" value="{{userinf.vCode}}" bindinput="handleProxy" data-eventid="{{'Nbg-1'}}" data-comkey="{{$k}}" class="_input data-v-3bc73770" />
-      <label class="_label data-v-3bc73770 getcode" bindtap="handleProxy" data-eventid="{{'qDp-2'}}" data-comkey="{{$k}}">{{codemsg}}</label>
+      <input type="text" placeholder="请输入验证码" value="{{userinf.code}}" bindinput="handleProxy" data-eventid="{{'j8l-1'}}" data-comkey="{{$k}}" class="_input data-v-3bc73770" />
+      <label class="_label data-v-3bc73770 getcode" bindtap="handleProxy" data-eventid="{{'mlF-2'}}" data-comkey="{{$k}}">{{codemsg}}</label>
     </view>
     <view class="_p data-v-3bc73770 submit">
-      <view bindtap="handleProxy" data-eventid="{{'gcX-3'}}" data-comkey="{{$k}}" class="_view data-v-3bc73770">更换手机号</view>
+      <view bindtap="handleProxy" data-eventid="{{'NFv-3'}}" data-comkey="{{$k}}" class="_view data-v-3bc73770">更换手机号</view>
     </view>
   </view>
 </template>

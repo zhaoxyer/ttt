@@ -1,4 +1,5 @@
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
+<import src="/components/comment.vue.wxml" />
 <template name="7e515bf3">
   <view class="_view data-v-2858cd8d">
     <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class="_swiper data-v-2858cd8d">
@@ -19,7 +20,7 @@
         </view>
       </view>
       <view class="_div data-v-2858cd8d typelist">
-        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'9d6-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
+        <view wx:key="index" key="{{index}}" bindtap="handleProxy" data-eventid="{{'jAJ-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typelist}}" wx:for-index="index" wx:for-item="list" class="_div data-v-2858cd8d {{[typeindex == index ? 'active' : '']}}">
           <view class="_div data-v-2858cd8d">
             <view class="_p data-v-2858cd8d">{{list.name}}</view>
             <view class="_p data-v-2858cd8d">￥{{list.price}}/个</view>
@@ -29,20 +30,20 @@
     </view>
     <view class="_div data-v-2858cd8d evaluate">
       <view class="_div data-v-2858cd8d evanum">
-        <view class="_div data-v-2858cd8d">评价（6）</view>
+        <view class="_div data-v-2858cd8d">评价（{{comlist.length}}）</view>
         <view class="_div data-v-2858cd8d">
-          <label class="_span data-v-2858cd8d">查看全部</label>
-          <image src="../../static/right.jpg" class="_image data-v-2858cd8d"></image>
+          <label bindtap="handleProxy" data-eventid="{{'QWz-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">查看全部</label>
+          <image src="../../static/right.jpg" bindtap="handleProxy" data-eventid="{{'GTW-2'}}" data-comkey="{{$k}}" class="_image data-v-2858cd8d"></image>
         </view>
       </view>
       <view class="_div data-v-2858cd8d gobuild">
-        <label bindtap="handleProxy" data-eventid="{{'nEa-1'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
+        <label bindtap="handleProxy" data-eventid="{{'51o-3'}}" data-comkey="{{$k}}" class="_span data-v-2858cd8d">建材城</label>
       </view>
       <view class="_div data-v-2858cd8d tip">以上标准价格为上门费，如需材料请点击建材城</view>
     </view>
     <view class="_div data-v-2858cd8d bggray"></view>
     <view wx:if="{{serverinf.detail}}" class="_div data-v-2858cd8d detail">
-      <template data="{{...$root['0'], ...$root[$kk+'1sC-1'],$root}}" is="745fb98c"></template>
+      <template data="{{...$root['0'], ...$root[$kk+'Nlk-1'],$root}}" is="745fb98c"></template>
     </view>
     <view style="height: 100rpx;" class="_div data-v-2858cd8d"></view>
     <view class="_div data-v-2858cd8d footer">
@@ -50,7 +51,10 @@
         <label class="_span data-v-2858cd8d">预约费</label>
         <label class="_span data-v-2858cd8d">￥{{serverinf.bookPrice}}</label>
       </view>
-      <view bindtap="handleProxy" data-eventid="{{'B4V-2'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+      <view bindtap="handleProxy" data-eventid="{{'juO-4'}}" data-comkey="{{$k}}" class="_div data-v-2858cd8d">立即预约</view>
+    </view>
+    <view class="_div data-v-2858cd8d pop" hidden="{{!(pop)}}">
+      <template bindcgpop="handleProxy" data-eventid="{{'TM2-5'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'lbn-2'],$root}}" is="2cfcb1f3"></template>
     </view>
   </view>
 </template>

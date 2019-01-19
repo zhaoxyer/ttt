@@ -4,14 +4,13 @@
 			<view class="list">
 				<div>
 					<div class="reformtype">
-						<span :class="{'active':reformtype==0}" @click='cg_reformtype(0)'>家居装修</span><span :class="{'active':reformtype==1}" @click='cg_reformtype(1)'>二次装修</span>
+						<span :class="{'active':reformtype==index}" @click='cg_reformtype(index,list.id)' v-for="(list,index) in classList" :key="index">{{list.name}}</span>
 					</div>
 					<div class="youhui leftright">
 						<div class='server'>
-							<div v-for="(list,index) in server" :key="index" @click="go_home_serverinf">
-								<image :src="list.image" mode="widthFix"></image>
-								<p>{{list.adress}}</p>
-								<P>{{list.type}}</p>
+							<div v-for="(list,index) in server" :key="index" @click="cg_serverIndex(index)">
+								<image :src="static+list.picture"></image>
+								<p :class="{'active':serverIndex==index}">{{list.name}}</p>
 							</div>
 						</div>
 					</div>
@@ -32,114 +31,42 @@
 				<h1>面积</h1>
 				<div class="type bigType">
 					<div v-for="(list,index) in bigType" :key="list" @click="cg_check1(index)">
-						<image src="../../static/mine/check.jpg" v-if="index!=check1" ></image><image src="../../static/mine/uncheck.jpg" v-else></image><span>{{list.type}}</span>
+						<image src="../../static/mine/check.jpg" v-if="index!=check1" ></image><image src="../../static/mine/uncheck.jpg" v-else></image><span>{{list.name}}</span>
 					</div>
 				</div>
 			</div>
 		</scroll-view>
 		<div class="apply">
-			<div>立即预约</div>
+			<div @click='req_make'>立即预约</div>
 		</div>
 	</div>
 
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
 				reformtype:0,
 				check1:-1,
 				check:-1,
-				server: [{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						}
-				],
-				homeType:[
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					}
-				],
-				bigType:[
-					{
-						type:"120平以下"
-					},
-					{
-						type:"120平以下"
-					},
-					{
-						type:"120平以下"
-					},
-					{
-						type:"120平以下"
-					},
-					{
-						type:"120平以下"
-					},
-					{
-						type:"120平以下"
-					}
-				]
+				classList:[],
+				server: [],
+				homeType:[],
+				bigType:[],
+				serverIndex:'-1'
 			}
 		},
 		onLoad() {
-
+			this.req_class();
+			this.req_bigType();
+			this.req_homeType();
 		},
 		methods: {
+			cg_serverIndex(index){
+				this.serverIndex=index
+			},
 			go_mine_infchange() {
 				wx.navigateTo({
 					url: '../mine/infchange'
@@ -164,8 +91,79 @@
 				}
 				this.check1=index;
 			},
-			cg_reformtype(index){
+			cg_reformtype(index,id){
 				this.reformtype=index;
+				this.req_server(id)
+			},
+			req_class(){
+				ut.request({
+					url: "renovation/wholeHomeClassList",
+					method:'get'
+				}).then(data=>{
+					this.classList=data;
+					return data
+				}).then(data=>{
+					if(data[0]){
+						this.req_server(data[0].id)
+					}
+				})
+			},
+			req_bigType(){
+				ut.request({
+					url: "renovation/houseAreaList",
+					method:'get'
+				}).then(data=>{
+					this.bigType=data;
+				})
+			},
+			req_homeType(){
+				ut.request({
+					url: "renovation/houseTypeList",
+					method:'get'
+				}).then(data=>{
+					this.homeType=data;
+				})
+			},
+			req_server(id){
+				ut.request({
+					data:{
+						classId:id
+					},
+					url: "renovation/wholeHomeTypeList",
+					method:'get'
+				}).then(data=>{
+					this.server=data;
+				})
+			},
+			req_make(){
+				if(this.serverIndex=='-1'){
+					ut.totast('请选择改造类型');
+					return;
+				}
+				if(this.check=='-1'){
+					ut.totast('请选择户型');
+					return;
+				}
+				if(this.check1=='-1'){
+					ut.totast('请选择面积');
+					return;
+				}
+				wx.setStorageSync('remakeinf',{
+					name:this.server[this.serverIndex].name,
+					wholeHomeTypeId:this.server[this.serverIndex].id,
+					houseTypeId:this.homeType[this.check].id,
+					picture:ut.static+this.server[this.serverIndex].picture,
+					areaTypeId:this.bigType[this.check1].id
+				})
+				if(wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../home/remake?type=1'
+					})
+				}else{
+					wx.navigateTo({
+						url: '../mine/login'
+					})
+				}
 			}
 		}
 	}
@@ -347,6 +345,10 @@
 	.server image {
 		width: 150px;
 		border-radius: 10px;
+		height: 150px;
+	}
+	.server .active{
+		color: #FEC200;
 	}
 
 	.bggray {

@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<div class="columlist columlist1" @click="uploadimg">
-			<span>头像</span><div><image   :src="headurl||'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
+			<span>头像</span><div><image   :src="userinf.phone||'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
 		</div>
 		<div class="columlist" @click="go_mine_updatename">
 			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image src="../../static/right.jpg"></image></div>
@@ -17,7 +17,6 @@
 	export default {
 		data() {
 			return {
-				headurl:wx.getStorageSync('headurl'),
 				userinf:{}
 			}
 		},
@@ -33,9 +32,45 @@
 			uploadimg(){
 				ut.uploadimg({
 					callback:res=>{
-						wx.setStorageSync('headurl',res);
-						this.headurl=res;
+						this.req_uploadimg(res);
+						
 					}
+				})
+			},
+			req_uploadimg(res){
+				console.log(ut.uploadimgurl+"common/imageUpload")
+				const that=this;
+				wx.uploadFile({
+					url: ut.uploadimgurl+"common/imageUpload", //仅为示例，非真实的接口地址
+					filePath: res,
+					name: 'picture',
+					header: {
+						"Accept": "*/*"
+					},
+					success(res) {
+						console.log(res)
+						if(!res.data){
+							ut.totast('上传图片失败')
+							return;
+						}
+						res.data=JSON.parse(res.data);
+						if(res.data.code==0){
+							that.req_updatePhoto(res.data.data)
+						}else{
+							ut.totast('上传图片失败')
+						}
+					}
+				})
+			},
+			req_updatePhoto(photo){
+				ut.request({
+					data:{
+					photo: photo
+					},
+					url: "user/updatePhone"
+				}).then(data => {
+					this.userinf.photo=ut.static+photo;
+					wx.setStorageSync('userinf',this.userinf);
 				})
 			},
 			go_mine_updatename(){
@@ -67,6 +102,7 @@
 	.header{
 		width: 120px!important;
 		height: 120px!important;
+		border-radius: 50%;
 	}
 	.bggray{
 		background: #e5e5e5;

@@ -154,6 +154,10 @@ scroll-view {
 .server image {
   width: 150rpx;
   border-radius: 10rpx;
+  height: 150rpx;
+}
+.server .active {
+  color: #FEC200;
 }
 .bggray {
   background: #e5e5e5;

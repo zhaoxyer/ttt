@@ -24,8 +24,7 @@
 		</div>
 		<div class="order-options-wrap">
 			<div class="order-options">
-				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
-				<button v-if="data.status == 1" @click="go_next" class="order-button">去支付</button>
+				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
 				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
 				<button v-if="data.status == 8" @click="changeOrderCheck(true)" class="order-button">验收付款</button>
 			</div>

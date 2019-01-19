@@ -5,6 +5,7 @@
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
+  position: relative;
 }
 .setinput>._div>._span,
 .setinput>._div>._input,

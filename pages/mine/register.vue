@@ -7,6 +7,9 @@
 			<span>姓名</span><input type="text" placeholder="请输入真实姓名" v-model="userinf.name"/>
 		</div>
 		<div>
+			<span>身份证</span><input type="text" placeholder="请输入身份证号" v-model="userinf.idCard"/>
+		</div>
+		<div>
 			<span>手机号</span><input type="text" placeholder="请输入手机号" v-model="userinf.phone"/>
 		</div>
 		<div>
@@ -45,7 +48,8 @@
 					"phone": "",//手机号
 					"roleId": 0,
 					"username": "",//用户名
-					"vCode": ""//验证码
+					"vCode": "",//验证码
+					"idCard":''
 				}
 			}
 		},
@@ -71,6 +75,10 @@
 				}
 				if(!this.userinf.name){
 					ut.totast('请输入姓名');
+					return;
+				}
+				if(!this.userinf.idCard){
+					ut.totast('请输入身份证号');
 					return;
 				}
 				if(!ut.checkmobile(this.userinf.phone)){

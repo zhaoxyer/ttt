@@ -1,33 +1,35 @@
 <template>
 	<div>
-	  <div class="order-item-detail">
-		<div class="order-info">
-			<span class="order-num">订单编号：{{data.orderNumber}}</span>
-			<span class="order-status">{{data.statusName}}</span>
-		</div>
-		<div class="order-info">
-			<image class="goods-picture noimage" :src="static+data.picture"></image>
-			<div class="goods-info-wrap">
-				<div class="goods-info">
-					<p>{{data.goodsName}}</p>
-					<p>¥ {{data.price}}</p>
-				</div>
-				<div class="goods-info">
-					<p>规格</p>
-					<p>&times;{{data.number}} </p>
+	  <div class="order-item-detail" >
+			<div class="order-info">
+				<span class="order-num">订单编号：{{data.orderNumber}}</span>
+				<span class="order-status">{{data.statusName}}</span>
+			</div>
+			<div class="order-info"  v-for="(list,index) in data.orderGoods" :key="list">
+				<image class="goods-picture noimage" :src="static+list.picture"></image>
+				<div class="goods-info-wrap">
+					<div class="goods-info">
+						<p>{{list.goodsName}}</p>
+						<p>¥ {{list.goodsPrice}}</p>
+					</div>
+					<div class="goods-info">
+						<p>规格:{{list.goodsSpec}}</p>
+						<p>&times;{{list.number}} </p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="goods-info">
-			<div class="order-time">下单时间：{{data.createTime}}</div>
-			<div class="order-time">合计: {{data.price*data.num}}</div>
-		</div>
-		<div class="order-options-wrap">
-			<div class="order-options">
-				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button border-collapse">取消订单</button>
-				<button v-if="data.status == 1" @click="go_next" class="order-button">去支付</button>
+			<div class="goods-info">
+				<div class="order-time">下单时间：{{data.createTime}}</div>
+				<div class="order-time">合计: {{data.total}}</div>
 			</div>
-		</div>
+			<div class="order-options-wrap">
+				<div class="order-options">
+					<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
+					<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
+					<button v-if="data.status == 8" @click="changeConfirmModal(true)" class="order-button border-collapse">配送议价</button>
+					<button v-if="data.status == 8" >验收付款</button>
+				</div>
+			</div>
 	  </div>
 		
 		<t-modal :reason="reason"  :visibile="order_status_visibile" @changeVisible = "changeOrderStatusModal">
@@ -38,27 +40,41 @@
 			<cancel-modal cancelUrl="goods/order/cancelOrder" @reload="reloadData" :orderId="data.id" :reason="reason"></cancel-modal>
 		</t-modal>
 		
+		<t-modal  :visibile="confirm_order_visibile" @changeVisible = "changeConfirmModal">
+			<confirm-plan @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></confirm-plan>
+		</t-modal>
+		
+		<t-modal  :visibile="confirm_ordercheck_visibile"    @changeVisible = "changeOrderCheck">
+			<order-check @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></order-check>
+		</t-modal>
 	</div>
 </template>
 
 <script>
 import TModal from './tmodal.vue';
 import OrderStatus from './orderStatus.vue';
-import CancelModal from './cancelModal.vue';
+import CancelModal from './goodscancelModal.vue';
+import ConfirmPlan from './goodsconfirmModal.vue';
+import orderCheck from './goodsorderCheck.vue';
 import ut from '../utils/index.js';
 export default {
   props: ["data","reason","reload"],
   data() {
 	return {
+		static:ut.static,
 		order_status_visibile: false,
 		cancel_order_visibile: false,
-		static:ut.static
+		confirm_order_visibile: false,
+		confirm_ordercheck_visibile:false,
+		confirmPlanlist:[]
 	}  
   },
   components: {
   	TModal,
 		OrderStatus,
-		CancelModal
+		CancelModal,
+		ConfirmPlan,
+		orderCheck
   },
   methods: {
 		go_next() {
@@ -69,6 +85,19 @@ export default {
 		reloadData() {
 			this.$emit('reload');
 		},
+		getConfirmPlan() {
+			ut.request({
+				data: {
+					orderId: this.data.id
+				},
+				method: 'get',
+				url: "goods/order/carryPrice"
+			}).then(data=>{
+				console.log(data)
+				this.confirmPlanlist=data;
+				//this.cancel_reason = data;
+			})
+		},
 		changeOrderStatusModal(status) {
 			if(typeof status != 'undefined'){
 				this.order_status_visibile = status;
@@ -77,6 +106,22 @@ export default {
 		changeCancelModal(status) {
 			if(typeof status != 'undefined'){
 				this.cancel_order_visibile = status;
+			}
+		},
+		changeConfirmModal(status) {
+			if(status) {
+				this.getConfirmPlan()
+			}
+			if(typeof status != 'undefined'){
+				this.confirm_order_visibile = status;
+			}
+		},
+		changeOrderCheck(status) {
+			if(status) {
+				this.getConfirmPlan()
+			}
+			if(typeof status != 'undefined'){
+				this.confirm_ordercheck_visibile = status;
 			}
 		}
   }

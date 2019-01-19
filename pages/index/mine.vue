@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="header" @click="checkinf">
-			<image :src="headurl||'../../static/logo.jpg'"/>
+			<image :src="userinf.photo||'../../static/logo.jpg'"/>
 			<p>{{userinf.nickname||userinf.name||'木斗生活'}}</p>
 		</div>
 		<div class='userinf'>
@@ -36,27 +36,27 @@
 		</div>
 		<div class='userinf'>
 			<h1>木斗招募</h1>
-			<div @click="go_mine_apply">
+			<div @click="go_mine_apply(1)">
 				<image src="../../static/index/recruit0.png"/>
 				<p>木斗工匠</p>
 			</div>
-			<div>
+			<div  @click="go_mine_apply(2)">
 				<image src="../../static/index/recruit1.png"/>
 				<p>木斗商户</p>
 			</div>
-			<div>
+			<div @click="go_mine_apply(3)">
 				<image src="../../static/index/recruit2.png"/>
 				<p>木斗速递</p>
 			</div>
-			<div>
+			<div @click="go_mine_apply(4)">
 				<image src="../../static/index/recruit3.png"/>
 				<p>木斗搬运</p>
 			</div>
-			<div>
+			<div @click="go_mine_apply(5)">
 				<image src="../../static/index/recruit4.png"/>
 				<p>定制商户</p>
 			</div>
-			<div>
+			<div @click="go_mine_apply(6)">
 				<image src="../../static/index/recruit5.png"/>
 				<p>地区加盟</p>
 			</div>
@@ -70,8 +70,7 @@
 	export default {
 		data() {
 			return {
-				userinf:{},
-				headurl:wx.getStorageSync('headurl')
+				userinf:{}
 			}
 		},
 		onLoad() {
@@ -79,7 +78,6 @@
 		},
 		onShow() {		
 			if(wx.getStorageSync('token')){
-				this.headurl=wx.getStorageSync('headurl');
 				this.req_userinfo();
 			}else{
 				this.userinf={};
@@ -95,7 +93,7 @@
 					this.go_mine_infchange();
 					return;
 				}
-				this.go_mine_register();
+				this.go_mine_login();
 			},
 			go_mine_aboutus(){
 				wx.navigateTo({
@@ -107,14 +105,18 @@
 					url: '../mine/infchange'
 				})
 			},
-			go_mine_apply(){
+			go_mine_apply(type){
+				if(!wx.getStorageSync('token')){
+					this.go_mine_login();
+					return;
+				}
 				wx.navigateTo({
-					url: '../mine/apply'
+					url: '../mine/apply?type='+type
 				})
 			},
-			go_mine_register(){
+			go_mine_login(){
 				wx.navigateTo({
-					url: '../mine/register'
+					url: '../mine/login'
 				})
 			},
 			go_mine_adress(){

@@ -1,13 +1,16 @@
 <template>
 	<div>
 		<div class='adress'>
-			<div class="adressli" @click="go_mine_adress">
+			<div class="adressli" @click="go_mine_adress" v-if="adress">
 				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{adress.name}}</div>
 				<div>联系方式：{{adress.phone}}</div>
 				<div class="adressinf">
 					<div><div></div><span>收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</span></div>
 					<image src="../../static/right.jpg"/>
 				</div>
+			</div>
+			<div class="adressli center" @click="go_mine_adress" v-else>
+				请选择地址
 			</div>
 		</div>
 		<div class="payinf inff" v-for="list in buildinf" :key='list'>
@@ -122,6 +125,8 @@
 			this.req_getdefaddress();
 			this.buildinf.forEach(item=>{
 				this.mallprice+=item.price;
+				item.goodsSpecId=item.id;
+				item.goodsNumber=item.num;
 			})
 		},
 		onShow(){
@@ -163,6 +168,10 @@
 				this.d=date[2];
 			},
 			req_unifiedOrder(){
+				if (!this.adress) {
+					ut.totast('请选择地址');
+					return;
+				}
 				if(!this.date){
 					ut.totast('请选择日期');
 					return;
@@ -182,11 +191,10 @@
 							"expressTypeId": this.vehiclelist[this.vehicleindex].id,
 							"expressTime": this.date+this.time,
 							"floor": this.floor,//楼层
-							"goodsId": this.buildinf[0].goodsId,
-							"number": this.buildinf[0].num,
+							"orderGoods": this.buildinf,
 							"remark": this.remark,
-							"requireCarry": this.requireCarry,//是否搬运1是2否
-							"specId": this.buildinf[0].id
+							 "number": 1,
+							"requireCarry": this.requireCarry//是否搬运1是2否
 					},
 					url: "goods/order/unifiedOrder",
 					c:true
@@ -439,5 +447,8 @@
 		flex-direction: column;
 		line-height: 50px;
 		font-size: 24px;
+	}
+	.center{
+		text-align: center;
 	}
 </style>

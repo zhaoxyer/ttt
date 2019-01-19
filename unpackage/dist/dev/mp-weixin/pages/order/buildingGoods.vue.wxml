@@ -9,7 +9,7 @@
     </view>
     <view wx:if="{{order_list.length>0}}" class="_div data-v-7ab8bd12">
       <view wx:key="index" key="{{index}}" wx:for="{{order_list}}" wx:for-index="index" wx:for-item="item" class="_div data-v-7ab8bd12">
-        <template bindreload="handleProxy" data-eventid="{{'JEV-0-'+index}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'wNZ-0-'+index],$root}}" is="bee37c32"></template>
+        <template bindreload="handleProxy" data-eventid="{{'lT2-0-'+index}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'Uvv-0-'+index],$root}}" is="bee37c32"></template>
       </view>
     </view>
   </view>

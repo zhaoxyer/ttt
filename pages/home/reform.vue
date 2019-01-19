@@ -4,10 +4,9 @@
 			<div>
 				<div class="youhui leftright">
 					<div class='server'>
-						<div v-for="(list,index) in server" :key="index" @click="go_home_serverinf">
-							<image :src="list.image" mode="widthFix"></image>
-							<p>{{list.adress}}</p>
-							<P>{{list.type}}</p>
+						<div v-for="(list,index) in server" :key="index" @click="cg_serverIndex(index)">
+							<image :src="static+list.picture"></image>
+							<p :class="{'active':serverIndex==index}">{{list.name}}</p>
 						</div>
 					</div>
 				</div>
@@ -24,86 +23,33 @@
 			</div>
 		</div>
 		<div class="apply">
-			<div>立即预约</div>
+			<div @click="go_home_remake">立即预约</div>
 		</div>
 	</div>
 
 </template>
 
 <script>
+	import ut from '../../utils/index.js';
 	export default {
 		data() {
 			return {
 				check:-1,
-				server: [{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						},
-						{
-							type: '改造',
-							adress: '卫生间',
-							image: '../../static/index/fuwu.jpg'
-						}
-				],
-				homeType:[
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					},
-					{
-						name:"别墅"
-					}
-				]
+				server: [],
+				homeType:[],
+				static:'',
+				serverIndex:'-1'
 			}
 		},
 		onLoad() {
-
+			this.static=ut.static
+			this.req_homeType();
+			this.req_server();
 		},
 		methods: {
+			cg_serverIndex(index){
+				this.serverIndex=index
+			},
 			go_mine_infchange() {
 				wx.navigateTo({
 					url: '../mine/infchange'
@@ -120,6 +66,47 @@
 					return;
 				}
 				this.check=index
+			},
+			req_homeType(){
+				ut.request({
+					url: "reform/houseTypeList",
+					method:'get'
+				}).then(data=>{
+					this.homeType=data;
+				})
+			},
+			req_server(){
+				ut.request({
+					url: "reform/reformTypeList",
+					method:'get'
+				}).then(data=>{
+					this.server=data;
+				})
+			},
+			go_home_remake(){
+				if(this.serverIndex=='-1'){
+					ut.totast('请选择改造类型');
+					return;
+				}
+				if(this.check=='-1'){
+					ut.totast('请选择户型');
+					return;
+				}
+				wx.setStorageSync('remakeinf',{
+					name:this.server[this.serverIndex].name,
+					reformTypeId:this.server[this.serverIndex].id,
+					houseTypeId:this.homeType[this.check].id,
+					picture:ut.static+this.server[this.serverIndex].picture
+				})
+				if(wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../home/remake'
+					})
+				}else{
+					wx.navigateTo({
+						url: '../mine/login'
+					})
+				}
 			}
 		}
 	}
@@ -249,7 +236,9 @@
 		text-align: center;
 		line-height: 40px;
 	}
-
+	.server .active{
+		color: #FEC200;
+	}
 	.server div {
 		display: inline-block;
 		vertical-align: top;
@@ -266,6 +255,7 @@
 
 	.server image {
 		width: 150px;
+		height: 150px;
 		border-radius: 10px;
 	}
 

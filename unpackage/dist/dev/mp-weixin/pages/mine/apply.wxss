@@ -33,11 +33,13 @@
 }
 .inf>._div {
   margin-bottom: 30rpx;
+  position: relative;
 }
 .inf>._div ._div,
 .inf>._div ._span {
   display: inline-block;
   vertical-align: top;
+  line-height: 60rpx;
 }
 .inf>._div>._span {
   width: 104rpx;
@@ -45,7 +47,7 @@
 .inf>._div ._div {
   width: 340rpx;
   border: 1rpx solid #5d5c5c;
-  height: 30rpx;
+  height: 60rpx;
   margin-left: 70rpx;
   padding: 0 10rpx;
 }
@@ -53,14 +55,13 @@
   width: 20rpx;
   height: 20rpx;
   float: right;
-  margin-top: 5rpx;
+  margin-top: 20rpx;
 }
 .inf>._div ._div ._input {
   width: 100%;
-  height: 30rpx;
-  line-height: 30rpx;
+  height: 60rpx;
+  line-height: 60rpx;
   font-size: 24rpx;
-  min-height: 30rpx;
 }
 .tip {
   text-align: center;

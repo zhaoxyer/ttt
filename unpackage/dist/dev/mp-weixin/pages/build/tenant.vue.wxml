@@ -22,19 +22,19 @@
     </view>
     <view class="_div data-v-897c38ac section">
       <scroll-view scroll-y="true" class="_scroll-view data-v-897c38ac nav">
-        <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'ALv-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typeList}}" wx:for-index="index" wx:for-item="item" class="_div data-v-897c38ac {{[type == index ? 'active' : '']}}">{{item.name}}</view>
+        <view wx:key="item" key="{{item}}" bindtap="handleProxy" data-eventid="{{'PFv-0-'+index}}" data-comkey="{{$k}}" wx:for="{{typeList}}" wx:for-index="index" wx:for-item="item" class="_div data-v-897c38ac {{[type == index ? 'active' : '']}}">{{item.name}}</view>
       </scroll-view>
       <scroll-view class="_scroll-view data-v-897c38ac list" scroll-y="true">
-        <view bindtap="handleProxy" class="_div data-v-897c38ac mall1inf" wx:key="item" key="{{item}}" data-eventid="{{'W4h-3-'+index}}" data-comkey="{{$k}}" wx:for="{{malllist}}" wx:for-index="index" wx:for-item="item">
+        <view bindtap="handleProxy" class="_div data-v-897c38ac mall1inf" wx:key="item" key="{{item}}" data-eventid="{{'5U1-3-'+index}}" data-comkey="{{$k}}" wx:for="{{malllist}}" wx:for-index="index" wx:for-item="item">
           <image src="{{static+item.picture}}" class="_image data-v-897c38ac"></image>
           <view class="_div data-v-897c38ac">
             <view class="_p data-v-897c38ac">{{item.name}}</view>
             <view class="_p data-v-897c38ac">月销{{item.num}}笔</view>
             <view class="_p data-v-897c38ac add"></view>
             <view class="_div data-v-897c38ac addedit">
-              <image src="../../static/build/minus.png" wx:if="{{item.mallnum}}" catchtap="handleProxy" data-eventid="{{'vZi-1-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
+              <image src="../../static/build/minus.png" wx:if="{{item.mallnum}}" catchtap="handleProxy" data-eventid="{{'wT1-1-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
               <label wx:if="{{item.mallnum}}" class="_span data-v-897c38ac">{{item.mallnum}}</label>
-              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'7vN-2-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
+              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'EJO-2-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
             </view>
             <label class="_span data-v-897c38ac">￥{{item.price}}</label>
             <view class="_p data-v-897c38ac"></view>
@@ -45,24 +45,24 @@
     <view class="_div data-v-897c38ac footer">
       <view class="_div data-v-897c38ac edit">
         <label class="_span data-v-897c38ac">加入购物车</label>
-        <label bindtap="handleProxy" data-eventid="{{'9Q2-4'}}" data-comkey="{{$k}}" class="_span data-v-897c38ac">购买</label>
+        <label bindtap="handleProxy" data-eventid="{{'oTM-4'}}" data-comkey="{{$k}}" class="_span data-v-897c38ac">购买</label>
       </view>
       <label class="_span data-v-897c38ac mallnum" hidden="{{!(mallnum)}}">{{mallnum}}</label>
-      <image src="../../static/logo.jpg" class="_image data-v-897c38ac logo" bindtap="handleProxy" data-eventid="{{'hfp-5'}}" data-comkey="{{$k}}"></image>
+      <image src="../../static/logo.jpg" class="_image data-v-897c38ac logo" bindtap="handleProxy" data-eventid="{{'9Zv-5'}}" data-comkey="{{$k}}"></image>
       <label class="_span data-v-897c38ac money" hidden="{{!(mallnum)}}">￥{{mallprice}}</label>
     </view>
-    <view class="_div data-v-897c38ac pop" wx:if="{{pop}}" bindtap="handleProxy" catchtap="handleProxy" data-eventid="{{'N0z-9'}}" data-comkey="{{$k}}">
+    <view class="_div data-v-897c38ac pop" wx:if="{{pop}}" bindtap="handleProxy" catchtap="handleProxy" data-eventid="{{'cfJ-9'}}" data-comkey="{{$k}}">
       <view class="_div data-v-897c38ac popcont">
         <view class="_div data-v-897c38ac delbar">
           <image src="../../static/mine/del.png" class="_image data-v-897c38ac"></image>
           <label class="_span data-v-897c38ac">清空购物车</label>
         </view>
         <view class="_div data-v-897c38ac barlist">
-          <view class="_div data-v-897c38ac add1" wx:key="index" key="{{index}}" wx:if="{{item.mallnum}}" catchtap="handleProxy" data-eventid="{{'nyP-8-'+index}}" data-comkey="{{$k}}" wx:for="{{malllist}}" wx:for-index="index" wx:for-item="item">
+          <view class="_div data-v-897c38ac add1" wx:key="index" key="{{index}}" wx:if="{{item.mallnum}}" catchtap="handleProxy" data-eventid="{{'OQR-8-'+index}}" data-comkey="{{$k}}" wx:for="{{malllist}}" wx:for-index="index" wx:for-item="item">
             <view class="_div data-v-897c38ac addedit addedit1">
-              <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'WOp-6-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
+              <image src="../../static/build/minus.png" catchtap="handleProxy" data-eventid="{{'MDM-6-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
               <label class="_span data-v-897c38ac">{{item.mallnum}}</label>
-              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'tUW-7-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
+              <image src="../../static/build/add.png" catchtap="handleProxy" data-eventid="{{'HNe-7-'+index}}" data-comkey="{{$k}}" class="_image data-v-897c38ac"></image>
             </view>
             <label class="_span data-v-897c38ac barname">{{item.name}}</label>
             <label class="_span data-v-897c38ac barmoney">￥{{item.price}}</label>

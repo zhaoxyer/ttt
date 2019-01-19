@@ -18,7 +18,7 @@
 			</swiper-item>
 		</swiper>
 		<div class='server'>
-			<div v-for="(list,index) in classlist" :key='index' @click="go_home_server(list.id)">
+			<div v-for="(list,index) in classlist" :key='index' @click="go_home_server(list.id,list.name)">
 				<image   :src="static+list.picture"   mode="widthFix" class="noimage"></image>
 				<view>{{list.name}}</view>
 			</div>
@@ -28,16 +28,16 @@
 			<button @click="go_home_reform1"></button>
 			<image src="../../static/index/buju.jpg" mode="widthFix"></image>
 		</div>
-		<div class="title1 bg0">推荐服务</div>
+		<div class="title1 bg0" v-if="recomlist.length">推荐服务</div>
 		<div class="fuwu leftright">
-			<div @click="go_home_serverinf(list.classId)" v-for="(list,index) in recomlist" :key='index'>
+			<div @click="go_home_serverinf(list.classId,list.name)" v-for="(list,index) in recomlist" :key='index'>
 				<image :src="static +list.picture" class="noimage"></image>
 				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
 		</div>
-		<div class="title1 bg1">最新优惠</div>
+		<div class="title1 bg1" v-if="newlist.length">最新优惠</div>
 		<div class="fuwu leftright">
-			<div  @click="go_home_serverinf(list.classId)" v-for="(list,index) in newlist" :key='index' >
+			<div  @click="go_home_serverinf(list.classId,list.name)" v-for="(list,index) in newlist" :key='index' >
 				<image :src="static +list.picture" class="noimage"></image>
 				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
 			</div>
@@ -84,15 +84,15 @@
 					url: '../home/serch'
 				})
 			},
-			go_home_server(_id){
+			go_home_server(_id,name){
 				console.log(_id)
 				wx.navigateTo({
-					url: '../home/server?_id='+_id
+					url: `../home/server?_id=${_id}&title=${name}`
 				})
 			},
-			go_home_serverinf(_id){
+			go_home_serverinf(_id,name){
 				wx.navigateTo({
-					url: '../home/serverinf?_id='+_id
+					url: `../home/serverinf?_id=${_id}&title=${name}`
 				})
 			},
 			go_home_reform(){

@@ -4,7 +4,7 @@
 			<span>手机号</span><input type="text" placeholder="请输入手机号" v-model="userinf.phone"/>
 		</div>
 		<div>
-			<span>验证码</span><input type="text" placeholder="请输入验证码" v-model="userinf.vCode"/><label class="getcode" @click="req_sendCode">{{codemsg}}</label>
+			<span>验证码</span><input type="text" placeholder="请输入验证码" v-model="userinf.code"/><label class="getcode" @click="req_sendCode">{{codemsg}}</label>
 		</div>
 		<p class="submit">
 			<view  @click="req_register">更换手机号</view>
@@ -23,7 +23,7 @@
 				codemsg:"获取验证码",
 				userinf:{
 					"phone": "",//手机号
-					"vCode": ""//验证码
+					"code": ""//验证码
 				}
 			}
 		},
@@ -47,14 +47,13 @@
 					ut.totast('请输入正确的手机号');
 					return;
 				}
-				if(!this.userinf.vCode){
+				if(!this.userinf.code){
 					ut.totast('请输入验证码');
 					return;
-				}				
+				}	
 				ut.request({
 					data: this.userinf,
-					url: "user/updatephone",
-					c:true
+					url: "user/updatephone"
 				}).then(data=>{
 					ut.totast('更换手机号成功');
 					setTimeout(function(){

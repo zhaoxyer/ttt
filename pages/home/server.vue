@@ -12,8 +12,8 @@
 			</div>
 			<div class="youhui leftright">
 				<div class='server'>
-					<div  v-for="(list,listindex) in item.clientServiceClasses" :key="listindex"  @click="go_home_serverinf(list.id)">
-						<image   :src="static+list.picture"   mode="widthFix"></image>
+					<div  v-for="(list,listindex) in item.clientServiceClasses" :key="listindex"  @click="go_home_serverinf(list.id,list.name)">
+						<image   :src="static+list.picture"></image>
 						<p>{{list.name}}</p>
 					</div>
 				</div>
@@ -47,11 +47,12 @@
 		onLoad(opt) {
 			this.static=ut.static;
 			this.req_class(opt._id);
+			ut.settitle(opt.title||'服务列表');
 		},
 		methods: {
-			go_home_serverinf(id){
+			go_home_serverinf(id,name){
 				wx.navigateTo({
-					url: `../home/serverinf?_id=${id}`
+					url: `../home/serverinf?_id=${id}&title=${name}`
 				})
 			},
 			cg_typeindex(index){

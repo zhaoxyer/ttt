@@ -19,11 +19,11 @@
 		</swiper>
 		<div class='server'>
 			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id)'>
-				<image   :src="static+list.picture"   mode="widthFix" class="noimage"></image>
+				<image   :src="static+list.picture"   class="noimage"></image>
 				<view>{{list.name}}</view>
 			</div>
 		</div>
-		<div class="title">
+		<div class="title" v-if="newlist.length">
 			<span>•</span><span class="bg0">最新优惠</span><span>•</span>
 		</div>
 		<div class="youhui leftright">
@@ -35,7 +35,7 @@
 				<div><span>{{list.price}}</span><span>元每套</span></div>
 			</div>			
 		</div>
-		<div class="title">
+		<div class="title"  v-if="recomlist.length">
 			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
 		</div>
 		<div class="youhui leftright">

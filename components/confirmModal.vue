@@ -21,7 +21,7 @@
 	</div>
 </template>
 
-<script>
+<script scode="true">
 import ut from '../utils/index.js';
 export default {
   props: ["orderId","reload","changeVisibileModal","confirmPlanlist"],

@@ -272,3 +272,6 @@
   line-height: 50rpx;
   font-size: 24rpx;
 }
+.center {
+  text-align: center;
+}

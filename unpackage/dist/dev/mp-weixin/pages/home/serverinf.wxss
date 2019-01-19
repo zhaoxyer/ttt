@@ -348,3 +348,75 @@
 .detail {
   padding: 0 30rpx;
 }
+.comment.data-v-09386f8c {
+  left: 10rpx;
+  right: 10rpx;
+  height: 600rpx;
+  background: white;
+  box-shadow: 1rpx 2rpx 3rpx 4rpx #ccc inset;
+  border-radius: 10rpx;
+  top: 300rpx;
+  position: absolute;
+}
+.close.data-v-09386f8c {
+  padding: 20rpx 30rpx;
+  text-align: right;
+}
+.close image.data-v-09386f8c {
+  display: inline-block;
+  vertical-align: top;
+  width: 40rpx;
+  height: 40rpx;
+}
+.cont.data-v-09386f8c {
+  line-height: 60rpx;
+}
+.listcom.data-v-09386f8c {
+  border-bottom: 1rpx solid #e8e8e8;
+}
+.commentlist.data-v-09386f8c {
+  font-size: 24rpx;
+  padding: 0 30rpx;
+}
+.zhuiping.data-v-09386f8c {
+  border-top: 1rpx solid #e8e8e8;
+}
+.commentlist .list.data-v-09386f8c {
+  height: 520rpx;
+}
+.commentlist .userinf.data-v-09386f8c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+  height: 70rpx;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  line-height: 50rpx;
+}
+.commentlist .userinf image.data-v-09386f8c {
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  margin-right: 10rpx;
+}
+.cont1.data-v-09386f8c {
+  line-height: 60rpx;
+  font-size: 24rpx;
+  padding: 0 30rpx;
+}
+.imgcont.data-v-09386f8c {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+.imgcont image.data-v-09386f8c {
+  width: 200rpx;
+  height: 150rpx;
+  margin-top: 15rpx;
+  margin-left: 30rpx;
+  margin-bottom: 15rpx;
+}
+.imgcont image.data-v-09386f8c:nth-child(3n+1) {
+  margin-left: 0;
+}

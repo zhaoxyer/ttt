@@ -1,0 +1,17 @@
+<template name="308378b7">
+  <view class="_div data-v-5cf4a23e cancel-order-modal">
+    <view class="_div data-v-5cf4a23e cancel-order-condition" wx:key="index" key="{{index}}" wx:for="{{confirmPlanlist}}" wx:for-index="index" wx:for-item="list">
+      <view class="_div data-v-5cf4a23e cancel-order-title" wx:if="{{list.type}}"> {{list.type}} </view>
+      <view class="_div data-v-5cf4a23e cancel-statement-wrap">
+        <view class="_div data-v-5cf4a23e cancel-radio-wrap" wx:key="priceIndex" key="{{priceIndex}}" wx:for="{{list.prices}}" wx:for-index="priceIndex" wx:for-item="item">
+          <label class="_span data-v-5cf4a23e cancel-radio"></label>
+          <label class="_span data-v-5cf4a23e cancel-label">{{item.name+""+item.price}}</label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-5cf4a23e agree-plan-wrap">
+      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'ZlM-0'}}" data-comkey="{{$k}}">重新申报</button>
+      <button class="_button data-v-5cf4a23e cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'GQk-1'}}" data-comkey="{{$k}}">同意并付款</button>
+    </view>
+  </view>
+</template>

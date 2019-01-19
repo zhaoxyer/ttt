@@ -1,0 +1,58 @@
+<template name="60a74f3c">
+  <view class="_div data-v-44ccd3e2">
+    <view class="_div data-v-44ccd3e2 adress">
+      <view class="_div data-v-44ccd3e2 adressli" bindtap="handleProxy" wx:if="{{adress}}" data-eventid="{{'wLD-1'}}" data-comkey="{{$k}}">
+        <view class="_div data-v-44ccd3e2">姓      名：{{adress.name}}</view>
+        <view class="_div data-v-44ccd3e2">联系方式：{{adress.phone}}</view>
+        <view class="_div data-v-44ccd3e2 adressinf">
+          <view class="_div data-v-44ccd3e2">
+            <view class="_div data-v-44ccd3e2">
+              <image src="../../static/index/blackadress.png" class="_image data-v-44ccd3e2"></image>
+            </view>
+            <label class="_span data-v-44ccd3e2">收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</label>
+          </view>
+          <image src="../../static/right.jpg" class="_image data-v-44ccd3e2"></image>
+        </view>
+      </view>
+      <view class="_div data-v-44ccd3e2 adressli center" bindtap="handleProxy" wx:else data-eventid="{{'emW-0'}}" data-comkey="{{$k}}"> 请选择地址 </view>
+    </view>
+    <view class="_div data-v-44ccd3e2 bggray"></view>
+    <view class="_div data-v-44ccd3e2 payinf">
+      <view class="_h1 data-v-44ccd3e2">{{remakeinf.name}}</view>
+      <view class="_div data-v-44ccd3e2">
+        <image src="{{remakeinf.picture}}" class="_image data-v-44ccd3e2"></image>
+        <view class="_div data-v-44ccd3e2">
+          <label class="_span data-v-44ccd3e2">{{remakeinf.name}}</label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-44ccd3e2 payinf time">
+      <view class="_h1 data-v-44ccd3e2">{{remakeinf.name}}</view>
+      <view class="_p data-v-44ccd3e2">
+        <view class="_view data-v-44ccd3e2">
+          <picker mode="date" value="日期" custom-item="{{customItem}}" class="_picker data-v-44ccd3e2 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'A4P-2'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-44ccd3e2 picker"> 日期 </view>
+          </picker>
+          <label wx:if="{{!date}}" class="_span data-v-44ccd3e2">请选择日期</label>
+          <view wx:else class="_view data-v-44ccd3e2">
+            <label class="_span data-v-44ccd3e2">{{y}}</label>
+            <label class="_span data-v-44ccd3e2">年</label>
+            <label class="_span data-v-44ccd3e2">{{m}}</label>
+            <label class="_span data-v-44ccd3e2">月</label>
+            <label class="_span data-v-44ccd3e2">{{d}}</label>
+            <label class="_span data-v-44ccd3e2">日</label>
+          </view>
+        </view>
+        <view class="_view data-v-44ccd3e2">
+          <picker mode="time" value="时间" custom-item="{{customItem}}" class="_picker data-v-44ccd3e2 regionpicker" wx:if="{{!disabled}}" bindchange="handleProxy" data-eventid="{{'OIh-3'}}" data-comkey="{{$k}}">
+            <view class="_view data-v-44ccd3e2 picker"> 时间 </view>
+          </picker>
+          <label class="_span data-v-44ccd3e2"> {{time||'请选择时间'}} </label>
+        </view>
+      </view>
+    </view>
+    <view class="_div data-v-44ccd3e2 apply" bindtap="handleProxy" data-eventid="{{'2aT-4'}}" data-comkey="{{$k}}">
+      <view class="_div data-v-44ccd3e2">立即预约</view>
+    </view>
+  </view>
+</template>

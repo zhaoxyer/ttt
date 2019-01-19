@@ -12,10 +12,10 @@
     <view class="_div data-v-573f8b62 zhanwei"></view>
     <view class="_div data-v-573f8b62 agree-plan-wrap">
       <view class="_div data-v-573f8b62">
-        <image src="{{'/static/mine/'+(check?'un':'')+'check.jpg'}}" bindtap="handleProxy" data-eventid="{{'i1M-0'}}" data-comkey="{{$k}}" class="_image data-v-573f8b62"></image>
+        <image src="{{'/static/mine/'+(check?'un':'')+'check.jpg'}}" bindtap="handleProxy" data-eventid="{{'fKS-0'}}" data-comkey="{{$k}}" class="_image data-v-573f8b62"></image>
         <label class="_span data-v-573f8b62">验收完成</label>
       </view>
-      <button class="_button data-v-573f8b62 cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'Vt8-1'}}" data-comkey="{{$k}}">付款</button>
+      <button class="_button data-v-573f8b62 cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'dsz-1'}}" data-comkey="{{$k}}">付款</button>
     </view>
   </view>
 </template>
