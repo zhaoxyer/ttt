@@ -14,7 +14,7 @@
 						<input type="radio" readonly="true" v-if="!item.checked" @click="checked(index,itemindex)"/>
 						<input type="radio" checked v-else @click="checked(index,itemindex)"/>
 						<div class="shopping-goods-img">
-							<image :src="item.picture"  class="noimage"></image>
+							<image :src="static+item.picture"  class="noimage"></image>
 						</div>
 						<div class="shopping-good-info" >
 							<p class="shopping-good-name">{{item.goodsName}}</p>

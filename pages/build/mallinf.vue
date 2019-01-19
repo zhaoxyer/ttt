@@ -191,13 +191,13 @@
 					this.guigetype=data.clientGoodsSpecList;
 				})
 			},
-			filterdate(){
+			filterdate(barlist){
 				let parm=[];
-				for(let i=0;i<this.barlist.length;i++){
+				for(let i=0;i<barlist.length;i++){
 					parm[i]={
-						goodsId:this.barlist[i].goodsId,
-						num:this.barlist[i].num,
-						specId:this.barlist[i].id
+						goodsId:barlist[i].goodsId,
+						num:barlist[i].num,
+						specId:barlist[i].id
 					}
 				}
 				return parm;
@@ -209,11 +209,16 @@
 					})
 					return
 				}
-				if(!this.barlist.length){
+				let barlist=[...this.guigetype];
+				barlist=barlist.filter(item=>{
+					console.log(item.num)
+					return item.num>0
+				})
+				if(!barlist.length){
 					ut.totast('请先选择商品');
 					return;
 				}
-				const parm=this.filterdate();
+				const parm=this.filterdate(barlist);
 				ut.request({
 					data:parm,
 					url: "cart/add",

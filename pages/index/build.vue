@@ -84,9 +84,17 @@
 		},
 		onLoad() {
 			this.static=ut.static;
-			this.req_class();
-			this.req_new();
-			this.req_recom();
+		},
+		onShow() {
+			if(!this.newlist.length){
+				this.req_new();
+			}
+			if(!this.recomlist.length){
+				this.req_recom();
+			}
+			if(!this.classlist.length){
+				this.req_class();
+			}
 		},
 		methods: {
 			bindRegionChange: function (e) {
