@@ -29,57 +29,57 @@ export default {
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		position: fixed;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890px;
+		max-height: 890upx;
 		background: #fff;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0upx;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.action-main {
 		position: relative;
 	}
 	.order-status-wrap {
-		padding-top: 123px;
+		padding-top: 123upx;
 	}
 	.order-status-item {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
-		font-size: 18px;
+		font-size: 18upx;
 		color: #0B0708;
 	}
 	.order-status-time {
-		width: 333px;
+		width: 333upx;
 		height: 100%;
 		text-align: right;
 		box-sizing: border-box;
-		padding-right: 31px;
+		padding-right: 31upx;
 		
 	}
 	.order-status-icon {
-		width: 28px;
-		height: 28px;
+		width: 28upx;
+		height: 28upx;
 		position: relative;
-		top: 0px;
-		left: 15px;
+		top: 0upx;
+		left: 15upx;
 		z-index: 100;
 	}
 	.order-status-text {
 		flex: 1;
-		padding-bottom: 20px;
+		padding-bottom: 20upx;
 		white-space: pre-wrap;
-		padding-left: 58px;
-		padding-right: 93px;
+		padding-left: 58upx;
+		padding-right: 93upx;
 		border-left: 1px solid #fec200;
 	}
 	.order-status-last {
-		border-left: 0px;
+		border-left: 0upx;
 	}
 </style>

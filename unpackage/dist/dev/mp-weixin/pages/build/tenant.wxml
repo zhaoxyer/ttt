@@ -1,1 +1,2 @@
-<import src="/pages/build/tenant.vue.wxml" /><template is="269fa46c" data="{{ ...$root['0'], $root }}"/>
+<import src="./tenant.vue.wxml" />
+    <template is="0be3fea6" data="{{ ...$root['0'], $root }}"/>

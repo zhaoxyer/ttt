@@ -81,7 +81,7 @@
 </script>
 
 <style>
-	.adressli{padding: 30px;font-size: 26px;border-bottom: 1px solid #E5E5E5;line-height: 26px;}
+	.adressli{padding: 30upx;font-size: 26upx;border-bottom: 1px solid #E5E5E5;line-height: 26upx;}
 	.adressli div>div{display: inline-block;}
 	.adressli div>div:nth-child(2){
 		float: right;
@@ -92,42 +92,42 @@
 	}
 	.edit{line-height: 40px!important;}
 	.edit div:first-child image{
-		width: 30px;
-		height: 30px;
-		margin-top: 5px;
+		width: 30upx;
+		height: 30upx;
+		margin-top: 5upx;
 	}
 	.edit div:first-child span{
-		margin-left: 15px;
+		margin-left: 15upx;
 	}
 	.edit div:nth-child(2) image{
-		width: 35px;
-		height: 40px;
-		margin-left: 15px;
+		width: 35upx;
+		height: 40upx;
+		margin-left: 15upx;
 	}
 	.edit div:nth-child(2) span{
-		margin-left: 15px;
+		margin-left: 15upx;
 	}
 	.adressli>div:nth-child(1){
-		font-size: 30px;
+		font-size: 30upx;
 	}
 	.adressli>div:nth-child(2){
-		margin-bottom: 30px;
-		margin-top: 25px;
+		margin-bottom: 30upx;
+		margin-top: 25upx;
 	}
 	.apply{
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		text-align: center;
 	}
 	.apply div{
-		margin-left: 30px;
-		margin-right: 30px;
-		height: 100px;
-		line-height: 100px;
+		margin-left: 30upx;
+		margin-right: 30upx;
+		height: 100upx;
+		line-height: 100upx;
 		color: white;
 		background: #F6C11B;
-		font-size: 28px;
+		font-size: 28upx;
 	}
 </style>

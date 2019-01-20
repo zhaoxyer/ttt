@@ -1,10 +1,1 @@
-<template name="d49e3b0a">
-  <view class="_view data-v-2c97a421 updatecont">
-    <view class="_div data-v-2c97a421">昵称：</view>
-    <view class="_div data-v-2c97a421">
-      <input type="text" value="{{name}}" bindinput="handleProxy" data-eventid="{{'s7Y-0'}}" data-comkey="{{$k}}" class="_input data-v-2c97a421" />
-    </view>
-    <view class="_div data-v-2c97a421">以中文或英文字母开头，限4到16个字符</view>
-    <view class="_div data-v-2c97a421 submit" bindtap="handleProxy" data-eventid="{{'YeY-1'}}" data-comkey="{{$k}}">确定</view>
-  </view>
-</template>
+<template name="e77f44e4"><view class="_view e77f44e4 updatecont"><view class="_div e77f44e4">昵称：</view><view class="_div e77f44e4"><input type="text" value="{{name}}" bindinput="handleProxy" data-eventid="{{'E-0'}}" data-comkey="{{$k}}" class="_input e77f44e4" /></view><view class="_div e77f44e4">以中文或英文字母开头，限4到16个字符</view><view class="_div e77f44e4 submit" bindtap="handleProxy" data-eventid="{{'E-1'}}" data-comkey="{{$k}}">确定</view></view></template>

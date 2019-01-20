@@ -119,17 +119,17 @@
 </script>
 
 <style>
-	.userinf image{width: 90px;height: 90px;}
-	.userinf h1{font-size: 28px;text-indent: 30px;line-height: 75px;}
+	.userinf image{width: 90upx;height: 90upx;}
+	.userinf h1{font-size: 28upx;text-indent: 30upx;line-height: 75upx;}
 	.userinf{border-bottom: 1px solid #CCCCCC;}
-	.userinf p{line-height: 54px;}
+	.userinf p{line-height: 54upx;}
 	div>.userinf:last-child{
 		border-bottom: none;
 	}
 	.server{
-		padding: 0 30px;
-		margin-top: 40px;
-		font-size: 24px;
+		padding: 0 30upx;
+		margin-top: 40upx;
+		font-size: 24upx;
 	}
 	.server p{
 		text-align: center;
@@ -137,17 +137,17 @@
 	.server div{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 70px;
-		width: 120px;
+		margin-right: 70upx;
+		width: 120upx;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
 	}
 	.server div:nth-last-child(n+5){
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	.server image{
-		width: 90px;
-		margin-left: 15px;
+		width: 90upx;
+		margin-left: 15upx;
 	}
 </style>

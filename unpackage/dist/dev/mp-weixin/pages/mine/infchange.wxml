@@ -1,1 +1,2 @@
-<import src="/pages/mine/infchange.vue.wxml" /><template is="03e2a00c" data="{{ ...$root['0'], $root }}"/>
+<import src="./infchange.vue.wxml" />
+    <template is="00ae88d7" data="{{ ...$root['0'], $root }}"/>

@@ -157,106 +157,106 @@
 
 <style>
 	.header{
-		padding: 40px 30px 30px;
+		padding: 40px 30px 30upx;
 		background: #FEC200;
-		height: 70px;
+		height: 70upx;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 	}
 	.header .tel{
-		padding: 0 0 0 80px;
+		padding: 0 0 0 80upx;
 	}
 	.header .tel image{
-		width: 50px;
-		height: 30px;
+		width: 50upx;
+		height: 30upx;
 	}
 	.header .serch{
 		background: white;
-		height: 70px;
+		height: 70upx;
 		flex: 1;
-		border-radius: 15px;
+		border-radius: 15upx;
 		align-items: center;
 		justify-content: space-between;
 		display: flex;
-		font-size: 30px;
+		font-size: 30upx;
 		color: #cccccc;
-		padding: 0 20px 0 40px;
+		padding: 0 20px 0 40upx;
 	}
 	.header .serch image{
-		width: 26px;
-		height: 24px;
+		width: 26upx;
+		height: 24upx;
 	}
 	.header .adress{
-		font-size: 30px;
-		line-height: 70px;
+		font-size: 30upx;
+		line-height: 70upx;
 		padding: 0 28px 0 0;
 		position: relative;
 	}
 	.header .adress image{
-		width: 20px;
-		height: 30px;
-		margin-right: 24px;
+		width: 20upx;
+		height: 30upx;
+		margin-right: 24upx;
 	}
 	.server{
-		padding: 0 30px;
-		margin-top: 30px;
+		padding: 0 30upx;
+		margin-top: 30upx;
 	}
 	.server div{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 96px;
-		font-size: 24px;
+		margin-right: 96upx;
+		font-size: 24upx;
 		text-align: center;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
 	}
 	.server div:nth-last-child(n+5){
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	.server image{
-		width: 100px;
-		height: 100px;
+		width: 100upx;
+		height: 100upx;
 		border-radius: 50%;
 	}
 	.title{
 		text-align: center;
-		margin-top: 40px;
-		height: 34px;
+		margin-top: 40upx;
+		height: 34upx;
 	}
 	.title span{
 		display: inline-block;
 		vertical-align: top;
-		line-height: 34px;
-		font-size: 20px;
+		line-height: 34upx;
+		font-size: 20upx;
 	}
 	.title span:nth-child(1):before{
 		content: '';
-		width:70px;
-		height: 3px;
+		width:70upx;
+		height: 3upx;
 		background: black;
 		position: absolute;
-		margin-left: -80px;
-		margin-top: 16px;
+		margin-left: -80upx;
+		margin-top: 16upx;
 	}
 	.title span:nth-child(3):after{
 		content: '';
-		width:70px;
-		height: 3px;
+		width:70upx;
+		height: 3upx;
 		background: black;
 		position: absolute;
-		margin-left: 10px;
-		margin-top: 16px;
+		margin-left: 10upx;
+		margin-top: 16upx;
 	}
 	.title span:nth-child(2){
-		width: 123px;
-		font-size: 20px;
+		width: 123upx;
+		font-size: 20upx;
 		text-align: center;
 		color: white;
-		border-radius: 16.5px;
-		margin-left: 30px;
-		margin-right: 30px;
+		border-radius: 16.5upx;
+		margin-left: 30upx;
+		margin-right: 30upx;
 	}
 	.bg0{
 		background: #45c5db;
@@ -265,24 +265,24 @@
 		background: #efcb70;
 	}
 	.youhui>div{
-		width: 332px;
-		height: 188px;
-		border-radius: 10px;
+		width: 332upx;
+		height: 188upx;
+		border-radius: 10upx;
 		border: 1px solid #c8c8c8;
 		display: flex;
-		font-size: 22px;
+		font-size: 22upx;
 	}
 	.youhui>div div:nth-child(2){
 		flex: 1;
 	}
 	.youhui>div:nth-child(2n) div:nth-child(1){
-		width: 60px;
-		line-height: 60px;
+		width: 60upx;
+		line-height: 60upx;
 		border-right: 1px solid #C8C8C8;
 	}
 	.youhui>div:nth-child(2n) div:nth-child(3){
-		width: 70px;
-		line-height: 70px;
+		width: 70upx;
+		line-height: 70upx;
 		border-left: none;
 	}
 	.youhui>div:nth-child(2n) div:nth-child(2) image{
@@ -290,12 +290,12 @@
 		right: 0;
 	}
 	.youhui>div div:nth-child(1){
-		width: 70px;
-		height: 168px;
+		width: 70upx;
+		height: 168upx;
 		writing-mode:tb-rl;
 		text-align: center;
-		line-height: 70px;
-		letter-spacing: 4px;
+		line-height: 70upx;
+		letter-spacing: 4upx;
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow:ellipsis;
@@ -303,32 +303,32 @@
 	}
 	.youhui>div div:nth-child(3) span:first-child{
 		writing-mode:lr-tb;
-		line-height: 22px;
+		line-height: 22upx;
 		letter-spacing: 0;
 	}
 	.youhui>div div:nth-child(3){
-		width: 60px;
-		height: 188px;
+		width: 60upx;
+		height: 188upx;
 		border-left: 1px solid #C8C8C8;
 		writing-mode:tb-rl;
 		text-align: center;
-		line-height: 70px;
-		letter-spacing: 4px;
+		line-height: 70upx;
+		letter-spacing: 4upx;
 	}
-	.youhui image{width: 190px;height: 190px;}
+	.youhui image{width: 190upx;height: 190upx;}
 	.youhui>div:nth-last-child(n+2){
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 	.leftright{
-		padding: 0 20px;
-		margin-top: 27px;
+		padding: 0 20upx;
+		margin-top: 27upx;
 		display: flex;
 		justify-content: space-between;
-		padding: 0 20px;
+		padding: 0 20upx;
 		flex-wrap: wrap;
 	}
 	.recom>div:nth-last-child(n+2){
-		margin-bottom: 60px;
+		margin-bottom: 60upx;
 	}
 	.recom>div image{
 		display: inline-block;
@@ -337,16 +337,16 @@
 	
 	.recom>div{
 		width: 50%;
-		height: 208px;
+		height: 208upx;
 	}
 	.recom>div div{
 		position: absolute;
-		margin-left: 190px;
-		margin-top: 144px;
-		width: 144px;
+		margin-left: 190upx;
+		margin-top: 144upx;
+		width: 144upx;
 		text-align: center;
-		font-size: 22px;
-		line-height: 32px;
+		font-size: 22upx;
+		line-height: 32upx;
 	}
 	.recom>div div p{
 		overflow: hidden;
@@ -357,19 +357,19 @@
 		margin-left: 0;
 	}
 	.recom>div image:nth-child(2){
-		width:190px;
-		height: 190px;
+		width:190upx;
+		height: 190upx;
 	}
 	.recom>div image:nth-child(3){
-		width: 144px;
-		height: 144px;
+		width: 144upx;
+		height: 144upx;
 	}
 	.recom>div:nth-last-child(-n+2) image:nth-child(2){
-		width:144px;
-		height: 144px;
+		width:144upx;
+		height: 144upx;
 	}
 	.recom>div:nth-last-child(-n+2) image:nth-child(3){
-		width: 190px;
-		height: 190px;
+		width: 190upx;
+		height: 190upx;
 	}
 </style>

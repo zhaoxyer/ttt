@@ -63,83 +63,83 @@ export default {
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		position: fixed;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890px;
+		max-height: 890upx;
 		background: #fff;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0upx;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.action-main {
 		position: relative;
-		min-height: 400rpx;
+		min-height: 400rupx;
 	}
 	.cancel-order-modal {
 		width: 100%;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.cancel-order-title {
-		padding-bottom: 30px;
+		padding-bottom: 30upx;
 	}
 	.cancel-order-condition {
-		padding-bottom: 30px;
+		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
 	}
 	.noborder {
-		margin-top: 30px;
-		border-bottom: 0px;
+		margin-top: 30upx;
+		border-bottom: 0upx;
 	}
 	.cancel-order-status .cancel-order-title {
-		padding-top: 20px;
+		padding-top: 20upx;
 	}
 
 	.cancel-radio-wrap {
-		margin-left: 220px;
-		margin-bottom: 20px;
+		margin-left: 220upx;
+		margin-bottom: 20upx;
 	}
 	.cancel-radio {
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 20upx;
+		height: 20upx;
 		background: #fec200;
-		border-radius: 10px;
+		border-radius: 10upx;
 	}
 	.cancel-label {
-		padding-left: 57px;
+		padding-left: 57upx;
 	}
 	.cancel-plan-wrap {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		padding-left: 98px;
-		padding-right: 98px;
-		margin-bottom: 30px;
+		padding-left: 98upx;
+		padding-right: 98upx;
+		margin-bottom: 30upx;
 	}
 	.cancel-plan {
-		width: 200px;
-		height: 50px;
+		width: 200upx;
+		height: 50upx;
 		background: #fec200;
-		border-radius: 4px;
-		font-size: 24px;
+		border-radius: 4upx;
+		font-size: 24upx;
 		text-align: center;
-		line-height: 50px;
+		line-height: 50upx;
 		color: #fff;
 	}
 	.cancel-plan.agree-plan {
-		width: 250px;
-		height: 100px;
-		border-radius: 0px;
-		line-height: 100px;
+		width: 250upx;
+		height: 100upx;
+		border-radius: 0upx;
+		line-height: 100upx;
 	}
 	.agree-plan-wrap {
 		display: flex;
 		flex-direction: row;
 		align-items: center;
-		margin-top: 100px;
+		margin-top: 100upx;
 	}
 </style>

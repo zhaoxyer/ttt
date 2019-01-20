@@ -1,1 +1,2 @@
-<import src="/pages/mine/updatephone.vue.wxml" /><template is="c7aa1da4" data="{{ ...$root['0'], $root }}"/>
+<import src="./updatephone.vue.wxml" />
+    <template is="082a8a6a" data="{{ ...$root['0'], $root }}"/>

@@ -1,4 +1,922 @@
-require("../../common/manifest.js");
-require("../../common/vendor.js");
-global.webpackJsonp([13],{154:function(e,t,s){"use strict";var i=n(s(2)),a=n(s(155));function n(e){return e&&e.__esModule?e:{default:e}}Page((0,i.default)(a.default))},155:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=s(157),a=s.n(i),n=s(158),c=!1;var o=function(e){c||s(156)},r=s(0)(a.a,n.a,o,null,null);r.options.__file="C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue",r.esModule&&Object.keys(r.esModule).some(function(e){return"default"!==e&&"__"!==e.substr(0,2)})&&console.error("named exports are not supported in *.vue files."),r.options.functional&&console.error("[vue-loader] apply.vue: functional components are not supported with templates, they should use render functions."),t.default=r.exports},156:function(e,t){},157:function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i,a=s(1),n=(i=a)&&i.__esModule?i:{default:i};t.default={data:function(){return{check:"-1",classlist:[],provinceName:"",countyAreaName:"",cityName:"",name:"",phone:"",adress:"",sexList:[{type:"男"},{type:"女"}],sex:"",type:""}},onLoad:function(e){this.type=e.type,1==e.type&&n.default.settitle("申请木斗工匠"),2==e.type&&n.default.settitle("申请木斗商户"),3==e.type&&n.default.settitle("申请木斗速递"),4==e.type&&n.default.settitle("申请木斗搬运"),5==e.type&&n.default.settitle("申请定制商户"),6==e.type&&n.default.settitle("申请地区加盟"),this.req_class()},methods:{bindsexChange:function(e){this.sex=this.sexList[e.target.value[0]].type},bindRegionChange:function(e){this.provinceName=e.target.value[0],this.countyAreaName=e.target.value[1],this.cityName=e.target.value[2]},cg_check:function(e){this.check=e},go_mine_infchange:function(){wx.navigateTo({url:"../mine/infchange"})},go_mine_apply:function(){wx.navigateTo({url:"../mine/apply"})},req_class:function(){var e=this,t="service/class";6!=this.type&&4!=this.type&&(3==this.type&&(t="order/vehiclelist"),2!=this.type&&5!=this.type||(t="goods/class"),n.default.request({data:{parentid:0},url:t}).then(function(t){e.classlist=t}))},submit:function(){"-1"!=this.check||2!=this.type&&5!=this.type&&1!=this.type?"-1"!=this.check||3!=this.type?this.provinceName?this.name?this.sex?"-1"!=this.phone?(1==this.type&&this.req_addcraftsman(),2!=this.type&&5!=this.type||this.req_addstore(),3==this.type&&this.req_addexpress(),4==this.type&&this.req_addcarry(),6==this.type&&this.req_addjoin()):n.default.totast("请输入手机号"):n.default.totast("请选择性别"):n.default.totast("请输入姓名"):n.default.totast("请选择服务范围"):n.default.totast("请选择车辆种类"):n.default.totast("请选择服务类型")},req_addstore:function(){var e="join/addstore";5==this.type&&(e="join/addcustomstore"),n.default.request({data:{name:this.name,phone:this.phone,scope:this.provinceName+this.countyAreaName+this.cityName,serviceScope:this.provinceName+this.countyAreaName+this.cityName,serviceClassIds:this.classlist[this.check].id,sex:this.sex,adress:this.adress},c:!0,url:e}).then(function(e){wx.showModal({title:"提示",content:"请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。",showCancel:!1,success:function(e){e.confirm&&wx.navigateBack()}})})},req_addcraftsman:function(){n.default.request({data:{name:this.name,phone:this.phone,scope:this.provinceName+this.countyAreaName+this.cityName,serviceClassIds:this.classlist[this.check].id,sex:this.sex},c:!0,url:"join/addcraftsman"}).then(function(e){wx.showModal({title:"提示",content:"请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。",showCancel:!1,success:function(e){e.confirm&&wx.navigateBack()}})})},req_addexpress:function(){n.default.request({data:{name:this.name,phone:this.phone,scope:this.provinceName+this.countyAreaName+this.cityName,vehicleTypesIds:this.classlist[this.check].id,sex:this.sex},c:!0,url:"join/addexpress"}).then(function(e){wx.showModal({title:"提示",content:"请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。",showCancel:!1,success:function(e){e.confirm&&wx.navigateBack()}})})},req_addcarry:function(){n.default.request({data:{name:this.name,phone:this.phone,scope:this.provinceName+this.countyAreaName+this.cityName,sex:this.sex},c:!0,url:"join/addcarry"}).then(function(e){wx.showModal({title:"提示",content:"请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。",showCancel:!1,success:function(e){e.confirm&&wx.navigateBack()}})})},req_addjoin:function(){n.default.request({data:{name:this.name,phone:this.phone,scope:this.provinceName+this.countyAreaName+this.cityName,sex:this.sex},c:!0,url:"join/addjoin"}).then(function(e){wx.showModal({title:"提示",content:"请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。",showCancel:!1,success:function(e){e.confirm&&wx.navigateBack()}})})}}}},158:function(e,t,s){"use strict";var i=function(){var e=this,t=e.$createElement,s=e._self._c||t;return s("div",[e.classlist.length?s("div",{staticClass:"userinf"},[1==e.type?s("h1",[e._v("服务种类")]):e._e(),2==e.type||5==e.type?s("h1",[e._v("经营种类")]):e._e(),3==e.type?s("h1",[e._v("选择车辆种类")]):e._e(),s("div",{staticClass:"type"},e._l(e.classlist,function(t,i){return s("div",{key:t,attrs:{eventid:"H0h-0-"+i},on:{click:function(t){e.cg_check(i)}}},[s("image",{attrs:{src:"../../static/mine/"+(e.check==i?"un":"")+"check.jpg"}}),s("span",[e._v(e._s(t.name))])])}))],1):e._e(),s("div",{staticClass:"userinf"},[s("div",{staticClass:"inf"},[s("div",[e.disabled?e._e():s("picker",{staticClass:"regionpicker",attrs:{mode:"region",value:"请选择所在城市",eventid:"xVI-1"},on:{change:e.bindRegionChange}},[s("view",{staticClass:"picker",staticStyle:{"line-height":"60rpx"}},[e._v("\n\t\t\t\t\t\t\t\t\t"+e._s(e.provinceName||"")+"，"+e._s(e.countyAreaName||"")+"，"+e._s(e.cityName||"")+"\n\t\t\t\t\t\t\t\t")])]),s("span",[e._v("服务范围")]),s("div",[s("span",[e._v(e._s(e.cityName||"请选择"))]),s("image",{attrs:{src:"../../static/select.png"}})])],1),s("div",[s("span",[e._v("姓      名")]),s("div",[s("input",{directives:[{name:"model",rawName:"v-model",value:e.name,expression:"name"}],attrs:{type:"text",placeholder:"请输入姓名",eventid:"vgr-2"},domProps:{value:e.name},on:{input:function(t){t.target.composing||(e.name=t.target.value)}}})])]),s("div",[s("picker",{staticClass:"regionpicker",attrs:{value:"请选择性别",range:e.sexList,"range-key":"type",eventid:"keE-3"},on:{change:e.bindsexChange}},[s("view",{staticClass:"picker",staticStyle:{"line-height":"60rpx"}},[e._v("\n\t\t\t\t\t\t\t\t\t"+e._s(e.sex||"请选择")+"\n\t\t\t\t\t\t\t\t")])]),s("span",[e._v("性      别")]),s("div",[s("span",[e._v(e._s(e.sex||"请选择"))]),s("image",{attrs:{src:"../../static/select.png"}})])],1),s("div",[s("span",[e._v("联系电话")]),s("div",[s("input",{directives:[{name:"model",rawName:"v-model",value:e.phone,expression:"phone"}],attrs:{type:"number",placeholder:"请输入联系电话",eventid:"hH6-4"},domProps:{value:e.phone},on:{input:function(t){t.target.composing||(e.phone=t.target.value)}}})])]),2==e.type||5==e.type?s("div",[s("span",[e._v("店铺地址")]),s("div",[s("input",{directives:[{name:"model",rawName:"v-model",value:e.adress,expression:"adress"}],attrs:{type:"number",placeholder:"请输入店铺地址",eventid:"pcm-5"},domProps:{value:e.adress},on:{input:function(t){t.target.composing||(e.adress=t.target.value)}}})])]):e._e()])]),s("div",{staticClass:"tip"},[s("p",[e._v("请保持电话畅通，木斗客服3个工作日内会和您联系，")]),s("p",[e._v("通知您来面试。")])],1),s("div",{staticClass:"apply"},[s("div",{attrs:{eventid:"Q8j-6"},on:{click:e.submit}},[e._v("提交申请")])])])};i._withStripped=!0;var a={render:i,staticRenderFns:[]};t.a=a}},[154]);
+(global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/mine/apply"],{
+
+/***/ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+{
+  data: function data() {
+    return {
+      check: '-1',
+      classlist: [],
+      provinceName: '',
+      countyAreaName: '',
+      cityName: '',
+      name: '',
+      phone: '',
+      adress: "",
+      sexList: [{
+        type: '男' },
+
+      {
+        type: '女' }],
+
+      sex: '',
+      type: '' };
+
+  },
+  onLoad: function onLoad(opt) {
+    this.type = opt.type;
+    if (opt.type == 1) {
+      _index.default.settitle('申请木斗工匠');
+    }
+    if (opt.type == 2) {
+      _index.default.settitle('申请木斗商户');
+    }
+    if (opt.type == 3) {
+      _index.default.settitle('申请木斗速递');
+    }
+    if (opt.type == 4) {
+      _index.default.settitle('申请木斗搬运');
+    }
+    if (opt.type == 5) {
+      _index.default.settitle('申请定制商户');
+    }
+    if (opt.type == 6) {
+      _index.default.settitle('申请地区加盟');
+    }
+    this.req_class();
+  },
+  methods: {
+    bindsexChange: function bindsexChange(e) {
+      this.sex = this.sexList[e.target.value[0]].type;
+    },
+    bindRegionChange: function bindRegionChange(e) {
+      this.provinceName = e.target.value[0];
+      this.countyAreaName = e.target.value[1];
+      this.cityName = e.target.value[2];
+    },
+    cg_check: function cg_check(index) {
+      this.check = index;
+    },
+    go_mine_infchange: function go_mine_infchange() {
+      wx.navigateTo({
+        url: '../mine/infchange' });
+
+    },
+    go_mine_apply: function go_mine_apply() {
+      wx.navigateTo({
+        url: '../mine/apply' });
+
+    },
+    req_class: function req_class() {var _this = this;
+      var url = "service/class";
+      if (this.type == 6 || this.type == 4) return;
+      if (this.type == 3) {
+        url = 'order/vehiclelist';
+      }
+      if (this.type == 2 || this.type == 5) {
+        url = 'goods/class';
+      }
+      _index.default.request({
+        data: {
+          parentid: 0 },
+
+        url: url }).
+      then(function (data) {
+        _this.classlist = data;
+      });
+    },
+    submit: function submit() {
+      if (this.check == '-1' && (this.type == 2 || this.type == 5 || this.type == 1)) {
+        _index.default.totast('请选择服务类型');
+        return;
+      }
+      if (this.check == '-1' && this.type == 3) {
+        _index.default.totast('请选择车辆种类');
+        return;
+      }
+      if (!this.provinceName) {
+        _index.default.totast('请选择服务范围');
+        return;
+      }
+      if (!this.name) {
+        _index.default.totast('请输入姓名');
+        return;
+      }
+      if (!this.sex) {
+        _index.default.totast('请选择性别');
+        return;
+      }
+      if (this.phone == '-1') {
+        _index.default.totast('请输入手机号');
+        return;
+      }
+      if (this.type == 1) {
+        this.req_addcraftsman();
+      }
+      if (this.type == 2 || this.type == 5) {
+        this.req_addstore();
+      }
+      if (this.type == 3) {
+        this.req_addexpress();
+      }
+      if (this.type == 4) {
+        this.req_addcarry();
+      }
+      if (this.type == 6) {
+        this.req_addjoin();
+      }
+
+    },
+    req_addstore: function req_addstore() {
+      var url = "join/addstore";
+      if (this.type == 5) {
+        url = 'join/addcustomstore';
+      }
+      _index.default.request({
+        data: {
+          name: this.name,
+          phone: this.phone,
+          scope: this.provinceName + this.countyAreaName + this.cityName,
+          serviceScope: this.provinceName + this.countyAreaName + this.cityName,
+          serviceClassIds: this.classlist[this.check].id,
+          sex: this.sex,
+          adress: this.adress },
+
+        c: true,
+        url: url }).
+      then(function (data) {
+        wx.showModal({
+          title: '提示',
+          content: '请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              wx.navigateBack();
+            }
+          } });
+
+      });
+
+    },
+    req_addcraftsman: function req_addcraftsman() {
+      _index.default.request({
+        data: {
+          name: this.name,
+          phone: this.phone,
+          scope: this.provinceName + this.countyAreaName + this.cityName,
+          serviceClassIds: this.classlist[this.check].id,
+          sex: this.sex },
+
+        c: true,
+        url: "join/addcraftsman" }).
+      then(function (data) {
+        wx.showModal({
+          title: '提示',
+          content: '请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              wx.navigateBack();
+            }
+          } });
+
+      });
+    },
+    req_addexpress: function req_addexpress() {
+      _index.default.request({
+        data: {
+          name: this.name,
+          phone: this.phone,
+          scope: this.provinceName + this.countyAreaName + this.cityName,
+          vehicleTypesIds: this.classlist[this.check].id,
+          sex: this.sex },
+
+        c: true,
+        url: "join/addexpress" }).
+      then(function (data) {
+        wx.showModal({
+          title: '提示',
+          content: '请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              wx.navigateBack();
+            }
+          } });
+
+      });
+    },
+    req_addcarry: function req_addcarry() {
+      _index.default.request({
+        data: {
+          name: this.name,
+          phone: this.phone,
+          scope: this.provinceName + this.countyAreaName + this.cityName,
+          sex: this.sex },
+
+        c: true,
+        url: "join/addcarry" }).
+      then(function (data) {
+        wx.showModal({
+          title: '提示',
+          content: '请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              wx.navigateBack();
+            }
+          } });
+
+      });
+    },
+    req_addjoin: function req_addjoin() {
+      _index.default.request({
+        data: {
+          name: this.name,
+          phone: this.phone,
+          scope: this.provinceName + this.countyAreaName + this.cityName,
+          sex: this.sex },
+
+        c: true,
+        url: "join/addjoin" }).
+      then(function (data) {
+        wx.showModal({
+          title: '提示',
+          content: '请保持电话畅通，木斗客服3个工作日内会和您联系，通知您来面试。',
+          showCancel: false,
+          success: function success(res) {
+            if (res.confirm) {
+              wx.navigateBack();
+            }
+          } });
+
+      });
+    } } };exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+// extracted by mini-css-extract-plugin
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=template&id=139338e3&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=template&id=139338e3& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div", [
+    _vm.classlist.length
+      ? _c(
+          "div",
+          { staticClass: "userinf" },
+          [
+            _vm.type == 1 ? _c("h1", [_vm._v("服务种类")]) : _vm._e(),
+            _vm.type == 2 || _vm.type == 5
+              ? _c("h1", [_vm._v("经营种类")])
+              : _vm._e(),
+            _vm.type == 3 ? _c("h1", [_vm._v("选择车辆种类")]) : _vm._e(),
+            _c(
+              "div",
+              { staticClass: "type" },
+              _vm._l(_vm.classlist, function(list, index) {
+                return _c(
+                  "div",
+                  {
+                    key: list,
+                    attrs: { eventid: "E-0-" + index },
+                    on: {
+                      click: function($event) {
+                        _vm.cg_check(index)
+                      }
+                    }
+                  },
+                  [
+                    _c("image", {
+                      attrs: {
+                        src:
+                          "../../static/mine/" +
+                          (_vm.check == index ? "un" : "") +
+                          "check.jpg"
+                      }
+                    }),
+                    _c("span", [_vm._v(_vm._s(list.name))])
+                  ]
+                )
+              })
+            )
+          ],
+          1
+        )
+      : _vm._e(),
+    _c("div", { staticClass: "userinf" }, [
+      _c("div", { staticClass: "inf" }, [
+        _c(
+          "div",
+          [
+            !_vm.disabled
+              ? _c(
+                  "picker",
+                  {
+                    staticClass: "regionpicker",
+                    attrs: {
+                      mode: "region",
+                      value: "请选择所在城市",
+                      eventid: "E-1"
+                    },
+                    on: { change: _vm.bindRegionChange }
+                  },
+                  [
+                    _c(
+                      "view",
+                      {
+                        staticClass: "picker",
+                        staticStyle: { "line-height": "60rpx" }
+                      },
+                      [
+                        _vm._v(
+                          "\n\t\t\t\t\t\t\t\t\t" +
+                            _vm._s(_vm.provinceName || "") +
+                            "，" +
+                            _vm._s(_vm.countyAreaName || "") +
+                            "，" +
+                            _vm._s(_vm.cityName || "") +
+                            "\n\t\t\t\t\t\t\t\t"
+                        )
+                      ]
+                    )
+                  ]
+                )
+              : _vm._e(),
+            _c("span", [_vm._v("服务范围")]),
+            _c("div", [
+              _c("span", [_vm._v(_vm._s(_vm.cityName || "请选择"))]),
+              _c("image", { attrs: { src: "../../static/select.png" } })
+            ])
+          ],
+          1
+        ),
+        _c("div", [
+          _c("span", [_vm._v("姓      名")]),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.name,
+                  expression: "name"
+                }
+              ],
+              attrs: {
+                type: "text",
+                placeholder: "请输入姓名",
+                eventid: "E-2"
+              },
+              domProps: { value: _vm.name },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.name = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _c(
+          "div",
+          [
+            _c(
+              "picker",
+              {
+                staticClass: "regionpicker",
+                attrs: {
+                  value: "请选择性别",
+                  range: _vm.sexList,
+                  "range-key": "type",
+                  eventid: "E-3"
+                },
+                on: { change: _vm.bindsexChange }
+              },
+              [
+                _c(
+                  "view",
+                  {
+                    staticClass: "picker",
+                    staticStyle: { "line-height": "60rpx" }
+                  },
+                  [
+                    _vm._v(
+                      "\n\t\t\t\t\t\t\t\t\t" +
+                        _vm._s(_vm.sex || "请选择") +
+                        "\n\t\t\t\t\t\t\t\t"
+                    )
+                  ]
+                )
+              ]
+            ),
+            _c("span", [_vm._v("性      别")]),
+            _c("div", [
+              _c("span", [_vm._v(_vm._s(_vm.sex || "请选择"))]),
+              _c("image", { attrs: { src: "../../static/select.png" } })
+            ])
+          ],
+          1
+        ),
+        _c("div", [
+          _c("span", [_vm._v("联系电话")]),
+          _c("div", [
+            _c("input", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.phone,
+                  expression: "phone"
+                }
+              ],
+              attrs: {
+                type: "number",
+                placeholder: "请输入联系电话",
+                eventid: "E-4"
+              },
+              domProps: { value: _vm.phone },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.phone = $event.target.value
+                }
+              }
+            })
+          ])
+        ]),
+        _vm.type == 2 || _vm.type == 5
+          ? _c("div", [
+              _c("span", [_vm._v("店铺地址")]),
+              _c("div", [
+                _c("input", {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.adress,
+                      expression: "adress"
+                    }
+                  ],
+                  attrs: {
+                    type: "number",
+                    placeholder: "请输入店铺地址",
+                    eventid: "E-5"
+                  },
+                  domProps: { value: _vm.adress },
+                  on: {
+                    input: function($event) {
+                      if ($event.target.composing) {
+                        return
+                      }
+                      _vm.adress = $event.target.value
+                    }
+                  }
+                })
+              ])
+            ])
+          : _vm._e()
+      ])
+    ]),
+    _c(
+      "div",
+      { staticClass: "tip" },
+      [
+        _c("p", [_vm._v("请保持电话畅通，木斗客服3个工作日内会和您联系，")]),
+        _c("p", [_vm._v("通知您来面试。")])
+      ],
+      1
+    ),
+    _c("div", { staticClass: "apply" }, [
+      _c("div", { attrs: { eventid: "E-6" }, on: { click: _vm.submit } }, [
+        _vm._v("提交申请")
+      ])
+    ])
+  ])
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\main.js?{\"page\":\"pages%2Fmine%2Fapply\"}":
+/*!**********************************************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/main.js?{"page":"pages%2Fmine%2Fapply"} ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+__webpack_require__(/*! uni-pages */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages.json");
+var _mpvuePageFactory = _interopRequireDefault(__webpack_require__(/*! mpvue-page-factory */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue-page-factory/index.js"));
+var _apply = _interopRequireDefault(__webpack_require__(/*! ./pages/mine/apply.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+Page((0, _mpvuePageFactory.default)(_apply.default));
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages.json":
+/*!*****************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/pages.json ***!
+  \*****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue":
+/*!***************************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./apply.vue?vue&type=template&id=139338e3& */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=template&id=139338e3&");
+/* harmony import */ var _apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./apply.vue?vue&type=script&lang=js& */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=script&lang=js&");
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+/* harmony import */ var _apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./apply.vue?vue&type=style&index=0&lang=css& */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--18-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib??vue-loader-options!./apply.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=script&lang=js&");
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_babel_loader_lib_index_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_12_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_18_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_script_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=style&index=0&lang=css&":
+/*!************************************************************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=style&index=0&lang=css& ***!
+  \************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader??ref--6-oneOf-1-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--6-oneOf-1-2!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-3!./node_modules/vue-loader/lib??vue-loader-options!./apply.vue?vue&type=style&index=0&lang=css& */ "./node_modules/mini-css-extract-plugin/dist/loader.js?!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=style&index=0&lang=css&");
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_mini_css_extract_plugin_dist_loader_js_ref_6_oneOf_1_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_css_loader_index_js_ref_6_oneOf_1_1_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_stylePostLoader_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_postcss_loader_src_index_js_ref_6_oneOf_1_2_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_6_oneOf_1_3_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_style_index_0_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=template&id=139338e3&":
+/*!**********************************************************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/pages/mine/apply.vue?vue&type=template&id=139338e3& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--17-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib??vue-loader-options!./apply.vue?vue&type=template&id=139338e3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader/index.js?!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/vue-loader/lib/index.js?!C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages\\mine\\apply.vue?vue&type=template&id=139338e3&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_vue_cli_plugin_uni_packages_webpack_preprocess_loader_index_js_ref_17_0_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_dcloudio_webpack_uni_mp_loader_lib_template_js_E_HBuilderX_1_2_0_20181122_full_HBuilderX_plugins_uniapp_cli_node_modules_vue_loader_lib_index_js_vue_loader_options_apply_vue_vue_type_template_id_139338e3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js":
+/*!*********************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/utils/index.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var ut = {};
+ut.url = 'https://mdapi.vertxjava.com/api/v1/client/';
+ut.static = 'https://mdapi.vertxjava.com';
+ut.uploadimgurl = 'https://mdapi.vertxjava.com/api/v1/';
+ut.formatTime = function (data) {
+  var year = date.getFullYear();
+  var month = date.getMonth() + 1;
+  var day = date.getDate();
+  var hour = date.getHours();
+  var minute = date.getMinutes();
+  var second = date.getSeconds();
+  return minute + '分' + second + '秒';
+};
+ut.formatNumber = function (n) {
+  n = n.toString();
+  return n[1] ? n : '0' + n;
+};
+//格式化时间
+ut.time = function (timestamp) {
+  var date = new Date(timestamp * 1000), //时间戳为10位需*1000，时间戳为13位的话不需乘1000
+  Y = date.getFullYear() + '-',
+  M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1) + '-',
+  D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate(),
+  h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ' :',
+  m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
+  return Y + M + D + " " + h + m;
+};
+//提示
+ut.totast = function (title) {
+  wx.showToast({
+    title: title,
+    icon: 'none',
+    color: 'red',
+    duration: 2000 });
+
+};
+//拨打电话
+ut.call = function () {
+  wx.makePhoneCall({
+    phoneNumber: '18888888888' });
+
+};
+//
+ut.createRandom = function (num, min, max) {
+  var arr = [],
+  res = [],
+  newArr;
+  for (var i = min; i < max; i++) {
+    arr.push(i);
+  }
+  newArr = Object.assign([], arr);
+
+  for (var item = 0; item < arr.length; item++) {
+    res.push(newArr.splice(Math.floor(Math.random() * newArr.length), 1)[0]);
+  }
+  res.length = num;
+  return res;
+};
+//设置页面title
+ut.settitle = function (title) {
+  wx.setNavigationBarTitle({
+    title: title });
+
+};
+//弹出消息
+ut.showToast = function (title) {
+  wx.showToast({
+    title: title,
+    icon: 'none',
+    color: 'red',
+    duration: 2000 });
+
+};
+//校验手机号
+ut.checkmobile = function (str) {
+  var myreg = /^[1][3,4,5,6.7,8,9][0-9]{9}$/;
+  if (!myreg.test(str)) {
+    return false;
+  } else {
+    return true;
+  }
+};
+//校验姓名
+ut.checkName = function (name) {
+  var regName = /^[\u4e00-\u9fa5]{2,4}$/;
+  if (!regName.test(name)) {
+    return false;
+  }
+  return true;
+};
+//校验身份证
+ut.checkName = function (idNo) {
+  var regIdNo = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/;
+  if (!regIdNo.test(idNo)) {
+    return false;
+  }
+};
+//清除用户信息
+ut.loginout = function () {
+  wx.setStorageSync('token', '');
+};
+ut.request = function (parm) {
+  parm.data = parm.data || {};
+  var c = 'application/x-www-form-urlencoded';
+  if (parm.c) {
+    c = 'application/json';
+  }
+  return new Promise(function (_success, _fail) {
+    wx.request({
+      url: parm.allurl ? parm.allurl : ut.url + parm.url,
+      data: parm.data,
+      method: parm.method || 'post',
+      header: {
+        "Accept": "*/*",
+        'content-type': c,
+        "Authorization": wx.getStorageSync('token') || '' },
+
+      success: function success(res) {
+        wx.hideLoading({
+          complete: function complete() {
+            if (res.data.code == 0) {
+              _success(res.data.data);
+            } else {
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'none',
+                color: 'red',
+                duration: 2000 });
+
+            }
+          } });
+
+      },
+      fail: function fail() {
+        _fail();
+        wx.showToast({
+          title: '连接超时',
+          icon: 'none',
+          color: 'red',
+          duration: 2000 });
+
+      } });
+
+  });
+};
+//请求
+ut.ajax = function (parm) {
+  if (parm.loadinghide) {
+    ut.request(parm);
+  } else {
+    wx.showLoading({
+      title: '正在加载。。',
+      complete: function complete() {
+        ut.request(parm);
+      } });
+
+  }
+};
+
+ut.login = function (callback) {
+  //调用登录接口
+  wx.login({
+    success: function success(data) {
+      console.log(data);
+      wx.getUserInfo({
+        success: function success(res) {
+          //获取用户标识
+          ut.ajax({
+            url: 'thirdParty/register',
+            data: {
+              js_code: data.code,
+              nickName: res.userInfo.nickName,
+              avatarUrl: res.userInfo.avatarUrl },
+
+            method: 'get',
+            success: function success(data) {
+              wx.setStorageSync('uid', data.id);
+              wx.setStorageSync('userInfo', data.inf);
+              if (callback) callback();
+            } });
+
+        } });
+
+
+      //  
+    } });
+
+};
+//上传图片
+ut.uploadimg = function (parm) {
+  parm = parm || {};
+  wx.chooseImage({
+    count: 1,
+    sizeType: ['compressed'], // 可以指定是原图还是压缩图，默认二者都有
+    sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
+    success: function success(res) {
+      // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+      console.log(res);
+      if (parm.callback) parm.callback(res.tempFilePaths[0]);
+    } });
+
+};
+//
+var _default = ut;exports.default = _default;
+
+/***/ })
+
+},[["C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\main.js?{\"page\":\"pages%2Fmine%2Fapply\"}","common/runtime","common/vendor"]]]);
 //# sourceMappingURL=../../../.sourcemap/mp-weixin/pages/mine/apply.js.map

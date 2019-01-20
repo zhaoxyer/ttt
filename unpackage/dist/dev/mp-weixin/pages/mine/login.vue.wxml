@@ -1,25 +1,3 @@
-<template name="29d14512">
-  <view class="_div data-v-523593ac">
-    <view class="_div data-v-523593ac setinput">
-      <view class="_p data-v-523593ac logo">
-        <image src="../../static/logo.jpg" class="_image data-v-523593ac"></image>
-      </view>
-      <view class="_div data-v-523593ac">
-        <image src="../../static/mine/user.jpg" class="_image data-v-523593ac"></image>
-        <input type="text" placeholder="请输入用户名" value="{{username}}" bindinput="handleProxy" data-eventid="{{'EyH-0'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
-      </view>
-      <view class="_div data-v-523593ac">
-        <image src="../../static/mine/pas.jpg" class="_image data-v-523593ac"></image>
-        <input type="password" placeholder="请输入密码" value="{{password}}" bindinput="handleProxy" data-eventid="{{'LIq-1'}}" data-comkey="{{$k}}" class="_input data-v-523593ac" />
-      </view>
-      <view class="_p data-v-523593ac submit" bindtap="handleProxy" data-eventid="{{'3gx-2'}}" data-comkey="{{$k}}"> 登陆 </view>
-      <view class="_p data-v-523593ac tip" bindtap="handleProxy" data-eventid="{{'UzK-3'}}" data-comkey="{{$k}}">没有账号？立即注册</view>
-    </view>
-    <view class="_div data-v-523593ac qlogin">
-      <image src="../../static/mine/qlogin.jpg" mode="widthFix" class="_image data-v-523593ac"></image>
-      <view class="_div data-v-523593ac">
-        <image src="../../static/mine/wx.jpg" class="_image data-v-523593ac"></image>
-      </view>
-    </view>
-  </view>
-</template>
+<template name="5e3e2722"><view class="_div 5e3e2722"><view class="_div 5e3e2722 setinput"><view class="_p 5e3e2722 logo"><image src="../../static/logo.jpg" class="_image 5e3e2722"></image></view><view class="_div 5e3e2722"><image src="../../static/mine/user.jpg" class="_image 5e3e2722"></image><input type="text" placeholder="请输入用户名" value="{{username}}" bindinput="handleProxy" data-eventid="{{'E-0'}}" data-comkey="{{$k}}" class="_input 5e3e2722" /></view><view class="_div 5e3e2722"><image src="../../static/mine/pas.jpg" class="_image 5e3e2722"></image><input type="password" placeholder="请输入密码" value="{{password}}" bindinput="handleProxy" data-eventid="{{'E-1'}}" data-comkey="{{$k}}" class="_input 5e3e2722" /></view><view class="_p 5e3e2722 submit" bindtap="handleProxy" data-eventid="{{'E-2'}}" data-comkey="{{$k}}">				
+			登陆
+		</view><view class="_p 5e3e2722 tip" bindtap="handleProxy" data-eventid="{{'E-3'}}" data-comkey="{{$k}}">没有账号？立即注册</view></view><view class="_div 5e3e2722 qlogin"><image src="../../static/mine/qlogin.jpg" mode="widthFix" class="_image 5e3e2722"></image><view class="_div 5e3e2722"><image src="../../static/mine/wx.jpg" class="_image 5e3e2722"></image></view></view></view></template>

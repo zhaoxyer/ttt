@@ -84,92 +84,92 @@ export default {
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		position: fixed;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890px;
+		max-height: 890upx;
 		background: #fff;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0upx;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.action-main {
 		position: relative;
 	}
 	.cancel-order-modal {
 		width: 100%;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.cancel-order-title {
-		padding-bottom: 30px;
+		padding-bottom: 30upx;
 	}
 	.cancel-order-condition {
-		padding-bottom: 30px;
+		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
 	}
 	.cancel-order-status .cancel-order-title {
-		padding-top: 20px;
+		padding-top: 20upx;
 	}
 	.cancel-order-check-group, .cancel-order-checked{
-		margin-left: 220px;
+		margin-left: 220upx;
 		position: relative;
 		overflow: hidden;
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 	.cancel-order-checked .check-box {
-		border: 0px;
+		border: 0upx;
 		background: #f6c11b;
 	}
 	.check-box {
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 20upx;
+		height: 20upx;
 		border: 1px solid #c9c9c9;
 		box-sizing: border-box;
 		position: absolute;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 		z-index: 99
 	}
 	.check-label {
 		display: inline-block;
-		padding-left: 50px;
+		padding-left: 50upx;
 	}
 	.cancel-order-des {
 		width: 100%;
-		height: 150px;
+		height: 150upx;
 		border: 1px solid #B4B4B4;
-		border-radius: 3px;
-		line-height: 150px;
+		border-radius: 3upx;
+		line-height: 150upx;
 		box-sizing: border-box;
 	}
 	.cancel-radio-wrap {
-		margin-left: 220px;
-		margin-bottom: 20px;
+		margin-left: 220upx;
+		margin-bottom: 20upx;
 	}
 	.cancel-radio {
 		display: inline-block;
-		width: 20px;
-		height: 20px;
+		width: 20upx;
+		height: 20upx;
 		background: #fec200;
-		border-radius: 10px;
+		border-radius: 10upx;
 	}
 	.cancel-label {
-		padding-left: 57px;
+		padding-left: 57upx;
 	}
 	.cancel-button {
 		margin: 0 auto;
-		margin-top: 30px;
+		margin-top: 30upx;
 		background: #fec200;
-		width: 500px;
-		height: 100px;
+		width: 500upx;
+		height: 100upx;
 		text-align: center;
-		line-height: 100px;
+		line-height: 100upx;
 		color: #fff;
-		border-radius: 0px;
-		font-size: 24px;
+		border-radius: 0upx;
+		font-size: 24upx;
 	}
 </style>

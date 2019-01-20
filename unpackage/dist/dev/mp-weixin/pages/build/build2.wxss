@@ -1,103 +1,82 @@
-@import "../../common/vendor.wxss";
 
-.serch {
-  margin-left: 60rpx;
-  margin-right: 60rpx;
-  margin-top: 30rpx;
-  height: 54rpx;
-  line-height: 54rpx;
-  border-radius: 10rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  border: 1rpx solid #c8c8c8;
-  color: #CCCCCC;
-  font-size: 24rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
+.serch{margin-left: 60px;margin-right: 60px;margin-top: 30px;height: 54px;line-height: 54px;border-radius: 10px;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;border:1px solid #c8c8c8;color: #CCCCCC;font-size: 24px;-webkit-box-align: center;-webkit-align-items: center;-ms-flex-align: center;align-items: center;}
+.serch image,.serch ._span{display: inline-block;vertical-align: top;}
+.serch image{width: 26px;height: 24px;margin-left: 30px;margin-right: 30px;}
+.section{margin-top: 28px;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;}
+.section .list{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	padding: 0 30px;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 }
-.serch image,
-.serch ._span {
-  display: inline-block;
-  vertical-align: top;
+.section ._nav{
+	width: 200px;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
-.serch image {
-  width: 26rpx;
-  height: 24rpx;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
+.section ._nav ._div{
+	width: 200px;
+	height: 60px;
+	line-height: 60px;
+	text-align: center;
+	font-size: 28px;
+	border-bottom-right-radius: 30px;
+	border-top-right-radius: 30px;
+	margin-bottom: 6px;
 }
-.section {
-  margin-top: 28rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
+.section ._nav .active{
+	background: #fec300;
 }
-.section .list {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  padding: 0 30rpx;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
+.list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 }
-.section ._nav {
-  width: 200rpx;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+.list>._div{
+	height: 150px;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-bottom: 30px;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
 }
-.section ._nav ._div {
-  width: 200rpx;
-  height: 60rpx;
-  line-height: 60rpx;
-  text-align: center;
-  font-size: 28rpx;
-  border-bottom-right-radius: 30rpx;
-  border-top-right-radius: 30rpx;
-  margin-bottom: 6rpx;
+.list>._div image{
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
+	margin-right: 18px;
 }
-.section ._nav .active {
-  background: #fec300;
+.list>._div ._div{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	font-size: 24px;
 }
-.list {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: column;
-  flex-direction: column;
+.list>._div ._div ._p:first-child{
+	margin-bottom: 20px;
 }
-.list>._div {
-  height: 150rpx;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  margin-bottom: 30rpx;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -webkit-flex-direction: row;
-  flex-direction: row;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-}
-.list>._div image {
-  width: 150rpx;
-  height: 150rpx;
-  border-radius: 10rpx;
-  margin-right: 18rpx;
-}
-.list>._div ._div {
-  -webkit-box-flex: 1;
-  -webkit-flex: 1;
-  flex: 1;
-  font-size: 24rpx;
-}
-.list>._div ._div ._p:first-child {
-  margin-bottom: 20rpx;
-}
+

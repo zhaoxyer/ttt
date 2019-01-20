@@ -38,18 +38,18 @@
 	.columlist{
 		display: flex;
 		justify-content: space-between;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
-		height: 90px;
-		padding: 0 30px;
+		height: 90upx;
+		padding: 0 30upx;
 		border-bottom: 1px solid #CCCCCC;
 	}
 	.columlist1,.columlist>div{
 		height: 180px!important;
 	}
 	.columlist image{
-		width: 20px;
-		height: 35px;
+		width: 20upx;
+		height: 35upx;
 	}
 	.header{
 		width: 120px!important;
@@ -57,29 +57,29 @@
 	}
 	.bggray{
 		background: #e5e5e5;
-		height: 30px;
+		height: 30upx;
 	}
 	.outinf{
 		background: #FEC200;
-		line-height: 100px;
+		line-height: 100upx;
 		text-align: center;
-		margin-top: 200px;
-		font-size: 24px;
+		margin-top: 200upx;
+		font-size: 24upx;
 		color: white;
-		margin-left: 30px;
-		margin-right: 30px;
+		margin-left: 30upx;
+		margin-right: 30upx;
 	}
 	.columlist>div{
 		display: flex;
 		justify-content: space-between;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
-		height: 90px;
+		height: 90upx;
 	}
 	.columlist1>div>image:first-child{
-		margin-right: 30px;
+		margin-right: 30upx;
 	}
 	.columlist>div>span{
-		margin-right: 30px;
+		margin-right: 30upx;
 	}
 </style>

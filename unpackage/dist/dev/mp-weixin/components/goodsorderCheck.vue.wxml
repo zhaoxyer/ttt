@@ -1,21 +1,3 @@
-<template name="46f4e944">
-  <view class="_div data-v-823e6eea cancel-order-modal">
-    <view class="_div data-v-823e6eea cancel-order-condition" wx:key="index" key="{{index}}" wx:for="{{confirmPlanlist}}" wx:for-index="index" wx:for-item="list">
-      <view class="_div data-v-823e6eea cancel-order-title" wx:if="{{list.type}}"> {{list.type}} </view>
-      <view class="_div data-v-823e6eea cancel-statement-wrap">
-        <view class="_div data-v-823e6eea cancel-radio-wrap" wx:key="priceIndex" key="{{priceIndex}}" wx:for="{{list.prices}}" wx:for-index="priceIndex" wx:for-item="item">
-          <label class="_span data-v-823e6eea cancel-radio"></label>
-          <label class="_span data-v-823e6eea cancel-label">{{item.name+""+item.price}}</label>
-        </view>
-      </view>
-    </view>
-    <view class="_div data-v-823e6eea zhanwei"></view>
-    <view class="_div data-v-823e6eea agree-plan-wrap">
-      <view class="_div data-v-823e6eea">
-        <image src="{{'/static/mine/'+(check?'un':'')+'check.jpg'}}" bindtap="handleProxy" data-eventid="{{'uV2-0'}}" data-comkey="{{$k}}" class="_image data-v-823e6eea"></image>
-        <label class="_span data-v-823e6eea">验收完成</label>
-      </view>
-      <button class="_button data-v-823e6eea cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'YC1-1'}}" data-comkey="{{$k}}">付款</button>
-    </view>
-  </view>
-</template>
+<template name="4375b30e"><view class="_div data-v-4efaedbd cancel-order-modal"><view class="_div data-v-4efaedbd cancel-order-condition" wx:key="index" key="{{index}}" wx:for="{{confirmPlanlist}}" wx:for-index="index" wx:for-item="list"><view class="_div data-v-4efaedbd cancel-order-title" wx:if="{{list.type}}">
+		 {{list.type}}
+		</view><view class="_div data-v-4efaedbd cancel-statement-wrap"><view class="_div data-v-4efaedbd cancel-radio-wrap" wx:key="priceIndex" key="{{priceIndex}}" wx:for="{{list.prices}}" wx:for-index="priceIndex" wx:for-item="item"><label class="_span data-v-4efaedbd cancel-radio"></label><label class="_span data-v-4efaedbd cancel-label">{{item.name+""+item.price}}</label></view></view></view><view class="_div data-v-4efaedbd zhanwei"></view><view class="_div data-v-4efaedbd agree-plan-wrap"><view class="_div data-v-4efaedbd"><image src="{{'/static/mine/'+(check?'un':'')+'check.jpg'}}" bindtap="handleProxy" data-eventid="{{'E-0'}}" data-comkey="{{$k}}" class="_image data-v-4efaedbd"></image><label class="_span data-v-4efaedbd">验收完成</label></view><button class="_button data-v-4efaedbd cancel-plan agree-plan" bindtap="handleProxy" data-eventid="{{'E-1'}}" data-comkey="{{$k}}">付款</button></view></view></template>

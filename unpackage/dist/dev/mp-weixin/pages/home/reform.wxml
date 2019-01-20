@@ -1,1 +1,2 @@
-<import src="/pages/home/reform.vue.wxml" /><template is="7a78fb12" data="{{ ...$root['0'], $root }}"/>
+<import src="./reform.vue.wxml" />
+    <template is="dc2db1b6" data="{{ ...$root['0'], $root }}"/>

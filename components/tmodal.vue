@@ -30,19 +30,19 @@ export default {
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		position: fixed;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 		z-index: 99;
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890px;
+		max-height: 890upx;
 		overflow: auto;
 		background: #fff;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0upx;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.action-main {
 		width: 100%;
@@ -51,19 +51,19 @@ export default {
 		overflow:hidden;
 	}
 	.action-close {
-		width: 30px;
-		height: 30px;
+		width: 30upx;
+		height: 30upx;
 		box-sizing: border-box;
 		border: 1px solid #fec200;
 		border-radius: 50%;
 		color: #fec200;
-		font-size: 20px;
+		font-size: 20upx;
 		display:flex;
 		align-items: center;
 		justify-content: center;
 		font-weight: bold;
 		position: absolute;
-		right: 0px;
+		right: 0upx;
 		z-index: 10;
 	}
 </style>

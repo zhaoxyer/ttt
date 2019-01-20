@@ -95,73 +95,73 @@
 
 <style>
 	.header{
-		padding: 40px 30px 30px;
+		padding: 40px 30px 30upx;
 		background: #FEC200;
-		height: 70px;
+		height: 70upx;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
 		color: white;
 	}
 	.header .tel{
-		padding: 0 0 0 80px;
+		padding: 0 0 0 80upx;
 	}
 	.header .tel image{
-		width: 50px;
-		height: 30px;
+		width: 50upx;
+		height: 30upx;
 	}
 	.header .serch{
 		background: white;
-		height: 70px;
+		height: 70upx;
 		flex: 1;
-		border-radius: 15px;
+		border-radius: 15upx;
 		align-items: center;
 		justify-content: space-between;
 		display: flex;
-		font-size: 30px;
+		font-size: 30upx;
 		color: #cccccc;
-		padding: 0 20px 0 40px;
+		padding: 0 20px 0 40upx;
 	}
 	.header .serch image{
-		width: 26px;
-		height: 24px;
+		width: 26upx;
+		height: 24upx;
 	}
 	.header .adress{
-		font-size: 30px;
-		line-height: 70px;
+		font-size: 30upx;
+		line-height: 70upx;
 		padding: 0 28px 0 0;
 	}
 	.header .adress image{
-		width: 20px;
-		height: 30px;
-		margin-right: 24px;
+		width: 20upx;
+		height: 30upx;
+		margin-right: 24upx;
 	}
 	.server{
-		padding: 0 30px;
-		margin-top: 30px;
+		padding: 0 30upx;
+		margin-top: 30upx;
 	}
 	.server div{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 96px;
+		margin-right: 96upx;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
 	}
 	.server div:nth-last-child(n+5){
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	.server image{
-		width: 100px;
+		width: 100upx;
 	}
 	.title1{
-		width: 180px;
-		line-height: 60px;
+		width: 180upx;
+		line-height: 60upx;
 		text-align: center;
-		font-size: 22px;
+		font-size: 22upx;
 		color: white;
-		border-top-right-radius: 30px;
-		border-bottom-right-radius: 30px;
+		border-top-right-radius: 30upx;
+		border-bottom-right-radius: 30upx;
 	}
 	.bg0{
 		background: #ff9839;
@@ -171,19 +171,19 @@
 	}
 	.buju{
 		position: relative;
-		margin-bottom: 30px;
-		margin-top: 30px;
+		margin-bottom: 30upx;
+		margin-top: 30upx;
 	}
 	.buju button{
 		position: absolute;
 		background: transparent;
-		width: 122px;
+		width: 122upx;
 		height: 100%;
-		left: 128px;
+		left: 128upx;
 		border: none;
 	}
 	.buju button:nth-child(2){
-		right: 128px;
+		right: 128upx;
 		left: inherit;
 	}
 	.buju button:after{border: none;}
@@ -192,22 +192,22 @@
 		display: block;
 	}
 	.leftright{
-		padding: 0 20px;
-		margin-top: 27px;
+		padding: 0 20upx;
+		margin-top: 27upx;
 		display: flex;
 		justify-content: space-between;
-		padding: 0 20px;
+		padding: 0 20upx;
 		flex-wrap: wrap;
 	}
 	.fuwu div{
-		width: 326px;
-		font-size: 22px;
+		width: 326upx;
+		font-size: 22upx;
 		text-align: center;
-		line-height: 50px;
-		margin-bottom: 30px;
+		line-height: 50upx;
+		margin-bottom: 30upx;
 	}
 	.fuwu div image{
 		width: 100%;
-		height: 300px;
+		height: 300upx;
 	}
 </style>

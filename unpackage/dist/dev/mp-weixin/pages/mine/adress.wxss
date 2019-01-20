@@ -1,61 +1,51 @@
-@import "../../common/vendor.wxss";
 
-.adressli {
-  padding: 30rpx;
-  font-size: 26rpx;
-  border-bottom: 1rpx solid #E5E5E5;
-  line-height: 26rpx;
+.adressli{padding: 30rpx;font-size: 26rpx;border-bottom: 1px solid #E5E5E5;line-height: 26rpx;}
+.adressli ._div>._div{display: inline-block;}
+.adressli ._div>._div:nth-child(2){
+	float: right;
 }
-.adressli ._div>._div {
-  display: inline-block;
+.adressli ._div>._div ._span,.adressli ._div>._div image{
+	display: inline-block;
+	vertical-align: top;
 }
-.adressli ._div>._div:nth-child(2) {
-  float: right;
+.edit{line-height: 40px!important;}
+.edit ._div:first-child image{
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: 5rpx;
 }
-.adressli ._div>._div ._span,
-.adressli ._div>._div image {
-  display: inline-block;
-  vertical-align: top;
+.edit ._div:first-child ._span{
+	margin-left: 15rpx;
 }
-.edit {
-  line-height: 40rpx!important;
+.edit ._div:nth-child(2) image{
+	width: 35rpx;
+	height: 40rpx;
+	margin-left: 15rpx;
 }
-.edit ._div:first-child image {
-  width: 30rpx;
-  height: 30rpx;
-  margin-top: 5rpx;
+.edit ._div:nth-child(2) ._span{
+	margin-left: 15rpx;
 }
-.edit ._div:first-child ._span {
-  margin-left: 15rpx;
+.adressli>._div:nth-child(1){
+	font-size: 30rpx;
 }
-.edit ._div:nth-child(2) image {
-  width: 35rpx;
-  height: 40rpx;
-  margin-left: 15rpx;
+.adressli>._div:nth-child(2){
+	margin-bottom: 30rpx;
+	margin-top: 25rpx;
 }
-.edit ._div:nth-child(2) ._span {
-  margin-left: 15rpx;
+.apply{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 100rpx;
+	text-align: center;
 }
-.adressli>._div:nth-child(1) {
-  font-size: 30rpx;
+.apply ._div{
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+	height: 100rpx;
+	line-height: 100rpx;
+	color: white;
+	background: #F6C11B;
+	font-size: 28rpx;
 }
-.adressli>._div:nth-child(2) {
-  margin-bottom: 30rpx;
-  margin-top: 25rpx;
-}
-.apply {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 100rpx;
-  text-align: center;
-}
-.apply ._div {
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  height: 100rpx;
-  line-height: 100rpx;
-  color: white;
-  background: #F6C11B;
-  font-size: 28rpx;
-}
+

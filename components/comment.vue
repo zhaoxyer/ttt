@@ -47,68 +47,68 @@ export default {
 
 <style scoped="true">
 	.comment{
-		left: 10px;
-		right: 10px;
-		height: 600px;
+		left: 10upx;
+		right: 10upx;
+		height: 600upx;
 		background: white;
 		box-shadow: 1px 2px 3px 4px #ccc inset;
-		border-radius: 10px;
-		top:300px;
+		border-radius: 10upx;
+		top:300upx;
 		position: absolute;
 	}
 	.close{
-		padding: 20px 30px;
+		padding: 20px 30upx;
 		text-align: right;
 	}
 	.close image{
 		display: inline-block;
 		vertical-align: top;
-		width: 40px;
-		height: 40px;
+		width: 40upx;
+		height: 40upx;
 		
 	}
 	.cont{
-		line-height: 60px;
+		line-height: 60upx;
 	}
 	.listcom{
 		border-bottom: 1px solid #e8e8e8;
 	}
 	.commentlist{
-		font-size: 24px;
-		padding: 0 30px;
+		font-size: 24upx;
+		padding: 0 30upx;
 	}
 	.zhuiping{
 		border-top: 1px solid #e8e8e8;
 	}
 	.commentlist .list{
-		height: 520px;
+		height: 520upx;
 	}
 	.commentlist .userinf{
 		display: flex;
-		height: 70px;
+		height: 70upx;
 		align-items: center;
-		line-height: 50px;
+		line-height: 50upx;
 	}
 	.commentlist .userinf image{
-		width: 60px;
-		height: 60px;
+		width: 60upx;
+		height: 60upx;
 		border-radius: 50%;
-		margin-right: 10px;
+		margin-right: 10upx;
 	}
 	.cont1{
-		line-height: 60px;
-		font-size: 24px;
-		padding:0 30px;
+		line-height: 60upx;
+		font-size: 24upx;
+		padding:0 30upx;
 	}
 	.imgcont{
 		display: flex;
 	}
 	.imgcont image{
-		width: 200px;
-		height: 150px;
-		margin-top: 15px;
+		width: 200upx;
+		height: 150upx;
+		margin-top: 15upx;
 		margin-left:30px ;
-		margin-bottom: 15px;
+		margin-bottom: 15upx;
 	}
 	.imgcont image:nth-child(3n+1){
 		margin-left: 0;

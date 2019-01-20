@@ -146,15 +146,15 @@ export default {
 	.order-item-detail {
 		width: 100%;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 		border-bottom: 1px solid #e5e5e5;
 	}
 	.order-info {
 		display: flex;
 		flex-direction: row;
-		font-size: 24px;
+		font-size: 24upx;
 		color: #0b0708;
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	.order-num {
 		flex: 1;
@@ -164,12 +164,12 @@ export default {
 		color: #fec200;
 	}
 	.goods-picture {
-		width: 200px;
-		height: 152px;
+		width: 200upx;
+		height: 152upx;
 	}
 	.goods-info-wrap {
 		flex: 1;
-		padding-left: 32px;
+		padding-left: 32upx;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -180,18 +180,18 @@ export default {
 		justify-content: space-between;
 	}
 	.order-time {
-		font-size: 24px;
+		font-size: 24upx;
 		color: #0b0708;
-		margin-bottom: 28px;
+		margin-bottom: 28upx;
 	}
 	.order-button {
-		width: 160px;
-		height: 50px;
+		width: 160upx;
+		height: 50upx;
 		background: #fec200;
 		text-align: center;
-		line-height: 50px;
+		line-height: 50upx;
 		color: #fff;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.order-options-wrap {
 		display: flex;
@@ -202,64 +202,64 @@ export default {
 		flex-direction: row;
 	}
 	.border-collapse {
-		margin-right: 52px;
+		margin-right: 52upx;
 	}
 	.action-sheet {
 		width: 100%;
 		height: 100%;
 		background: rgba(0,0,0,0.3);
 		position: fixed;
-		top: 0px;
-		left: 0px;
+		top: 0upx;
+		left: 0upx;
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890px;
+		max-height: 890upx;
 		background: #fff;
 		position: absolute;
-		bottom: 0px;
+		bottom: 0upx;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.action-main {
 		position: relative;
 	}
 	.order-status-wrap {
-		padding-top: 123px;
+		padding-top: 123upx;
 	}
 	.order-status-item {
 		width: 100%;
 		display: flex;
 		flex-direction: row;
 		align-items: flex-start;
-		font-size: 18px;
+		font-size: 18upx;
 		color: #0B0708;
 	}
 	.order-status-time {
-		width: 333px;
+		width: 333upx;
 		height: 100%;
 		text-align: right;
 		box-sizing: border-box;
-		padding-right: 31px;
+		padding-right: 31upx;
 		
 	}
 	.order-status-icon {
-		width: 28px;
-		height: 28px;
+		width: 28upx;
+		height: 28upx;
 		position: relative;
-		top: 0px;
-		left: 15px;
+		top: 0upx;
+		left: 15upx;
 		z-index: 100;
 	}
 	.order-status-text {
 		flex: 1;
-		padding-bottom: 20px;
+		padding-bottom: 20upx;
 		white-space: pre-wrap;
-		padding-left: 58px;
-		padding-right: 93px;
+		padding-left: 58upx;
+		padding-right: 93upx;
 		border-left: 1px solid #fec200;
 	}
 	.order-status-last {
-		border-left: 0px;
+		border-left: 0upx;
 	}
 </style>

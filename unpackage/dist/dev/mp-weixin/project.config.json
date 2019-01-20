@@ -1,1 +1,32 @@
-{"description":"项目配置文件。","packOptions":{"ignore":[]},"setting":{"urlCheck":true,"es6":false,"postcss":false,"minified":false,"newFeature":true},"compileType":"miniprogram","libVersion":"1.9.98","appid":"wxe28e48498b48d2cf","projectname":"mall","condition":{"search":{"current":-1,"list":[]},"conversation":{"current":-1,"list":[]},"game":{"current":-1,"list":[]},"miniprogram":{"current":-1,"list":[]}}}
+{
+	"description": "项目配置文件。",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "",
+	"appid": "wxe28e48498b48d2cf",
+	"projectname": "mall",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": []
+		}
+	}
+}

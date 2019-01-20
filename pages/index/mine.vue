@@ -152,8 +152,8 @@
 					url: "user/info",
 					method:'get'
 				}).then(data=>{
-					this.userinf=data
-					wx.setStorageSync('userinf',data)
+					this.userinf=data||{}
+					wx.setStorageSync('userinf',data||{})
 				})
 			}
 		}
@@ -161,25 +161,25 @@
 </script>
 
 <style>
-	.userinf div{width: 33.333%;text-align: center;display: inline-block;vertical-align: top;font-size: 24px;line-height: 30px;}
-	.userinf image{width: 90px;height: 90px;}
-	.userinf h1{font-size: 28px;text-indent: 30px;line-height: 75px;}
+	.userinf div{width: 33.333%;text-align: center;display: inline-block;vertical-align: top;font-size: 24upx;line-height: 30upx;}
+	.userinf image{width: 90upx;height: 90upx;}
+	.userinf h1{font-size: 28upx;text-indent: 30upx;line-height: 75upx;}
 	.userinf{border-bottom: 1px solid #CCCCCC;}
-	.userinf p{margin-bottom: 15px;line-height: 54px;}
+	.userinf p{margin-bottom: 15upx;line-height: 54upx;}
 	.header{
-		height: 266px;
+		height: 266upx;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		font-size: 28px;
+		font-size: 28upx;
 		flex-direction: column;
 		border-bottom: 1px solid #CCCCCC;
 	}
 	.header image{
-		width: 145px;
-		height: 145px;
+		width: 145upx;
+		height: 145upx;
 		border-radius: 50%;
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	div>.userinf:last-child{
 		border-bottom: none;

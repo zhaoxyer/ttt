@@ -88,20 +88,20 @@
 
 <style>
 	.updatecont{
-		padding: 0 30px;
-		line-height: 80px;
-		height: 80px;
-		font-size: 24px;
+		padding: 0 30upx;
+		line-height: 80upx;
+		height: 80upx;
+		font-size: 24upx;
 	}
 	.updatecont div{
-		line-height: 80px;
-		height:80px;
+		line-height: 80upx;
+		height:80upx;
 	}
 	.updatecont input{
 		width: 100%;
 		border-bottom: 2px solid #e6e6e6;
-		line-height: 80px;
-		height: 80px;
+		line-height: 80upx;
+		height: 80upx;
 	}
 	.submit{
 		background: #ECBA25;
@@ -109,7 +109,7 @@
 		text-align: center;
 		line-height: 100px!important;
 		height: 100px!important;
-		margin-top: 30px;
+		margin-top: 30upx;
 	}
 </style>
 

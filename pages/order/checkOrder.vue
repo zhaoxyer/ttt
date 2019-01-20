@@ -68,26 +68,26 @@
 		width: 100%;
 		border-bottom: 1px solid #ededed;
 		box-sizing: border-box;
-		padding: 30px;
+		padding: 30upx;
 	}
 	.order-tip-text {
-		font-size: 20px;
+		font-size: 20upx;
 		color: #656565;
 		box-sizing: border-box;
-		padding-left: 40px;
+		padding-left: 40upx;
 		position: relative;
 	}
 	.order-tip-text:before {
 		content: '';
 		display: inline-block;
-		width: 16px;
-		height: 16px;
+		width: 16upx;
+		height: 16upx;
 		background: #fec401;
-		border-radius: 8px;
+		border-radius: 8upx;
 		position: absolute;
 		top: 50%;
-		left: 0px;
-		margin-top: -8px;
+		left: 0upx;
+		margin-top: -8upx;
 	}
 	
 </style>

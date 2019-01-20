@@ -87,21 +87,21 @@
 
 <style>
 	.tip{
-		line-height: 60px;
+		line-height: 60upx;
 		text-align: right;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.setinput{
-		padding: 0 70px;
+		padding: 0 70upx;
 	}
 	.submit{
 		background: #F6C11B;
 		color: white;
-		line-height: 80px;
+		line-height: 80upx;
 		text-align: center;
-		border-radius: 10px;
-		font-size: 28px;
-		margin-top: 90px;
+		border-radius: 10upx;
+		font-size: 28upx;
+		margin-top: 90upx;
 	}
 	.logo{
 		padding: 40px 0;
@@ -110,8 +110,8 @@
 	.logo image{
 		display: inline-block;
 		vertical-align: top;
-		width: 300px;
-		height: 300px;
+		width: 250upx;
+		height: 250upx;
 	}
 	.setinput>div>input{
 		flex: 1;
@@ -121,28 +121,28 @@
 		border-bottom: 1px solid #C8C8C8;
 	}
 	.setinput>div>input{
-		line-height: 90px;
-		height: 90px;
-		font-size: 24px;
+		line-height: 90upx;
+		height: 90upx;
+		font-size: 24upx;
 	}
 	.setinput>div>image{
-		width: 35px;
-		height: 35px;
-		margin-top: 27.5px;
-		margin-right: 30px;
+		width: 35upx;
+		height: 35upx;
+		margin-top: 27.5upx;
+		margin-right: 30upx;
 	}
 	.qlogin>image{
 		width: 100%;
-		margin-top: 75px;
+		margin-top: 75upx;
 	}
 	.qlogin>div{
 		text-align: center;
 	}
 	.qlogin>div image{
-		width: 150px;
-		height: 150px;
+		width: 150upx;
+		height: 150upx;
 		display: inline-block;
 		vertical-align: top;
-		margin-top: 50px;
+		margin-top: 50upx;
 	}
 </style>

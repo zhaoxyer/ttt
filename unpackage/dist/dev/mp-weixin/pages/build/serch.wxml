@@ -1,1 +1,2 @@
-<import src="/pages/build/serch.vue.wxml" /><template is="07dcf055" data="{{ ...$root['0'], $root }}"/>
+<import src="./serch.vue.wxml" />
+    <template is="5312e73c" data="{{ ...$root['0'], $root }}"/>

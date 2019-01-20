@@ -21,14 +21,14 @@
 	}
 	swiper image{
 		width: 100%;
-		height: 300px;
+		height: 300upx;
 	}
 	swiper{
-		height: 300px;
+		height: 300upx;
 	}
 	.bggray {
 		background: #e5e5e5;
-		height: 40px;
+		height: 40upx;
 	}
 	::-webkit-scrollbar {
 	  width: 0;
@@ -39,7 +39,7 @@
 		background:rgba(0,0,0,0.5);
 		position: fixed;
 		top:0;
-		bottom: 102px;
+		bottom: 102upx;
 		width: 100%;
 		z-index: 999;
 	}

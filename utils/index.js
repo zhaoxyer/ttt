@@ -80,6 +80,21 @@ ut.checkmobile = function(str) {
 		return true;
 	}
 }
+//校验姓名
+ut.checkName=function(name){
+	const regName =/^[\u4e00-\u9fa5]{2,4}$/; 
+	if(!regName.test(name)){ 
+		 return false; 
+	 }
+	 return true;
+}
+//校验身份证
+ut.checkName=function(idNo){
+	const regIdNo = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
+	if(!regIdNo.test(idNo)){ 
+		return false; 
+	}
+}
 //清除用户信息
 ut.loginout =function(){
 	wx.setStorageSync('token','');

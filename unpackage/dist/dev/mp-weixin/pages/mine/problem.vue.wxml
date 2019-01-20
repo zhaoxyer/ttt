@@ -1,10 +1,1 @@
-<template name="2d2425f0">
-  <view class="_view data-v-ec0e05bc">
-    <view class="_div data-v-ec0e05bc columlist" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list">
-      <label class="_span data-v-ec0e05bc">{{list.title}}</label>
-      <view class="_div data-v-ec0e05bc">
-        <image src="../../static/right.jpg" class="_image data-v-ec0e05bc"></image>
-      </view>
-    </view>
-  </view>
-</template>
+<template name="1506d3b6"><view class="_view 1506d3b6"><view class="_div 1506d3b6 columlist" wx:key="list" key="{{list}}" wx:for="{{list}}" wx:for-index="index" wx:for-item="list"><label class="_span 1506d3b6">{{list.title}}</label><view class="_div 1506d3b6"><image src="../../static/right.jpg" class="_image 1506d3b6"></image></view></view></view></template>

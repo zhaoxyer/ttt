@@ -7,19 +7,19 @@
 			<span>姓名</span><input type="text" placeholder="请输入真实姓名" v-model="userinf.name"/>
 		</div>
 		<div>
-			<span>身份证</span><input type="idcard" placeholder="请输入身份证号" v-model="userinf.idCard"/>
+			<span>身份证</span><input type="idcard" placeholder="请输入身份证号" v-model="userinf.idCard" maxlength="18"/>
 		</div>
 		<div>
-			<span>手机号</span><input type="text" placeholder="请输入手机号" v-model="userinf.phone"/>
+			<span>手机号</span><input type="number" placeholder="请输入手机号" v-model="userinf.phone" maxlength="11"/>
 		</div>
 		<div>
-			<span>验证码</span><input type="text" placeholder="请输入验证码" v-model="userinf.vCode"/><label class="getcode" @click="req_sendCode">{{codemsg}}</label>
+			<span>验证码</span><input type="number" placeholder="请输入验证码" v-model="userinf.vCode"/><label class="getcode" @click="req_sendCode">{{codemsg}}</label>
 		</div>
 		<div>
-			<span>密码</span><input type="password" placeholder="长度8~32位须包含数字字母符号至少2种元素" v-model="userinf.password"/>
+			<span>密码</span><input type="password" placeholder="长度8~32位须包含数字字母符号至少2种元素" v-model="userinf.password" maxlength="32"/>
 		</div>
 		<div>
-			<span>确认密码</span><input type="password" placeholder="请输入确认密码" v-model="userinf.password1"/>
+			<span>确认密码</span><input type="password" placeholder="请输入确认密码" v-model="userinf.password1" maxlength="32"/>
 		</div>
 		<p class="xieyi">
 			<span :class="{'active':check}" @click="cg_active">●</span><span>我已阅读并同意</span><span>《用户服务协议》</span>
@@ -93,6 +93,10 @@
 					ut.totast('请输入密码');
 					return;
 				}
+				if(this.userinf.password.length<8||this.userinf.password.length>32){
+					ut.totast('密码为8到32位');
+					return;
+				}
 				if(this.userinf.password!=this.userinf.password1){
 					ut.totast('两次密码输入不一致');
 					return;
@@ -141,14 +145,14 @@
 
 <style>
 	.setinput{
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 	.setinput>div>span,.setinput>div>input,.setinput>div>textarea{
-		font-size: 24px;
-		line-height: 80px;
-		min-height: 80px;
-		margin-top: 20px;
-		height: 80px;
+		font-size: 24upx;
+		line-height: 80upx;
+		min-height: 80upx;
+		margin-top: 20upx;
+		height: 80upx;
 	}
 	.setinput>div>input,.setinput>div>textarea{
 		flex: 1;
@@ -158,23 +162,23 @@
 		display: flex;
 	}
 	.setinput>div>span{
-		width: 150px;
+		width: 150upx;
 	}
 	.setinput>div>textarea{
-		width: 500px;
-		margin-top: 38px;
-		line-height: 40px;
+		width: 500upx;
+		margin-top: 38upx;
+		line-height: 40upx;
 	}
 	.setinput>div>input{
-		width: 300px;
+		width: 300upx;
 	}
 	.submit{
 		background: #F6C11B;
 		color: white;
-		line-height: 80px;
+		line-height: 80upx;
 		text-align: center;
-		border-radius: 10px;
-		font-size: 28px;
+		border-radius: 10upx;
+		font-size: 28upx;
 		position: relative;
 	}
 	.xieyi{
@@ -183,19 +187,19 @@
 	.xieyi span{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 10px;
-		line-height: 30px;
-		font-size: 24px;
+		margin-right: 10upx;
+		line-height: 30upx;
+		font-size: 24upx;
 	}
 	.xieyi span:first-child{
-		width: 28px;
-		height: 28px;
-		border-radius: 10px;
+		width: 28upx;
+		height: 28upx;
+		border-radius: 10upx;
 		border: 1px solid #5d5c5c;
 		color: white;
 		text-align: center;
-		font-size: 20px;
-		line-height: 28px;
+		font-size: 20upx;
+		line-height: 28upx;
 	}
 	.xieyi .active{
 		color: #F6C11B!important;
@@ -207,22 +211,22 @@
 	.getcode{
 		float: right;
 		color: #F6C11B;
-		width: 200px;
+		width: 200upx;
 		text-align: center;
 		border-left: 1px solid #C8C8C8;
-		height: 30px;
-		line-height: 30px;
-		margin-top: 45px;
-		min-height: 30px;
-		font-size: 24px;
+		height: 30upx;
+		line-height: 30upx;
+		margin-top: 45upx;
+		min-height: 30upx;
+		font-size: 24upx;
 	}
 	.tip{
-		line-height: 60px;
+		line-height: 60upx;
 		text-align: right;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	p{
 		position: relative;
-		height: 80px;
+		height: 80upx;
 	}
 </style>

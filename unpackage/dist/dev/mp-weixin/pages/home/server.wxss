@@ -1,86 +1,90 @@
-@import "../../common/vendor.wxss";
 
-.yiji {
-  padding: 0 30rpx;
-  text-align: center;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  height: 100rpx;
+.yiji{
+	padding:0 30px;
+	text-align: center;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	height: 100px;
 }
-.yiji ._span {
-  font-size: 24rpx;
-  margin-right: ;
-  border-bottom: 8rpx solid #e5e5e5;
-  line-height: 80rpx;
+.yiji ._span{
+	font-size: 24px;
+	margin-right: ;
+	border-bottom: 8px solid #e5e5e5;
+	line-height: 80px;
 }
-.yiji ._span:first-child {
-  margin-right: 60rpx;
+.yiji ._span:first-child{
+	margin-right: 60px;
 }
-.yiji ._span.active {
-  border-bottom: 8rpx solid #FEC200;
-  color: #FEC200;
+.yiji ._span.active{
+	border-bottom: 8px solid #FEC200;
+	color: #FEC200;
 }
-.title {
-  text-align: center;
-  margin-top: 40rpx;
-  height: 50rpx;
+.title{
+	text-align: center;
+	margin-top: 40px;
+	height: 50px;
 }
-.title ._span {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 50rpx;
-  font-size: 20rpx;
-  width: 200rpx;
-  font-size: 20rpx;
-  text-align: center;
-  color: white;
-  border-radius: 25rpx;
-  margin-left: 30rpx;
-  margin-right: 30rpx;
-  box-shadow: 0 4rpx 0 #CCCCCC;
+.title ._span{
+	display: inline-block;
+	vertical-align: top;
+	line-height: 50px;
+	font-size: 20px;
+	width: 200px;
+	font-size: 20px;
+	text-align: center;
+	color: white;
+	border-radius: 25px;
+	margin-left: 30px;
+	margin-right: 30px;
+	-webkit-box-shadow: 0 4px 0 #CCCCCC;
+	        box-shadow: 0 4px 0 #CCCCCC;
 }
-.bg0 {
-  background: #FEC200;
+.bg0{
+	background: #FEC200;
 }
-.server {
-  padding: 0 30rpx;
-  margin-top: 40rpx;
-  font-size: 24rpx;
-  margin-bottom: 20rpx;
+.server{
+	padding: 0 30px;
+	margin-top: 40px;
+	font-size: 24px;
+	margin-bottom: 20px;
 }
-.server ._p {
-  text-align: center;
-  line-height: 40rpx;
-  width: 150rpx;
-  text-align: center;
+.server ._p{
+	text-align: center;
+	line-height: 40px;
+	width: 150px;
+	text-align: center;
 }
-.server ._div {
-  display: inline-block;
-  vertical-align: top;
-  margin-right: 30rpx;
+.server ._div{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 30px;
 }
-.server ._div:nth-child(4n) {
-  margin-right: 0;
+.server ._div:nth-child(4n){
+	margin-right: 0;
 }
-.server ._div:nth-last-child(n+5) {
-  margin-bottom: 30rpx;
+.server ._div:nth-last-child(n+5){
+	margin-bottom: 30px;
 }
-.server image {
-  width: 150rpx;
-  height: 150rpx;
-  border-radius: 10rpx;
+.server image{
+	width: 150px;
+	height: 150px;
+	border-radius: 10px;
 }
-.bggray {
-  background: #e5e5e5;
-  height: 40rpx;
+.bggray{
+	background: #e5e5e5;
+	height: 40px;
 }
-.list>._div:last-child .bggray {
-  display: none;
+.list>._div:last-child .bggray{
+	display: none;
 }
+

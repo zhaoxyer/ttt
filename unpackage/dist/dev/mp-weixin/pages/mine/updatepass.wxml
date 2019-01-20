@@ -1,1 +1,2 @@
-<import src="/pages/mine/updatepass.vue.wxml" /><template is="70759901" data="{{ ...$root['0'], $root }}"/>
+<import src="./updatepass.vue.wxml" />
+    <template is="e77d71d8" data="{{ ...$root['0'], $root }}"/>
