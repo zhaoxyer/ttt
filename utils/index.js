@@ -36,9 +36,23 @@ ut.totast=function(title){
 }
 //拨打电话
 ut.call=function(){
-	wx.makePhoneCall({
-		phoneNumber: '18888888888',
-	})
+	const callphone=wx.getStorageSync('callphone');
+	if(callphone){
+		wx.makePhoneCall({
+			phoneNumber: callphone
+		})
+		return
+	}
+		ut.request({
+			allurl: ut.uploadimgurl+"common/customerPhone",
+			method:'GET'
+		}).then(data=>{
+			wx.setStorageSync('callphone',data);
+			wx.makePhoneCall({
+				phoneNumber: data,
+			})
+		})
+	
 }
 //
 ut.createRandom = function(num, min, max) {
@@ -80,6 +94,13 @@ ut.checkmobile = function(str) {
 		return true;
 	}
 }
+//校验用户名
+ut.checkUsername = function(str) {
+	if(/^[a-zA-Z0-9]*$/g.test(str)){
+	  return true;
+	}
+	return false;
+}
 //校验姓名
 ut.checkName=function(name){
 	const regName =/^[\u4e00-\u9fa5]{2,4}$/; 
@@ -89,11 +110,40 @@ ut.checkName=function(name){
 	 return true;
 }
 //校验身份证
-ut.checkName=function(idNo){
-	const regIdNo = /(^\d{15}$)|(^\d{18}$)|(^\d{17}(\d|X|x)$)/; 
-	if(!regIdNo.test(idNo)){ 
+ut.checkCard=function(id) {
+	var format = /^(([1][1-5])|([2][1-3])|([3][1-7])|([4][1-6])|([5][0-4])|([6][1-5])|([7][1])|([8][1-2]))\d{4}(([1][9]\d{2})|([2]\d{3}))(([0][1-9])|([1][0-2]))(([0][1-9])|([1-2][0-9])|([3][0-1]))\d{3}[0-9xX]$/;
+        //号码规则校验
+        if (!format.test(id)) {
+            return false;
+        }
+        //区位码校验
+        //出生年月日校验   前正则限制起始年份为1900;
+        var year = id.substr(6, 4),//身份证年
+            month = id.substr(10, 2),//身份证月
+            date = id.substr(12, 2),//身份证日
+            time = Date.parse(month + '-' + date + '-' + year),//身份证日期时间戳date
+            now_time = Date.parse(new Date()),//当前时间戳
+            dates = (new Date(year, month, 0)).getDate();//身份证当月天数
+        if (time > now_time || date > dates) {
+            return false;
+        }
+        //校验码判断
+        var c = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];   //系数
+        var b = ['1', '0', 'X', '9', '8', '7', '6', '5', '4', '3', '2'];  //校验码对照表
+        var id_array = id.split("");
+        var sum = 0;
+        for (var k = 0; k < 17; k++) {
+            sum += parseInt(id_array[k]) * parseInt(c[k]);
+        }
+        return id_array[17].toUpperCase() === b[sum % 11].toUpperCase();
+}
+//校验密码
+ut.checkPass=function(pass){
+	const regIdNo = /(^\a-\z\A-\Z0-9\@\.)/; 
+	if(!regIdNo.test(pass)){ 
 		return false; 
 	}
+	return true
 }
 //清除用户信息
 ut.loginout =function(){
