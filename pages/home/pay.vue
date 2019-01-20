@@ -112,7 +112,7 @@
 				ut.request({
 					data: {
 						"addressId": this.adress.id,
-						"makeTime": this.date + this.time,
+						"makeTime": this.date +' '+ this.time,
 						"remark": '',
 						"serviceId": this.serverinf.id
 					},

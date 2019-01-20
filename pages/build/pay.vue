@@ -194,7 +194,7 @@
 						 "addressId": this.adress.id,
 						  "carryTypeId": this.carrylist[this.carryindex].id,
 							"expressTypeId": this.vehiclelist[this.vehicleindex].id,
-							"expressTime": this.date+this.time,
+							"expressTime": this.date+' '+this.time,
 							"floor": this.floor,//楼层
 							"orderGoods": this.buildinf,
 							"remark": this.remark,
