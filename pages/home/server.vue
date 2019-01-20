@@ -90,44 +90,44 @@
 
 <style>
 	.yiji{
-		padding:0 30px;
+		padding:0 30upx;
 		text-align: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100px;
+		height: 100upx;
 	}
 	.yiji span{
-		font-size: 24px;
+		font-size: 24upx;
 		margin-right: ;
-		border-bottom: 8px solid #e5e5e5;
-		line-height: 80px;
+		border-bottom: 8upx solid #e5e5e5;
+		line-height: 80upx;
 	}
 	.yiji span:first-child{
-		margin-right: 60px;
+		margin-right: 60upx;
 	}
 	.yiji span.active{
-		border-bottom: 8px solid #FEC200;
+		border-bottom: 8upx solid #FEC200;
 		color: #FEC200;
 	}
 	.title{
 		text-align: center;
-		margin-top: 40px;
-		height: 50px;
+		margin-top: 40upx;
+		height: 50upx;
 	}
 	
 	.title span{
 		display: inline-block;
 		vertical-align: top;
-		line-height: 50px;
-		font-size: 20px;
-		width: 200px;
-		font-size: 20px;
+		line-height: 50upx;
+		font-size: 20upx;
+		width: 200upx;
+		font-size: 20upx;
 		text-align: center;
 		color: white;
-		border-radius: 25px;
-		margin-left: 30px;
-		margin-right: 30px;
+		border-radius: 25upx;
+		margin-left: 30upx;
+		margin-right: 30upx;
 		box-shadow: 0 4px 0 #CCCCCC;
 	}	
 	.bg0{
@@ -135,36 +135,36 @@
 	}
 	
 	.server{
-		padding: 0 30px;
-		margin-top: 40px;
-		font-size: 24px;
-		margin-bottom: 20px;
+		padding: 0 30upx;
+		margin-top: 40upx;
+		font-size: 24upx;
+		margin-bottom: 20upx;
 	}
 	.server p{
 		text-align: center;
-		line-height: 40px;
-		width: 150px;
+		line-height: 40upx;
+		width: 150upx;
 		text-align: center;
 	}
 	.server div{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 30px;
+		margin-right: 30upx;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
 	}
 	.server div:nth-last-child(n+5){
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 	.server image{
-		width: 150px;
-		height: 150px;
-		border-radius: 10px;
+		width: 150upx;
+		height: 150upx;
+		border-radius: 10upx;
 	}
 	.bggray{
 		background: #e5e5e5;
-		height: 40px;
+		height: 40upx;
 	}
 	.list>div:last-child .bggray{
 		display: none;

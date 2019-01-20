@@ -95,30 +95,30 @@
 </script>
 
 <style>
-	.serch{margin-left: 60px;margin-right: 60px;margin-top: 30px;height: 54px;line-height: 54px;border-radius: 10px;display: flex;border:1px solid #c8c8c8;font-size: 24px;align-items: center;}
+	.serch{margin-left: 60upx;margin-right: 60upx;margin-top: 30upx;height: 54upx;line-height: 54upx;border-radius: 10upx;display: flex;border:1px solid #c8c8c8;font-size: 24upx;align-items: center;}
 	nav{
-		margin-bottom: 42px;
-		margin-top: 29px;
-		font-size: 30px;
+		margin-bottom: 42upx;
+		margin-top: 29upx;
+		font-size: 30upx;
 	}
 	nav span{
-		margin-left: 152px;
+		margin-left: 152upx;
 		display: inline-block;
 		vertical-align: top;
 		color: #FEC300;
 	}
 	nav span:first-child{
-		margin-left: 81px;
+		margin-left: 81upx;
 		color: #5d5c5c;
 	}
-	.serch image{width: 26px;height: 24px;margin-left: 30px;margin-right: 30px;}
+	.serch image{width: 26upx;height: 24upx;margin-left: 30upx;margin-right: 30upx;}
 	.serch input{
 		flex: 1;
 	}
 	.section{display: flex;}
 	.section .list{
 		flex: 1;
-		padding: 0 30px;
+		padding: 0 30upx;
 		display: flex;
 	}
 	.list{
@@ -126,81 +126,81 @@
 		flex-direction: column;
 	}
 	.list>div{
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 		flex-direction: row;
 		display: flex;
 	}
 	.list>div image{
-		width: 150px;
-		height: 150px;
-		border-radius: 10px;
-		margin-right: 18px;
+		width: 150upx;
+		height: 150upx;
+		border-radius: 10upx;
+		margin-right: 18upx;
 	}
 	.list>div>div{
 		flex: 1;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.tetantinf{
 		justify-content: center;
-		height: 150px;
+		height: 150upx;
 		display: flex;
 		flex-direction: column;
 		border-bottom: 1px dashed #CCCCCC;
 	}
 	.tetantinf p:first-child{
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 	.leftright{
-		margin-top: 27px;
+		margin-top: 27upx;
 		display: flex;
 		justify-content: space-between;
 		flex-wrap: wrap;
 	}
 	.mallinf{
 		flex-direction: row;
-		font-size: 13px;
+		font-size: 13upx;
 		display: flex;
-		margin-top: 34px;
+		margin-top: 34upx;
 	}
 	.mallinf>div{
 		width: 50%;
 		display: flex;
 		flex-direction: row;
-		margin-bottom: 34px;
+		margin-bottom: 34upx;
 	}
 	.mallinf>div image{
-		width: 72px;
-		height: 65px;
+		width: 72upx;
+		height: 65upx;
 		margin-right: 0;
 	}
 	.mallinf>div div{
-		margin-left: 10px;
+		margin-left: 10upx;
 	}
 	.mallinf>div div p:nth-child(2){
-		margin-bottom: 10px;
-		margin-top: 10px;
+		margin-bottom: 10upx;
+		margin-top: 10upx;
 	}
 	.mallinf .color{
 		color: #FEC300;
 	}
 	
 	.leftright{
-		padding: 0 20px;
-		margin-top: 27px;
+		padding: 0 20upx;
+		margin-top: 27upx;
 		display: flex;
 		justify-content: space-between;
-		padding: 0 20px;
+		padding: 0 20upx;
 		flex-wrap: wrap;
 	}
 	.fuwu div{
-		width: 326px;
-		font-size: 22px;
+		width: 326upx;
+		font-size: 22upx;
 		text-align: center;
-		line-height: 50px;
-		margin-bottom: 30px;
+		line-height: 50upx;
+		margin-bottom: 30upx;
 	}
 	.fuwu div image{
 		width: 100%;
-		height: 300px;
+		height: 300upx;
 	}
 </style>

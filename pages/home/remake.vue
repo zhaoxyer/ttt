@@ -181,10 +181,10 @@
 
 <style>
 	.adressli {
-		padding: 30px;
-		font-size: 26px;
+		padding: 30upx;
+		font-size: 26upx;
 		border-bottom: 1px solid #E5E5E5;
-		line-height: 26px;
+		line-height: 26upx;
 	}
 
 	.adressli div>div {
@@ -192,30 +192,30 @@
 	}
 
 	.adressli>div:nth-child(1) {
-		font-size: 30px;
-		padding: 0 30px;
+		font-size: 30upx;
+		padding: 0 30upx;
 	}
 
 	.adressli>div:nth-child(2) {
-		margin-bottom: 30px;
-		margin-top: 25px;
-		padding: 0 30px;
+		margin-bottom: 30upx;
+		margin-top: 25upx;
+		padding: 0 30upx;
 	}
 
 	.adressinf {
 		display: flex;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
 	}
 
 	.adressinf image {
-		width: 20px;
-		height: 30px;
+		width: 20upx;
+		height: 30upx;
 	}
 
 	.adressinf div {
 		flex: 1;
-		line-height: 30px;
+		line-height: 30upx;
 		display: flex;
 	}
 
@@ -223,28 +223,28 @@
 
 	.adressinf div span {
 		flex: 1;
-		margin-left: 10px;
+		margin-left: 10upx;
 	}
 
 	.payinf {
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 
 	.payinf h1 {
-		font-size: 28px;
-		line-height: 80px;
+		font-size: 28upx;
+		line-height: 80upx;
 	}
 
 	.payinf>div {
 		display: flex;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 
 	.payinf>div image {
-		width: 300px;
-		height: 200px;
+		width: 300upx;
+		height: 200upx;
 	}
 
 	.payinf>div div {
@@ -252,7 +252,7 @@
 	}
 
 	.payinf>div div span {
-		margin-left: 20px;
+		margin-left: 20upx;
 	}
 
 	.payinf>div div span:last-child {
@@ -261,33 +261,33 @@
 
 	.tip {
 		display: flex;
-		padding: 0 30px;
-		line-height: 40px;
-		margin-top: 10px;
-		font-size: 24px;
+		padding: 0 30upx;
+		line-height: 40upx;
+		margin-top: 10upx;
+		font-size: 24upx;
 	}
 
 	.tip div:last-child {
 		flex: 1;
-		margin-left: 10px;
+		margin-left: 10upx;
 	}
 
 	.apply {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		text-align: center;
 	}
 
 	.apply div {
-		margin-left: 30px;
-		margin-right: 30px;
-		height: 100px;
-		line-height: 100px;
+		margin-left: 30upx;
+		margin-right: 30upx;
+		height: 100upx;
+		line-height: 100upx;
 		color: white;
 		background: #F6C11B;
-		font-size: 28px;
+		font-size: 28upx;
 	}
 
 	.time {
@@ -303,9 +303,9 @@
 		display: inline-block;
 		vertical-align: top;
 		text-align: center;
-		line-height: 100px;
-		font-size: 24px;
-		margin-right: 20px;
+		line-height: 100upx;
+		font-size: 24upx;
+		margin-right: 20upx;
 		position: relative;
 	}
 

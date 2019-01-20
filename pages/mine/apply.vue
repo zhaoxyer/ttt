@@ -314,7 +314,7 @@
 	.type div image{width: 40upx;height: 40upx;margin-right: 10upx;margin-bottom: 30upx;}
 	.inf{font-size: 24upx;line-height: 30upx;margin-top: 30upx;}
 	.inf>div {margin-bottom: 30upx;position: relative;}
-	.inf>div div,.inf>div span{display: inline-block;vertical-align: top;line-height: 60px}
+	.inf>div div,.inf>div span{display: inline-block;vertical-align: top;line-height: 60upx;}
 	.inf>div>span{width: 104upx;}
 	.inf>div div{width: 340upx;border: 1px solid #5d5c5c;height:60upx;margin-left: 70upx;padding: 0 10upx;}
 	.inf>div div image{width: 20upx;height: 20upx;float: right;margin-top: 20upx;}

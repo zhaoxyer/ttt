@@ -159,8 +159,7 @@
 				ut.request({
 					data: {
 						storeid:this.storeid,
-						classid:this.classid,
-						class_id:this.class_id
+						classid:this.class_id
 					},
 					url: "goods/goodslist"
 				}).then(data=>{
@@ -178,71 +177,72 @@
 	.mallinf1{position: relative;}
 	.otherinf{position: absolute;width: 100%;bottom: 0;}
 	.otherinf>div{display: inline-block;vertical-align: bottom;}
-	.mallname{width: 150px;height: 150px;background: #FEC200;color: white;border-radius: 20px;font-size: 24px;margin-left:30px;margin-bottom: -20px;text-align: center;}
-	.mallname p{margin-top: 30px;}
+	.mallname{width: 150upx;height: 150upx;background: #FEC200;color: white;border-radius: 20upx;font-size: 24upx;margin-left:30upx;margin-bottom: -20upx;text-align: center;}
+	.mallname p{margin-top: 30upx;}
 	.mallname p:nth-child(2){
-		margin-top: 12px;
+		margin-top: 12upx;
 	}
-	.malladress{font-size: 26px;color: #FEC300;line-height: 40px;margin-bottom: 20px;margin-left: 30px;}
-	.mallimage{width: 100%;height: 300rpx;}
-	.share{position: absolute;right: 30px;bottom: 10px;}
+	.malladress{font-size: 26upx;color: #FEC300;line-height: 40upx;margin-bottom: 20upx;margin-left: 30upx;}
+	.mallimage{width: 100%;height: 300upx;}
+	.share{position: absolute;right: 30upx;bottom: 10upx;}
 	.share>div{
 		display: inline-block;
 		vertical-align: top;
-		font-size: 26px;
-		line-height: 40px;
+		font-size: 26upx;
+		line-height: 40upx;
 		color: white;
-		margin-left: 70px;
+		margin-left: 70upx;
 	}
-	.share image{width: 45px;height: 45px;}
+	.share image{width: 45upx;height: 45upx;}
 	.footer{
 		position: fixed;
 		bottom: 0;
 		width: 100%;
 		border-top:1px solid #C8C8C8;
-		height: 100px;
+		height: 100upx;
 		display: flex;
 		align-items: center;
 	}
 	.logo{
-		margin-left: 30px;
-		width: 80px;
-		height: 80px;
+		margin-left: 30upx;
+		width: 80upx;
+		height: 80upx;
 	}
 	.edit{
 		position: absolute;
-		right: 30rpx;
+		right: 30rupx;
 	}
-	.edit span{line-height: 60rpx;color: white;font-size: 24px;text-align: center;width: 215px;display: inline-block;}
+	.edit span{line-height: 60rupx;color: white;font-size: 24upx;text-align: center;width: 215upx;display: inline-block;}
 	.edit span:first-child{
-		border-bottom-left-radius: 30rpx;
-		border-top-left-radius: 30rpx;
+		border-bottom-left-radius: 30rupx;
+		border-top-left-radius: 30rupx;
 		background: #FEC200;
 	}
 	.edit span:last-child{
-		border-bottom-right-radius: 30rpx;
-		border-top-right-radius: 30rpx;
+		border-bottom-right-radius: 30rupx;
+		border-top-right-radius: 30rupx;
 		background: #FF0015;
 	}
-	.section{margin-top: 28px;display: flex;position: fixed;top:330rpx;bottom: 100rpx;width: 100%;}
+	.section{margin-top: 28upx;display: flex;position: fixed;top:330upx;bottom: 30upx;width: 100%;}
 	.section .list{
 		flex: 1;
-		padding: 0 30px;
+		padding: 0 30upx;
 		display: flex;
 	}
 	.section .nav{
-		width: 200px;
+		width: 200upx;
 		flex-direction: column;
+		height: 100%;
 	}
 	.section .nav div{
-		width: 200px;
-		height: 60px;
-		line-height: 60px;
+		width: 200upx;
+		height: 60upx;
+		line-height: 60upx;
 		text-align: center;
-		font-size: 28px;
-		border-bottom-right-radius: 30px;
-		border-top-right-radius: 30px;
-		margin-bottom: 6px;
+		font-size: 28upx;
+		border-bottom-right-radius: 30upx;
+		border-top-right-radius: 30upx;
+		margin-bottom: 6upx;
 	}
 	.section .nav .active{
 		background: #fec300;
@@ -253,91 +253,91 @@
 		flex-direction: column;
 	}
 	.mall1inf{
-		height: 150px;
+		height: 150upx;
 		align-items: center;
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 		flex-direction: row;
 		display: flex;
 	}
 	.mall1inf image{
-		width: 150px;
-		height: 120px;
-		border-radius: 10px;
-		margin-right: 18px;
+		width: 150upx;
+		height: 120upx;
+		border-radius: 10upx;
+		margin-right: 18upx;
 	}
 	.mall1inf div{
 		flex: 1;
-		font-size: 24px;
-		line-height: 30px;
+		font-size: 24upx;
+		line-height: 30upx;
 	}
 	.mall1inf div p{
-		margin-bottom: 15px;
+		margin-bottom: 15upx;
 	}
 	.add{color: #FEC300;margin-bottom: 0!important;}
-	.add1{margin-bottom: 0!important;line-height: 80px;position: relative;font-size: 24px;}
+	.add1{margin-bottom: 0!important;line-height: 80upx;position: relative;font-size: 24upx;}
 	.addedit{
 		position: absolute;
 		right: 0;
-		line-height: 30px;
+		line-height: 30upx;
 	}
 	.addedit image,.addedit span{
 		display: inline-block;
 		vertical-align: top;
-		width: 50px;
+		width: 50upx;
 		text-align: center;
 	}
 	.addedit image{
-		width: 30px!important;
-		height: 30px!important;
+		width: 30upx!important;
+		height: 30upx!important;
 		margin-right: 0;
 	}
 	.addedit.addedit1{
-		line-height: 80px;
+		line-height: 80upx;
 	}
 	.addedit.addedit1 image{
-		width: 40px!important;
-		height: 40px!important;
+		width: 40upx!important;
+		height: 40upx!important;
 		margin-right: 0;
-		margin-top: 20px;
+		margin-top: 20upx;
 	}
 	.mallnum{
-		width: 45px;
-		font-size: 20px;
+		width: 45upx;
+		font-size: 20upx;
 		text-align: center;
 		background: #FF0100;
 		color: white;
-		height: 45px;
+		height: 45upx;
 		border-radius: 50%;
 		position: absolute;
-		line-height: 45px;
-		margin-left: 89.5px;
-		margin-top: -25px;
+		line-height: 45upx;
+		margin-left: 89.5upx;
+		margin-top: -25upx;
 	}
 	.money{
-		font-size: 24px;
+		font-size: 24upx;
 		color: #FEC200;
-		margin-left: 30px;
+		margin-left: 30upx;
 	}
 	.barname{
-		width: 300px;
+		width: 300upx;
 		overflow: hidden;
 		text-overflow :ellipsis;
-		height: 80px;
+		height: 80upx;
 		white-space:nowrap;
-		margin-right: 20px;
+		margin-right: 20upx;
 	}
 	.popcont{
-		height: 500px;
+		height: 500upx;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		background: white;
 	}
 	.delbar{
-		line-height: 95px;
-		font-size: 24px;
+		line-height: 95upx;
+		font-size: 24upx;
 		text-align: right;
-		padding: 0 30px;
+		padding: 0 30upx;
 		border-bottom: 1px solid #C8C8C8;
 	}
 	.delbar image,.delbar span{
@@ -345,14 +345,14 @@
 		vertical-align: top;
 	}
 	.delbar image{
-		width: 20px;
-		height: 30px;
-		margin-right: 20px;
-		margin-top: 32.5px;
+		width: 20upx;
+		height: 30upx;
+		margin-right: 20upx;
+		margin-top: 32.5upx;
 	}
 	.barlist{
-		height: 400px;
-		padding: 0 30px;
+		height: 400upx;
+		padding: 0 30upx;
 		position: relative;
 	}
 </style>

@@ -14,7 +14,7 @@
 		</div>
 		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
 			<swiper-item v-for="item in swipeList" :key="item">
-				<image :src="item"/>
+				<image :src="static+item.banner"/>
 			</swiper-item>
 		</swiper>
 		<div class='server'>
@@ -51,7 +51,7 @@
 		data() {
 			return {
 				static:'',
-				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
+				swipeList: wx.getStorageSync('banderindex')||[],
 				indicatorDots: true,
 				indicatorcolor: 'white',
 				indicatoractivecolor:'#FEC200',
@@ -79,6 +79,9 @@
 			}
 			if(!this.classlist.length){
 				this.req_class();
+			}
+			if(!this.swipeList.length){
+				this.req_banner();
 			}
 		},
 		methods: {
@@ -144,6 +147,15 @@
 					url: "service/recommendlist"
 				}).then(data=>{
 					this.recomlist=data
+				})
+			},
+			req_banner(){
+				ut.request({
+					allurl: ut.uploadimgurl+"common/banner",
+					method:'GET'
+				}).then(data=>{
+					this.swipeList=data;
+					wx.setStorageSync('banderindex',this.swipeList);
 				})
 			},
 			//打开授权

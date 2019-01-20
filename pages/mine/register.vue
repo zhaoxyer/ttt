@@ -1,7 +1,7 @@
 <template>
 	<div class="setinput">
 		<div>
-			<span>用户名</span><input type="text" placeholder="请输入用户名" v-model="userinf.username"/>
+			<span>用户名</span><input type="text" placeholder="请输入用户名" v-model="userinf.username" maxlength="16"/>
 		</div>
 		<div>
 			<span>姓名</span><input type="text" placeholder="请输入真实姓名" v-model="userinf.name"/>
@@ -73,12 +73,28 @@
 					ut.totast('请输入用户名');
 					return;
 				}
+				if(!ut.checkUsername(this.userinf.username)){
+					ut.totast('用户名为英文和数字组成');
+					return;
+				}
+				if(this.userinf.username.length<8||this.userinf.username.length>16){
+					ut.totast('用户名为8到16位数字英文组合');
+					return;
+				}
 				if(!this.userinf.name){
 					ut.totast('请输入姓名');
 					return;
 				}
+				if(!ut.checkName(this.userinf.name)){
+					ut.totast('请输入正确的姓名');
+					return;
+				}
 				if(!this.userinf.idCard){
 					ut.totast('请输入身份证号');
+					return;
+				}
+				if(!ut.checkCard(this.userinf.idCard)){
+					ut.totast('请输入正确的身份证号');
 					return;
 				}
 				if(!ut.checkmobile(this.userinf.phone)){

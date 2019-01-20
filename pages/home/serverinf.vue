@@ -31,7 +31,7 @@
 		<div v-if='serverinf.detail' class="detail">
 			<wxParse :content="detailinf"/>
 		</div>
-		<div style="height: 100rpx;">
+		<div style="height: 100rupx;">
 		</div>
 		<div class="footer">
 			<div><span>预约费</span><span>￥{{serverinf.bookPrice}}</span></div><div @click="go_home_pay">立即预约</div>
@@ -151,12 +151,12 @@
 <style>
 	@import url("../../components/mpvue-wxparse/src/wxParse.css");
 	.servertype{
-		padding: 0 30px 10px 30px;
+		padding: 0 30px 10px 30upx;
 		border-bottom: 1px solid #E5E5E5;
 	}
 	.serverinf{
-		line-height: 30px;
-		font-size: 28px;
+		line-height: 30upx;
+		font-size: 28upx;
 		padding: 30px 0;
 		position: relative;
 	}
@@ -172,22 +172,22 @@
 		vertical-align: top;
 	}
 	.serverinf>div image{
-		width: 25px;
-		height: 30px;
+		width: 25upx;
+		height: 30upx;
 	}
 	.serverinf>div span:last-child{
-		margin-left: 20px;
+		margin-left: 20upx;
 	}
 	.typelist>div{
 		width: 30%;
-		font-size: 24px;
+		font-size: 24upx;
 		background: #C9C9C9;
 		color: white;
 		text-align: center;
-		line-height: 40px;
+		line-height: 40upx;
 		display: inline-block;
 		vertical-align: top;
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 	.typelist>div div{
 		padding: 10px 0;
@@ -201,44 +201,44 @@
 		margin: 0 5%;
 	}
 	.evaluate{
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 	.evanum{
-		height: 80px;
+		height: 80upx;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.evanum image{
-		width: 20px;
-		height: 20px;
-		margin-left: 20px;
+		width: 20upx;
+		height: 20upx;
+		margin-left: 20upx;
 	}
 	.evanum>div:first-child{
-		font-size: 28px;
+		font-size: 28upx;
 	}
 	.gobuild{
 		text-align: center;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.gobuild span{
-		width: 200px;
-		line-height: 50px;
+		width: 200upx;
+		line-height: 50upx;
 		display: inline-block;
 		background: #FEC200;
 		color: white;
-		border-radius: 25px;
+		border-radius: 25upx;
 	}
 	.evaluate .tip{
 		color: #b4b4b4;
-		line-height: 80px;
+		line-height: 80upx;
 		text-align: center;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.bggray {
 		background: #e5e5e5;
-		height: 40px;
+		height: 40upx;
 	}
 	.liucheng{
 		width: 100%;
@@ -247,12 +247,12 @@
 		position: fixed;
 		display: flex;
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		bottom: 0;
-		line-height: 100px;
+		line-height: 100upx;
 		background: white;
 		border-top:1px solid #dadada;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.footer>div:first-child{
 		flex: 1;
@@ -263,16 +263,16 @@
 		vertical-align: top;
 	}
 	.footer>div:first-child span:last-child{
-		padding: 0 30px 0 20px;
+		padding: 0 30px 0 20upx;
 		color: #FEC200;
 	}
 	.footer>div:last-child{
-		width: 250px;
+		width: 250upx;
 		color: white;
 		background: #FEC200;
 		text-align: center;
 	}
 	.detail{
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 </style>

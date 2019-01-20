@@ -82,28 +82,28 @@
 </script>
 
 <style>
-	.serch{margin-left: 60px;margin-right: 60px;margin-top: 30px;height: 54px;line-height: 54px;border-radius: 10px;display: flex;border:1px solid #c8c8c8;color: #CCCCCC;font-size: 24px;align-items: center;}
+	.serch{margin-left: 60upx;margin-right: 60upx;margin-top: 30upx;height: 54upx;line-height: 54upx;border-radius: 10upx;display: flex;border:1px solid #c8c8c8;color: #CCCCCC;font-size: 24upx;align-items: center;}
 	.serch image,.serch span{display: inline-block;vertical-align: top;}
-	.serch image{width: 26px;height: 24px;margin-left: 30px;margin-right: 30px;}
-	.section{margin-top: 28px;display: flex;}
+	.serch image{width: 26upx;height: 24upx;margin-left: 30upx;margin-right: 30upx;}
+	.section{margin-top: 28upx;display: flex;}
 	.section .list{
 		flex: 1;
-		padding: 0 30px;
+		padding: 0 30upx;
 		display: flex;
 	}
 	.section nav{
-		width: 200px;
+		width: 200upx;
 		flex-direction: column;
 	}
 	.section nav div{
-		width: 200px;
-		height: 60px;
-		line-height: 60px;
+		width: 200upx;
+		height: 60upx;
+		line-height: 60upx;
 		text-align: center;
-		font-size: 28px;
-		border-bottom-right-radius: 30px;
-		border-top-right-radius: 30px;
-		margin-bottom: 6px;
+		font-size: 28upx;
+		border-bottom-right-radius: 30upx;
+		border-top-right-radius: 30upx;
+		margin-bottom: 6upx;
 	}
 	.section nav .active{
 		background: #fec300;
@@ -113,23 +113,23 @@
 		flex-direction: column;
 	}
 	.list>div{
-		height: 150px;
+		height: 150upx;
 		align-items: center;
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 		flex-direction: row;
 		display: flex;
 	}
 	.list>div image{
-		width: 150px;
-		height: 150px;
-		border-radius: 10px;
-		margin-right: 18px;
+		width: 150upx;
+		height: 150upx;
+		border-radius: 10upx;
+		margin-right: 18upx;
 	}
 	.list>div div{
 		flex: 1;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.list>div div p:first-child{
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 	}
 </style>

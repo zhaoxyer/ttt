@@ -245,66 +245,66 @@
 </script>
 
 <style scoped>
-	.mallimage{width: 100%;height: 300rpx;}
+	.mallimage{width: 100%;height: 300rupx;}
 	.footer{
 		background: white;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
 		border-top:1px solid #C8C8C8;
-		height: 100px;
+		height: 100upx;
 		display: flex;
 		align-items: center;
 	}
 	.logo{
-		margin-left: 30px;
-		width: 80px;
-		height: 80px;
+		margin-left: 30upx;
+		width: 80upx;
+		height: 80upx;
 	}
 	.edit{
 		position: absolute;
-		right: 30rpx;
+		right: 30upx;
 	}
-	.edit span{line-height: 60rpx;color: white;font-size: 24px;text-align: center;width: 215px;display: inline-block;}
+	.edit span{line-height: 60upx;color: white;font-size: 24upx;text-align: center;width: 215upx;display: inline-block;}
 	.edit span:first-child{
-		border-bottom-left-radius: 30rpx;
-		border-top-left-radius: 30rpx;
+		border-bottom-left-radius: 30upx;
+		border-top-left-radius: 30upx;
 		background: #FEC200;
 	}
 	.edit span:last-child{
-		border-bottom-right-radius: 30rpx;
-		border-top-right-radius: 30rpx;
+		border-bottom-right-radius: 30upx;
+		border-top-right-radius: 30upx;
 		background: #FF0015;
 	}
 	.mall1inf{
-		height: 150px;
+		height: 150upx;
 		align-items: center;
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 		flex-direction: row;
 		display: flex;
 	}
 	.num{
-		width: 45px;
-		font-size: 20px;
+		width: 45upx;
+		font-size: 20upx;
 		text-align: center;
 		background: #FF0100;
 		color: white;
-		height: 45px;
+		height: 45upx;
 		border-radius: 50%;
 		position: absolute;
-		line-height: 45px;
-		margin-left: 89.5px;
-		margin-top: -25px;
+		line-height: 45upx;
+		margin-left: 89.5upx;
+		margin-top: -25upx;
 	}
 	.money{
-		font-size: 24px;
+		font-size: 24upx;
 		color: #FEC200;
-		margin-left: 30px;
+		margin-left: 30upx;
 	}
 	.mallinf2{
-		padding: 20px 30px;
-		line-height: 50px;
-		font-size: 24px;
+		padding: 20px 30upx;
+		line-height: 50upx;
+		font-size: 24upx;
 	}
 	.mallinf2>div{
 		position: relative;
@@ -315,11 +315,11 @@
 		color: #FEC200;
 	}
 	.mallinf2price image{
-		width: 40px;
-		height: 40px;
+		width: 40upx;
+		height: 40upx;
 		position: absolute;
 		right: 0;
-		margin-top: 5px;
+		margin-top: 5upx;
 	}
 	.mallinf2s span{
 		display: inline-block;
@@ -334,23 +334,23 @@
 		text-align: right;
 	}
 	.guige{
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 	.guige h1{
-		line-height: 90px;
-		font-size: 28px;
+		line-height: 90upx;
+		font-size: 28upx;
 	}
 	.guigetype span{
-		min-width: 150px;
-		height: 60px;
-		line-height: 60px;
-		border-radius: 10px;
+		min-width: 150upx;
+		height: 60upx;
+		line-height: 60upx;
+		border-radius: 10upx;
 		background: #EEEEEE;
-		margin-left: 30px;
-		font-size: 24px;
+		margin-left: 30upx;
+		font-size: 24upx;
 		display: inline-block;
 		vertical-align: top;
-		margin-bottom: 20px;
+		margin-bottom: 20upx;
 		text-align: center;
 	}
 	.guigetype span.active{
@@ -360,7 +360,7 @@
 	.guigetype span:nth-child(4n+1){
 		margin-left: 0;
 	}
-	.add{margin-bottom: 0!important;line-height: 80px;position: relative;font-size: 24px;}
+	.add{margin-bottom: 0!important;line-height: 80upx;position: relative;font-size: 24upx;}
 	.add1{color: #FEC300;margin-bottom: 0!important;}
 	.addedit{
 		position: absolute;
@@ -369,39 +369,39 @@
 	.addedit image,.addedit span{
 		display: inline-block;
 		vertical-align: top;
-		width: 100px;
+		width: 100upx;
 		text-align: center;
 	}
 	.addedit image{
-		width: 40px!important;
-		height: 40px!important;
+		width: 40upx!important;
+		height: 40upx!important;
 		margin-right: 0;
-		margin-top: 20px;
+		margin-top: 20upx;
 	}
 	.add>span{
 		display: inline-block;
 		vertical-align: top;
 	}
 	.barname{
-		width: 300px;
+		width: 300upx;
 		overflow: hidden;
 		text-overflow :ellipsis;
-		height: 80px;
+		height: 80upx;
 		white-space:nowrap;
-		margin-right: 20px;
+		margin-right: 20upx;
 	}
 	.popcont{
-		height: 500px;
+		height: 500upx;
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		background: white;
 	}
 	.delbar{
-		line-height: 95px;
-		font-size: 24px;
+		line-height: 95upx;
+		font-size: 24upx;
 		text-align: right;
-		padding: 0 30px;
+		padding: 0 30upx;
 		border-bottom: 1px solid #C8C8C8;
 	}
 	.delbar image,.delbar span{
@@ -409,18 +409,18 @@
 		vertical-align: top;
 	}
 	.delbar image{
-		width: 20px;
-		height: 30px;
-		margin-right: 20px;
-		margin-top: 32.5px;
+		width: 20upx;
+		height: 30upx;
+		margin-right: 20upx;
+		margin-top: 32.5upx;
 	}
 	.barlist{
-		height: 400px;
-		padding: 0 30px;
+		height: 400upx;
+		padding: 0 30upx;
 		position: relative;
 	}
 	.detail{
-		padding: 0 30px;
-		margin-bottom: 100px;
+		padding: 0 30upx;
+		margin-bottom: 100upx;
 	}
 </style>

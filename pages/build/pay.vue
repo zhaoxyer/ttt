@@ -241,25 +241,25 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 60px;
-		font-size: 24px;
+		height: 60upx;
+		font-size: 24upx;
 	}
 	.louceng input{
 		border: 1px solid #999999;
-		border-radius: 10px;
+		border-radius: 10upx;
 	}
 	.floor view{
 		display: flex;
 	}
 	.floor view view{
-		margin-left: 30px;
+		margin-left: 30upx;
 		
 	}
 	.floor view view:nth-child(1){
-		width:30px;
-		height: 30px;
-		border-radius: 15px;
-		padding: 5px;
+		width:30upx;
+		height: 30upx;
+		border-radius: 15upx;
+		padding: 5upx;
 		border: 1px solid #999999;
 	}
 	.floor view view.active{
@@ -270,37 +270,37 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 60px;
-		font-size: 24px;
+		height: 60upx;
+		font-size: 24upx;
 	}
 	.carry image,.carry span{
-		margin-left: 30px;
+		margin-left: 30upx;
 	}
 	.carry image{
-		width: 40px;
-		height: 40px;
+		width: 40upx;
+		height: 40upx;
 	}
-	.adressli{padding: 30px;font-size: 26px;border-bottom: 1px solid #E5E5E5;line-height: 26px;}
+	.adressli{padding: 30upx;font-size: 26upx;border-bottom: 1px solid #E5E5E5;line-height: 26upx;}
 	.adressli div>div{display: inline-block;}
 	.adressli>div:nth-child(1){
-		font-size: 30px;
+		font-size: 30upx;
 	}
 	.adressli>div:nth-child(2){
-		margin-bottom: 30px;
-		margin-top: 25px;
+		margin-bottom: 30upx;
+		margin-top: 25upx;
 	}
 	.adressinf{
 		display: flex;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
 	 }
 	 .adressinf image{
-		 width: 20px;
-		 height: 30px;
+		 width: 20upx;
+		 height: 30upx;
 	 }
 	 .adressinf div{
 		 flex: 1;
-		 line-height: 30px;
+		 line-height: 30upx;
 		 display: flex;
 	 }
 	 .adressinf div image{
@@ -308,28 +308,28 @@
 		}
 	.adressinf div span{
 		flex: 1;
-		line-height: 30px;
+		line-height: 30upx;
 	}
-	.payinf{padding: 0 30px;}
+	.payinf{padding: 0 30upx;}
 	.payinf h1{
-		font-size: 28px;
-		line-height: 80px;
+		font-size: 28upx;
+		line-height: 80upx;
 	}
 	.inff{
-		height: 200px;
+		height: 200upx;
 		align-items: center;
 		display: flex;
 	}
 	.payinf>div{
 		display: flex;
-		font-size: 24px;
+		font-size: 24upx;
 		align-items: center;
-		line-height: 50px;
+		line-height: 50upx;
 		width: 100%;
 	}
 	.payinf>div image{
-		width: 150px;
-		height: 120px;
+		width: 150upx;
+		height: 120upx;
 	}
 	.payinf>div div{
 		flex: 1;
@@ -342,7 +342,7 @@
 	.payinf>div div p{
 		display: inline-block;
 		text-align: left;
-		max-width: 460px;
+		max-width: 460upx;
 		overflow: hidden;
 	}
 	.payinf>div div p view{
@@ -352,25 +352,25 @@
 	}
 	.tip{
 		display: flex;
-		padding: 0 30px;
-		line-height: 40px;
-		margin-top: 10px;
-		font-size: 24px;
+		padding: 0 30upx;
+		line-height: 40upx;
+		margin-top: 10upx;
+		font-size: 24upx;
 	}
 	.tip div:last-child{
 		flex: 1;
-		margin-left: 10px;
+		margin-left: 10upx;
 	}
 	.apply{
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		text-align: center;
 		display: flex;
 		background: white;
-		line-height: 100px;
-		font-size: 24px;
+		line-height: 100upx;
+		font-size: 24upx;
 		z-index: 10;
 	}
 	.apply>span:nth-child(1){
@@ -380,7 +380,7 @@
 		color: #FEC200;
 	}
 	.apply>span:nth-child(2){
-		width: 500px;
+		width: 500upx;
 		background: #FEC200;
 		text-align: center;
 		color: white;
@@ -396,9 +396,9 @@
 		display:inline-block ;
 		vertical-align: top;
 		text-align: center;
-		line-height: 100px;
-		font-size: 24px;
-		margin-right: 20px;
+		line-height: 100upx;
+		font-size: 24upx;
+		margin-right: 20upx;
 		position: relative;
 	}
 	.time p view:nth-child(1) span:nth-child(2n+1){
@@ -409,22 +409,22 @@
 	}
 	.sendtype p{
 		padding: 10px 0;
-		font-size: 24px;
+		font-size: 24upx;
 	}
 	.sendtype p span{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 30px;
-		height: 60px;
-		line-height: 60px;
+		margin-right: 30upx;
+		height: 60upx;
+		line-height: 60upx;
 	}
 
 	.sendtype p span:nth-child(1){
 		background: #999999;
 		color: white;
-		width:200px;
+		width:200upx;
 		text-align: center;
-		border-radius: 20px;
+		border-radius: 20upx;
 	}
 	.sendtype p .active{
 		background: #FEC200!important;
@@ -434,24 +434,24 @@
 	}
 	.remake textarea{
 		width: 100%;
-		height: 150px;
+		height: 150upx;
 		border:1px solid #C9C9C9;
-		border-radius: 10px;
-		margin-bottom: 30px;
-		font-size: 24px;
+		border-radius: 10upx;
+		margin-bottom: 30upx;
+		font-size: 24upx;
 	}
 	
 	.bgheight{
-		height: 120px;
+		height: 120upx;
 	}
 	.mingxi .mingxiinf{
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 180px;
+		height: 180upx;
 		flex-direction: column;
-		line-height: 50px;
-		font-size: 24px;
+		line-height: 50upx;
+		font-size: 24upx;
 	}
 	.center{
 		text-align: center;

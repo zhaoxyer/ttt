@@ -90,7 +90,7 @@
 		display: inline-block;
 		vertical-align: top;
 	}
-	.edit{line-height: 40px!important;}
+	.edit{line-height: 40upx!important;}
 	.edit div:first-child image{
 		width: 30upx;
 		height: 30upx;

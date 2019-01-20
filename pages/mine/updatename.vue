@@ -93,8 +93,8 @@
 		background: #ECBA25;
 		color: white;
 		text-align: center;
-		line-height: 100px!important;
-		height: 100px!important;
+		line-height: 100upx!important;
+		height: 100upx!important;
 		margin-top: 30upx;
 	}
 </style>

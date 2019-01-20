@@ -1,10 +1,10 @@
 <template>
 	<view>
 		<div class="columlist columlist1" @click="uploadimg">
-			<span>头像</span><div><image   :src="userinf.photo||'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
+			<span>头像</span><div><image   :src="userinf.photo?(static+userinf.photo):'../../static/logo.jpg'" class="header"></image><image src="../../static/right.jpg"></image></div>
 		</div>
 		<div class="columlist" @click="go_mine_updatename">
-			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image  :src="userinf.photo?(static+userinf.photo):'../../static/logo.jpg'"></image></div>
+			<span>昵称</span><div><span>{{userinf.nickname||userinf.name||'木斗生活'}}</span><image src="../../static/right.jpg"></image></div>
 		</div>
 		<div class="columlist" @click="go_mine_adress">
 			<span>收货地址</span><div><span>修改/添加</span><image src="../../static/right.jpg"></image></div>
@@ -95,15 +95,15 @@
 		border-bottom: 1px solid #CCCCCC;
 	}
 	.columlist1,.columlist>div{
-		height: 180px!important;
+		height: 180upx!important;
 	}
 	.columlist image{
 		width: 20upx;
 		height: 35upx;
 	}
 	.header{
-		width: 120px!important;
-		height: 120px!important;
+		width: 120upx!important;
+		height: 120upx!important;
 		border-radius: 50%;
 	}
 	.bggray{

@@ -57,9 +57,20 @@
 					ut.totast('请输入用户名');
 					return;
 				}
-				
+				if(!ut.checkUsername(this.username)){
+					ut.totast('请输入正确的用户名');
+					return;
+				}
+				if(this.username.length<8||this.username.length>16){
+					ut.totast('请输入正确的用户名');
+					return;
+				}
 				if(!this.password){
 					ut.totast('请输入密码');
+					return;
+				}
+				if(this.password.length<8||this.password.length>32){
+					ut.totast('请输入正确的密码');
 					return;
 				}
 				wx.login({

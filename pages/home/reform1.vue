@@ -176,7 +176,7 @@
 		position: absolute;
 		width: 100%;
 		top:0;
-		bottom: 120px;
+		bottom: 120upx;
 	}
 	::-webkit-scrollbar {
 	  width: 0;
@@ -188,36 +188,36 @@
 	}
 	.reformtype span{
 		display: inline-block;
-		font-size: 30px;
-		line-height: 60px;
-		width: 200px;
+		font-size: 30upx;
+		line-height: 60upx;
+		width: 200upx;
 		color: white;
 		background: #999999;
-		border-radius: 10px;
+		border-radius: 10upx;
 		text-align: center;
-		margin-top: 30px;
+		margin-top: 30upx;
 		box-shadow: 0 4px 0 #CCCCCC;
 	}
 	.reformtype span:last-child{
-		margin-left: 30px;
+		margin-left: 30upx;
 	}
 	.reformtype .active{
 		background: #FEC300!important;
 	}
 	.userinf {
-		padding: 0 30px;
+		padding: 0 30upx;
 	}
 
 	.userinf h1 {
-		font-size: 30px;
-		line-height: 60px;
-		width: 200px;
+		font-size: 30upx;
+		line-height: 60upx;
+		width: 200upx;
 		color: white;
 		background: #FEC300;
-		border-radius: 10px;
+		border-radius: 10upx;
 		text-align: center;
-		margin-top: 30px;
-		margin-bottom: 44px;
+		margin-top: 30upx;
+		margin-bottom: 44upx;
 		box-shadow: 0 4px 0 #CCCCCC;
 	}
 
@@ -233,25 +233,25 @@
 	.type div span {
 		display: inline-block;
 		vertical-align: top;
-		font-size: 24px;
-		line-height: 40px;
+		font-size: 24upx;
+		line-height: 40upx;
 	}
 
 	.type div image {
-		width: 40px;
-		height: 40px;
-		margin-right: 10px;
-		margin-bottom: 30px;
+		width: 40upx;
+		height: 40upx;
+		margin-right: 10upx;
+		margin-bottom: 30upx;
 	}
 
 	.inf {
-		font-size: 24px;
-		line-height: 30px;
-		margin-top: 30px;
+		font-size: 24upx;
+		line-height: 30upx;
+		margin-top: 30upx;
 	}
 
 	.inf>div {
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 
 	.inf>div div,
@@ -261,56 +261,56 @@
 	}
 
 	.inf>div>span {
-		width: 104px;
+		width: 104upx;
 	}
 
 	.inf>div div {
-		width: 340px;
+		width: 340upx;
 		border: 1px solid #5d5c5c;
-		height: 30px;
-		margin-left: 70px;
-		padding: 0 10px;
+		height: 30upx;
+		margin-left: 70upx;
+		padding: 0 10upx;
 	}
 
 	.inf>div div image {
-		width: 20px;
-		height: 20px;
+		width: 20upx;
+		height: 20upx;
 		float: right;
-		margin-top: 5px;
+		margin-top: 5upx;
 	}
 
 	.inf>div div input {
 		width: 100%;
-		height: 30px;
-		line-height: 30px;
-		font-size: 24px;
-		min-height: 30px;
+		height: 30upx;
+		line-height: 30upx;
+		font-size: 24upx;
+		min-height: 30upx;
 	}
 
 	.tip {
 		text-align: center;
-		font-size: 24px;
+		font-size: 24upx;
 		color: #999999;
-		line-height: 60px;
-		margin-top: 20px;
+		line-height: 60upx;
+		margin-top: 20upx;
 	}
 
 	.apply {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		height: 100px;
+		height: 100upx;
 		text-align: center;
 	}
 
 	.apply div {
-		height: 100px;
-		line-height: 100px;
+		height: 100upx;
+		line-height: 100upx;
 		color: white;
 		background: #FEC300;
-		font-size: 28px;
-		margin-left: 125px;
-		margin-right: 125px;
+		font-size: 28upx;
+		margin-left: 125upx;
+		margin-right: 125upx;
 	}
 
 
@@ -319,21 +319,21 @@
 	}
 
 	.server {
-		padding: 0 30px;
-		margin-top: 40px;
-		font-size: 24px;
-		margin-bottom: 20px;
+		padding: 0 30upx;
+		margin-top: 40upx;
+		font-size: 24upx;
+		margin-bottom: 20upx;
 	}
 
 	.server p {
 		text-align: center;
-		line-height: 40px;
+		line-height: 40upx;
 	}
 
 	.server div {
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 30px;
+		margin-right: 30upx;
 	}
 
 	.server div:nth-child(4n) {
@@ -341,13 +341,13 @@
 	}
 
 	.server div:nth-last-child(n+5) {
-		margin-bottom: 30px;
+		margin-bottom: 30upx;
 	}
 
 	.server image {
-		width: 150px;
-		border-radius: 10px;
-		height: 150px;
+		width: 150upx;
+		border-radius: 10upx;
+		height: 150upx;
 	}
 	.server .active{
 		color: #FEC200;
@@ -355,7 +355,7 @@
 
 	.bggray {
 		background: #e5e5e5;
-		height: 40px;
+		height: 40upx;
 	}
 
 	.list>div:last-child .bggray {
