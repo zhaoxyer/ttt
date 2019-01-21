@@ -95,7 +95,7 @@
 				ut.request({
 					data: {
 						"addressId": this.adress.id,
-						"makeTime": this.date + this.time,
+						"makeTime": this.date +' '+ this.time,
 						"remark": '',
 						"reformTypeId": this.remakeinf.reformTypeId,
 						"houseTypeId": this.remakeinf.houseTypeId
@@ -118,7 +118,7 @@
 				ut.request({
 					data: {
 						"addressId": this.adress.id,
-						"makeTime": this.date + this.time,
+						"makeTime": this.date +' '+ this.time,
 						"remark": '',
 						"wholeHomeTypeId": this.remakeinf.wholeHomeTypeId,
 						"houseTypeId": this.remakeinf.houseTypeId,
