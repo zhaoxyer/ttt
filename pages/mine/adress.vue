@@ -1,18 +1,20 @@
 <template>
 	<div>
-		<div class='adress'>
-			<div class="adressli" v-for="(item,index) in list" :key="index" @click=setadress(item)>
-				<div>
-					<div>{{item.name}}</div><div>{{item.phone}}</div>
-				</div>
-				<div>{{item.provinceName+item.countyAreaName+item.cityName+item.address}}</div>
-				<div class="edit">
-					<div v-if="item.defaultType!=1" @click.stop="req_setDef(item)"><image src="../../static/mine/check.jpg" ></image><span>默认</span></div>
-					<div v-else  @click="req_setDef(item)"><image src="../../static/mine/uncheck.jpg"></image><span>设为默认</span></div>
-					<div><image src="../../static/mine/edit.png" @click.stop="go_mine_addadress(item.id)"></image><span  @click.stop="go_mine_addadress(item.id)">编辑</span><image src="../../static/mine/del.png" @click.stop="req_del(item,index)"></image><span @click.stop="req_del(item,index)">删除</span></div>
+		<scroll-view class="list" scroll-y='true'>
+			<div class='adress'>
+				<div class="adressli" v-for="(item,index) in list" :key="index" @click=setadress(item)>
+					<div>
+						<div>{{item.name}}</div><div>{{item.phone}}</div>
+					</div>
+					<div>{{item.provinceName+item.countyAreaName+item.cityName+item.address}}</div>
+					<div class="edit">
+						<div v-if="item.defaultType!=1" @click.stop="req_setDef(item)"><image src="../../static/mine/check.jpg" ></image><span>默认</span></div>
+						<div v-else  @click="req_setDef(item)"><image src="../../static/mine/uncheck.jpg"></image><span>设为默认</span></div>
+						<div><image src="../../static/mine/edit.png" @click.stop="go_mine_addadress(item.id)"></image><span  @click.stop="go_mine_addadress(item.id)">编辑</span><image src="../../static/mine/del.png" @click.stop="req_del(item,index)"></image><span @click.stop="req_del(item,index)">删除</span></div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</scroll-view>
 		<div class="apply">
 			<div @click='go_mine_addadress()'>新建收货地址</div>
 		</div>					
@@ -81,6 +83,12 @@
 </script>
 
 <style>
+	.list{
+		position: absolute;
+		top:0;
+		bottom: 120upx;
+		width: 100%;
+	}
 	.adressli{padding: 30upx;font-size: 26upx;border-bottom: 1px solid #E5E5E5;line-height: 26upx;}
 	.adressli div>div{display: inline-block;}
 	.adressli div>div:nth-child(2){

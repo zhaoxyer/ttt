@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<div class="columlist" v-for="list in list" :key='list'>
-			<span>{{list.content}}</span><div><image src="../../static/right.jpg"></image></div>
-		</div>		
+			<div class="columlist" v-for="list in list" :key='list'>
+				<span>{{list.content}}</span><div><image src="../../static/right.jpg"></image></div>
+			</div>	
 	</view>
 </template>
 
