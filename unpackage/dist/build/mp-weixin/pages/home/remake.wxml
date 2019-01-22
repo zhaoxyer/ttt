@@ -1,0 +1,2 @@
+<import src="./remake.vue.wxml" />
+    <template is="dc27bf62" data="{{ ...$root['0'], $root }}"/>

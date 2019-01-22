@@ -1,0 +1,195 @@
+
+.shopping-car {
+	background: #efefef
+}
+.shopping-options-wrap {
+	padding: 31rpx;
+	height: 50rpx;
+	clear: both;
+	overflow: hidden;
+}
+.shopping-options {
+	float: right;
+}
+.shopping-options:after {
+	overflow: hidden;
+}
+.shopping-all{
+	height: 100rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 24rpx;
+	-webkit-box-pack: end;
+	-webkit-justify-content: flex-end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.shopping-all ._span{
+	margin-left: 30rpx;
+}
+.shopping-all ._span:nth-child(2){
+	color: #FEC200;
+}
+.shopping-all ._span:nth-child(3){
+	background: #FEC200;
+	color: white;
+	padding: 0 10rpx;
+	line-height: 50rpx;
+	border-radius: 25rpx;
+	min-width: 150rpx;
+	text-align: center;
+}
+.shopping-option-item {
+	display: inline-block;
+	height: 50rpx;
+	padding: 0 25rpx;
+	border: 1px solid #fe0100;
+	border-radius: 25rpx;
+	color: #fe0100;
+	line-height: 50rpx;
+	font-size: 24rpx;
+}
+.shopping-collect {
+	margin-right: 10rpx;
+	border-color: #e9bb27;
+	color: #e9bb27;
+}
+.shopping-goods-list {
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	padding: 0 30rpx;
+	margin-bottom: 10rpx;
+	background: #fff;
+}
+.shopping-seller {
+	width: 100%;
+	padding-left: 70rpx;
+	-webkit-box-sizing: border-box;
+	        box-sizing: border-box;
+	line-height: 50rpx;
+	font-size: 24rpx;
+}
+.shopping-goods-container {
+	background: #EFEFEF;
+}
+.shopping-goods-item {
+	width: 100%;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	padding-bottom: 30rpx;
+}
+.shopping-goods-img {
+	width: 300rpx;
+	height: 200rpx;
+}
+.shopping-goods-img image{
+	height: 100%;
+	width: 100%;
+}
+.shopping-good-info {
+	-webkit-box-flex:1;
+	-webkit-flex:1;
+	    -ms-flex:1;
+	        flex:1;
+	height: 200rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	font-size: 24rpx;
+}
+.shopping-good-name {
+	font-size: 28rpx;
+	margin-bottom: 30rpx;
+}
+.shopping-good-type {
+	padding: 0px 20rpx;
+	background: #e5e5e5;
+	border-radius: 25rpx;
+	line-height: 50rpx;
+}
+.shopping-good-price {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-top: 30rpx;
+}
+.shopping-num-container {
+	margin-left: 10rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	width: 168rpx;
+	height: 30rpx;
+	border: 1px solid #000;
+	border-radius: 10rpx;
+	line-height: 30rpx;
+	font-size: 24rpx;
+}
+.shopping-num-container ._li:nth-child(2){
+	width: 100rpx;
+	text-align: center;
+}
+.shopping-option {
+	width: 65rpx;
+	height: 100%;
+	border-right: 1px solid #000;
+	text-align: center;
+	font-size: 30rpx;
+}
+.shopping-add {
+	border-right: 0rpx;
+	border-left: 1px solid #000;
+}
+

@@ -77,8 +77,8 @@
 					ut.totast('用户名为英文和数字组成');
 					return;
 				}
-				if(this.userinf.username.length<8||this.userinf.username.length>16){
-					ut.totast('用户名为8到16位数字英文组合');
+				if(this.userinf.username.length<4||this.userinf.username.length>16){
+					ut.totast('用户名为4到16位数字英文组成');
 					return;
 				}
 				if(!this.userinf.name){

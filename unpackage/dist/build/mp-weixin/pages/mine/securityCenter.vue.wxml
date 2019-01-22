@@ -1,0 +1,1 @@
+<template name="a163ed22"><view class="_view a163ed22"><view class="_div a163ed22 columlist" bindtap="handleProxy" data-eventid="{{'a163ed22-0'}}" data-comkey="{{$k}}"><label class="_span a163ed22">登录密码</label><image src="../../static/right.jpg" class="_image a163ed22"></image></view></view></template>

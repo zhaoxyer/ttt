@@ -1,0 +1,152 @@
+
+.header{
+	padding: 40px 30px 30rpx;
+	background: #FEC200;
+	height: 70rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	color: white;
+}
+.header .tel{
+	padding: 0 0 0 80rpx;
+}
+.header .tel image{
+	width: 50rpx;
+	height: 30rpx;
+}
+.header .serch{
+	background: white;
+	height: 70rpx;
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	border-radius: 15rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	font-size: 30rpx;
+	color: #cccccc;
+	padding: 0 20px 0 40rpx;
+}
+.header .serch image{
+	width: 26rpx;
+	height: 24rpx;
+}
+.header .adress{
+	font-size: 30rpx;
+	line-height: 70rpx;
+	padding: 0 28px 0 0;
+	position: relative;
+}
+.header .adress image{
+	width: 20rpx;
+	height: 30rpx;
+	margin-right: 24rpx;
+}
+.server{
+	padding: 0 30rpx;
+	margin-top: 30rpx;
+}
+.server ._div{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 96rpx;
+	font-size: 24rpx;
+	text-align: center;
+}
+.server ._div:nth-child(4n){
+	margin-right: 0;
+}
+.server ._div:nth-last-child(n+5){
+	margin-bottom: 30rpx;
+}
+.server image{
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+}
+.title1{
+	width: 180rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 22rpx;
+	color: white;
+	border-top-right-radius: 30rpx;
+	border-bottom-right-radius: 30rpx;
+}
+.bg0{
+	background: #ff9839;
+}
+.bg1{
+	background: #6FCED2;
+}
+.buju{
+	position: relative;
+	margin-bottom: 30rpx;
+	margin-top: 30rpx;
+}
+.buju ._button{
+	position: absolute;
+	background: transparent;
+	width: 122rpx;
+	height: 100%;
+	left: 128rpx;
+	border: none;
+}
+.buju ._button:nth-child(2){
+	right: 128rpx;
+	left: inherit;
+}
+.buju ._button:after{border: none;}
+.buju image{
+	width: 100%;
+	display: block;
+}
+.leftright{
+	padding: 0 20rpx;
+	margin-top: 27rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	padding: 0 20rpx;
+	-webkit-flex-wrap: wrap;
+	    -ms-flex-wrap: wrap;
+	        flex-wrap: wrap;
+}
+.fuwu ._div{
+	width: 326rpx;
+	font-size: 22rpx;
+	text-align: center;
+	line-height: 50rpx;
+	margin-bottom: 30rpx;
+}
+.fuwu ._div image{
+	width: 100%;
+	height: 300rpx;
+}
+

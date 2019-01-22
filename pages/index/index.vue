@@ -69,19 +69,33 @@
 		},
 		onLoad() {
 			this.static=ut.static;
+			wx.setStorageSync('index_index_time',new Date().getTime());
 		},
 		onShow() {
-			if(!this.newlist.length){
+			const reload = ut.checkPageTime('index_index_time');
+			if(!this.newlist.length||reload){
 				this.req_new();
 			}
-			if(!this.recomlist.length){
+			if(!this.recomlist.length||reload){
 				this.req_recom();
 			}
-			if(!this.classlist.length){
+			if(!this.classlist.length||reload){
 				this.req_class();
 			}
-			if(!this.swipeList.length){
+			if(!this.swipeList.length||reload){
 				this.req_banner();
+			}
+		},
+		onShareAppMessage() {
+			var that = this;
+			return {
+				title:'',
+				success: (res) => {
+					console.log("转发成功", res);
+				},
+				fail: (res) => {
+					console.log("转发失败", res);
+				}
 			}
 		},
 		methods: {

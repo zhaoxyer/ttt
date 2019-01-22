@@ -1,0 +1,441 @@
+
+.comment.data-v-2a11e212{
+	left: 10rpx;
+	right: 10rpx;
+	height: 600rpx;
+	background: white;
+	-webkit-box-shadow: 1px 2px 3px 4px #ccc inset;
+	        box-shadow: 1px 2px 3px 4px #ccc inset;
+	border-radius: 10rpx;
+	top:300rpx;
+	position: absolute;
+}
+.close.data-v-2a11e212{
+	padding: 20px 30rpx;
+	text-align: right;
+}
+.close image.data-v-2a11e212{
+	display: inline-block;
+	vertical-align: top;
+	width: 40rpx;
+	height: 40rpx;
+}
+.cont.data-v-2a11e212{
+	line-height: 60rpx;
+}
+.listcom.data-v-2a11e212{
+	border-bottom: 1px solid #e8e8e8;
+}
+.commentlist.data-v-2a11e212{
+	font-size: 24rpx;
+	padding: 0 30rpx;
+}
+.zhuiping.data-v-2a11e212{
+	border-top: 1px solid #e8e8e8;
+}
+.commentlist .list.data-v-2a11e212{
+	height: 520rpx;
+}
+.commentlist .userinf.data-v-2a11e212{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	height: 70rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	line-height: 50rpx;
+}
+.commentlist .userinf image.data-v-2a11e212{
+	width: 60rpx;
+	height: 60rpx;
+	border-radius: 50%;
+	margin-right: 10rpx;
+}
+.cont1.data-v-2a11e212{
+	line-height: 60rpx;
+	font-size: 24rpx;
+	padding:0 30rpx;
+}
+.imgcont.data-v-2a11e212{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.imgcont image.data-v-2a11e212{
+	width: 200rpx;
+	height: 150rpx;
+	margin-top: 15rpx;
+	margin-left:30px ;
+	margin-bottom: 15rpx;
+}
+.imgcont image.data-v-2a11e212:nth-child(3n+1){
+	margin-left: 0;
+}
+
+/**
+ * author: Di (微信小程序开发工程师)
+ * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
+ *         垂直微信小程序开发交流社区
+ *
+ * github地址: https://github.com/icindy/wxParse
+ *
+ * for: 微信小程序富文本解析
+ * detail : http://weappdev.com/t/wxparse-alpha0-1-html-markdown/184
+ */
+.wxParse {
+  width: 100%;
+  font-family: Helvetica, sans-serif;
+  font-size: 24rpx;
+  color: #666;
+  line-height: 1.8;
+}
+.wxParse view {
+  word-break: hyphenate;
+}
+.wxParse .inline {
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+.wxParse .div {
+  margin: 0;
+  padding: 0;
+}
+.wxParse .h1>view {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+.wxParse .h2>view {
+  font-size: 1.5em;
+  margin: 0.83em 0;
+}
+.wxParse .h3>view {
+  font-size: 1.17em;
+  margin: 1em 0;
+}
+.wxParse .h4>view {
+  margin: 1.33em 0;
+}
+.wxParse .h5>view {
+  font-size: 0.83em;
+  margin: 1.67em 0;
+}
+.wxParse .h6>view {
+  font-size: 0.67em;
+  margin: 2.33em 0;
+}
+.wxParse .h1>view,
+.wxParse .h2>view,
+.wxParse .h3>view,
+.wxParse .h4>view,
+.wxParse .h5>view,
+.wxParse .h6>view,
+.wxParse .b,
+.wxParse .strong {
+  font-weight: bolder;
+}
+.wxParse .p {
+  margin: 1em 0;
+}
+.wxParse .i,
+.wxParse .cite,
+.wxParse .em,
+.wxParse .var,
+.wxParse .address {
+  font-style: italic;
+}
+.wxParse .pre,
+.wxParse .tt,
+.wxParse .code,
+.wxParse .kbd,
+.wxParse .samp {
+  font-family: monospace;
+}
+.wxParse .pre {
+  overflow: auto;
+  background: #f5f5f5;
+  padding: 16px;
+  white-space: pre;
+  margin: 1em 0px;
+}
+.wxParse .code {
+  display: inline;
+  background: #f5f5f5;
+}
+.wxParse .big {
+  font-size: 1.17em;
+}
+.wxParse .small,
+.wxParse .sub,
+.wxParse .sup {
+  font-size: 0.83em;
+}
+.wxParse .sub {
+  vertical-align: sub;
+}
+.wxParse .sup {
+  vertical-align: super;
+}
+.wxParse .s,
+.wxParse .strike,
+.wxParse .del {
+  text-decoration: line-through;
+}
+.wxParse .strong,
+.wxParse .s {
+  display: inline;
+}
+.wxParse .a {
+  color: deepskyblue;
+}
+.wxParse .video {
+  text-align: center;
+  margin: 22px 0;
+}
+.wxParse .video-video {
+  width: 100%;
+}
+.wxParse .img {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  max-width: 100%;
+  overflow: hidden;
+}
+.wxParse .blockquote {
+  margin: 10rpx 0;
+  padding: 22rpx 0 22rpx 22rpx;
+  font-family: Courier, Calibri, "\5B8B\4F53";
+  background: #f5f5f5;
+  border-left: 6rpx solid #dbdbdb;
+}
+.wxParse .blockquote .p {
+  margin: 0;
+}
+.wxParse .ul, .wxParse .ol {
+  display: block;
+  margin: 1em 0;
+  padding-left: 33rpx;
+}
+.wxParse .ol {
+  list-style-type: disc;
+}
+.wxParse .ol {
+  list-style-type: decimal;
+}
+.wxParse .li {
+  display: list-item;
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  text-align: match-parent;
+}
+.wxParse .ul .ul, .wxParse .ol .ul {
+  list-style-type: circle;
+}
+.wxParse .ol .ol .ul, .wxParse .ol .ul .ul, .wxParse .ul .ol .ul, .wxParse .ul .ul .ul {
+    list-style-type: square;
+}
+.wxParse .u {
+  text-decoration: underline;
+}
+.wxParse .hide {
+  display: none;
+}
+.wxParse .del {
+  display: inline;
+}
+.wxParse .figure {
+  overflow: hidden;
+}
+.wxParse .table {
+  width: 100%;
+}
+.wxParse .thead, .wxParse .tfoot, .wxParse .tr {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+.wxParse .tr {
+  width:100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  border-right: 2rpx solid #e0e0e0;
+  border-bottom: 2rpx solid #e0e0e0;
+}
+.wxParse .th,
+.wxParse .td {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 1276rpx;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 11rpx;
+  border-left: 2rpx solid #e0e0e0;
+}
+.wxParse .td:last {
+  border-top: 2rpx solid #e0e0e0;
+}
+.wxParse .th {
+  background: #f0f0f0;
+  border-top: 2rpx solid #e0e0e0;
+}
+.servertype{
+	padding: 0 30px 10px 30rpx;
+	border-bottom: 1px solid #E5E5E5;
+}
+.serverinf{
+	line-height: 30rpx;
+	font-size: 28rpx;
+	padding: 30px 0;
+	position: relative;
+}
+.serverinf>._div:first-child{
+	position: absolute;
+	right: 0;
+}
+.serverinf>._div:last-child ._span:nth-child(2){
+	color: #FEC300;
+}
+.serverinf>._div ._span,.serverinf>._div image{
+	display: inline-block;
+	vertical-align: top;
+}
+.serverinf>._div image{
+	width: 25rpx;
+	height: 30rpx;
+}
+.serverinf>._div ._span:last-child{
+	margin-left: 20rpx;
+}
+.typelist>._div{
+	width: 30%;
+	font-size: 24rpx;
+	background: #C9C9C9;
+	color: white;
+	text-align: center;
+	line-height: 40rpx;
+	display: inline-block;
+	vertical-align: top;
+	margin-bottom: 20rpx;
+}
+.typelist>._div ._div{
+	padding: 10px 0;
+}
+.typelist>._div.active ._div{
+	color: #FEC300;
+	border: 1px solid #FEC300;
+	background: white;
+}
+.typelist>._div:nth-child(3n-1){
+	margin: 0 5%;
+}
+.evaluate{
+	padding: 0 30rpx;
+}
+.evanum{
+	height: 80rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	-webkit-box-pack: justify;
+	-webkit-justify-content: space-between;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	font-size: 24rpx;
+}
+.evanum image{
+	width: 20rpx;
+	height: 20rpx;
+	margin-left: 20rpx;
+}
+.evanum>._div:first-child{
+	font-size: 28rpx;
+}
+.gobuild{
+	text-align: center;
+	font-size: 24rpx;
+}
+.gobuild ._span{
+	width: 200rpx;
+	line-height: 50rpx;
+	display: inline-block;
+	background: #FEC200;
+	color: white;
+	border-radius: 25rpx;
+}
+.evaluate .tip{
+	color: #b4b4b4;
+	line-height: 80rpx;
+	text-align: center;
+	font-size: 24rpx;
+}
+.bggray {
+	background: #e5e5e5;
+	height: 40rpx;
+}
+.liucheng{
+	width: 100%;
+}
+.footer{
+	position: fixed;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	width: 100%;
+	height: 100rpx;
+	bottom: 0;
+	line-height: 100rpx;
+	background: white;
+	border-top:1px solid #dadada;
+	font-size: 24rpx;
+}
+.footer>._div:first-child{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	text-align: right;
+}
+.footer>._div:first-child ._span{
+	display: inline-block;
+	vertical-align: top;
+}
+.footer>._div:first-child ._span:last-child{
+	padding: 0 30px 0 20rpx;
+	color: #FEC200;
+}
+.footer>._div:last-child{
+	width: 250rpx;
+	color: white;
+	background: #FEC200;
+	text-align: center;
+}
+.detail{
+	padding: 0 30rpx;
+}
+

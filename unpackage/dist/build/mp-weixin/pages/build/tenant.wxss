@@ -1,0 +1,220 @@
+
+.mallinf1{position: relative;}
+.otherinf{position: absolute;width: 100%;bottom: 0;}
+.otherinf>._div{display: inline-block;vertical-align: bottom;}
+.mallname{width: 150rpx;height: 150rpx;background: #FEC200;color: white;border-radius: 20rpx;font-size: 24rpx;margin-left:30rpx;margin-bottom: -20rpx;text-align: center;}
+.mallname ._p{margin-top: 30rpx;}
+.mallname ._p:nth-child(2){
+	margin-top: 12rpx;
+}
+.malladress{font-size: 26rpx;color: #FEC300;line-height: 40rpx;margin-bottom: 20rpx;margin-left: 30rpx;}
+.mallimage{width: 100%;height: 300rpx;}
+.share{position: absolute;right: 30rpx;bottom: 10rpx;}
+.share>._div{
+	display: inline-block;
+	vertical-align: top;
+	font-size: 26rpx;
+	line-height: 40rpx;
+	color: white;
+	margin-left: 70rpx;
+}
+.share image{width: 45rpx;height: 45rpx;}
+.footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	border-top:1px solid #C8C8C8;
+	height: 100rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+.logo{
+	margin-left: 30rpx;
+	width: 80rpx;
+	height: 80rpx;
+}
+.edit{
+	position: absolute;
+	right: 30rupx;
+}
+.edit ._span{line-height: 60rupx;color: white;font-size: 24rpx;text-align: center;width: 215rpx;display: inline-block;}
+.edit ._span:first-child{
+	border-bottom-left-radius: 30rupx;
+	border-top-left-radius: 30rupx;
+	background: #FEC200;
+}
+.edit ._span:last-child{
+	border-bottom-right-radius: 30rupx;
+	border-top-right-radius: 30rupx;
+	background: #FF0015;
+}
+.section{margin-top: 28rpx;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;position: fixed;top:330rpx;bottom: 30rpx;width: 100%;}
+.section .list{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	padding: 0 30rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.section .nav{
+	width: 200rpx;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+	height: 100%;
+}
+.section .nav ._div{
+	width: 200rpx;
+	height: 60rpx;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 28rpx;
+	border-bottom-right-radius: 30rpx;
+	border-top-right-radius: 30rpx;
+	margin-bottom: 6rpx;
+}
+.section .nav .active{
+	background: #fec300;
+	color: white;
+}
+.list{
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
+}
+.mall1inf{
+	height: 150rpx;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	margin-bottom: 30rpx;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	-webkit-flex-direction: row;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+}
+.mall1inf image{
+	width: 150rpx;
+	height: 120rpx;
+	border-radius: 10rpx;
+	margin-right: 18rpx;
+}
+.mall1inf ._div{
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
+	font-size: 24rpx;
+	line-height: 30rpx;
+}
+.mall1inf ._div ._p{
+	margin-bottom: 15rpx;
+}
+.add{color: #FEC300;margin-bottom: 0!important;}
+.add1{margin-bottom: 0!important;line-height: 80rpx;position: relative;font-size: 24rpx;}
+.addedit{
+	position: absolute;
+	right: 0;
+	line-height: 30rpx;
+}
+.addedit image,.addedit ._span{
+	display: inline-block;
+	vertical-align: top;
+	width: 50rpx;
+	text-align: center;
+}
+.addedit image{
+	width: 30rpx!important;
+	height: 30rpx!important;
+	margin-right: 0;
+}
+.addedit.addedit1{
+	line-height: 80rpx;
+}
+.addedit.addedit1 image{
+	width: 40rpx!important;
+	height: 40rpx!important;
+	margin-right: 0;
+	margin-top: 20rpx;
+}
+.mallnum{
+	width: 45rpx;
+	font-size: 20rpx;
+	text-align: center;
+	background: #FF0100;
+	color: white;
+	height: 45rpx;
+	border-radius: 50%;
+	position: absolute;
+	line-height: 45rpx;
+	margin-left: 89.5rpx;
+	margin-top: -25rpx;
+}
+.money{
+	font-size: 24rpx;
+	color: #FEC200;
+	margin-left: 30rpx;
+}
+.barname{
+	width: 300rpx;
+	overflow: hidden;
+	-o-text-overflow :ellipsis;
+	   text-overflow :ellipsis;
+	height: 80rpx;
+	white-space:nowrap;
+	margin-right: 20rpx;
+}
+.popcont{
+	height: 500rpx;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: white;
+}
+.delbar{
+	line-height: 95rpx;
+	font-size: 24rpx;
+	text-align: right;
+	padding: 0 30rpx;
+	border-bottom: 1px solid #C8C8C8;
+}
+.delbar image,.delbar ._span{
+	display: inline-block;
+	vertical-align: top;
+}
+.delbar image{
+	width: 20rpx;
+	height: 30rpx;
+	margin-right: 20rpx;
+	margin-top: 32.5rpx;
+}
+.barlist{
+	height: 400rpx;
+	padding: 0 30rpx;
+	position: relative;
+}
+

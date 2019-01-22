@@ -61,7 +61,7 @@
 					ut.totast('请输入正确的用户名');
 					return;
 				}
-				if(this.username.length<8||this.username.length>16){
+				if(this.username.length<4||this.username.length>16){
 					ut.totast('请输入正确的用户名');
 					return;
 				}

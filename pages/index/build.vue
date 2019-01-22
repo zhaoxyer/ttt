@@ -86,13 +86,15 @@
 			this.static=ut.static;
 		},
 		onShow() {
-			if(!this.newlist.length){
+			const reload = ut.checkPageTime('index_build_time');
+			console.log(reload)
+			if(!this.newlist.length||reload){
 				this.req_new();
 			}
-			if(!this.recomlist.length){
+			if(!this.recomlist.length||reload){
 				this.req_recom();
 			}
-			if(!this.classlist.length){
+			if(!this.classlist.length||reload){
 				this.req_class();
 			}
 		},

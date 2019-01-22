@@ -1,0 +1,33 @@
+
+.userinf image{width: 90rpx;height: 90rpx;}
+.userinf ._h1{font-size: 28rpx;text-indent: 30rpx;line-height: 75rpx;}
+.userinf{border-bottom: 1px solid #CCCCCC;}
+.userinf ._p{line-height: 54rpx;}
+._div>.userinf:last-child{
+	border-bottom: none;
+}
+.server{
+	padding: 0 30rpx;
+	margin-top: 40rpx;
+	font-size: 24rpx;
+}
+.server ._p{
+	text-align: center;
+}
+.server ._div{
+	display: inline-block;
+	vertical-align: top;
+	margin-right: 70rpx;
+	width: 120rpx;
+}
+.server ._div:nth-child(4n){
+	margin-right: 0;
+}
+.server ._div:nth-last-child(n+5){
+	margin-bottom: 30rpx;
+}
+.server image{
+	width: 90rpx;
+	margin-left: 15rpx;
+}
+

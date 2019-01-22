@@ -25,6 +25,16 @@ ut.time = function(timestamp) {
 		m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
 	return Y + M + D + " " + h + m;
 };
+ut.reloaadTime = 600;
+ut.checkPageTime=function(name){
+	const monttime = new Date().getTime();
+	const m = (monttime-wx.getStorageSync(name))/1000;
+	if(m>ut.reloaadTime||!wx.getStorageSync(name)){
+		wx.setStorageSync(name,new Date().getTime());
+		return true;
+	}
+	return false;
+}
 //提示
 ut.totast=function(title){
 	wx.showToast({
@@ -155,8 +165,8 @@ ut.request=function(parm){
 	if(parm.c){
 	  c='application/json';
 	}
-	return new Promise(function(success,fail){
-		wx.request({
+	return new Promise(function(reject,fail){
+		uni.request({
 			url: parm.allurl?parm.allurl:(ut.url + parm.url),
 			data: parm.data,
 			method: parm.method || 'post',
@@ -165,21 +175,33 @@ ut.request=function(parm){
 				'content-type': c,
 				"Authorization": wx.getStorageSync('token')||''
 			},
-			success: function(res) {
-				wx.hideLoading({
-					complete: function() {
-						if(res.data.code == 0) {
-							success(res.data.data)
-						} else {
-							wx.showToast({
-								title: res.data.msg,
-								icon: 'none',
-								color: 'red',
-								duration: 2000
-							})
-						}
+			success: (res) => {
+				if(res.statusCode==401){
+					const pages = getCurrentPages(); //获取加载的页面
+					const currentPage = pages[pages.length-1].route; //获取当前页面的对象
+					ut.loginout();
+					if(currentPage.indexOf('pages/index')!=-1){
+						wx.navigateTo({
+							url: '../mine/login'
+						})
+					}else{
+						wx.redirectTo({
+							url: '../mine/login'
+						})
 					}
-				});
+					return
+				}
+
+				if(res.data.code == 0) {
+					reject(res.data.data)
+				} else {
+					wx.showToast({
+						title: res.data.msg,
+						icon: 'none',
+						color: 'red',
+						duration: 2000
+					})
+				}
 			},
 			fail: function() {
 				fail();
