@@ -69,7 +69,6 @@
 		},
 		onLoad() {
 			this.static=ut.static;
-			wx.setStorageSync('index_index_time',new Date().getTime());
 		},
 		onShow() {
 			const reload = ut.checkPageTime('index_index_time');
@@ -166,6 +165,7 @@
 			req_banner(){
 				ut.request({
 					allurl: ut.uploadimgurl+"common/banner",
+					data:{type:1},
 					method:'GET'
 				}).then(data=>{
 					this.swipeList=data;

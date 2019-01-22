@@ -101,7 +101,7 @@
 				this.typeindex=index;
 				this.serverinf=this.typelist[index];
 				const reg=new RegExp('/attach/download\\?filePath=','g');
-				this.detailinf=marked(this.serverinf.detail.replace(reg,'src="'+ut.static));
+				this.detailinf=marked(this.serverinf.detail.replace(reg,ut.static));
 			},
 			go_home_pay(){
 				wx.setStorageSync('serverinf',this.serverinf)
