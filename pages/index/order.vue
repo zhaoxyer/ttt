@@ -17,11 +17,11 @@
 					<p>质量验收</p>
 					<p>及付尾款</p>
 				</div>
-				<!-- <div @click="go_next('../order/checkOrder?type=4')">
+				<div @click="go_next('../order/checkOrder?type=4')">
 					<image   src="../../static/order/ordertype2.jpg"  mode="widthFix"></image>
 					<p>技术服务</p>
 					<p>申请质保</p>
-				</div> -->
+				</div>
 			</div>
 		</div>
 		<div class='userinf'>
@@ -48,7 +48,7 @@
 				</div>
 			</div>
 		</div>
-		<div class='userinf'>
+		<!-- <div class='userinf'>
 			<h1>定金建材商品类</h1>
 			<div class='server'>
 				<div>
@@ -72,7 +72,7 @@
 					<p>售后质保</p>
 				</div>
 			</div>
-		</div>
+		</div> -->
 		<div class='userinf'>
 			<h1>综合</h1>
 			<div class='server'>
