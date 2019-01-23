@@ -130,7 +130,7 @@
 			this.req_carrylist();
 			this.req_getdefaddress();
 			this.buildinf.forEach(item=>{
-				this.mallprice+=Number(item.price*item.num).toFixed(2);
+				this.mallprice=(item.price*item.num.toFixed(2)+Number(this.mallprice)).toFixed(2);
 				item.goodsSpecId=item.specId?item.specId:item.id;
 				item.goodsNumber=item.num;
 				item.name =item.goodsSpecName?item.goodsSpecName:item.name
