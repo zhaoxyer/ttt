@@ -60,12 +60,12 @@
 				<image src="../../static/mine/uncheck.jpg" v-if="requireCarry==1"></image><image src="../../static/mine/check.jpg" v-else @click="cg_requireCarry(1)"></image><span>是</span>
 				<image src="../../static/mine/uncheck.jpg" v-if="requireCarry==2" ></image><image src="../../static/mine/check.jpg" v-else @click="cg_requireCarry(2)"></image><span>否</span>
 			</p>
-			<p class="floor">
+			<p class="floor" v-if='requireCarry==1'>
 				<view v-for="(list,index) in carrylist" :key='index' @click='cg_carryindex(index)'>
 					<view :class="{'active':index==carryindex}"></view><view>{{list.name}}</view>
 				</view>
 			</p>
-			<p class="louceng" v-if="carrylist.length">
+			<p class="louceng" v-if="carrylist.length&&requireCarry==1">
 				<input placeholder="请输入楼层" v-model="floor" type="number"/>层 起步价¥{{carrylist[carryindex].startPrice}}
 			</p>
 		</div>
@@ -80,7 +80,7 @@
 			<div class='mingxiinf'>
 				<p>货款：¥{{mallprice}}</p>
 				<p>配送费：¥{{sendprice}}</p>
-				<p>搬运费：¥{{carryprice}}</p>
+				<p v-if='requireCarry==1'>搬运费：¥{{carryprice}}</p>
 			</div>
 		</div>
 		<div class="bgheight"></div>
@@ -145,9 +145,15 @@
 		methods: {
 			cg_requireCarry(type){
 				this.requireCarry=type;
+				this.getallprice();
 			},
 			getallprice(){
-				this.allprice=(Number(this.mallprice)+Number(this.sendprice)+Number(this.carryprice)).toFixed(2);
+				if(this.requireCarry==1){
+					this.allprice=(Number(this.mallprice)+Number(this.sendprice)+Number(this.carryprice)).toFixed(2);
+				}else{
+					this.allprice=(Number(this.mallprice)+Number(this.sendprice)).toFixed(2);
+				}
+				
 			},
 			cg_vehicleindex(index){
 				this.vehicleindex=index;
@@ -187,9 +193,11 @@
 					ut.totast('请选择时间');
 					return;
 				}
-				if(!this.floor){
-					ut.totast('请选择楼层');
-					return;
+				if(this.requireCarry==1){
+					if(!this.floor){
+						ut.totast('请填写楼层信息');
+						return;
+					}
 				}
 				ut.request({
 					data: {

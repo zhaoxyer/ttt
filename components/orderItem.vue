@@ -25,9 +25,11 @@
 		<div class="order-options-wrap">
 			<div class="order-options">
 				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
-				<button v-if="data.status == 1" @click="goToPay" class="order-button order-pay">立即支付</button>
+				<button v-if="data.status == 1" @click="goToPay(data.id)" class="order-button order-pay">立即支付</button>
 				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
 				<button v-if="data.status == 8" @click="changeOrderCheck(true)" class="order-button">验收付款</button>
+				<button v-if="data.status == 10" @click="changeShouhouModal(true)" class="order-button">申请售后</button>
+				<!-- <button v-if="data.status == 10"  class="order-button order-pay">处理完成</button> -->
 			</div>
 		</div>
 	  </div>
@@ -41,11 +43,15 @@
 		</t-modal>
 		
 		<t-modal  :visibile="confirm_order_visibile" @changeVisible = "changeConfirmModal">
-			<confirm-plan @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></confirm-plan>
+			<confirm-plan @reload="reloadData"  @changeb="changeCancelModal" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></confirm-plan>
 		</t-modal>
 		
 		<t-modal  :visibile="confirm_ordercheck_visibile"    @changeVisible = "changeOrderCheck">
 			<order-check @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></order-check>
+		</t-modal>
+		
+		<t-modal  :visibile="shou_order_visibile" @changeVisible = "changeShouhouModal">
+			<order-shouhou @reload="reloadData"   :orderId="data.id" :reason="afterSaleReason"></order-shouhou>
 		</t-modal>
 	</div>
 </template>
@@ -56,6 +62,7 @@ import OrderStatus from './orderStatus.vue';
 import CancelModal from './cancelModal.vue';
 import ConfirmPlan from './confirmModal.vue';
 import orderCheck from './orderCheck.vue';
+import orderShouhou from './orderShouhou.vue';
 import ut from '../utils/index.js';
 export default {
   props: ["data","reload","type"],
@@ -65,9 +72,11 @@ export default {
 		cancel_order_visibile: false,
 		confirm_order_visibile: false,
 		confirm_ordercheck_visibile:false,
+		shou_order_visibile: false,
 		static:ut.static,
 		reason: [],
-		confirmPlanlist:[]
+		confirmPlanlist:[],
+		afterSaleReason:[]
 	}  
   },
   components: {
@@ -75,7 +84,8 @@ export default {
 	OrderStatus,
 	CancelModal,
 	ConfirmPlan,
-	orderCheck
+	orderCheck,
+	orderShouhou
   },
   methods: {
 		go_next() {
@@ -86,16 +96,15 @@ export default {
 		reloadData() {
 			this.$emit('reload');
 		},
-		goToPay() {
+		goToPay(orderId) {
 			ut.request({
 				data: {
-					orderId: ''
+					orderId: orderId
 				},
-				url: ""
+				url: "service/order/repayOrder"
 			}).then(data=>{
 				ut.pay(data,{
 					complete: (res)=> {
-						this.$parent.changeVisibileModal(false)
 						this.reloadData();
 					},
 					success: () => {
@@ -136,6 +145,7 @@ export default {
 			}
 		},
 		changeCancelModal(status) {
+			console.log(status)
 			if(status) {
 				this.getReasonType();
 			}
@@ -158,7 +168,25 @@ export default {
 			if(typeof status != 'undefined'){
 				this.confirm_ordercheck_visibile = status;
 			}
-		}
+		},
+		changeShouhouModal(status) {
+			if(status) {
+				this.getafterSaleReason()
+			}
+			if(typeof status != 'undefined'){
+				this.shou_order_visibile = status;
+			}
+		},
+		getafterSaleReason() {
+			ut.request({
+				data: {
+					type: 1
+				},
+				url: "service/order/afterSaleReason"
+			}).then(data=>{
+				this.afterSaleReason = data;
+			})
+		},
   }
 }
 </script>

@@ -155,9 +155,15 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   methods: {
     cg_requireCarry: function cg_requireCarry(type) {
       this.requireCarry = type;
+      this.getallprice();
     },
     getallprice: function getallprice() {
-      this.allprice = (Number(this.mallprice) + Number(this.sendprice) + Number(this.carryprice)).toFixed(2);
+      if (this.requireCarry == 1) {
+        this.allprice = (Number(this.mallprice) + Number(this.sendprice) + Number(this.carryprice)).toFixed(2);
+      } else {
+        this.allprice = (Number(this.mallprice) + Number(this.sendprice)).toFixed(2);
+      }
+
     },
     cg_vehicleindex: function cg_vehicleindex(index) {
       this.vehicleindex = index;
@@ -197,9 +203,11 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
         _index.default.totast('请选择时间');
         return;
       }
-      if (!this.floor) {
-        _index.default.totast('请选择楼层');
-        return;
+      if (this.requireCarry == 1) {
+        if (!this.floor) {
+          _index.default.totast('请填写楼层信息');
+          return;
+        }
       }
       _index.default.request({
         data: {
@@ -481,29 +489,33 @@ var render = function() {
                 }),
             _c("span", [_vm._v("否")])
           ]),
-          _c(
-            "p",
-            { staticClass: "floor" },
-            _vm._l(_vm.carrylist, function(list, index) {
-              return _c(
-                "view",
-                {
-                  key: index,
-                  attrs: { eventid: "c5bf60f6-7-" + index },
-                  on: {
-                    click: function($event) {
-                      _vm.cg_carryindex(index)
-                    }
-                  }
-                },
-                [
-                  _c("view", { class: { active: index == _vm.carryindex } }),
-                  _c("view", [_vm._v(_vm._s(list.name))])
-                ]
+          _vm.requireCarry == 1
+            ? _c(
+                "p",
+                { staticClass: "floor" },
+                _vm._l(_vm.carrylist, function(list, index) {
+                  return _c(
+                    "view",
+                    {
+                      key: index,
+                      attrs: { eventid: "c5bf60f6-7-" + index },
+                      on: {
+                        click: function($event) {
+                          _vm.cg_carryindex(index)
+                        }
+                      }
+                    },
+                    [
+                      _c("view", {
+                        class: { active: index == _vm.carryindex }
+                      }),
+                      _c("view", [_vm._v(_vm._s(list.name))])
+                    ]
+                  )
+                })
               )
-            })
-          ),
-          _vm.carrylist.length
+            : _vm._e(),
+          _vm.carrylist.length && _vm.requireCarry == 1
             ? _c("p", { staticClass: "louceng" }, [
                 _c("input", {
                   directives: [
@@ -577,7 +589,9 @@ var render = function() {
             [
               _c("p", [_vm._v("货款：¥" + _vm._s(_vm.mallprice))]),
               _c("p", [_vm._v("配送费：¥" + _vm._s(_vm.sendprice))]),
-              _c("p", [_vm._v("搬运费：¥" + _vm._s(_vm.carryprice))])
+              _vm.requireCarry == 1
+                ? _c("p", [_vm._v("搬运费：¥" + _vm._s(_vm.carryprice))])
+                : _vm._e()
             ],
             1
           )

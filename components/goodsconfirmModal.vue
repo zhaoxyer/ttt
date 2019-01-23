@@ -2,12 +2,12 @@
 	<div class="cancel-order-modal">
 		<div class="cancel-order-condition" v-for="(list,index) in confirmPlanlist" :key="index">
 			<div class="cancel-order-title" v-if="list.type">
-			{{list.type}}
+			 {{list.type==1?'技术服务类':'配件类'}}
 			</div>
 			<div class="cancel-statement-wrap">
 				<div class="cancel-radio-wrap" v-for="(item,priceIndex) in list.prices" :key="priceIndex">
 					<span class="cancel-radio"></span>
-					<span class="cancel-label">{{item.name+""+item.price}}</span>
+					<span class="cancel-label">{{item.name+' '+item.price+item.unit+' '+'x'+item.number}}</span>
 				</div>
 			</div>
 		</div>
@@ -47,10 +47,15 @@ export default {
 			},
 			url: "goods/order/agreeCarryPrice"
 		}).then(data=>{
-			this.$parent.changeVisibileModal(false)
-			this.$emit('reload');
-			ut.totast("操作成功")
-			console.log(data)
+			ut.pay(data,{
+				complete: (res)=> {
+					this.$parent.changeVisibileModal(false)
+					this.$emit('reload');
+				},
+				success: () => {
+					ut.totast("操作成功")
+				}
+			})
 		})
 	}
   }

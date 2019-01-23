@@ -281,10 +281,15 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
         url: "goods/order/agreeCarryPrice" }).
       then(function (data) {
-        _this2.$parent.changeVisibileModal(false);
-        _this2.$emit('reload');
-        _index.default.totast("操作成功");
-        console.log(data);
+        _index.default.pay(data, {
+          complete: function complete(res) {
+            _this2.$parent.changeVisibileModal(false);
+            _this2.$emit('reload');
+          },
+          success: function success() {
+            _index.default.totast("操作成功");
+          } });
+
       });
     } } };exports.default = _default;
 
@@ -361,10 +366,15 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
         url: "service/order/check" }).
       then(function (data) {
-        _this2.$parent.changeVisibileModal(false);
-        _this2.$emit('reload');
-        _index.default.totast("操作成功");
-        console.log(data);
+        _index.default.pay(data, {
+          complete: function complete(res) {
+            _this2.$parent.changeVisibileModal(false);
+            _this2.$emit('reload');
+          },
+          success: function success() {
+            _index.default.totast("操作成功");
+          } });
+
       });
     } } };exports.default = _default;
 
@@ -857,7 +867,7 @@ var render = function() {
           [
             list.type
               ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type))
+                  _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
                 ])
               : _vm._e(),
             _c(
@@ -870,7 +880,17 @@ var render = function() {
                   [
                     _c("span", { staticClass: "cancel-radio" }),
                     _c("span", { staticClass: "cancel-label" }, [
-                      _vm._v(_vm._s(item.name + "" + item.price))
+                      _vm._v(
+                        _vm._s(
+                          item.name +
+                            " " +
+                            item.price +
+                            item.unit +
+                            " " +
+                            "x" +
+                            item.number
+                        )
+                      )
                     ])
                   ]
                 )
@@ -941,7 +961,7 @@ var render = function() {
           [
             list.type
               ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type == 1 ? "表示技术服务类" : "配件类"))
+                  _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
                 ])
               : _vm._e(),
             _c(
@@ -954,7 +974,17 @@ var render = function() {
                   [
                     _c("span", { staticClass: "cancel-radio" }),
                     _c("span", { staticClass: "cancel-label" }, [
-                      _vm._v(_vm._s(item.name + "" + item.price))
+                      _vm._v(
+                        _vm._s(
+                          item.name +
+                            " " +
+                            item.price +
+                            item.unit +
+                            " " +
+                            "x" +
+                            item.number
+                        )
+                      )
                     ])
                   ]
                 )

@@ -7,7 +7,7 @@
 			<div class="cancel-statement-wrap">
 				<div class="cancel-radio-wrap" v-for="(item,priceIndex) in list.prices" :key="priceIndex">
 					<span class="cancel-radio"></span>
-					<span class="cancel-label">{{item.name+""+item.price}}</span>
+					<span class="cancel-label">{{item.name+' '+item.price+item.unit+' '+'x'+item.number}}</span>
 				</div>
 			</div>
 		</div>
