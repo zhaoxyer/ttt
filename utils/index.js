@@ -272,5 +272,25 @@ ut.uploadimg = function(parm) {
 		}
 	})
 }
+//微信支付
+ut.pay = function(data,parm){
+	wx.requestPayment({
+		'timeStamp': data.timeStamp,
+		'nonceStr': data.nonceStr,
+		'package': data.package,
+		'paySign': data.paySign,
+		'signType': 'HMAC-SHA256',
+		success: function(res) {
+			parm.success&&parm.success();
+		},
+		'fail': function(res) {
+			console.log(res)
+			parm.fail&&parm.fail();
+		},
+		'complete': function(res) {
+			parm.complete&&parm.complete();
+		}
+	});
+}
 //
 export default ut;
