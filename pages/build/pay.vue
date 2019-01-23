@@ -206,24 +206,13 @@
 					url: "goods/order/unifiedOrder",
 					c:true
 				}).then(data=>{
-					wx.requestPayment({
-						'timeStamp': data.timeStamp,
-						'nonceStr': data.nonceStr,
-						'package': data.package,
-						'paySign': data.paySign,
-						'signType': 'HMAC-SHA256',
-						success: function(res) {
-							
-						},
-						'fail': function(res) {
-							console.log(res)
-						},
+					ut.pay(data,{
 						'complete': function(res) {
 							wx.redirectTo({
 								url: '../order/buildingGoods?type=1'
 							})
 						}
-					});
+					})
 				})
 			},
 			req_vehiclelist(){

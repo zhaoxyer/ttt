@@ -418,6 +418,9 @@
 	color: #fff;
 	font-size: 24rpx;
 }
+.order-pay {
+	margin-left: 10px;
+}
 .order-options-wrap {
 	display: -webkit-box;
 	display: -webkit-flex;

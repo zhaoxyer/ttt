@@ -6,7 +6,7 @@
 			<h1 v-if="type==3">选择车辆种类</h1>
 			<div class="type">
 				<div v-for="(list,index) in classlist" :key="list" @click="cg_check(index)">
-					<image :src="'../../static/mine/'+((check==index)?'un':'')+'check.jpg'"></image><span>{{list.name}}</span>
+					<image :src="'../../static/mine/'+((list.check)?'un':'')+'check.jpg'"></image><span>{{list.name}}</span>
 				</div>
 			</div>
 		</div>	
@@ -105,7 +105,7 @@
 				this.cityName=e.target.value[2];
 			},
 			cg_check(index){
-				this.check=index;
+				this.classlist[index].check=!this.classlist[index].check;
 			},
 			go_mine_infchange(){
 				wx.navigateTo({
@@ -132,15 +132,25 @@
 					},
 					url: url
 				}).then(data=>{
-					this.classlist=data;
+					if(data){
+						data.forEach(item=>{
+							item.check = false;
+						})
+						this.classlist=data;
+					}
+					
 				})
 			},
 			submit(){
-				if(this.check=='-1'&&(this.type==2||this.type==5||this.type==1)){
+				let serviceClassIds;
+				if(this.classlist.length){
+					serviceClassIds=this.return_serviceClassIds();
+				}
+				if(!serviceClassIds&&(this.type==2||this.type==5||this.type==1)){
 					ut.totast('请选择服务类型');
 					return
 				}
-				if(this.check=='-1'&&this.type==3){
+				if(!serviceClassIds&&this.type==3){
 					ut.totast('请选择车辆种类');
 					return
 				}
@@ -161,13 +171,13 @@
 					return
 				}
 				if(this.type==1){
-					this.req_addcraftsman()
+					this.req_addcraftsman(serviceClassIds)
 				}
 				if(this.type==2||this.type==5){
-					this.req_addstore()
+					this.req_addstore(serviceClassIds)
 				}
 				if(this.type==3){
-					this.req_addexpress()
+					this.req_addexpress(serviceClassIds)
 				}
 				if(this.type==4){
 					this.req_addcarry()
@@ -177,7 +187,20 @@
 				}
 				
 			},
-			req_addstore(){
+			return_serviceClassIds(){
+				let serviceClassIds='';
+				this.classlist.forEach(item=>{
+					if(item.check){
+						if(serviceClassIds){
+							serviceClassIds+=','+item.id
+						}else{
+							serviceClassIds+=item.id
+						}
+					}
+				})
+				return serviceClassIds;
+			},
+			req_addstore(serviceClassIds){
 				let url = "join/addstore";
 				if(this.type==5){
 					url='join/addcustomstore'
@@ -188,7 +211,7 @@
 							phone:this.phone,
 							scope:this.provinceName+this.countyAreaName+this.cityName,
 							serviceScope:this.provinceName+this.countyAreaName+this.cityName,
-							serviceClassIds:this.classlist[this.check].id,
+							serviceClassIds:serviceClassIds,
 							sex:this.sex,
 							adress:this.adress
 						},
@@ -208,13 +231,13 @@
 					})
 				
 			},
-			req_addcraftsman(){
+			req_addcraftsman(serviceClassIds){
 				ut.request({
 					data: {
 						name:this.name,
 						phone:this.phone,
 						scope:this.provinceName+this.countyAreaName+this.cityName,
-						serviceClassIds:this.classlist[this.check].id,
+						serviceClassIds:serviceClassIds,
 						sex:this.sex
 					},
 					c:true,
@@ -232,13 +255,13 @@
 					})
 				})
 			},
-			req_addexpress(){
+			req_addexpress(serviceClassIds){
 				ut.request({
 					data: {
 						name:this.name,
 						phone:this.phone,
 						scope:this.provinceName+this.countyAreaName+this.cityName,
-						vehicleTypesIds:this.classlist[this.check].id,
+						vehicleTypesIds:serviceClassIds,
 						sex:this.sex
 					},
 					c:true,

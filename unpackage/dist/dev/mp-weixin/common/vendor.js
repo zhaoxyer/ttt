@@ -14182,6 +14182,26 @@ ut.uploadimg = function (parm) {
     } });
 
 };
+//微信支付
+ut.pay = function (data, parm) {
+  wx.requestPayment({
+    'timeStamp': data.timeStamp,
+    'nonceStr': data.nonceStr,
+    'package': data.package,
+    'paySign': data.paySign,
+    'signType': 'HMAC-SHA256',
+    success: function success(res) {
+      parm.success && parm.success();
+    },
+    'fail': function fail(res) {
+      console.log(res);
+      parm.fail && parm.fail();
+    },
+    'complete': function complete(res) {
+      parm.complete && parm.complete();
+    } });
+
+};
 //
 var _default = ut;exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ "./node_modules/@dcloudio/uni-mp-weixin/dist/index.js")["default"]))

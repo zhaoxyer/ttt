@@ -115,7 +115,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       this.cityName = e.target.value[2];
     },
     cg_check: function cg_check(index) {
-      this.check = index;
+      this.classlist[index].check = !this.classlist[index].check;
     },
     go_mine_infchange: function go_mine_infchange() {
       wx.navigateTo({
@@ -142,15 +142,25 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
         url: url }).
       then(function (data) {
-        _this.classlist = data;
+        if (data) {
+          data.forEach(function (item) {
+            item.check = false;
+          });
+          _this.classlist = data;
+        }
+
       });
     },
     submit: function submit() {
-      if (this.check == '-1' && (this.type == 2 || this.type == 5 || this.type == 1)) {
+      var serviceClassIds;
+      if (this.classlist.length) {
+        serviceClassIds = this.return_serviceClassIds();
+      }
+      if (!serviceClassIds && (this.type == 2 || this.type == 5 || this.type == 1)) {
         _index.default.totast('请选择服务类型');
         return;
       }
-      if (this.check == '-1' && this.type == 3) {
+      if (!serviceClassIds && this.type == 3) {
         _index.default.totast('请选择车辆种类');
         return;
       }
@@ -171,13 +181,13 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
         return;
       }
       if (this.type == 1) {
-        this.req_addcraftsman();
+        this.req_addcraftsman(serviceClassIds);
       }
       if (this.type == 2 || this.type == 5) {
-        this.req_addstore();
+        this.req_addstore(serviceClassIds);
       }
       if (this.type == 3) {
-        this.req_addexpress();
+        this.req_addexpress(serviceClassIds);
       }
       if (this.type == 4) {
         this.req_addcarry();
@@ -187,7 +197,20 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       }
 
     },
-    req_addstore: function req_addstore() {
+    return_serviceClassIds: function return_serviceClassIds() {
+      var serviceClassIds = '';
+      this.classlist.forEach(function (item) {
+        if (item.check) {
+          if (serviceClassIds) {
+            serviceClassIds += ',' + item.id;
+          } else {
+            serviceClassIds += item.id;
+          }
+        }
+      });
+      return serviceClassIds;
+    },
+    req_addstore: function req_addstore(serviceClassIds) {
       var url = "join/addstore";
       if (this.type == 5) {
         url = 'join/addcustomstore';
@@ -198,7 +221,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
           phone: this.phone,
           scope: this.provinceName + this.countyAreaName + this.cityName,
           serviceScope: this.provinceName + this.countyAreaName + this.cityName,
-          serviceClassIds: this.classlist[this.check].id,
+          serviceClassIds: serviceClassIds,
           sex: this.sex,
           adress: this.adress },
 
@@ -218,13 +241,13 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       });
 
     },
-    req_addcraftsman: function req_addcraftsman() {
+    req_addcraftsman: function req_addcraftsman(serviceClassIds) {
       _index.default.request({
         data: {
           name: this.name,
           phone: this.phone,
           scope: this.provinceName + this.countyAreaName + this.cityName,
-          serviceClassIds: this.classlist[this.check].id,
+          serviceClassIds: serviceClassIds,
           sex: this.sex },
 
         c: true,
@@ -242,13 +265,13 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
       });
     },
-    req_addexpress: function req_addexpress() {
+    req_addexpress: function req_addexpress(serviceClassIds) {
       _index.default.request({
         data: {
           name: this.name,
           phone: this.phone,
           scope: this.provinceName + this.countyAreaName + this.cityName,
-          vehicleTypesIds: this.classlist[this.check].id,
+          vehicleTypesIds: serviceClassIds,
           sex: this.sex },
 
         c: true,
@@ -372,7 +395,7 @@ var render = function() {
                       attrs: {
                         src:
                           "../../static/mine/" +
-                          (_vm.check == index ? "un" : "") +
+                          (list.check ? "un" : "") +
                           "check.jpg"
                       }
                     }),

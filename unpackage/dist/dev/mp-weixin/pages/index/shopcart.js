@@ -172,6 +172,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
           item.allmoneynum = 0;
           item.cartlist.forEach(function (item) {
             item.checked = false;
+            if (item.picture) item.picture = item.picture.split(',')[0];
           });
         });
         _this3.list = data;

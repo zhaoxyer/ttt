@@ -162,6 +162,7 @@
 						item.allmoneynum=0;
 						item.cartlist.forEach(item=>{
 							item.checked=false;
+							if(item.picture)item.picture=item.picture.split(',')[0]
 						})
 					})
 					this.list =data;

@@ -941,7 +941,7 @@ var render = function() {
           [
             list.type
               ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type))
+                  _vm._v(_vm._s(list.type == 1 ? "表示技术服务类" : "配件类"))
                 ])
               : _vm._e(),
             _c(

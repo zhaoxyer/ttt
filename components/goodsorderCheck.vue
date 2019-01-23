@@ -2,7 +2,7 @@
 	<div class="cancel-order-modal">
 		<div class="cancel-order-condition" v-for="(list,index) in confirmPlanlist" :key="index">
 			<div class="cancel-order-title" v-if="list.type">
-			 {{list.type}}
+			 {{list.type==1?'表示技术服务类':'配件类'}}
 			</div>
 			<div class="cancel-statement-wrap">
 				<div class="cancel-radio-wrap" v-for="(item,priceIndex) in list.prices" :key="priceIndex">

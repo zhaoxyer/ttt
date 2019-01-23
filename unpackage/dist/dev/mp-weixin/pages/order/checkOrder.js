@@ -128,28 +128,59 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
   },
   methods: {
-    againPlan: function againPlan() {var _this = this;
+    cancel_order: function cancel_order() {var _this = this;
+
+      _index.default.request({
+        data: {
+          orderId: this.orderId },
+
+        url: "service/order/cancelOrder" }).
+      then(function (data) {
+        _this.$parent.changeVisibileModal(false);
+        _this.$emit('reload');
+        _index.default.totast("订单取消成功");
+      });
+    },
+    cancel_confirm: function cancel_confirm() {var _this2 = this;
+      if (!this.chooseData) {
+        _index.default.totast("请选择取消原因");
+        return;
+      }
+      wx.showModal({
+        title: '',
+        content: '您确定要取消该订单吗？',
+        success: function success(sm) {
+          if (sm.confirm) {
+            // 用户点击了确定 可以调用删除方法了
+            _this2.cancel_order();
+          } else if (sm.cancel) {
+            return;
+          }
+        } });
+
+    },
+    againPlan: function againPlan() {var _this3 = this;
       _index.default.request({
         data: {
           orderId: this.orderId },
 
         url: "service/order/againPrice" }).
       then(function (data) {
-        _this.$parent.changeVisibileModal(false);
-        _this.$emit('reload');
+        _this3.$parent.changeVisibileModal(false);
+        _this3.$emit('reload');
         _index.default.totast("操作成功");
         console.log(data);
       });
     },
-    confirmPlan: function confirmPlan() {var _this2 = this;
+    confirmPlan: function confirmPlan() {var _this4 = this;
       _index.default.request({
         data: {
           orderId: this.orderId },
 
         url: "service/order/confirmPrice" }).
       then(function (data) {
-        _this2.$parent.changeVisibileModal(false);
-        _this2.$emit('reload');
+        _this4.$parent.changeVisibileModal(false);
+        _this4.$emit('reload');
         _index.default.totast("操作成功");
         console.log(data);
       });
@@ -228,9 +259,16 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
         url: "service/order/check" }).
       then(function (data) {
-        _this2.$parent.changeVisibileModal(false);
-        _this2.$emit('reload');
-        _index.default.totast("操作成功");
+        _index.default.pay(data, {
+          complete: function complete(res) {
+            _this2.$parent.changeVisibileModal(false);
+            _this2.$emit('reload');
+          },
+          success: function success() {
+            _index.default.totast("操作成功");
+          } });
+
+
         console.log(data);
       });
     } } };exports.default = _default;
@@ -246,6 +284,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
 
 
 
@@ -332,7 +371,27 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
     reloadData: function reloadData() {
       this.$emit('reload');
     },
-    getConfirmPlan: function getConfirmPlan() {var _this = this;
+    goToPay: function goToPay() {var _this = this;
+      _index.default.request({
+        data: {
+          orderId: '' },
+
+        url: "" }).
+      then(function (data) {
+        _index.default.pay(data, {
+          complete: function complete(res) {
+            _this.$parent.changeVisibileModal(false);
+            _this.reloadData();
+          },
+          success: function success() {
+            _index.default.totast("操作成功");
+          } });
+
+
+        console.log(data);
+      });
+    },
+    getConfirmPlan: function getConfirmPlan() {var _this2 = this;
       _index.default.request({
         data: {
           orderId: this.data.id },
@@ -341,11 +400,11 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
         url: "service/order/price" }).
       then(function (data) {
         console.log(data);
-        _this.confirmPlanlist = data;
+        _this2.confirmPlanlist = data;
         //this.cancel_reason = data;
       });
     },
-    getReasonType: function getReasonType() {var _this2 = this;
+    getReasonType: function getReasonType() {var _this3 = this;
       _index.default.request({
         data: {
           type: this.type },
@@ -353,7 +412,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
         method: 'get',
         url: "service/order/cancelReason" }).
       then(function (data) {
-        _this2.reason = data;
+        _this3.reason = data;
       });
     },
     changeOrderStatusModal: function changeOrderStatusModal(status) {
@@ -658,12 +717,20 @@ var render = function() {
         "div",
         { staticClass: "cancel-plan-wrap" },
         [
-          _c("button", { staticClass: "cancel-plan" }, [_vm._v("放弃维修")]),
           _c(
             "button",
             {
               staticClass: "cancel-plan",
               attrs: { eventid: "5c0a37af-0" },
+              on: { click: _vm.cancel_confirm }
+            },
+            [_vm._v("放弃维修")]
+          ),
+          _c(
+            "button",
+            {
+              staticClass: "cancel-plan",
+              attrs: { eventid: "5c0a37af-1" },
               on: { click: _vm.againPlan }
             },
             [_vm._v("重新申报方案")]
@@ -679,7 +746,7 @@ var render = function() {
             "button",
             {
               staticClass: "cancel-plan agree-plan",
-              attrs: { eventid: "5c0a37af-1" },
+              attrs: { eventid: "5c0a37af-2" },
               on: { click: _vm.confirmPlan }
             },
             [_vm._v("同意方案")]
@@ -724,7 +791,7 @@ var render = function() {
           [
             list.type
               ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type))
+                  _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
                 ])
               : _vm._e(),
             _c(
@@ -856,12 +923,23 @@ var render = function() {
                     [_vm._v("取消订单")]
                   )
                 : _vm._e(),
+              _vm.data.status == 1
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "order-button order-pay",
+                      attrs: { eventid: "747ac242-1" },
+                      on: { click: _vm.goToPay }
+                    },
+                    [_vm._v("立即支付")]
+                  )
+                : _vm._e(),
               _vm.data.status == 5
                 ? _c(
                     "button",
                     {
                       staticClass: "order-button",
-                      attrs: { eventid: "747ac242-1" },
+                      attrs: { eventid: "747ac242-2" },
                       on: {
                         click: function($event) {
                           _vm.changeConfirmModal(true)
@@ -876,7 +954,7 @@ var render = function() {
                     "button",
                     {
                       staticClass: "order-button",
-                      attrs: { eventid: "747ac242-2" },
+                      attrs: { eventid: "747ac242-3" },
                       on: {
                         click: function($event) {
                           _vm.changeOrderCheck(true)
@@ -897,7 +975,7 @@ var render = function() {
           attrs: {
             reason: _vm.reason,
             visibile: _vm.order_status_visibile,
-            eventid: "747ac242-3",
+            eventid: "747ac242-4",
             mpcomid: "747ac242-1"
           },
           on: { changeVisible: _vm.changeOrderStatusModal }
@@ -910,7 +988,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.cancel_order_visibile,
-            eventid: "747ac242-5",
+            eventid: "747ac242-6",
             mpcomid: "747ac242-3"
           },
           on: { changeVisible: _vm.changeCancelModal }
@@ -921,7 +999,7 @@ var render = function() {
               cancelUrl: "service/order/cancelOrder",
               orderId: _vm.data.id,
               reason: _vm.reason,
-              eventid: "747ac242-4",
+              eventid: "747ac242-5",
               mpcomid: "747ac242-2"
             },
             on: { reload: _vm.reloadData }
@@ -934,7 +1012,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.confirm_order_visibile,
-            eventid: "747ac242-7",
+            eventid: "747ac242-8",
             mpcomid: "747ac242-5"
           },
           on: { changeVisible: _vm.changeConfirmModal }
@@ -944,7 +1022,7 @@ var render = function() {
             attrs: {
               orderId: _vm.data.id,
               confirmPlanlist: _vm.confirmPlanlist,
-              eventid: "747ac242-6",
+              eventid: "747ac242-7",
               mpcomid: "747ac242-4"
             },
             on: { reload: _vm.reloadData }
@@ -957,7 +1035,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.confirm_ordercheck_visibile,
-            eventid: "747ac242-9",
+            eventid: "747ac242-10",
             mpcomid: "747ac242-7"
           },
           on: { changeVisible: _vm.changeOrderCheck }
@@ -967,7 +1045,7 @@ var render = function() {
             attrs: {
               orderId: _vm.data.id,
               confirmPlanlist: _vm.confirmPlanlist,
-              eventid: "747ac242-8",
+              eventid: "747ac242-9",
               mpcomid: "747ac242-6"
             },
             on: { reload: _vm.reloadData }

@@ -140,7 +140,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
     this.req_carrylist();
     this.req_getdefaddress();
     this.buildinf.forEach(function (item) {
-      _this.mallprice += Number(item.price * item.num).toFixed(2);
+      _this.mallprice = (item.price * item.num.toFixed(2) + Number(_this.mallprice)).toFixed(2);
       item.goodsSpecId = item.specId ? item.specId : item.id;
       item.goodsNumber = item.num;
       item.name = item.goodsSpecName ? item.goodsSpecName : item.name;
@@ -216,18 +216,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
         url: "goods/order/unifiedOrder",
         c: true }).
       then(function (data) {
-        wx.requestPayment({
-          'timeStamp': data.timeStamp,
-          'nonceStr': data.nonceStr,
-          'package': data.package,
-          'paySign': data.paySign,
-          'signType': 'HMAC-SHA256',
-          success: function success(res) {
-
-          },
-          'fail': function fail(res) {
-            console.log(res);
-          },
+        _index.default.pay(data, {
           'complete': function complete(res) {
             wx.redirectTo({
               url: '../order/buildingGoods?type=1' });

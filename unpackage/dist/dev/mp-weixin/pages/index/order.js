@@ -224,6 +224,28 @@ var render = function() {
               _c("p", [_vm._v("及付尾款")])
             ],
             1
+          ),
+          _c(
+            "div",
+            {
+              attrs: { eventid: "bffe2b62-3" },
+              on: {
+                click: function($event) {
+                  _vm.go_next("../order/checkOrder?type=4")
+                }
+              }
+            },
+            [
+              _c("image", {
+                attrs: {
+                  src: "../../static/order/ordertype2.jpg",
+                  mode: "widthFix"
+                }
+              }),
+              _c("p", [_vm._v("技术服务")]),
+              _c("p", [_vm._v("申请质保")])
+            ],
+            1
           )
         ])
       ],
@@ -238,7 +260,7 @@ var render = function() {
           _c(
             "div",
             {
-              attrs: { eventid: "bffe2b62-3" },
+              attrs: { eventid: "bffe2b62-4" },
               on: {
                 click: function($event) {
                   _vm.go_next("../order/buildingGoods?type=1")
@@ -259,7 +281,7 @@ var render = function() {
           _c(
             "div",
             {
-              attrs: { eventid: "bffe2b62-4" },
+              attrs: { eventid: "bffe2b62-5" },
               on: {
                 click: function($event) {
                   _vm.go_next("../order/buildingGoods?type=2")
@@ -281,7 +303,7 @@ var render = function() {
           _c(
             "div",
             {
-              attrs: { eventid: "bffe2b62-5" },
+              attrs: { eventid: "bffe2b62-6" },
               on: {
                 click: function($event) {
                   _vm.go_next("../order/buildingGoods?type=3")
@@ -303,7 +325,7 @@ var render = function() {
           _c(
             "div",
             {
-              attrs: { eventid: "bffe2b62-6" },
+              attrs: { eventid: "bffe2b62-7" },
               on: {
                 click: function($event) {
                   _vm.go_next("../order/buildingGoods?type=4")
@@ -319,72 +341,6 @@ var render = function() {
               }),
               _c("p", [_vm._v("建材商品")]),
               _c("p", [_vm._v("类退换")])
-            ],
-            1
-          )
-        ])
-      ],
-      1
-    ),
-    _c(
-      "div",
-      { staticClass: "userinf" },
-      [
-        _c("h1", [_vm._v("定金建材商品类")]),
-        _c("div", { staticClass: "server" }, [
-          _c(
-            "div",
-            [
-              _c("image", {
-                attrs: {
-                  src: "../../static/order/ordertype7.jpg",
-                  mode: "widthFix"
-                }
-              }),
-              _c("p", [_vm._v("查看与取")]),
-              _c("p", [_vm._v("消订单")])
-            ],
-            1
-          ),
-          _c(
-            "div",
-            [
-              _c("image", {
-                attrs: {
-                  src: "../../static/order/ordertype8.jpg",
-                  mode: "widthFix"
-                }
-              }),
-              _c("p", [_vm._v("确认方案")]),
-              _c("p", [_vm._v("及付定金")])
-            ],
-            1
-          ),
-          _c(
-            "div",
-            [
-              _c("image", {
-                attrs: {
-                  src: "../../static/order/ordertype9.jpg",
-                  mode: "widthFix"
-                }
-              }),
-              _c("p", [_vm._v("质量验收")]),
-              _c("p", [_vm._v("及付尾款")])
-            ],
-            1
-          ),
-          _c(
-            "div",
-            [
-              _c("image", {
-                attrs: {
-                  src: "../../static/order/ordertype9.jpg",
-                  mode: "widthFix"
-                }
-              }),
-              _c("p", [_vm._v("定金商品")]),
-              _c("p", [_vm._v("售后质保")])
             ],
             1
           )
