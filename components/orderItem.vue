@@ -25,6 +25,7 @@
 		<div class="order-options-wrap">
 			<div class="order-options">
 				<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
+				<button v-if="data.status == 1" @click="goToPay" class="order-button order-pay">立即支付</button>
 				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
 				<button v-if="data.status == 8" @click="changeOrderCheck(true)" class="order-button">验收付款</button>
 			</div>
@@ -84,6 +85,26 @@ export default {
 		},
 		reloadData() {
 			this.$emit('reload');
+		},
+		goToPay() {
+			ut.request({
+				data: {
+					orderId: ''
+				},
+				url: ""
+			}).then(data=>{
+				ut.pay(data,{
+					complete: (res)=> {
+						this.$parent.changeVisibileModal(false)
+						this.reloadData();
+					},
+					success: () => {
+						ut.totast("操作成功")
+					}
+				})
+				
+				console.log(data)
+			})
 		},
 		getConfirmPlan() {
 			ut.request({
@@ -192,6 +213,9 @@ export default {
 		line-height: 50upx;
 		color: #fff;
 		font-size: 24upx;
+	}
+	.order-pay {
+		margin-left: 10px;
 	}
 	.order-options-wrap {
 		display: flex;

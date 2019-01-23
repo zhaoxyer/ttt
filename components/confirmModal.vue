@@ -12,7 +12,7 @@
 			</div>
 		</div>
 		<div class="cancel-plan-wrap">
-			<button class="cancel-plan">放弃维修</button>
+			<button class="cancel-plan" @click="cancel_confirm">放弃维修</button>
 			<button class="cancel-plan" @click="againPlan">重新申报方案</button>
 		</div>
 		<div class="agree-plan-wrap">
@@ -30,7 +30,38 @@ export default {
 
 	}
   },
-  methods: {  
+  methods: { 
+	 cancel_order() {
+	 			
+		ut.request({
+			data: {
+				orderId: this.orderId,
+			},
+			url: "service/order/cancelOrder"
+		}).then(data=>{
+			this.$parent.changeVisibileModal(false)
+			this.$emit('reload');
+			ut.totast("订单取消成功")
+		})
+	},
+	 cancel_confirm() {
+		if(!this.chooseData){
+			ut.totast("请选择取消原因")
+			return;
+		}
+		wx.showModal({
+		title: '',
+		content: '您确定要取消该订单吗？',
+		success: (sm) => {
+			if (sm.confirm) {
+				// 用户点击了确定 可以调用删除方法了
+					this.cancel_order();
+				} else if (sm.cancel) {
+				return;
+				}
+			}
+		})
+	 },
 	againPlan() {
 		ut.request({
 			data: {
