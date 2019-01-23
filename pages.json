@@ -112,7 +112,7 @@
 		{
 			"path" : "pages/mine/addadress",
 			"style" : {
-				"navigationBarTitleText" : "新建收获地址"
+				"navigationBarTitleText" : "新建收货地址"
 			}
 		},
 		{

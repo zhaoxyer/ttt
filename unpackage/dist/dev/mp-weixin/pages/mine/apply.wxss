@@ -6,7 +6,7 @@
 .type ._div image{width: 40rpx;height: 40rpx;margin-right: 10rpx;margin-bottom: 30rpx;}
 .inf{font-size: 24rpx;line-height: 30rpx;margin-top: 30rpx;}
 .inf>._div {margin-bottom: 30rpx;position: relative;}
-.inf>._div ._div,.inf>._div ._span{display: inline-block;vertical-align: top;line-height: 60px}
+.inf>._div ._div,.inf>._div ._span{display: inline-block;vertical-align: top;line-height: 60rpx;}
 .inf>._div>._span{width: 104rpx;}
 .inf>._div ._div{width: 340rpx;border: 1px solid #5d5c5c;height:60rpx;margin-left: 70rpx;padding: 0 10rpx;}
 .inf>._div ._div image{width: 20rpx;height: 20rpx;float: right;margin-top: 20rpx;}

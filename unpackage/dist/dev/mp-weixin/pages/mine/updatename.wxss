@@ -19,8 +19,8 @@
 	background: #ECBA25;
 	color: white;
 	text-align: center;
-	line-height: 100px!important;
-	height: 100px!important;
+	line-height: 100rpx!important;
+	height: 100rpx!important;
 	margin-top: 30rpx;
 }
 

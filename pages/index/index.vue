@@ -2,12 +2,12 @@
 	<view>
 		<div class="header">
 			<div class="adress">
-				<picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
+				<!-- <picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
 								<view class="picker">
 									{{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}}
 								</view>
-				</picker>
-				<image src="../../static/index/whiteadress.jpg" ></image><span>{{cityName||'朝阳'}}</span>
+				</picker> -->
+				<image src="../../static/index/whiteadress.jpg" ></image><span>{{cityName||'通州'}}</span>
 			</div>
 			<div class='serch' @click="go_home_serch"><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
 			<div class="tel"><image src="../../static/index/whitetel.jpg" @click="call"></image></div>
@@ -64,7 +64,7 @@
 				classlist:[],
 				provinceName:'',
 				countyAreaName:'',
-				cityName:''
+				cityName:'通州'
 			}
 		},
 		onLoad() {

@@ -49,6 +49,12 @@
 				</view>
 			</p>
 		</div>
+		<div class="payinf remake">
+			<h1>备注</h1>
+			<textarea v-model="remark">
+				
+			</textarea>
+		</div>
 		<div class="tip">
 			<div>注意事项:</div>
 			<div>
@@ -74,7 +80,8 @@
 				y: "",
 				m: '',
 				d: '',
-				adress: ''
+				adress: '',
+				remark:''
 			}
 		},
 		onLoad() {
@@ -113,7 +120,7 @@
 					data: {
 						"addressId": this.adress.id,
 						"makeTime": this.date +' '+ this.time,
-						"remark": '',
+						"remark": this.remark,
 						"serviceId": this.serverinf.id
 					},
 					url: "service/order/unifiedOrder",
@@ -295,5 +302,48 @@
 	}
 	.center{
 		text-align: center;
+	}
+	.payinf{padding: 0 30upx;}
+	.payinf h1{
+		font-size: 28upx;
+		line-height: 80upx;
+	}
+	.payinf>div{
+		display: flex;
+		font-size: 24upx;
+		align-items: center;
+		line-height: 50upx;
+		width: 100%;
+	}
+	.payinf>div image{
+		width: 150upx;
+		height: 120upx;
+	}
+	.payinf>div div{
+		flex: 1;
+		text-align: right;
+		overflow: hidden;
+	}
+	.payinf>div div span:last-child{
+		float: right;
+	}
+	.payinf>div div p{
+		display: inline-block;
+		text-align: left;
+		max-width: 460upx;
+		overflow: hidden;
+	}
+	.payinf>div div p view{
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow:ellipsis;
+	}
+	.remake textarea{
+		width: 100%;
+		height: 150upx;
+		border:1px solid #C9C9C9;
+		border-radius: 10upx;
+		margin-bottom: 30upx;
+		font-size: 24upx;
 	}
 </style>

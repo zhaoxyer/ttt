@@ -1,4 +1,10 @@
 
+.list{
+	position: absolute;
+	top:0;
+	bottom: 120rpx;
+	width: 100%;
+}
 .adressli{padding: 30rpx;font-size: 26rpx;border-bottom: 1px solid #E5E5E5;line-height: 26rpx;}
 .adressli ._div>._div{display: inline-block;}
 .adressli ._div>._div:nth-child(2){
@@ -8,7 +14,7 @@
 	display: inline-block;
 	vertical-align: top;
 }
-.edit{line-height: 40px!important;}
+.edit{line-height: 40rpx!important;}
 .edit ._div:first-child image{
 	width: 30rpx;
 	height: 30rpx;

@@ -18,7 +18,7 @@
 				<image :src="static+list.picture"></image>
 				<div>
 					<p>
-						<view>{{name}}</view>
+						<view>{{list.goodsName||name}}</view>
 						<view><span>规格</span><span>{{list.name}}</span></view>
 						<view><span>数量</span><span>x{{list.num}}</span></view>
 						<!-- <view><span>重量</span><span>￥98.00</span></view> -->
@@ -66,7 +66,7 @@
 				</view>
 			</p>
 			<p class="louceng" v-if="carrylist.length">
-				<input placeholder="请输入楼层" v-model="floor" type="number"/>层 起步价{{carrylist[carryindex].startPrice}}
+				<input placeholder="请输入楼层" v-model="floor" type="number"/>层 起步价¥{{carrylist[carryindex].startPrice}}
 			</p>
 		</div>
 		<div class="payinf remake">
@@ -78,14 +78,14 @@
 		<div class="payinf mingxi">
 			<h1>价格明细</h1>
 			<div class='mingxiinf'>
-				<p>货款：{{mallprice}}</p>
-				<p>配送费：{{sendprice}}</p>
-				<p>搬运费：{{carryprice}}</p>
+				<p>货款：¥{{mallprice}}</p>
+				<p>配送费：¥{{sendprice}}</p>
+				<p>搬运费：¥{{carryprice}}</p>
 			</div>
 		</div>
 		<div class="bgheight"></div>
 		<div class="apply" >
-			<span>合计：<span>{{allprice}}</span></span><span @click='req_unifiedOrder'>确认支付</span>
+			<span>合计：<span>¥{{allprice}}</span></span><span @click='req_unifiedOrder'>确认支付</span>
 		</div>					
 	</div>
 </template>
@@ -124,14 +124,16 @@
 			this.buildinf.forEach(item=>{
 				if(item.picture)item.picture=item.picture.split(',')[0];
 			});
+			console.log(this.buildinf)
 			wx.setStorageSync('buildinf','');
 			this.req_vehiclelist();
 			this.req_carrylist();
 			this.req_getdefaddress();
 			this.buildinf.forEach(item=>{
-				this.mallprice+=item.price;
-				item.goodsSpecId=item.id;
+				this.mallprice+=Number(item.price*item.num).toFixed(2);
+				item.goodsSpecId=item.specId?item.specId:item.id;
 				item.goodsNumber=item.num;
+				item.name =item.goodsSpecName?item.goodsSpecName:item.name
 			})
 		},
 		onShow(){

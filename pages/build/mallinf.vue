@@ -24,6 +24,8 @@
 		<div v-if='detailinf' class="detail">
 			<wxParse :content="detailinf"/>
 		</div>
+		<div style="height: 110rpx;">
+		</div>
 		<div class='footer'>
 			<div class="edit"><span @click='req_cartadd'>加入购物车</span><span @click="go_build_pay">购买</span></div>
 			<span class="num" v-show='num'>{{num}}</span>

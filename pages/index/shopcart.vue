@@ -67,7 +67,11 @@
 				})
 			},
 			go_build_pay(index){
-				wx.setStorageSync('buildinf',this.list[index].cartlist)
+				const buildinf = this.list[index].cartlist.filter(item=>{
+					return item.checked
+				})
+				console.log(JSON.stringify(buildinf))
+				wx.setStorageSync('buildinf',buildinf)
 				wx.navigateTo({
 					url: '../build/pay'
 				})

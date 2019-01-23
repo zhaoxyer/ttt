@@ -1,6 +1,6 @@
 
 .yiji{
-	padding:0 30px;
+	padding:0 30rpx;
 	text-align: center;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -14,38 +14,38 @@
 	-webkit-justify-content: center;
 	    -ms-flex-pack: center;
 	        justify-content: center;
-	height: 100px;
+	height: 100rpx;
 }
 .yiji ._span{
-	font-size: 24px;
+	font-size: 24rpx;
 	margin-right: ;
-	border-bottom: 8px solid #e5e5e5;
-	line-height: 80px;
+	border-bottom: 8rpx solid #e5e5e5;
+	line-height: 80rpx;
 }
 .yiji ._span:first-child{
-	margin-right: 60px;
+	margin-right: 60rpx;
 }
 .yiji ._span.active{
-	border-bottom: 8px solid #FEC200;
+	border-bottom: 8rpx solid #FEC200;
 	color: #FEC200;
 }
 .title{
 	text-align: center;
-	margin-top: 40px;
-	height: 50px;
+	margin-top: 40rpx;
+	height: 50rpx;
 }
 .title ._span{
 	display: inline-block;
 	vertical-align: top;
-	line-height: 50px;
-	font-size: 20px;
-	width: 200px;
-	font-size: 20px;
+	line-height: 50rpx;
+	font-size: 20rpx;
+	width: 200rpx;
+	font-size: 20rpx;
 	text-align: center;
 	color: white;
-	border-radius: 25px;
-	margin-left: 30px;
-	margin-right: 30px;
+	border-radius: 25rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
 	-webkit-box-shadow: 0 4px 0 #CCCCCC;
 	        box-shadow: 0 4px 0 #CCCCCC;
 }
@@ -53,36 +53,36 @@
 	background: #FEC200;
 }
 .server{
-	padding: 0 30px;
-	margin-top: 40px;
-	font-size: 24px;
-	margin-bottom: 20px;
+	padding: 0 30rpx;
+	margin-top: 40rpx;
+	font-size: 24rpx;
+	margin-bottom: 20rpx;
 }
 .server ._p{
 	text-align: center;
-	line-height: 40px;
-	width: 150px;
+	line-height: 40rpx;
+	width: 150rpx;
 	text-align: center;
 }
 .server ._div{
 	display: inline-block;
 	vertical-align: top;
-	margin-right: 30px;
+	margin-right: 30rpx;
 }
 .server ._div:nth-child(4n){
 	margin-right: 0;
 }
 .server ._div:nth-last-child(n+5){
-	margin-bottom: 30px;
+	margin-bottom: 30rpx;
 }
 .server image{
-	width: 150px;
-	height: 150px;
-	border-radius: 10px;
+	width: 150rpx;
+	height: 150rpx;
+	border-radius: 10rpx;
 }
 .bggray{
 	background: #e5e5e5;
-	height: 40px;
+	height: 40rpx;
 }
 .list>._div:last-child .bggray{
 	display: none;

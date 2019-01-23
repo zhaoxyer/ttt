@@ -31,7 +31,7 @@
 		<div v-if='serverinf.detail' class="detail">
 			<wxParse :content="detailinf"/>
 		</div>
-		<div style="height: 100rupx;">
+		<div style="height: 110rpx;">
 		</div>
 		<div class="footer">
 			<div><span>预约费</span><span>￥{{serverinf.bookPrice}}</span></div><div @click="go_home_pay">立即预约</div>

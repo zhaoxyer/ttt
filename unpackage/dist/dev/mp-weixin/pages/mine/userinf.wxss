@@ -18,15 +18,15 @@
 	border-bottom: 1px solid #CCCCCC;
 }
 .columlist1,.columlist>._div{
-	height: 180px!important;
+	height: 180rpx!important;
 }
 .columlist image{
 	width: 20rpx;
 	height: 35rpx;
 }
 .header{
-	width: 120px!important;
-	height: 120px!important;
+	width: 120rpx!important;
+	height: 120rpx!important;
 	border-radius: 50%;
 }
 .bggray{

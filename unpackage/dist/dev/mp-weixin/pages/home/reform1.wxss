@@ -3,7 +3,7 @@ scroll-view{
 	position: absolute;
 	width: 100%;
 	top:0;
-	bottom: 120px;
+	bottom: 120rpx;
 }
 ::-webkit-scrollbar {
   width: 0;
@@ -15,36 +15,36 @@ scroll-view{
 }
 .reformtype ._span{
 	display: inline-block;
-	font-size: 30px;
-	line-height: 60px;
-	width: 200px;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	width: 200rpx;
 	color: white;
 	background: #999999;
-	border-radius: 10px;
+	border-radius: 10rpx;
 	text-align: center;
-	margin-top: 30px;
+	margin-top: 30rpx;
 	-webkit-box-shadow: 0 4px 0 #CCCCCC;
 	        box-shadow: 0 4px 0 #CCCCCC;
 }
 .reformtype ._span:last-child{
-	margin-left: 30px;
+	margin-left: 30rpx;
 }
 .reformtype .active{
 	background: #FEC300!important;
 }
 .userinf {
-	padding: 0 30px;
+	padding: 0 30rpx;
 }
 .userinf ._h1 {
-	font-size: 30px;
-	line-height: 60px;
-	width: 200px;
+	font-size: 30rpx;
+	line-height: 60rpx;
+	width: 200rpx;
 	color: white;
 	background: #FEC300;
-	border-radius: 10px;
+	border-radius: 10rpx;
 	text-align: center;
-	margin-top: 30px;
-	margin-bottom: 44px;
+	margin-top: 30rpx;
+	margin-bottom: 44rpx;
 	-webkit-box-shadow: 0 4px 0 #CCCCCC;
 	        box-shadow: 0 4px 0 #CCCCCC;
 }
@@ -60,22 +60,22 @@ scroll-view{
 .type ._div ._span {
 	display: inline-block;
 	vertical-align: top;
-	font-size: 24px;
-	line-height: 40px;
+	font-size: 24rpx;
+	line-height: 40rpx;
 }
 .type ._div image {
-	width: 40px;
-	height: 40px;
-	margin-right: 10px;
-	margin-bottom: 30px;
+	width: 40rpx;
+	height: 40rpx;
+	margin-right: 10rpx;
+	margin-bottom: 30rpx;
 }
 .inf {
-	font-size: 24px;
-	line-height: 30px;
-	margin-top: 30px;
+	font-size: 24rpx;
+	line-height: 30rpx;
+	margin-top: 30rpx;
 }
 .inf>._div {
-	margin-bottom: 30px;
+	margin-bottom: 30rpx;
 }
 .inf>._div ._div,
 .inf>._div ._span {
@@ -83,86 +83,86 @@ scroll-view{
 	vertical-align: top;
 }
 .inf>._div>._span {
-	width: 104px;
+	width: 104rpx;
 }
 .inf>._div ._div {
-	width: 340px;
+	width: 340rpx;
 	border: 1px solid #5d5c5c;
-	height: 30px;
-	margin-left: 70px;
-	padding: 0 10px;
+	height: 30rpx;
+	margin-left: 70rpx;
+	padding: 0 10rpx;
 }
 .inf>._div ._div image {
-	width: 20px;
-	height: 20px;
+	width: 20rpx;
+	height: 20rpx;
 	float: right;
-	margin-top: 5px;
+	margin-top: 5rpx;
 }
 .inf>._div ._div ._input {
 	width: 100%;
-	height: 30px;
-	line-height: 30px;
-	font-size: 24px;
-	min-height: 30px;
+	height: 30rpx;
+	line-height: 30rpx;
+	font-size: 24rpx;
+	min-height: 30rpx;
 }
 .tip {
 	text-align: center;
-	font-size: 24px;
+	font-size: 24rpx;
 	color: #999999;
-	line-height: 60px;
-	margin-top: 20px;
+	line-height: 60rpx;
+	margin-top: 20rpx;
 }
 .apply {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-	height: 100px;
+	height: 100rpx;
 	text-align: center;
 }
 .apply ._div {
-	height: 100px;
-	line-height: 100px;
+	height: 100rpx;
+	line-height: 100rpx;
 	color: white;
 	background: #FEC300;
-	font-size: 28px;
-	margin-left: 125px;
-	margin-right: 125px;
+	font-size: 28rpx;
+	margin-left: 125rpx;
+	margin-right: 125rpx;
 }
 .bg0 {
 	background: #FEC200;
 }
 .server {
-	padding: 0 30px;
-	margin-top: 40px;
-	font-size: 24px;
-	margin-bottom: 20px;
+	padding: 0 30rpx;
+	margin-top: 40rpx;
+	font-size: 24rpx;
+	margin-bottom: 20rpx;
 }
 .server ._p {
 	text-align: center;
-	line-height: 40px;
+	line-height: 40rpx;
 }
 .server ._div {
 	display: inline-block;
 	vertical-align: top;
-	margin-right: 30px;
+	margin-right: 30rpx;
 }
 .server ._div:nth-child(4n) {
 	margin-right: 0;
 }
 .server ._div:nth-last-child(n+5) {
-	margin-bottom: 30px;
+	margin-bottom: 30rpx;
 }
 .server image {
-	width: 150px;
-	border-radius: 10px;
-	height: 150px;
+	width: 150rpx;
+	border-radius: 10rpx;
+	height: 150rpx;
 }
 .server .active{
 	color: #FEC200;
 }
 .bggray {
 	background: #e5e5e5;
-	height: 40px;
+	height: 40rpx;
 }
 .list>._div:last-child .bggray {
 	display: none;

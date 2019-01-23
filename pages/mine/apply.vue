@@ -35,7 +35,7 @@
 					<span>联系电话</span><div><input type="number" placeholder="请输入联系电话" v-model="phone"/></div>
 				</div>
 				<div v-if="type==2||type==5">
-					<span>店铺地址</span><div><input type="number" placeholder="请输入店铺地址" v-model="adress"/></div>
+					<span>店铺地址</span><div><input type="text" placeholder="请输入店铺地址" v-model="adress"/></div>
 				</div>
 			</div>
 		</div>	
