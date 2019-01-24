@@ -71,7 +71,7 @@
 					},
 					url: "user/updatePhone"
 				}).then(data => {
-					this.userinf.photo=ut.static+photo;
+					this.userinf.photo=photo;
 					wx.setStorageSync('userinf',this.userinf);
 				})
 			},

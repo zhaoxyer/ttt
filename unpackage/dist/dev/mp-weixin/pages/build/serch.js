@@ -147,10 +147,12 @@ var render = function() {
         attrs: {
           type: "text",
           placeholder: "寻找商品、店铺",
+          "confirm-type": "search",
           eventid: "5312e73c-1"
         },
         domProps: { value: _vm.name },
         on: {
+          confirm: _vm.req_goodslist,
           input: function($event) {
             if ($event.target.composing) {
               return
@@ -182,7 +184,7 @@ var render = function() {
             }),
             _c("p", [
               _vm._v(_vm._s(list.name) + "："),
-              _c("span", [_vm._v(_vm._s(list.price))]),
+              _c("span", [_vm._v("¥" + _vm._s(list.price))]),
               _vm._v("起")
             ])
           ],

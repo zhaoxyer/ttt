@@ -21,8 +21,6 @@
 	margin-right: ;
 	border-bottom: 8rpx solid #e5e5e5;
 	line-height: 80rpx;
-}
-.yiji ._span:first-child{
 	margin-right: 60rpx;
 }
 .yiji ._span.active{

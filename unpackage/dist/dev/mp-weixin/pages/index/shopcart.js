@@ -219,8 +219,13 @@ var render = function() {
             [
               _c(
                 "li",
+                { staticClass: "shopping-option-item shopping-collect" },
+                [_vm._v("全选")]
+              ),
+              _c(
+                "li",
                 {
-                  staticClass: "shopping-option-item shopping-collect",
+                  staticClass: "shopping-option-item",
                   attrs: { eventid: "6c641c75-0" },
                   on: { click: _vm.delcart }
                 },

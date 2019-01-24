@@ -1,11 +1,11 @@
 <template>
 	<div>
-		<div class="serch"><image src="../../static/index/serch.png" @click="req_goodslist"></image><input type="text" placeholder="寻找服务" v-model="name"/></div>
+		<div class="serch"><image src="../../static/index/serch.png" @click="req_goodslist"></image><input type="text" placeholder="寻找服务" v-model="name" confirm-type='search' @confirm='req_goodslist'/></div>
 		<!-- <nav><span>筛选</span><span>销量</span><span>价格</span></nav> -->
 		<div class="fuwu leftright">
 			<div @click="go_home_serverinf(list.classId,list.name)" v-for="(list,index) in list" :key='index'>
 				<image :src="static +list.picture" class="noimage"></image>
-				<p>{{list.name}}：<span>{{list.price}}</span>起/每次</p>
+				<p>{{list.name}}：<span>¥{{list.price}}</span>起/每次</p>
 			</div>
 		</div>
 	<!-- 	<div class="section">

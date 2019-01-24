@@ -88,6 +88,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
     this.static = _index.default.static;
   },
   onShow: function onShow() {
+    this.userinf = wx.getStorageSync('userinf') || {};
     if (wx.getStorageSync('token')) {
       this.req_userinfo();
     } else {
@@ -242,7 +243,7 @@ var render = function() {
           },
           [
             _c("image", { attrs: { src: "../../static/index/userinf1.png" } }),
-            _c("p", [_vm._v("收获地址")])
+            _c("p", [_vm._v("收货地址")])
           ],
           1
         ),

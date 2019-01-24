@@ -200,7 +200,7 @@ var render = function() {
             attrs: { eventid: "5e3e2722-2" },
             on: { click: _vm.req_login }
           },
-          [_vm._v("登陆")]
+          [_vm._v("登录")]
         ),
         _c(
           "p",

@@ -12,7 +12,7 @@
 			</div>
 			<div @click="go_mine_adress">
 				<image src="../../static/index/userinf1.png"/>
-				<p>收获地址</p>
+				<p>收货地址</p>
 			</div>
 			<div @click="go_mine_securityCenter">
 				<image src="../../static/index/userinf2.png"/>
@@ -77,7 +77,8 @@
 		onLoad() {
 			this.static=ut.static;
 		},
-		onShow() {		
+		onShow() {	
+			this.userinf = wx.getStorageSync('userinf')||{}
 			if(wx.getStorageSync('token')){
 				this.req_userinfo();
 			}else{

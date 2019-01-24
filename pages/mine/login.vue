@@ -11,7 +11,7 @@
 				<image src="../../static/mine/pas.jpg"></image><input type="password" placeholder="请输入密码" v-model="password"/>
 			</div>
 			<p class="submit" @click="req_login">				
-				登陆
+				登录
 			</p>
 			<p class="tip" @click="go_mine_register">没有账号？立即注册</p>
 		</div>

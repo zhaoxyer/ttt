@@ -81,7 +81,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
         url: "user/updatePhone" }).
       then(function (data) {
-        _this2.userinf.photo = _index.default.static + photo;
+        _this2.userinf.photo = photo;
         wx.setStorageSync('userinf', _this2.userinf);
       });
     },

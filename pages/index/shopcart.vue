@@ -3,8 +3,8 @@
         <div class="shopping-car">
 			<div class="shopping-options-wrap">
 				<ul class="shopping-options">
-					<li class="shopping-option-item shopping-collect" @click="delcart">删除</li>
-					<!-- <li class="shopping-option-item"></li> -->
+					<li class="shopping-option-item shopping-collect">全选</li>
+					<li class="shopping-option-item" @click="delcart">删除</li>
 				</ul>
 			</div>
 			<div class="shopping-goods-container">

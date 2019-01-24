@@ -102,8 +102,6 @@
 		margin-right: ;
 		border-bottom: 8upx solid #e5e5e5;
 		line-height: 80upx;
-	}
-	.yiji span:first-child{
 		margin-right: 60upx;
 	}
 	.yiji span.active{
