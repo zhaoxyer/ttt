@@ -64,4 +64,11 @@
 .columlist>._div>._span{
 	margin-right: 30rpx;
 }
+.cont{
+	border-bottom: 1px solid #CCCCCC;
+	padding: 30rpx;
+	font-size: 24rpx;
+	background: #E8E8E8;
+	line-height: 30rpx;
+}
 

@@ -11,6 +11,9 @@
 				<order-item :type="type" :data="item" :reason="cancel_reason" @reload="init"></order-item>
 			</div>
 		</div>
+		<div v-else  class="nomall">
+			暂无订单
+		</div>
 	</div>
 </template>
 
@@ -89,5 +92,11 @@
 		left: 0upx;
 		margin-top: -8upx;
 	}
-	
+	.nomall{
+		height: 300px;
+		line-height: 300px;
+		text-align: center;
+		font-size: 24upx;
+		background: white;
+	}
 </style>

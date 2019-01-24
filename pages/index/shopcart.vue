@@ -1,11 +1,14 @@
 <template>
 	<view>
         <div class="shopping-car">
-			<div class="shopping-options-wrap">
+			<div class="shopping-options-wrap" v-if="list.length">
 				<ul class="shopping-options">
-					<li class="shopping-option-item shopping-collect">全选</li>
+					<li class="shopping-option-item shopping-collect" @click="clickall">全选</li>
 					<li class="shopping-option-item" @click="delcart">删除</li>
 				</ul>
+			</div>
+			<div v-else  class="nomall">
+				暂无商品
 			</div>
 			<div class="shopping-goods-container">
 				<div class="shopping-goods-list" v-for="(list,index) in list" :key="list">
@@ -76,6 +79,14 @@
 					url: '../build/pay'
 				})
 			},
+			clickall(){
+				this.list.forEach(item=>{
+					item.cartlist.forEach(item=>{
+						item.checked = true;
+					})
+				});
+				this.com();
+			},
 			checked(index,itemindex){
 				console.log(index,itemindex)
 				this.list[index].cartlist[itemindex].checked=!this.list[index].cartlist[itemindex].checked;
@@ -130,13 +141,22 @@
 				})
 			},
 			delcart(){
-				this.list .forEach((item,index)=>{
-					item.cartlist.forEach((item1,index1)=>{
-						if(item1.checked){
-							this.req_delete(item1.id,index,index1)
+				const list=[...this.list]
+				for(let j=(list.length-1);j>=0;j--){
+					const item = list[j];
+					const item1 = item.cartlist;
+					const len = item.cartlist.length-1;
+					for(let i=len;i>=0;i--){
+						if(item1[i].checked){
+							const id=item1[i].id;
+							this.list[j].cartlist.splice(i,1)
+							if(!this.list[j].cartlist.length){
+								this.list.splice(j,1)
+							}
+							this.req_delete(id,j,i)
 						}
-					})
-				})
+					}
+				}
 			},
 			//删除购物车商品
 			req_delete(cartid,index,index1){
@@ -147,10 +167,7 @@
 					}
 				}).then(data=>{
 					//this.list=data
-					this.list[index].cartlist.splice(index1,1)
-					if(!this.list[index].cartlist.length){
-						this.list.splice(index,1)
-					}
+					
 				})
 			},
 			req_cartlist(){
@@ -308,5 +325,12 @@
 	.shopping-add {
 		border-right: 0upx;
 		border-left: 1px solid #000;
+	}
+	.nomall{
+		height: 300px;
+		line-height: 300px;
+		text-align: center;
+		font-size: 24upx;
+		background: white;
 	}
 </style>

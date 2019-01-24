@@ -619,6 +619,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
 var _orderItem = _interopRequireDefault(__webpack_require__(/*! ../../components/orderItem.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\orderItem.vue"));
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
@@ -1386,7 +1389,7 @@ var render = function() {
                 expression: "phone"
               }
             ],
-            attrs: { type: "number", eventid: "df6767b2-4" },
+            attrs: { type: "number", maxlength: "11", eventid: "df6767b2-4" },
             domProps: { value: _vm.phone },
             on: {
               input: function($event) {
@@ -1489,7 +1492,7 @@ var render = function() {
             )
           })
         )
-      : _vm._e()
+      : _c("div", { staticClass: "nomall" }, [_vm._v("暂无订单")])
   ])
 }
 var staticRenderFns = []

@@ -47,7 +47,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+
+
+
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _toConsumableArray(arr) {return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread();}function _nonIterableSpread() {throw new TypeError("Invalid attempt to spread non-iterable instance");}function _iterableToArray(iter) {if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter);}function _arrayWithoutHoles(arr) {if (Array.isArray(arr)) {for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) {arr2[i] = arr[i];}return arr2;}}var _default =
 {
   data: function data() {
     return {
@@ -85,6 +88,14 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       wx.navigateTo({
         url: '../build/pay' });
 
+    },
+    clickall: function clickall() {
+      this.list.forEach(function (item) {
+        item.cartlist.forEach(function (item) {
+          item.checked = true;
+        });
+      });
+      this.com();
     },
     checked: function checked(index, itemindex) {
       console.log(index, itemindex);
@@ -139,17 +150,26 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
         //this.list=data
       });
     },
-    delcart: function delcart() {var _this = this;
-      this.list.forEach(function (item, index) {
-        item.cartlist.forEach(function (item1, index1) {
-          if (item1.checked) {
-            _this.req_delete(item1.id, index, index1);
+    delcart: function delcart() {
+      var list = _toConsumableArray(this.list);
+      for (var j = list.length - 1; j >= 0; j--) {
+        var item = list[j];
+        var item1 = item.cartlist;
+        var len = item.cartlist.length - 1;
+        for (var i = len; i >= 0; i--) {
+          if (item1[i].checked) {
+            var id = item1[i].id;
+            this.list[j].cartlist.splice(i, 1);
+            if (!this.list[j].cartlist.length) {
+              this.list.splice(j, 1);
+            }
+            this.req_delete(id, j, i);
           }
-        });
-      });
+        }
+      }
     },
     //删除购物车商品
-    req_delete: function req_delete(cartid, index, index1) {var _this2 = this;
+    req_delete: function req_delete(cartid, index, index1) {
       _index.default.request({
         url: "cart/delete",
         data: {
@@ -157,13 +177,10 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
       then(function (data) {
         //this.list=data
-        _this2.list[index].cartlist.splice(index1, 1);
-        if (!_this2.list[index].cartlist.length) {
-          _this2.list.splice(index, 1);
-        }
+
       });
     },
-    req_cartlist: function req_cartlist() {var _this3 = this;
+    req_cartlist: function req_cartlist() {var _this = this;
       _index.default.request({
         url: "cart/list" }).
       then(function (data) {
@@ -175,7 +192,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
             if (item.picture) item.picture = item.picture.split(',')[0];
           });
         });
-        _this3.list = data;
+        _this.list = data;
       });
     } } };exports.default = _default;
 
@@ -209,34 +226,40 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("view", [
     _c("div", { staticClass: "shopping-car" }, [
-      _c(
-        "div",
-        { staticClass: "shopping-options-wrap" },
-        [
-          _c(
-            "ul",
-            { staticClass: "shopping-options" },
+      _vm.list.length
+        ? _c(
+            "div",
+            { staticClass: "shopping-options-wrap" },
             [
               _c(
-                "li",
-                { staticClass: "shopping-option-item shopping-collect" },
-                [_vm._v("全选")]
-              ),
-              _c(
-                "li",
-                {
-                  staticClass: "shopping-option-item",
-                  attrs: { eventid: "6c641c75-0" },
-                  on: { click: _vm.delcart }
-                },
-                [_vm._v("删除")]
+                "ul",
+                { staticClass: "shopping-options" },
+                [
+                  _c(
+                    "li",
+                    {
+                      staticClass: "shopping-option-item shopping-collect",
+                      attrs: { eventid: "6c641c75-0" },
+                      on: { click: _vm.clickall }
+                    },
+                    [_vm._v("全选")]
+                  ),
+                  _c(
+                    "li",
+                    {
+                      staticClass: "shopping-option-item",
+                      attrs: { eventid: "6c641c75-1" },
+                      on: { click: _vm.delcart }
+                    },
+                    [_vm._v("删除")]
+                  )
+                ],
+                1
               )
             ],
             1
           )
-        ],
-        1
-      ),
+        : _c("div", { staticClass: "nomall" }, [_vm._v("暂无商品")]),
       _c(
         "div",
         { staticClass: "shopping-goods-container" },
@@ -258,7 +281,7 @@ var render = function() {
                           attrs: {
                             type: "radio",
                             readonly: "true",
-                            eventid: "6c641c75-2-" + index + "-" + itemindex
+                            eventid: "6c641c75-3-" + index + "-" + itemindex
                           },
                           on: {
                             click: function($event) {
@@ -270,7 +293,7 @@ var render = function() {
                           attrs: {
                             type: "radio",
                             checked: "",
-                            eventid: "6c641c75-1-" + index + "-" + itemindex
+                            eventid: "6c641c75-2-" + index + "-" + itemindex
                           },
                           on: {
                             click: function($event) {
@@ -311,7 +334,7 @@ var render = function() {
                                     staticClass: "shopping-option",
                                     attrs: {
                                       eventid:
-                                        "6c641c75-3-" + index + "-" + itemindex
+                                        "6c641c75-4-" + index + "-" + itemindex
                                     },
                                     on: {
                                       click: function($event) {
@@ -328,7 +351,7 @@ var render = function() {
                                     staticClass: "shopping-option shopping-add",
                                     attrs: {
                                       eventid:
-                                        "6c641c75-4-" + index + "-" + itemindex
+                                        "6c641c75-5-" + index + "-" + itemindex
                                     },
                                     on: {
                                       click: function($event) {
@@ -357,7 +380,7 @@ var render = function() {
                     _c(
                       "span",
                       {
-                        attrs: { eventid: "6c641c75-5-" + index },
+                        attrs: { eventid: "6c641c75-6-" + index },
                         on: {
                           click: function($event) {
                             _vm.go_build_pay(index)

@@ -30,7 +30,7 @@
 			<h1>配送时间选择</h1>
 			<p>
 				<view>
-					<picker mode="date"  value="日期" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="dateChange">
+					<picker mode="date"  value="日期" :custom-item="customItem" :start="start" class='regionpicker'  v-if="!disabled" @change="dateChange">
 						<view class="picker">
 							日期
 						</view>
@@ -114,7 +114,8 @@
 				remark:'',
 				requireCarry:1,
 				floor:'',
-				static:''
+				static:'',
+				start:ut.date()
 			}
 		},
 		onLoad(opt) {

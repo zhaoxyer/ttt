@@ -2,7 +2,8 @@
 <import src="/components/orderStatus.vue.wxml" />
 <import src="/components/goodscancelModal.vue.wxml" />
 <import src="/components/goodsconfirmModal.vue.wxml" />
-<import src="/components/goodsorderCheck.vue.wxml" />
+<import src="/components/goodsconfirmBanyun.vue.wxml" />
+<import src="/components/goodsShouhou.vue.wxml" />
 <import src="/components/cancelModal.vue.wxml" />
 <import src="/components/confirmModal.vue.wxml" />
 <import src="/components/orderCheck.vue.wxml" />
@@ -10,11 +11,15 @@
 
 <template name="360617a6-default-360617a6-1"><template data="{{...$root['0'], ...$root[$kk+'360617a6-0'],$root}}" is="70a530be"></template></template>
 
-<template name="360617a6-default-360617a6-3"><template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'360617a6-4'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-2'],$root}}" is="f140ebc2"></template></template>
+<template name="360617a6-default-360617a6-3"><template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'360617a6-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-2'],$root}}" is="f140ebc2"></template></template>
 
-<template name="360617a6-default-360617a6-5"><template bindreload="handleProxy" data-eventid="{{'360617a6-6'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-4'],$root}}" is="578be381"></template></template>
+<template name="360617a6-default-360617a6-5"><template bindreload="handleProxy" data-eventid="{{'360617a6-10'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-4'],$root}}" is="578be381"></template></template>
 
-<template name="360617a6-default-360617a6-7"><template bindreload="handleProxy" data-eventid="{{'360617a6-8'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-6'],$root}}" is="4375b30e"></template></template>
+<template name="360617a6-default-360617a6-7"><template bindreload="handleProxy" data-eventid="{{'360617a6-12'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-6'],$root}}" is="f32a47e2"></template></template>
+
+<template name="360617a6-default-360617a6-9"><order-check bindreload="handleProxy" orderId="{{data.id}}" confirmPlanlist="{{confirmPlanlist}}" data-eventid="{{'360617a6-14'}}" data-comkey="{{$k}}" class="_order-check 360617a6"></order-check></template>
+
+<template name="360617a6-default-360617a6-11"><template bindreload="handleProxy" data-eventid="{{'360617a6-16'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-10'],$root}}" is="3254b9c2"></template></template>
 
 <template name="747ac242-default-747ac242-1"><template data="{{...$root['0'], ...$root[$kk+'747ac242-0'],$root}}" is="70a530be"></template></template>
 

@@ -14,7 +14,7 @@
 			<div class="addimg">
 				<image src="/static/addimg.png"  @click="uploadimg"></image><image :src="static+list"  @click="uploadimg" v-for="(list,index) in pictures" :key='index'></image> 
 			</div>
-			<div class="phone"><span>联系电话</span><input type="number" v-model="phone"/></div>
+			<div class="phone"><span>联系电话</span><input type="number" v-model="phone" maxlength="11"/></div>
 		</div>
 		<!-- <div class="cancel-order-status">
 			<div class="cancel-order-title">

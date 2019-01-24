@@ -17,6 +17,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   data: function data() {
@@ -32,8 +35,15 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       _index.default.request({
         url: "common/problem" }).
       then(function (data) {
+        data = data || [];
+        data.forEach(function (item) {
+          item.check = false;
+        });
         _this.list = data;
       });
+    },
+    cg_check: function cg_check(index) {
+      this.list[index].check = !this.list[index].check;
     } } };exports.default = _default;
 
 /***/ }),
@@ -67,9 +77,23 @@ var render = function() {
   return _c(
     "view",
     _vm._l(_vm.list, function(list, index) {
-      return _c("div", { key: list, staticClass: "columlist" }, [
-        _c("span", [_vm._v(_vm._s(list.title))]),
-        _vm._m(0, true)
+      return _c("div", { key: list }, [
+        _c(
+          "div",
+          {
+            staticClass: "columlist",
+            attrs: { eventid: "1506d3b6-0-" + index },
+            on: {
+              click: function($event) {
+                _vm.cg_check(index)
+              }
+            }
+          },
+          [_c("span", [_vm._v(_vm._s(list.title))]), _vm._m(0, true)]
+        ),
+        list.check
+          ? _c("div", { staticClass: "cont" }, [_vm._v(_vm._s(list.content))])
+          : _vm._e()
       ])
     })
   )

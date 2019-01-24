@@ -17,13 +17,18 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
+var _marked = _interopRequireDefault(__webpack_require__(/*! ../../components/marked */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\marked\\index.js"));
+var _wxParse = _interopRequireDefault(__webpack_require__(/*! ../../components/mpvue-wxparse/src/wxParse.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\mpvue-wxparse\\src\\wxParse.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   data: function data() {
     return {
       list: [] };
 
   },
+  components: {
+    wxParse: _wxParse.default },
+
   onShow: function onShow() {
     this.req_problem();
   },
@@ -32,6 +37,11 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       _index.default.request({
         url: "aboutus/list" }).
       then(function (data) {
+        if (!data) return;
+        data.forEach(function (item) {
+          var reg = new RegExp('/attach/download\\?filePath=', 'g');
+          item.content == (0, _marked.default)(item.content.replace(reg, _index.default.static));
+        });
         _this.list = data;
       });
     } } };exports.default = _default;
@@ -67,23 +77,22 @@ var render = function() {
   return _c(
     "view",
     _vm._l(_vm.list, function(list, index) {
-      return _c("div", { key: list, staticClass: "columlist" }, [
-        _c("span", [_vm._v(_vm._s(list.content))]),
-        _vm._m(0, true)
-      ])
+      return _c(
+        "div",
+        { key: list, staticClass: "columlist" },
+        [
+          list.content
+            ? _c("wxParse", {
+                attrs: { content: list.content, mpcomid: "7e8b531e-0-" + index }
+              })
+            : _vm._e()
+        ],
+        1
+      )
     })
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [
-      _c("image", { attrs: { src: "../../static/right.jpg" } })
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

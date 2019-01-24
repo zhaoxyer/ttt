@@ -5,16 +5,26 @@
 				<span class="order-num">订单编号：{{data.orderNumber}}</span>
 				<span class="order-status">{{data.statusName}}</span>
 			</div>
-			<div class="order-info"  v-for="(list,index) in data.orderGoods" :key="list">
-				<image class="goods-picture noimage" :src="static+list.picture"></image>
-				<div class="goods-info-wrap">
-					<div class="goods-info">
-						<p>{{list.goodsName}}</p>
-						<p>¥ {{list.goodsPrice}}</p>
+			<div   v-for="(list,index) in data.orderGoods" :key="list">
+				<div class="order-info">
+					<image class="goods-picture noimage" :src="static+list.picture"></image>
+					<div class="goods-info-wrap">
+						<div class="goods-info">
+							<p>{{list.goodsName}}</p>
+							<p>¥ {{list.goodsPrice}}</p>
+						</div>
+						<div class="goods-info">
+							<p>规格:{{list.goodsSpec}}</p>
+							<p>&times;{{list.number}} </p>
+						</div>
 					</div>
-					<div class="goods-info">
-						<p>规格:{{list.goodsSpec}}</p>
-						<p>&times;{{list.number}} </p>
+				</div>
+				<div style="padding: 20rpx 0;">
+					<div class="order-options-wrap">
+						<div class="order-options">
+							<button v-if="data.status == 17&&list.hasUntreatedAftersale" @click="changeShouhouModal(true,1,list.id)" class="order-button">申请换货</button>
+							<button v-if="data.status == 17" @click="changeShouhouModal(true,2,list.id)" class="order-button  order-pay">申请退货</button>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -25,9 +35,10 @@
 			<div class="order-options-wrap">
 				<div class="order-options">
 					<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
-					<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
-					<button v-if="data.status == 8" @click="changeConfirmModal(true)" class="order-button border-collapse">配送议价</button>
-					<button v-if="data.status == 8" >验收付款</button>
+					<button v-if="data.status == 9" @click="changeConfirmModal(true)" class="order-button">配送议价</button>
+					<button v-if="data.status == 10" @click="yanshousudi()" class="order-button">验收速递</button>
+					<button v-if="data.status == 14" @click="changeBanyunModal(true)" class="order-button">确认搬运议价</button>
+					<button v-if="data.status == 15" @click="yanshoubanyun()" class="order-button">验收搬运</button>
 				</div>
 			</div>
 	  </div>
@@ -44,8 +55,16 @@
 			<confirm-plan @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></confirm-plan>
 		</t-modal>
 		
+		<t-modal  :visibile="confirm_banyun" @changeVisible = "changeBanyunModal">
+			<goods-banyun @reload="reloadData" :orderId="data.id" :confirmPlanlist='banyunplan'></goods-banyun>
+		</t-modal>
+		
 		<t-modal  :visibile="confirm_ordercheck_visibile"    @changeVisible = "changeOrderCheck">
 			<order-check @reload="reloadData" :orderId="data.id" :confirmPlanlist='confirmPlanlist'></order-check>
+		</t-modal>
+		
+		<t-modal  :visibile="shou_order_visibile" @changeVisible = "changeShouhouModal">
+			<goods-shouhou @reload="reloadData"   :orderId="data.id" :reason="afterSaleReason" :flag="flag" :goodsId="goodsId"></goods-shouhou>
 		</t-modal>
 	</div>
 </template>
@@ -56,6 +75,8 @@ import OrderStatus from './orderStatus.vue';
 import CancelModal from './goodscancelModal.vue';
 import ConfirmPlan from './goodsconfirmModal.vue';
 import orderCheck from './goodsorderCheck.vue';
+import goodsBanyun from './goodsconfirmBanyun.vue';
+import goodsShouhou from './goodsShouhou.vue';
 import ut from '../utils/index.js';
 export default {
   props: ["data","reason","reload"],
@@ -66,7 +87,12 @@ export default {
 		cancel_order_visibile: false,
 		confirm_order_visibile: false,
 		confirm_ordercheck_visibile:false,
-		confirmPlanlist:[]
+		confirm_banyun:false,
+		confirmPlanlist:{},
+		banyunplan: [],
+		afterSaleReason:[],
+		flag:'',
+		goodsId:''
 	}  
   },
   components: {
@@ -74,7 +100,8 @@ export default {
 		OrderStatus,
 		CancelModal,
 		ConfirmPlan,
-		orderCheck
+		goodsBanyun,
+		goodsShouhou
   },
   methods: {
 		go_next() {
@@ -91,11 +118,31 @@ export default {
 					orderId: this.data.id
 				},
 				method: 'get',
-				url: "goods/order/carryPrice"
+				url: "goods/order/expressPrice"
 			}).then(data=>{
-				console.log(data)
-				this.confirmPlanlist=data;
-				//this.cancel_reason = data;
+				this.confirmPlanlist=data||{};
+			})
+		},
+		yanshousudi(){
+			ut.request({
+				data: {
+					orderId: this.data.id
+				},
+				url: "goods/order/checkExpress"
+			}).then(data=>{
+				ut.totast("操作成功");
+				this.$emit('reload');
+			})
+		},
+		yanshoubanyun(){
+			ut.request({
+				data: {
+					orderId: this.data.id
+				},
+				url: "goods/order/checkCarry"
+			}).then(data=>{
+				ut.totast("操作成功");
+				this.$emit('reload');
 			})
 		},
 		changeOrderStatusModal(status) {
@@ -123,6 +170,47 @@ export default {
 			if(typeof status != 'undefined'){
 				this.confirm_ordercheck_visibile = status;
 			}
+		},
+		changeBanyunModal(status) {
+			if(status) {
+				this.getbanyunPlan()
+			}
+			if(typeof status != 'undefined'){
+				this.confirm_banyun = status;
+			}
+		},
+		getbanyunPlan(){
+			ut.request({
+				data: {
+					orderId: this.data.id
+				},
+				method: 'get',
+				url: "goods/order/carryPrice"
+			}).then(data=>{
+				this.banyunplan=data||[];
+				//this.cancel_reason = data;
+			})
+		},
+		changeShouhouModal(status,flag,goodsId) {
+			if(status) {
+				this.getafterSaleReason()
+			}
+			if(typeof status != 'undefined'){
+				this.flag =flag
+				console.log(flag)
+				this.shou_order_visibile = status;
+				this.goodsId = goodsId;
+			}
+		},
+		getafterSaleReason() {
+			ut.request({
+				data: {
+					type: 2
+				},
+				url: "goods/order/afterSaleReason"
+			}).then(data=>{
+				this.afterSaleReason = data;
+			})
 		}
   }
 }
@@ -247,5 +335,8 @@ export default {
 	}
 	.order-status-last {
 		border-left: 0upx;
+	}
+	.order-pay {
+		margin-left: 10px;
 	}
 </style>

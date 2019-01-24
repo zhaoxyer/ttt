@@ -1,18 +1,23 @@
 <template>
 	<view>
 			<div class="columlist" v-for="list in list" :key='list'>
-				<span>{{list.content}}</span><div><image src="../../static/right.jpg"></image></div>
+				<wxParse :content="list.content" v-if="list.content"/>
 			</div>	
 	</view>
 </template>
 
 <script>
 	import ut from '../../utils/index.js';
+	import marked from '../../components/marked'
+	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
 	export default {
 		data() {
 			return {
 				list:[]
 			}
+		},
+		components: {
+			wxParse
 		},
 		onShow() {
 			this.req_problem();
@@ -22,7 +27,12 @@
 				ut.request({
 					url: "aboutus/list"
 				}).then(data=>{
-					this.list=data;
+					if(!data)return;
+					data.forEach(item=>{
+						const reg=new RegExp('/attach/download\\?filePath=','g');
+						item.content==marked(item.content.replace(reg,ut.static));
+					});
+					this.list = data;
 				})
 			}
 		}
@@ -31,50 +41,8 @@
 
 <style>
 	.columlist{
-		display: flex;
-		justify-content: space-between;
-		font-size: 24upx;
-		align-items: center;
-		height: 90upx;
 		padding: 0 30upx;
-		border-bottom: 1px solid #CCCCCC;
-	}
-	.columlist1,.columlist>div{
-		height: 180px!important;
-	}
-	.columlist image{
-		width: 20upx;
-		height: 35upx;
-	}
-	.header{
-		width: 120px!important;
-		height: 120px!important;
-	}
-	.bggray{
-		background: #e5e5e5;
-		height: 30upx;
-	}
-	.outinf{
-		background: #FEC200;
-		line-height: 100upx;
-		text-align: center;
-		margin-top: 200upx;
-		font-size: 24upx;
-		color: white;
-		margin-left: 30upx;
-		margin-right: 30upx;
-	}
-	.columlist>div{
-		display: flex;
-		justify-content: space-between;
-		font-size: 24upx;
-		align-items: center;
-		height: 90upx;
-	}
-	.columlist1>div>image:first-child{
-		margin-right: 30upx;
-	}
-	.columlist>div>span{
-		margin-right: 30upx;
+		text-indent: 48upx;
+		margin-top: 10upx;
 	}
 </style>
