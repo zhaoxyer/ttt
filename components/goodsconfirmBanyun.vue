@@ -1,21 +1,23 @@
 <template>
 	<div class="cancel-order-modal">
-		<div class="cancel-order-condition" v-for="(list,index) in confirmPlanlist" :key="index">
-			<div class="cancel-order-title">
-			 {{list.carryType}}
-			</div>
-			<div class="cancel-statement-wrap">
-				<div class="cancel-radio-wrap">
-					<span class="cancel-radio"></span>
-					<span class="cancel-label">{{list.name +"：¥"+list.price+" "+list.unit+' * '+list.number}}</span>
+		<scroll-view class="popheight" scroll-y="true">
+			<div class="cancel-order-condition" v-for="(list,index) in confirmPlanlist" :key="index">
+				<div class="cancel-order-title">
+				 {{list.carryType}}
+				</div>
+				<div class="cancel-statement-wrap">
+					<div class="cancel-radio-wrap">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">{{list.name +"：¥"+list.price+" "+list.unit+' * '+list.number}}</span>
+					</div>
+				</div>
+				<div class="cancel-statement-wrap">
+					<div class="cancel-radio-wrap">
+						<span class="cancel-label">合计{{' ¥'+list.carryAllPrice}}</span>
+					</div>
 				</div>
 			</div>
-			<div class="cancel-statement-wrap">
-				<div class="cancel-radio-wrap">
-					<span class="cancel-label">合计{{' ¥'+list.carryAllPrice}}</span>
-				</div>
-			</div>
-		</div>
+		</scroll-view>
 		<div class="agree-plan-wrap">
 			<button class="cancel-plan agree-plan" @click="againPlan">重新申报</button><button class="cancel-plan agree-plan" @click="confirmPlan">同意报价</button>
 		</div>
@@ -83,7 +85,6 @@ export default {
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890upx;
 		background: #fff;
 		position: absolute;
 		bottom: 0upx;
@@ -104,6 +105,9 @@ export default {
 	.cancel-order-condition {
 		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
+	}
+	.popheight{
+		max-height: 600upx;
 	}
 	.noborder {
 		margin-top: 30upx;

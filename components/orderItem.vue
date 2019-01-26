@@ -28,7 +28,8 @@
 				<button v-if="data.status == 1" @click="goToPay(data.id)" class="order-button order-pay">立即支付</button>
 				<button v-if="data.status == 5" @click="changeConfirmModal(true)" class="order-button">确认方案</button>
 				<button v-if="data.status == 8" @click="changeOrderCheck(true)" class="order-button">验收付款</button>
-				<button v-if="data.status == 10" @click="changeShouhouModal(true)" class="order-button">申请售后</button>
+				<button v-if="data.status == 10 && !comment" @click="changeShouhouModal(true)" class="order-button">申请售后</button>
+				<button v-if="data.status == 10 && comment" @click="changeComment(true)" class="order-button">评价</button>
 				<!-- <button v-if="data.status == 10"  class="order-button order-pay">处理完成</button> -->
 			</div>
 		</div>
@@ -53,6 +54,10 @@
 		<t-modal  :visibile="shou_order_visibile" @changeVisible = "changeShouhouModal">
 			<order-shouhou @reload="reloadData"   :orderId="data.id" :reason="afterSaleReason"></order-shouhou>
 		</t-modal>
+		
+		<t-modal  :visibile="show_comment" @changeVisible = "changeComment">
+			<addComment @reload="reloadData"   :orderId="data.id" type="2"></addComment>
+		</t-modal>
 	</div>
 </template>
 
@@ -63,9 +68,10 @@ import CancelModal from './cancelModal.vue';
 import ConfirmPlan from './confirmModal.vue';
 import orderCheck from './orderCheck.vue';
 import orderShouhou from './orderShouhou.vue';
+import addComment from './addComment.vue';
 import ut from '../utils/index.js';
 export default {
-  props: ["data","reload","type"],
+  props: ["data","reload","type","comment"],
   data() {
 	return {
 		order_status_visibile: false,
@@ -73,6 +79,7 @@ export default {
 		confirm_order_visibile: false,
 		confirm_ordercheck_visibile:false,
 		shou_order_visibile: false,
+		show_comment: false,
 		static:ut.static,
 		reason: [],
 		confirmPlanlist:[],
@@ -85,7 +92,8 @@ export default {
 	CancelModal,
 	ConfirmPlan,
 	orderCheck,
-	orderShouhou
+	orderShouhou,
+	addComment
   },
   methods: {
 		go_next() {
@@ -177,6 +185,11 @@ export default {
 				this.shou_order_visibile = status;
 			}
 		},
+		changeComment(status){
+			if(typeof status != 'undefined'){
+				this.show_comment = status;
+			}
+		},
 		getafterSaleReason() {
 			ut.request({
 				data: {
@@ -266,7 +279,6 @@ export default {
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890upx;
 		background: #fff;
 		position: absolute;
 		bottom: 0upx;

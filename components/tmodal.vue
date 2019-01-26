@@ -1,5 +1,5 @@
 <template>
-	<div @click.stop="changeVisibileModal(!visibile)" v-show="visibile" catchtouchmove="true" class="action-sheet">
+	<div @click.stop="changeVisibileModal(!visibile)" v-show="visibile"  class="action-sheet">
 	  <div class="action-main-wrap" @click.stop="cancelVisibileModal">
 		  <div class="action-main">
 			  <div @click.stop="changeVisibileModal(false)" class="action-close">&times;</div>

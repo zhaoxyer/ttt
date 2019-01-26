@@ -22,8 +22,9 @@
 				<div style="padding: 20rpx 0;">
 					<div class="order-options-wrap">
 						<div class="order-options">
-							<button v-if="data.status == 17&&list.hasUntreatedAftersale" @click="changeShouhouModal(true,1,list.id)" class="order-button">申请换货</button>
-							<button v-if="data.status == 17" @click="changeShouhouModal(true,2,list.id)" class="order-button  order-pay">申请退货</button>
+							<button v-if="data.status == 17&&list.canExchangeGoods&&!comment" @click="changeShouhouModal(true,1,list.id)" class="order-button">申请换货</button>
+							<button v-if="data.status == 17 && list.canReturnGoods && !comment" @click="changeShouhouModal(true,2,list.id)" class="order-button  order-pay">申请退货</button>
+							<button v-if="data.status == 17 && comment" @click="changeComment(true,2,list.id)" class="order-button  order-pay">评价</button>
 						</div>
 					</div>
 				</div>
@@ -34,7 +35,7 @@
 			</div>
 			<div class="order-options-wrap">
 				<div class="order-options">
-					<button v-if="data.status == 1" @click="changeCancelModal(true)" class="order-button">取消订单</button>
+					<button v-if="data.status <= 8" @click="changeCancelModal(true)" class="order-button">取消订单</button>
 					<button v-if="data.status == 9" @click="changeConfirmModal(true)" class="order-button">配送议价</button>
 					<button v-if="data.status == 10" @click="yanshousudi()" class="order-button">验收速递</button>
 					<button v-if="data.status == 14" @click="changeBanyunModal(true)" class="order-button">确认搬运议价</button>
@@ -66,6 +67,10 @@
 		<t-modal  :visibile="shou_order_visibile" @changeVisible = "changeShouhouModal">
 			<goods-shouhou @reload="reloadData"   :orderId="data.id" :reason="afterSaleReason" :flag="flag" :goodsId="goodsId"></goods-shouhou>
 		</t-modal>
+		
+		<t-modal  :visibile="show_comment" @changeVisible = "changeComment">
+			<addComment @reload="reloadData"   :orderId="goodsId" type="1"></addComment>
+		</t-modal>
 	</div>
 </template>
 
@@ -77,9 +82,11 @@ import ConfirmPlan from './goodsconfirmModal.vue';
 import orderCheck from './goodsorderCheck.vue';
 import goodsBanyun from './goodsconfirmBanyun.vue';
 import goodsShouhou from './goodsShouhou.vue';
+import addComment from './addComment.vue';
+
 import ut from '../utils/index.js';
 export default {
-  props: ["data","reason","reload"],
+  props: ["data","reason","reload",'comment'],
   data() {
 	return {
 		static:ut.static,
@@ -101,7 +108,8 @@ export default {
 		CancelModal,
 		ConfirmPlan,
 		goodsBanyun,
-		goodsShouhou
+		goodsShouhou,
+		addComment
   },
   methods: {
 		go_next() {
@@ -211,6 +219,12 @@ export default {
 			}).then(data=>{
 				this.afterSaleReason = data;
 			})
+		},
+		changeComment(status,goodsId){
+			if(typeof status != 'undefined'){
+				this.show_comment = status;
+				this.goodsId = goodsId;
+			}
 		}
   }
 }
@@ -288,7 +302,6 @@ export default {
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890upx;
 		background: #fff;
 		position: absolute;
 		bottom: 0upx;

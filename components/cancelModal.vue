@@ -1,6 +1,6 @@
 <template>
 	<div class="cancel-order-modal">
-		<div class="cancel-order-condition">
+		<scroll-view class="cancel-order-condition popheight" scroll-y="true">
 			<div class="cancel-order-title">
 			取消原因
 			</div>
@@ -11,7 +11,7 @@
 				</div>
 			</div>
 			<textarea v-model="detail" class="cancel-order-des"></textarea>
-		</div>
+		</scroll-view>
 		<!-- <div class="cancel-order-status">
 			<div class="cancel-order-title">
 			取消订单声明
@@ -109,6 +109,9 @@ export default {
 	.cancel-order-condition {
 		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
+	}
+	.popheight{
+		max-height: 600upx;
 	}
 	.cancel-order-status .cancel-order-title {
 		padding-top: 20upx;

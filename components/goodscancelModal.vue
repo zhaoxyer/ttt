@@ -1,17 +1,17 @@
 <template>
 	<div class="cancel-order-modal">
-		<div class="cancel-order-condition">
-			<div class="cancel-order-title">
-			取消原因
-			</div>
-			<div class="cancel-order-check-wrap">
-				<div v-for="(item,index) in reason" :key="index" :class="chooseData==item.id ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
-					<div class="check-box"></div>
-					<div class="check-label">{{item.context}}</div>
+			<div class="cancel-order-condition">
+				<div class="cancel-order-title">
+				取消原因
 				</div>
+				<div class="cancel-order-check-wrap">
+					<div v-for="(item,index) in reason" :key="index" :class="chooseData==item.id ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
+						<div class="check-box"></div>
+						<div class="check-label">{{item.context}}</div>
+					</div>
+				</div>
+				<textarea v-model="detail" class="cancel-order-des"></textarea>
 			</div>
-			<textarea v-model="detail" class="cancel-order-des"></textarea>
-		</div>
 		<!-- <div class="cancel-order-status">
 			<div class="cancel-order-title">
 			取消订单声明
@@ -73,7 +73,7 @@ export default {
 					}
 				}
 			})
-	  },
+	  }
   }
 }
 </script>
@@ -89,7 +89,6 @@ export default {
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890upx;
 		background: #fff;
 		position: absolute;
 		bottom: 0upx;
@@ -109,6 +108,9 @@ export default {
 	.cancel-order-condition {
 		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
+	}
+	.popheight{
+		max-height: 600upx;
 	}
 	.cancel-order-status .cancel-order-title {
 		padding-top: 20upx;
@@ -143,7 +145,7 @@ export default {
 		height: 150upx;
 		border: 1px solid #B4B4B4;
 		border-radius: 3upx;
-		line-height: 150upx;
+		line-height: 30upx;
 		box-sizing: border-box;
 	}
 	.cancel-radio-wrap {

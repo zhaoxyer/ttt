@@ -1,21 +1,23 @@
 <template>
 	<div class="cancel-order-modal">
-		<div class="cancel-order-condition">
-			<div class="cancel-order-title">
-			售后类别
-			</div>
-			<div class="cancel-order-check-wrap">
-				<div v-for="(item,index) in reason" :key="index" :class="chooseData==item.id ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
-					<div class="check-box"></div>
-					<div class="check-label">{{item.context}}</div>
+		<scroll-view class="popheight" scroll-y="true">
+			<div class="cancel-order-condition">
+				<div class="cancel-order-title">
+				售后类别
 				</div>
+				<div class="cancel-order-check-wrap">
+					<div v-for="(item,index) in reason" :key="index" :class="chooseData==item.id ? 'cancel-order-checked':'cancel-order-check-group'" @click="choose(item.id)">
+						<div class="check-box"></div>
+						<div class="check-label">{{item.context}}</div>
+					</div>
+				</div>
+				<textarea v-model="detail" class="cancel-order-des" placeholder="详情说明"></textarea>
+				<div class="addimg">
+					<image src="/static/addimg.png"  @click="uploadimg"></image><image :src="static+list"  @click="uploadimg" v-for="(list,index) in pictures" :key='index'></image> 
+				</div>
+				<div class="phone"><span>联系电话</span><input type="number" v-model="phone" maxlength="11"/></div>
 			</div>
-			<textarea v-model="detail" class="cancel-order-des" placeholder="详情说明"></textarea>
-			<div class="addimg">
-				<image src="/static/addimg.png"  @click="uploadimg"></image><image :src="static+list"  @click="uploadimg" v-for="(list,index) in pictures" :key='index'></image> 
-			</div>
-			<div class="phone"><span>联系电话</span><input type="number" v-model="phone" maxlength="11"/></div>
-		</div>
+		</scroll-view>
 		<!-- <div class="cancel-order-status">
 			<div class="cancel-order-title">
 			取消订单声明
@@ -160,12 +162,13 @@ export default {
 	}
 	.action-main-wrap {
 		width: 100%;
-		max-height: 890upx;
 		background: #fff;
 		position: absolute;
 		bottom: 0upx;
 		box-sizing: border-box;
 		padding: 30upx;
+		max-height: 899upx;
+		overflow: auto;
 	}
 	.action-main {
 		position: relative;
@@ -180,6 +183,9 @@ export default {
 	.cancel-order-condition {
 		padding-bottom: 30upx;
 		border-bottom: 1px solid #ededed;
+	}
+	.popheight{
+		max-height: 600upx;
 	}
 	.cancel-order-status .cancel-order-title {
 		padding-top: 20upx;
@@ -215,7 +221,7 @@ export default {
 		height: 150upx;
 		border: 1px solid #B4B4B4;
 		border-radius: 3upx;
-		line-height: 150upx;
+		line-height: 30upx;
 		box-sizing: border-box;
 	}
 	.cancel-radio-wrap {
