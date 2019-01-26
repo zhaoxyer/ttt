@@ -76,7 +76,7 @@
 		<div class='userinf'>
 			<h1>综合</h1>
 			<div class='server'>
-				<div>
+				<div  @click="go_next('../order/checkOrder?type=4&comment=1')">
 					<image   src="../../static/order/ordertype13.jpg"  mode="widthFix"></image>
 					<p>订单评价</p>
 				</div>

@@ -75,7 +75,7 @@
 			getReasonType() {
 				ut.request({
 					data: {
-						type: 1
+						type: 3
 					},
 					method: 'get',
 					url: "service/order/cancelReason"
