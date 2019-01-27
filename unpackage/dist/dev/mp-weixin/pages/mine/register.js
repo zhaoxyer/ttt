@@ -56,7 +56,6 @@ var _login = _interopRequireDefault(__webpack_require__(/*! ../../components/log
         "password": "", //密码
         "password1": "", //确认密码
         "phone": "", //手机号
-        "roleId": 0,
         "username": "", //用户名
         "vCode": "" }, "idCard",
       '') };

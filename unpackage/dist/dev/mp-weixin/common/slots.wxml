@@ -9,6 +9,26 @@
 <import src="/components/goodsconfirmModal.vue.wxml" />
 <import src="/components/goodsconfirmBanyun.vue.wxml" />
 <import src="/components/goodsShouhou.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
+<import src="/components/comment.vue.wxml" />
+<import src="/components/goodsOrderItem.vue.wxml" />
+<import src="/components/orderItem.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate0.vue.wxml" />
+<import src="/common/slots.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate1.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseVideo.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseAudio.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseImg.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate2.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate3.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate4.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate5.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate6.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate7.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate8.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate9.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate10.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/components/wxParseTemplate11.vue.wxml" />
 
 <template name="747ac242-default-747ac242-1"><template data="{{...$root['0'], ...$root[$kk+'747ac242-0'],$root}}" is="70a530be"></template></template>
 

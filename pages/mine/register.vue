@@ -46,7 +46,6 @@
 					"password": "",//密码
 					"password1": "",//确认密码
 					"phone": "",//手机号
-					"roleId": 0,
 					"username": "",//用户名
 					"vCode": "",//验证码
 					"idCard":''
