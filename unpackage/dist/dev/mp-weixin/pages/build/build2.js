@@ -43,6 +43,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   onLoad: function onLoad(opt) {
     this.static = _index.default.static;
     this.id = opt._id;
+    _index.default.settitle(opt.name);
     this.req_class(opt._id);
   },
   methods: {

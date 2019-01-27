@@ -33,6 +33,7 @@
 		onLoad(opt) {
 			this.static=ut.static;
 			this.id=opt._id;
+			ut.settitle(opt.name)
 			this.req_class(opt._id)
 		},
 		methods: {
@@ -100,10 +101,13 @@
 		height: 60upx;
 		line-height: 60upx;
 		text-align: center;
-		font-size: 28upx;
+		font-size: 24upx;
 		border-bottom-right-radius: 30upx;
 		border-top-right-radius: 30upx;
 		margin-bottom: 6upx;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
 	}
 	.section nav .active{
 		background: #fec300;

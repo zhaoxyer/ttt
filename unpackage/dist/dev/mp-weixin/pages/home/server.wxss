@@ -15,13 +15,16 @@
 	    -ms-flex-pack: center;
 	        justify-content: center;
 	height: 100rpx;
+	overflow:hidden;
+	white-space:nowrap;
 }
 .yiji ._span{
 	font-size: 24rpx;
 	margin-right: ;
 	border-bottom: 8rpx solid #e5e5e5;
 	line-height: 80rpx;
-	margin-right: 60rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
 }
 .yiji ._span.active{
 	border-bottom: 8rpx solid #FEC200;

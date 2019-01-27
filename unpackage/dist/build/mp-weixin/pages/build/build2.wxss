@@ -27,10 +27,14 @@
 	height: 60rpx;
 	line-height: 60rpx;
 	text-align: center;
-	font-size: 28rpx;
+	font-size: 24rpx;
 	border-bottom-right-radius: 30rpx;
 	border-top-right-radius: 30rpx;
 	margin-bottom: 6rpx;
+	overflow: hidden;
+	-o-text-overflow:ellipsis;
+	   text-overflow:ellipsis;
+	white-space: nowrap;
 }
 .section ._nav .active{
 	background: #fec300;

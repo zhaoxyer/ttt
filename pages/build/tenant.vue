@@ -83,6 +83,7 @@
 		},
 		onLoad(opt) {
 			this.tenant=wx.getStorageSync('tenant');
+			ut.settitle(this.tenant.name||'建材城');
 			const length=this.tenant.name.split('').length;
 			this.mallname=this.tenant.name.substring(0,parseInt(length/2));
 			this.mallname1=this.tenant.name.substring(parseInt(length/2),length)

@@ -34,25 +34,25 @@
         {
             "path" : "pages/build/build2",
             "style" : {
-                "navigationBarTitleText" : "五金建材"
+                "navigationBarTitleText" : "建材城"
             }
         },
         {
             "path" : "pages/build/serch",
             "style" : {
-                "navigationBarTitleText" : "五金建材"
+                "navigationBarTitleText" : "建材城"
             }
         },
 		{
 			"path" : "pages/build/mallinf",
 			"style" : {
-				"navigationBarTitleText" : "盛丰五金建材"
+				"navigationBarTitleText" : "建材城"
 			}
 		},
 		{
 			"path" : "pages/build/tenant",
 			"style" : {
-				"navigationBarTitleText" : "盛丰五金建材"
+				"navigationBarTitleText" : "建材城"
 			}
 		},
 		{

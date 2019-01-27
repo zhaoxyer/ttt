@@ -93,6 +93,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   },
   onLoad: function onLoad(opt) {
     this.tenant = wx.getStorageSync('tenant');
+    _index.default.settitle(this.tenant.name || '建材城');
     var length = this.tenant.name.split('').length;
     this.mallname = this.tenant.name.substring(0, parseInt(length / 2));
     this.mallname1 = this.tenant.name.substring(parseInt(length / 2), length);

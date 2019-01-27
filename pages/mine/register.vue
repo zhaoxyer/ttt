@@ -59,9 +59,12 @@
 		},
 		methods: {
 			go_mine_login(){
-				wx.redirectTo({
-					url: '../mine/login'
-				})
+				ut.totast('注册成功')
+				setTimeout(function(){
+					wx.redirectTo({
+						url: '../mine/login'
+					})
+				},2000)
 			},
 			cg_active(){
 				console.log(1)

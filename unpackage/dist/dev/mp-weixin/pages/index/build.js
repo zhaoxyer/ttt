@@ -120,9 +120,9 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
     call: function call() {
       _index.default.call();
     },
-    go_build_build2: function go_build_build2(_id) {
+    go_build_build2: function go_build_build2(_id, name) {
       wx.navigateTo({
-        url: "../build/build2?_id=".concat(_id) });
+        url: "../build/build2?_id=".concat(_id, "&name=").concat(name) });
 
     },
     go_build_serch: function go_build_serch() {
@@ -266,7 +266,7 @@ var render = function() {
               attrs: { eventid: "c169ad22-2-" + index },
               on: {
                 click: function($event) {
-                  _vm.go_build_build2(list.id)
+                  _vm.go_build_build2(list.id, list.name)
                 }
               }
             },

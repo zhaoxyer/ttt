@@ -96,13 +96,16 @@
 		align-items: center;
 		justify-content: center;
 		height: 100upx;
+		overflow:hidden;
+		white-space:nowrap;
 	}
 	.yiji span{
 		font-size: 24upx;
 		margin-right: ;
 		border-bottom: 8upx solid #e5e5e5;
 		line-height: 80upx;
-		margin-right: 60upx;
+		margin-left: 30upx;
+		margin-right: 30upx;
 	}
 	.yiji span.active{
 		border-bottom: 8upx solid #FEC200;

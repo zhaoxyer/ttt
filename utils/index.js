@@ -25,6 +25,20 @@ ut.date=function(){
 	var nowDate = year + "-" + month + "-" + day;
 	return nowDate;
 }
+ut.enddate=function(){
+	var date = new Date();
+	var year = date.getFullYear()+2;
+	var month = date.getMonth() + 1;
+	var day = date.getDate();
+	if (month < 10) {
+		month = "0" + month;
+	}
+	if (day < 10) {
+		day = "0" + day;
+	}
+	var nowDate = year + "-" + month + "-" + day;
+	return nowDate;
+}
 ut.formatNumber = function(n) {
 	n = n.toString()
 	return n[1] ? n : '0' + n

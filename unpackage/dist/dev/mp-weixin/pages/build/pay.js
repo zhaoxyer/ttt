@@ -125,7 +125,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       requireCarry: 1,
       floor: '',
       static: '',
-      start: _index.default.date() };
+      start: _index.default.date(),
+      end: _index.default.enddate() };
 
   },
   onLoad: function onLoad(opt) {var _this = this;
@@ -375,6 +376,7 @@ var render = function() {
                           value: "日期",
                           "custom-item": _vm.customItem,
                           start: _vm.start,
+                          end: _vm.end,
                           eventid: "c5bf60f6-2"
                         },
                         on: { change: _vm.dateChange }

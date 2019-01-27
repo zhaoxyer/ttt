@@ -29,7 +29,7 @@
 			<h1>{{serverinf.name}}</h1>
 			<p>
 				<view>
-					<picker mode="date" value="日期" :custom-item="customItem" :start="start" class='regionpicker' v-if="!disabled" @change="dateChange">
+					<picker mode="date" value="日期" :custom-item="customItem" :start="start" :end="end" class='regionpicker' v-if="!disabled" @change="dateChange">
 						<view class="picker">
 							日期
 						</view>
@@ -82,7 +82,8 @@
 				d: '',
 				adress: '',
 				remark:'',
-				start:ut.date()
+				start:ut.date(),
+				end:ut.enddate()
 			}
 		},
 		onLoad() {

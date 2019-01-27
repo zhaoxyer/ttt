@@ -69,9 +69,12 @@ var _login = _interopRequireDefault(__webpack_require__(/*! ../../components/log
   },
   methods: {
     go_mine_login: function go_mine_login() {
-      wx.redirectTo({
-        url: '../mine/login' });
+      _index.default.totast('注册成功');
+      setTimeout(function () {
+        wx.redirectTo({
+          url: '../mine/login' });
 
+      }, 2000);
     },
     cg_active: function cg_active() {
       console.log(1);

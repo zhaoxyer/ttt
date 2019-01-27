@@ -18,7 +18,7 @@
 			</swiper-item>
 		</swiper>
 		<div class='server'>
-			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id)'>
+			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id,list.name)'>
 				<image   :src="static+list.picture"   class="noimage"></image>
 				<view>{{list.name}}</view>
 			</div>
@@ -110,9 +110,9 @@
 			call(){
 				ut.call();
 			},
-			go_build_build2(_id){
+			go_build_build2(_id,name){
 				wx.navigateTo({
-					url: `../build/build2?_id=${_id}`
+					url: `../build/build2?_id=${_id}&name=${name}`
 				})
 			},
 			go_build_serch(){
