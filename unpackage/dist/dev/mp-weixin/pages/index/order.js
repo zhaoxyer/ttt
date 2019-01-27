@@ -356,6 +356,14 @@ var render = function() {
         _c("div", { staticClass: "server" }, [
           _c(
             "div",
+            {
+              attrs: { eventid: "bffe2b62-8" },
+              on: {
+                click: function($event) {
+                  _vm.go_next("../order/checkOrder?type=4&comment=1")
+                }
+              }
+            },
             [
               _c("image", {
                 attrs: {

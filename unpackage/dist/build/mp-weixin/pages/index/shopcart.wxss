@@ -192,4 +192,11 @@
 	border-right: 0rpx;
 	border-left: 1px solid #000;
 }
+.nomall{
+	height: 300px;
+	line-height: 300px;
+	text-align: center;
+	font-size: 24rpx;
+	background: white;
+}
 

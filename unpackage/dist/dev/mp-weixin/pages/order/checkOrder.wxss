@@ -31,6 +31,9 @@
 	padding-bottom: 30rpx;
 	border-bottom: 1px solid #ededed;
 }
+.popheight{
+	max-height: 600rpx;
+}
 .cancel-order-status .cancel-order-title {
 	padding-top: 20rpx;
 }
@@ -107,7 +110,6 @@
 }
 .action-main-wrap {
 	width: 100%;
-	max-height: 890rpx;
 	background: #fff;
 	position: absolute;
 	bottom: 0rpx;
@@ -128,6 +130,9 @@
 .cancel-order-condition {
 	padding-bottom: 30rpx;
 	border-bottom: 1px solid #ededed;
+}
+.popheight{
+	max-height: 500rpx;
 }
 .noborder {
 	margin-top: 30rpx;
@@ -212,7 +217,6 @@
 }
 .action-main-wrap.data-v-d4e7c446 {
 	width: 100%;
-	max-height: 890rpx;
 	background: #fff;
 	position: absolute;
 	bottom: 0rpx;
@@ -233,6 +237,9 @@
 .cancel-order-condition.data-v-d4e7c446 {
 	padding-bottom: 30rpx;
 	border-bottom: 1px solid #ededed;
+}
+.popheight.data-v-d4e7c446{
+	max-height: 600rpx;
 }
 .noborder.data-v-d4e7c446 {
 	margin-top: 30rpx;
@@ -364,7 +371,6 @@
 }
 .action-main-wrap.data-v-cc59f8f0 {
 	width: 100%;
-	max-height: 890rpx;
 	background: #fff;
 	position: absolute;
 	bottom: 0rpx;
@@ -385,6 +391,9 @@
 .cancel-order-condition.data-v-cc59f8f0 {
 	padding-bottom: 30rpx;
 	border-bottom: 1px solid #ededed;
+}
+.popheight.data-v-cc59f8f0{
+	max-height: 600rpx;
 }
 .cancel-order-status .cancel-order-title.data-v-cc59f8f0 {
 	padding-top: 20rpx;
@@ -407,7 +416,7 @@
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 	position: absolute;
-	top: 0rpx;
+	top: 8rpx;
 	left: 0rpx;
 	z-index: 99
 }
@@ -420,7 +429,7 @@
 	height: 150rpx;
 	border: 1px solid #B4B4B4;
 	border-radius: 3rpx;
-	line-height: 150rpx;
+	line-height: 30rpx;
 	-webkit-box-sizing: border-box;
 	        box-sizing: border-box;
 }
@@ -573,7 +582,6 @@
 }
 .action-main-wrap {
 	width: 100%;
-	max-height: 890rpx;
 	background: #fff;
 	position: absolute;
 	bottom: 0rpx;

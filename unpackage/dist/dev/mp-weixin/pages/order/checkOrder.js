@@ -119,6 +119,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
 var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   props: ["orderId", "reload", "changeVisibileModal", "confirmPlanlist"],
@@ -183,6 +185,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
 
 
 
@@ -328,15 +332,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
 var _tmodal = _interopRequireDefault(__webpack_require__(/*! ./tmodal.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\tmodal.vue"));
 var _orderStatus = _interopRequireDefault(__webpack_require__(/*! ./orderStatus.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\orderStatus.vue"));
 var _cancelModal = _interopRequireDefault(__webpack_require__(/*! ./cancelModal.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\cancelModal.vue"));
 var _confirmModal = _interopRequireDefault(__webpack_require__(/*! ./confirmModal.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\confirmModal.vue"));
 var _orderCheck = _interopRequireDefault(__webpack_require__(/*! ./orderCheck.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\orderCheck.vue"));
 var _orderShouhou = _interopRequireDefault(__webpack_require__(/*! ./orderShouhou.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\orderShouhou.vue"));
+var _addComment = _interopRequireDefault(__webpack_require__(/*! ./addComment.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\addComment.vue"));
 var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
-  props: ["data", "reload", "type"],
+  props: ["data", "reload", "type", "comment"],
   data: function data() {
     return {
       order_status_visibile: false,
@@ -344,6 +354,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
       confirm_order_visibile: false,
       confirm_ordercheck_visibile: false,
       shou_order_visibile: false,
+      show_comment: false,
       static: _index.default.static,
       reason: [],
       confirmPlanlist: [],
@@ -356,7 +367,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
     CancelModal: _cancelModal.default,
     ConfirmPlan: _confirmModal.default,
     orderCheck: _orderCheck.default,
-    orderShouhou: _orderShouhou.default },
+    orderShouhou: _orderShouhou.default,
+    addComment: _addComment.default },
 
   methods: {
     go_next: function go_next() {
@@ -448,6 +460,11 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
         this.shou_order_visibile = status;
       }
     },
+    changeComment: function changeComment(status) {
+      if (typeof status != 'undefined') {
+        this.show_comment = status;
+      }
+    },
     getafterSaleReason: function getafterSaleReason() {var _this4 = this;
       _index.default.request({
         data: {
@@ -470,6 +487,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../utils/index.js */
 
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
 
 
 
@@ -622,21 +641,31 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
 var _orderItem = _interopRequireDefault(__webpack_require__(/*! ../../components/orderItem.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\orderItem.vue"));
+var _goodsOrderItem = _interopRequireDefault(__webpack_require__(/*! ../../components/goodsOrderItem.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\goodsOrderItem.vue"));
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   components: {
-    orderItem: _orderItem.default },
+    orderItem: _orderItem.default,
+    goodsOrderItem: _goodsOrderItem.default },
 
   data: function data() {
     return {
       order_list: [],
       cancel_reason: [],
-      type: '' };
+      goods_list: [],
+      type: '',
+      comment: "" };
 
   },
   onLoad: function onLoad(option) {
     this.type = option.type;
+    this.comment = option.comment;
     var barTitle = "查看订单";
     if (this.type == 1) {
       barTitle = "查看订单";
@@ -653,6 +682,9 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   methods: {
     init: function init() {
       this.getOrderList();
+      if (this.comment) {
+        this.getOrderList1();
+      }
     },
     getOrderList: function getOrderList() {var _this = this;
       _index.default.request({
@@ -664,6 +696,23 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       then(function (data) {
         console.log(data);
         _this.order_list = data;
+      });
+    },
+    getOrderList1: function getOrderList1() {var _this2 = this;
+      _index.default.request({
+        data: {
+          type: this.type },
+
+        method: 'get',
+        url: "goods/order/goodsOrderList" }).
+      then(function (data) {
+        console.log(data);
+        data.forEach(function (item) {
+          item.orderGoods.forEach(function (item) {
+            if (item.picture) item.picture = item.picture.split(',')[0];
+          });
+        });
+        _this2.goods_list = data;
       });
     } } };exports.default = _default;
 
@@ -754,58 +803,67 @@ var render = function() {
     "div",
     { staticClass: "cancel-order-modal" },
     [
-      _c("div", { staticClass: "cancel-order-condition" }, [
-        _c("div", { staticClass: "cancel-order-title" }, [_vm._v("取消原因")]),
-        _c(
-          "div",
-          { staticClass: "cancel-order-check-wrap" },
-          _vm._l(_vm.reason, function(item, index) {
-            return _c(
-              "div",
-              {
-                key: index,
-                class:
-                  _vm.chooseData == item.id
-                    ? "cancel-order-checked"
-                    : "cancel-order-check-group",
-                attrs: { eventid: "9e620f9e-0-" + index },
-                on: {
-                  click: function($event) {
-                    _vm.choose(item.id)
+      _c(
+        "scroll-view",
+        {
+          staticClass: "cancel-order-condition popheight",
+          attrs: { "scroll-y": "true" }
+        },
+        [
+          _c("div", { staticClass: "cancel-order-title" }, [
+            _vm._v("取消原因")
+          ]),
+          _c(
+            "div",
+            { staticClass: "cancel-order-check-wrap" },
+            _vm._l(_vm.reason, function(item, index) {
+              return _c(
+                "div",
+                {
+                  key: index,
+                  class:
+                    _vm.chooseData == item.id
+                      ? "cancel-order-checked"
+                      : "cancel-order-check-group",
+                  attrs: { eventid: "9e620f9e-0-" + index },
+                  on: {
+                    click: function($event) {
+                      _vm.choose(item.id)
+                    }
                   }
-                }
-              },
-              [
-                _c("div", { staticClass: "check-box" }),
-                _c("div", { staticClass: "check-label" }, [
-                  _vm._v(_vm._s(item.context))
-                ])
-              ]
-            )
-          })
-        ),
-        _c("textarea", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.detail,
-              expression: "detail"
-            }
-          ],
-          staticClass: "cancel-order-des",
-          attrs: { eventid: "9e620f9e-1" },
-          domProps: { value: _vm.detail },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
+                },
+                [
+                  _c("div", { staticClass: "check-box" }),
+                  _c("div", { staticClass: "check-label" }, [
+                    _vm._v(_vm._s(item.context))
+                  ])
+                ]
+              )
+            })
+          ),
+          _c("textarea", {
+            directives: [
+              {
+                name: "model",
+                rawName: "v-model",
+                value: _vm.detail,
+                expression: "detail"
               }
-              _vm.detail = $event.target.value
+            ],
+            staticClass: "cancel-order-des",
+            attrs: { eventid: "9e620f9e-1" },
+            domProps: { value: _vm.detail },
+            on: {
+              input: function($event) {
+                if ($event.target.composing) {
+                  return
+                }
+                _vm.detail = $event.target.value
+              }
             }
-          }
-        })
-      ]),
+          })
+        ]
+      ),
       _c(
         "button",
         {
@@ -845,45 +903,49 @@ var render = function() {
     "div",
     { staticClass: "cancel-order-modal" },
     [
-      _vm._l(_vm.confirmPlanlist, function(list, index) {
-        return _c(
-          "div",
-          { key: index, staticClass: "cancel-order-condition" },
-          [
-            list.type
-              ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
-                ])
-              : _vm._e(),
-            _c(
-              "div",
-              { staticClass: "cancel-statement-wrap" },
-              _vm._l(list.prices, function(item, priceIndex) {
-                return _c(
-                  "div",
-                  { key: priceIndex, staticClass: "cancel-radio-wrap" },
-                  [
-                    _c("span", { staticClass: "cancel-radio" }),
-                    _c("span", { staticClass: "cancel-label" }, [
-                      _vm._v(
-                        _vm._s(
-                          item.name +
-                            " " +
-                            item.price +
-                            item.unit +
-                            " " +
-                            "x" +
-                            item.number
+      _c(
+        "scroll-view",
+        { staticClass: "popheight", attrs: { "scroll-y": "true" } },
+        _vm._l(_vm.confirmPlanlist, function(list, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "cancel-order-condition" },
+            [
+              list.type
+                ? _c("div", { staticClass: "cancel-order-title" }, [
+                    _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
+                  ])
+                : _vm._e(),
+              _c(
+                "div",
+                { staticClass: "cancel-statement-wrap" },
+                _vm._l(list.prices, function(item, priceIndex) {
+                  return _c(
+                    "div",
+                    { key: priceIndex, staticClass: "cancel-radio-wrap" },
+                    [
+                      _c("span", { staticClass: "cancel-radio" }),
+                      _c("span", { staticClass: "cancel-label" }, [
+                        _vm._v(
+                          _vm._s(
+                            item.name +
+                              " " +
+                              item.price +
+                              item.unit +
+                              " " +
+                              "x" +
+                              item.number
+                          )
                         )
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          ]
-        )
-      }),
+                      ])
+                    ]
+                  )
+                })
+              )
+            ]
+          )
+        })
+      ),
       _c(
         "div",
         { staticClass: "cancel-plan-wrap" },
@@ -926,7 +988,7 @@ var render = function() {
         1
       )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -955,45 +1017,49 @@ var render = function() {
     "div",
     { staticClass: "cancel-order-modal" },
     [
-      _vm._l(_vm.confirmPlanlist, function(list, index) {
-        return _c(
-          "div",
-          { key: index, staticClass: "cancel-order-condition" },
-          [
-            list.type
-              ? _c("div", { staticClass: "cancel-order-title" }, [
-                  _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
-                ])
-              : _vm._e(),
-            _c(
-              "div",
-              { staticClass: "cancel-statement-wrap" },
-              _vm._l(list.prices, function(item, priceIndex) {
-                return _c(
-                  "div",
-                  { key: priceIndex, staticClass: "cancel-radio-wrap" },
-                  [
-                    _c("span", { staticClass: "cancel-radio" }),
-                    _c("span", { staticClass: "cancel-label" }, [
-                      _vm._v(
-                        _vm._s(
-                          item.name +
-                            " " +
-                            item.price +
-                            item.unit +
-                            " " +
-                            "x" +
-                            item.number
+      _c(
+        "scroll-view",
+        { staticClass: "popheight", attrs: { "scroll-y": "true" } },
+        _vm._l(_vm.confirmPlanlist, function(list, index) {
+          return _c(
+            "div",
+            { key: index, staticClass: "cancel-order-condition" },
+            [
+              list.type
+                ? _c("div", { staticClass: "cancel-order-title" }, [
+                    _vm._v(_vm._s(list.type == 1 ? "技术服务类" : "配件类"))
+                  ])
+                : _vm._e(),
+              _c(
+                "div",
+                { staticClass: "cancel-statement-wrap" },
+                _vm._l(list.prices, function(item, priceIndex) {
+                  return _c(
+                    "div",
+                    { key: priceIndex, staticClass: "cancel-radio-wrap" },
+                    [
+                      _c("span", { staticClass: "cancel-radio" }),
+                      _c("span", { staticClass: "cancel-label" }, [
+                        _vm._v(
+                          _vm._s(
+                            item.name +
+                              " " +
+                              item.price +
+                              item.unit +
+                              " " +
+                              "x" +
+                              item.number
+                          )
                         )
-                      )
-                    ])
-                  ]
-                )
-              })
-            )
-          ]
-        )
-      }),
+                      ])
+                    ]
+                  )
+                })
+              )
+            ]
+          )
+        })
+      ),
       _c("div", { staticClass: "zhanwei" }),
       _c(
         "div",
@@ -1022,7 +1088,7 @@ var render = function() {
         1
       )
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -1149,7 +1215,7 @@ var render = function() {
                     [_vm._v("验收付款")]
                   )
                 : _vm._e(),
-              _vm.data.status == 10
+              _vm.data.status == 10 && !_vm.comment
                 ? _c(
                     "button",
                     {
@@ -1163,6 +1229,21 @@ var render = function() {
                     },
                     [_vm._v("申请售后")]
                   )
+                : _vm._e(),
+              _vm.data.status == 10 && _vm.comment
+                ? _c(
+                    "button",
+                    {
+                      staticClass: "order-button",
+                      attrs: { eventid: "747ac242-5" },
+                      on: {
+                        click: function($event) {
+                          _vm.changeComment(true)
+                        }
+                      }
+                    },
+                    [_vm._v("评价")]
+                  )
                 : _vm._e()
             ],
             1
@@ -1175,7 +1256,7 @@ var render = function() {
           attrs: {
             reason: _vm.reason,
             visibile: _vm.order_status_visibile,
-            eventid: "747ac242-5",
+            eventid: "747ac242-6",
             mpcomid: "747ac242-1"
           },
           on: { changeVisible: _vm.changeOrderStatusModal }
@@ -1188,7 +1269,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.cancel_order_visibile,
-            eventid: "747ac242-7",
+            eventid: "747ac242-8",
             mpcomid: "747ac242-3"
           },
           on: { changeVisible: _vm.changeCancelModal }
@@ -1199,7 +1280,7 @@ var render = function() {
               cancelUrl: "service/order/cancelOrder",
               orderId: _vm.data.id,
               reason: _vm.reason,
-              eventid: "747ac242-6",
+              eventid: "747ac242-7",
               mpcomid: "747ac242-2"
             },
             on: { reload: _vm.reloadData }
@@ -1212,7 +1293,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.confirm_order_visibile,
-            eventid: "747ac242-9",
+            eventid: "747ac242-10",
             mpcomid: "747ac242-5"
           },
           on: { changeVisible: _vm.changeConfirmModal }
@@ -1222,7 +1303,7 @@ var render = function() {
             attrs: {
               orderId: _vm.data.id,
               confirmPlanlist: _vm.confirmPlanlist,
-              eventid: "747ac242-8",
+              eventid: "747ac242-9",
               mpcomid: "747ac242-4"
             },
             on: { reload: _vm.reloadData, changeb: _vm.changeCancelModal }
@@ -1235,7 +1316,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.confirm_ordercheck_visibile,
-            eventid: "747ac242-11",
+            eventid: "747ac242-12",
             mpcomid: "747ac242-7"
           },
           on: { changeVisible: _vm.changeOrderCheck }
@@ -1245,7 +1326,7 @@ var render = function() {
             attrs: {
               orderId: _vm.data.id,
               confirmPlanlist: _vm.confirmPlanlist,
-              eventid: "747ac242-10",
+              eventid: "747ac242-11",
               mpcomid: "747ac242-6"
             },
             on: { reload: _vm.reloadData }
@@ -1258,7 +1339,7 @@ var render = function() {
         {
           attrs: {
             visibile: _vm.shou_order_visibile,
-            eventid: "747ac242-13",
+            eventid: "747ac242-14",
             mpcomid: "747ac242-9"
           },
           on: { changeVisible: _vm.changeShouhouModal }
@@ -1268,8 +1349,31 @@ var render = function() {
             attrs: {
               orderId: _vm.data.id,
               reason: _vm.afterSaleReason,
-              eventid: "747ac242-12",
+              eventid: "747ac242-13",
               mpcomid: "747ac242-8"
+            },
+            on: { reload: _vm.reloadData }
+          })
+        ],
+        1
+      ),
+      _c(
+        "t-modal",
+        {
+          attrs: {
+            visibile: _vm.show_comment,
+            eventid: "747ac242-16",
+            mpcomid: "747ac242-11"
+          },
+          on: { changeVisible: _vm.changeComment }
+        },
+        [
+          _c("addComment", {
+            attrs: {
+              orderId: _vm.data.id,
+              type: "2",
+              eventid: "747ac242-15",
+              mpcomid: "747ac242-10"
             },
             on: { reload: _vm.reloadData }
           })
@@ -1306,102 +1410,114 @@ var render = function() {
     "div",
     { staticClass: "cancel-order-modal" },
     [
-      _c("div", { staticClass: "cancel-order-condition" }, [
-        _c("div", { staticClass: "cancel-order-title" }, [_vm._v("售后类别")]),
-        _c(
-          "div",
-          { staticClass: "cancel-order-check-wrap" },
-          _vm._l(_vm.reason, function(item, index) {
-            return _c(
+      _c(
+        "scroll-view",
+        { staticClass: "popheight", attrs: { "scroll-y": "true" } },
+        [
+          _c("div", { staticClass: "cancel-order-condition" }, [
+            _c("div", { staticClass: "cancel-order-title" }, [
+              _vm._v("售后类别")
+            ]),
+            _c(
               "div",
-              {
-                key: index,
-                class:
-                  _vm.chooseData == item.id
-                    ? "cancel-order-checked"
-                    : "cancel-order-check-group",
-                attrs: { eventid: "df6767b2-0-" + index },
+              { staticClass: "cancel-order-check-wrap" },
+              _vm._l(_vm.reason, function(item, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    class:
+                      _vm.chooseData == item.id
+                        ? "cancel-order-checked"
+                        : "cancel-order-check-group",
+                    attrs: { eventid: "df6767b2-0-" + index },
+                    on: {
+                      click: function($event) {
+                        _vm.choose(item.id)
+                      }
+                    }
+                  },
+                  [
+                    _c("div", { staticClass: "check-box" }),
+                    _c("div", { staticClass: "check-label" }, [
+                      _vm._v(_vm._s(item.context))
+                    ])
+                  ]
+                )
+              })
+            ),
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.detail,
+                  expression: "detail"
+                }
+              ],
+              staticClass: "cancel-order-des",
+              attrs: { placeholder: "详情说明", eventid: "df6767b2-1" },
+              domProps: { value: _vm.detail },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.detail = $event.target.value
+                }
+              }
+            }),
+            _c(
+              "div",
+              { staticClass: "addimg" },
+              [
+                _c("image", {
+                  attrs: { src: "/static/addimg.png", eventid: "df6767b2-2" },
+                  on: { click: _vm.uploadimg }
+                }),
+                _vm._l(_vm.pictures, function(list, index) {
+                  return _c("image", {
+                    key: index,
+                    attrs: {
+                      src: _vm.static + list,
+                      eventid: "df6767b2-3-" + index
+                    },
+                    on: { click: _vm.uploadimg }
+                  })
+                })
+              ],
+              2
+            ),
+            _c("div", { staticClass: "phone" }, [
+              _c("span", [_vm._v("联系电话")]),
+              _c("input", {
+                directives: [
+                  {
+                    name: "model",
+                    rawName: "v-model",
+                    value: _vm.phone,
+                    expression: "phone"
+                  }
+                ],
+                attrs: {
+                  type: "number",
+                  maxlength: "11",
+                  eventid: "df6767b2-4"
+                },
+                domProps: { value: _vm.phone },
                 on: {
-                  click: function($event) {
-                    _vm.choose(item.id)
+                  input: function($event) {
+                    if ($event.target.composing) {
+                      return
+                    }
+                    _vm.phone = $event.target.value
                   }
                 }
-              },
-              [
-                _c("div", { staticClass: "check-box" }),
-                _c("div", { staticClass: "check-label" }, [
-                  _vm._v(_vm._s(item.context))
-                ])
-              ]
-            )
-          })
-        ),
-        _c("textarea", {
-          directives: [
-            {
-              name: "model",
-              rawName: "v-model",
-              value: _vm.detail,
-              expression: "detail"
-            }
-          ],
-          staticClass: "cancel-order-des",
-          attrs: { placeholder: "详情说明", eventid: "df6767b2-1" },
-          domProps: { value: _vm.detail },
-          on: {
-            input: function($event) {
-              if ($event.target.composing) {
-                return
-              }
-              _vm.detail = $event.target.value
-            }
-          }
-        }),
-        _c(
-          "div",
-          { staticClass: "addimg" },
-          [
-            _c("image", {
-              attrs: { src: "/static/addimg.png", eventid: "df6767b2-2" },
-              on: { click: _vm.uploadimg }
-            }),
-            _vm._l(_vm.pictures, function(list, index) {
-              return _c("image", {
-                key: index,
-                attrs: {
-                  src: _vm.static + list,
-                  eventid: "df6767b2-3-" + index
-                },
-                on: { click: _vm.uploadimg }
               })
-            })
-          ],
-          2
-        ),
-        _c("div", { staticClass: "phone" }, [
-          _c("span", [_vm._v("联系电话")]),
-          _c("input", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.phone,
-                expression: "phone"
-              }
-            ],
-            attrs: { type: "number", maxlength: "11", eventid: "df6767b2-4" },
-            domProps: { value: _vm.phone },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.phone = $event.target.value
-              }
-            }
-          })
-        ])
-      ]),
+            ])
+          ])
+        ]
+      ),
       _c(
         "button",
         {
@@ -1469,7 +1585,31 @@ var render = function() {
       ],
       1
     ),
-    _vm.order_list.length > 0
+    _vm.goods_list.length
+      ? _c(
+          "div",
+          _vm._l(_vm.goods_list, function(item, index) {
+            return _c(
+              "div",
+              { key: index },
+              [
+                _c("goods-order-item", {
+                  attrs: {
+                    data: item,
+                    reason: _vm.cancel_reason,
+                    comment: _vm.comment,
+                    eventid: "7012e8c9-0-" + index,
+                    mpcomid: "7012e8c9-0-" + index
+                  },
+                  on: { reload: _vm.init }
+                })
+              ],
+              1
+            )
+          })
+        )
+      : _vm._e(),
+    _vm.order_list.length
       ? _c(
           "div",
           _vm._l(_vm.order_list, function(item, index) {
@@ -1482,8 +1622,9 @@ var render = function() {
                     type: _vm.type,
                     data: item,
                     reason: _vm.cancel_reason,
-                    eventid: "7012e8c9-0-" + index,
-                    mpcomid: "7012e8c9-0-" + index
+                    comment: _vm.comment,
+                    eventid: "7012e8c9-1-" + index,
+                    mpcomid: "7012e8c9-1-" + index
                   },
                   on: { reload: _vm.init }
                 })

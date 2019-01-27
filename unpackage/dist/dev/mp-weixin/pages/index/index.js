@@ -251,7 +251,7 @@ var render = function() {
             on: { click: _vm.go_home_serch }
           },
           [
-            _c("span", [_vm._v("请输入所需材料")]),
+            _c("span", [_vm._v("请输入所需服务")]),
             _c("image", { attrs: { src: "../../static/index/serch.png" } })
           ]
         ),
