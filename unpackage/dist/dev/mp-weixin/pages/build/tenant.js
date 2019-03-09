@@ -322,12 +322,57 @@ var render = function() {
       ],
       1
     ),
+    _c("div", { staticClass: "footer" }, [
+      _c("div", { staticClass: "edit" }, [
+        _c("span", [_vm._v("加入购物车")]),
+        _c(
+          "span",
+          { attrs: { eventid: "0be3fea6-2" }, on: { click: _vm.go_build_pay } },
+          [_vm._v("购买")]
+        )
+      ]),
+      _c(
+        "span",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.mallnum,
+              expression: "mallnum"
+            }
+          ],
+          staticClass: "mallnum"
+        },
+        [_vm._v(_vm._s(_vm.mallnum))]
+      ),
+      _c("image", {
+        staticClass: "logo",
+        attrs: { src: "../../static/logo.jpg", eventid: "0be3fea6-3" },
+        on: { click: _vm.cg_pop }
+      }),
+      _c(
+        "span",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.mallnum,
+              expression: "mallnum"
+            }
+          ],
+          staticClass: "money"
+        },
+        [_vm._v("￥" + _vm._s(_vm.mallprice))]
+      )
+    ]),
     _vm.pop
       ? _c(
           "div",
           {
             staticClass: "pop",
-            attrs: { eventid: "0be3fea6-5" },
+            attrs: { eventid: "0be3fea6-7" },
             on: {
               click: [
                 _vm.cg_pop,
@@ -351,7 +396,7 @@ var render = function() {
                         {
                           key: index,
                           staticClass: "add1",
-                          attrs: { eventid: "0be3fea6-4-" + index },
+                          attrs: { eventid: "0be3fea6-6-" + index },
                           on: {
                             click: function($event) {
                               $event.stopPropagation()
@@ -363,7 +408,7 @@ var render = function() {
                             _c("image", {
                               attrs: {
                                 src: "../../static/build/minus.png",
-                                eventid: "0be3fea6-2-" + index
+                                eventid: "0be3fea6-4-" + index
                               },
                               on: {
                                 click: function($event) {
@@ -376,7 +421,7 @@ var render = function() {
                             _c("image", {
                               attrs: {
                                 src: "../../static/build/add.png",
-                                eventid: "0be3fea6-3-" + index
+                                eventid: "0be3fea6-5-" + index
                               },
                               on: {
                                 click: function($event) {

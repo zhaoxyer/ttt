@@ -1,9 +1,7 @@
 <template>
 	<view class="list">
 		<div class="yiji">
-			<scroll-view scroll-x='true' class="nav">
-				<span v-for="(item,index) in server" :key="index"  :class="{'active':typeindex==index}" @click="cg_typeindex(index)">{{item.name}}</span>
-			</scroll-view>
+			<span v-for="(item,index) in server" :key="index"  :class="{'active':typeindex==index}" @click="cg_typeindex(index)">{{item.name}}</span>
 		</div>
 		<div class="bggray"></div>
 		<div v-for="item in clientServiceClasses" :key="item" >
@@ -29,16 +27,7 @@
 		data() {
 			return {
 				typeindex:0,
-				swipeList: ['../../static/index/banner.jpg','../../static/index/banner.jpg'],
-				indicatorDots: true,
-				indicatorcolor: 'white',
-				indicatoractivecolor:'#FEC200',
-				autoplay: true,
-				interval: 5000,
-				duration: 1000,
-				circular: true,
 				server:[],
-				classlist:[],
 				clientServiceClasses:[],
 				activeindex:0,
 				static:""
@@ -90,82 +79,88 @@
 
 <style>
 	.yiji{
-		padding:0 30upx;
+		padding:16rpx 30rpx 30rpx;
 		text-align: center;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		height: 100upx;
-		overflow:hidden;
-		white-space:nowrap;
+		flex-wrap: wrap;
 	}
 	.yiji span{
-		font-size: 24upx;
-		margin-right: ;
-		border-bottom: 8upx solid #e5e5e5;
-		line-height: 80upx;
-		margin-left: 30upx;
-		margin-right: 30upx;
+		font-size: 24rpx;
+		border-bottom: 10rpx solid #e5e5e5;
+		width: 150rpx;
+		margin-left: 120rpx;
+		padding: 30rpx 0;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap;
+	}
+	.yiji span:nth-child(3n+1){
+		margin-left: 0;
 	}
 	.yiji span.active{
-		border-bottom: 8upx solid #FEC200;
-		color: #FEC200;
+		border-bottom: 10rpx solid #FEC300;
+		color: #FEC300;
 	}
 	.title{
 		text-align: center;
-		margin-top: 40upx;
-		height: 50upx;
+		margin-top: 30rpx;
+		height: 60rpx;
+		margin-bottom: 50rpx;
 	}
 	
 	.title span{
 		display: inline-block;
 		vertical-align: top;
-		line-height: 50upx;
-		font-size: 20upx;
-		width: 200upx;
-		font-size: 20upx;
+		line-height: 60rpx;
+		font-size: 30rpx;
+		width: 250rpx;
+		font-size: 20rpx;
 		text-align: center;
 		color: white;
-		border-radius: 25upx;
-		margin-left: 30upx;
-		margin-right: 30upx;
-		box-shadow: 0 4px 0 #CCCCCC;
+		border-radius: 10rpx;
+		margin-left: 30rpx;
+		margin-right: 30rpx;
 	}	
 	.bg0{
-		background: #FEC200;
+		background: #FEC300;
 	}
 	
 	.server{
-		padding: 0 30upx;
-		margin-top: 40upx;
-		font-size: 24upx;
-		margin-bottom: 20upx;
+		padding: 0 30rpx;
+		margin-top: 40rpx;
+		font-size: 24rpx;
+		margin-bottom: 44rpx;
 	}
 	.server p{
 		text-align: center;
-		line-height: 40upx;
-		width: 150upx;
+		line-height: 44rpx;
+		margin-top: 20rpx;
+		padding: 0 15rpx;
+		width: 120rpx;
 		text-align: center;
+		margin-bottom: 21rpx;
 	}
 	.server div{
 		display: inline-block;
 		vertical-align: top;
-		margin-right: 30upx;
+		margin-right: 30rpx;
 	}
 	.server div:nth-child(4n){
 		margin-right: 0;
 	}
 	.server div:nth-last-child(n+5){
-		margin-bottom: 30upx;
+		margin-bottom: 30rpx;
 	}
 	.server image{
-		width: 150upx;
-		height: 150upx;
-		border-radius: 10upx;
+		width: 150rpx;
+		height: 150rpx;
+		border-radius: 10rpx;
 	}
 	.bggray{
 		background: #e5e5e5;
-		height: 40upx;
+		height: 30rpx;
 	}
 	.list>div:last-child .bggray{
 		display: none;

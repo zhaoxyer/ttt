@@ -1,30 +1,10 @@
 <template>
 	<view>
-		<div class="header">
-			<div class="adress">
-				<!-- <picker mode="region"  value="请选择所在城市" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="bindRegionChange">
-								<view class="picker">
-									{{provinceName||''}}，{{countyAreaName||''}}，{{cityName||''}}
-								</view>
-				</picker> -->
-				<image src="../../static/index/blackadress.png" ></image><span>{{cityName||'通州'}}</span>
-			</div>
-			<div class='serch' @click="go_build_serch"><span>请输入所需材料</span><image src="../../static/index/serch.png" ></image></div>
-			<div class="tel"><image src="../../static/index/blacktel.png" @click="call"></image></div>
-		</div>
-		<swiper :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration" :indicator-active-color="indicatoractivecolor" :indicator-color="indicatorcolor">
-			<swiper-item v-for="item in swipeList" :key="item">
-				<image :src="static+item.banner"/>
-			</swiper-item>
-		</swiper>
-		<div class='server'>
-			<div v-for="list in classlist" :key="item" @click='go_build_build2(list.id,list.name)'>
-				<image   :src="static+list.picture"   class="noimage"></image>
-				<view>{{list.name}}</view>
-			</div>
-		</div>
+		<SearchBox type="2" text="请输入所需材料"></SearchBox>
+		<Banner :swipeList="swipeList" type="2"></Banner>
+		<ServerType :list="classlist" type="2"></ServerType>
 		<div class="title" v-if="newlist.length">
-			<span>•</span><span class="bg0">最新优惠</span><span>•</span>
+			<image src="../../static/index/line-left.png"></image><span class="bg0">最新优惠</span><image src="../../static/index/line-right.png"></image>
 		</div>
 		<div class="youhui leftright">
 			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in newlist" :key='index'>
@@ -36,44 +16,31 @@
 			</div>			
 		</div>
 		<div class="title"  v-if="recomlist.length">
-			<span>•</span><span class="bg1">最新推荐</span><span>•</span>
+			<image src="../../static/index/line-left.png"></image><span class="bg1">最新推荐</span><image src="../../static/index/line-right.png"></image>
 		</div>
-		<div class="youhui leftright">
-			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in recomlist" :key='index'>
-				<div>{{list.name}}</div>
-				<div>
-					<image :src="static +list.picture" class="noimage"></image>
-				</div>
-				<div><span>{{list.price}}</span><span>元每套</span></div>
-			</div>			
-		</div>
-		<!-- <div class="recom leftright">
+		<div class="recom leftright">
 			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
 				<div>
 					<p>{{list.name}}</p>
 					<p>{{list.price}}元起/每套</p>
 				</div>
 				<image :src="static +list.picture"></image>
-				<image src="../../static/index/tuijian.png"></image>
+				<image :src="static +list.picture"></image>
 			</div>			
-		</div> -->
+		</div>
 	</view>
 </template>
 
 <script>
 	import ut from '../../utils/index.js';
+	import Banner from '../../components/common/banner.vue'
+	import SearchBox from '../../components/common/searchBox.vue'
+	import ServerType from '../../components/common/serverType.vue'
 	export default {
 		data() {
 			return {
 				static:"",
 				swipeList: wx.getStorageSync('banderbuild')||[],
-				indicatorDots: true,
-				indicatorcolor: 'white',
-				indicatoractivecolor:'#FEC200',
-				autoplay: true,
-				interval: 5000,
-				duration: 1000,
-				circular: true,
 				newlist: [],
 				recomlist: [],
 				classlist:[],
@@ -82,12 +49,16 @@
 				cityName:'通州'
 			}
 		},
+		components:{
+			Banner,
+			SearchBox,
+			ServerType
+		},
 		onLoad() {
 			this.static=ut.static;
 		},
 		onShow() {
 			const reload = ut.checkPageTime('index_build_time');
-			console.log(reload)
 			if(!this.newlist.length||reload){
 				this.req_new();
 			}
@@ -102,14 +73,6 @@
 			}
 		},
 		methods: {
-			bindRegionChange: function (e) {
-				this.provinceName=e.target.value[0];
-				this.countyAreaName=e.target.value[1];
-				this.cityName=e.target.value[2];
-			},
-			call(){
-				ut.call();
-			},
 			go_build_build2(_id,name){
 				wx.navigateTo({
 					url: `../build/build2?_id=${_id}&name=${name}`
@@ -171,107 +134,29 @@
 </script>
 
 <style>
-	.header{
-		padding: 40px 30px 30upx;
-		background: #FEC200;
-		height: 70upx;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-	}
-	.header .tel{
-		padding: 0 0 0 80upx;
-	}
-	.header .tel image{
-		width: 50upx;
-		height: 30upx;
-	}
-	.header .serch{
-		background: white;
-		height: 70upx;
-		flex: 1;
-		border-radius: 15upx;
-		align-items: center;
-		justify-content: space-between;
-		display: flex;
-		font-size: 30upx;
-		color: #cccccc;
-		padding: 0 20px 0 40upx;
-	}
-	.header .serch image{
-		width: 26upx;
-		height: 24upx;
-	}
-	.header .adress{
-		font-size: 30upx;
-		line-height: 70upx;
-		padding: 0 28px 0 0;
-		position: relative;
-	}
-	.header .adress image{
-		width: 20upx;
-		height: 30upx;
-		margin-right: 24upx;
-	}
-	.server{
-		padding: 0 30upx;
-		margin-top: 30upx;
-	}
-	.server div{
-		display: inline-block;
-		vertical-align: top;
-		margin-right: 96upx;
-		font-size: 24upx;
-		text-align: center;
-	}
-	.server div:nth-child(4n){
-		margin-right: 0;
-	}
-	.server div:nth-last-child(n+5){
-		margin-bottom: 30upx;
-	}
-	.server image{
-		width: 100upx;
-		height: 100upx;
-		border-radius: 50%;
-	}
 	.title{
 		text-align: center;
 		margin-top: 40upx;
-		height: 34upx;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 33rpx;
 	}
+
 	.title span{
-		display: inline-block;
-		vertical-align: top;
-		line-height: 34upx;
-		font-size: 20upx;
-	}
-	.title span:nth-child(1):before{
-		content: '';
-		width:70upx;
-		height: 3upx;
-		background: black;
-		position: absolute;
-		margin-left: -80upx;
-		margin-top: 16upx;
-	}
-	.title span:nth-child(3):after{
-		content: '';
-		width:70upx;
-		height: 3upx;
-		background: black;
-		position: absolute;
-		margin-left: 10upx;
-		margin-top: 16upx;
-	}
-	.title span:nth-child(2){
 		width: 123upx;
-		font-size: 20upx;
+		font-size: 18upx;
 		text-align: center;
 		color: white;
 		border-radius: 16.5upx;
 		margin-left: 30upx;
 		margin-right: 30upx;
+		height: 33rpx;
+		line-height: 33rpx;
+	}
+	.title image{
+		width: 87rpx;
+		height: 8rpx;
 	}
 	.bg0{
 		background: #45c5db;
@@ -306,7 +191,7 @@
 	}
 	.youhui>div div:nth-child(1){
 		width: 70upx;
-		height: 168upx;
+		height: 188upx;
 		writing-mode:tb-rl;
 		text-align: center;
 		line-height: 70upx;
@@ -314,7 +199,6 @@
 		overflow: hidden;
 		white-space: nowrap;
 		text-overflow:ellipsis;
-		padding: 10px 0;
 	}
 	.youhui>div div:nth-child(3) span:first-child{
 		writing-mode:lr-tb;
@@ -322,7 +206,7 @@
 		letter-spacing: 0;
 	}
 	.youhui>div div:nth-child(3){
-		width: 60upx;
+		width: 70upx;
 		height: 188upx;
 		border-left: 1px solid #C8C8C8;
 		writing-mode:tb-rl;
@@ -348,6 +232,7 @@
 	.recom>div image{
 		display: inline-block;
 		vertical-align: top;
+		border-radius: 50%;
 	}
 	
 	.recom>div{

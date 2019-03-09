@@ -42,48 +42,15 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
+var _banner = _interopRequireDefault(__webpack_require__(/*! ../../components/common/banner.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\banner.vue"));
+var _searchBox = _interopRequireDefault(__webpack_require__(/*! ../../components/common/searchBox.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\searchBox.vue"));
+var _serverType = _interopRequireDefault(__webpack_require__(/*! ../../components/common/serverType.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\serverType.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   data: function data() {
     return {
       static: "",
       swipeList: wx.getStorageSync('banderbuild') || [],
-      indicatorDots: true,
-      indicatorcolor: 'white',
-      indicatoractivecolor: '#FEC200',
-      autoplay: true,
-      interval: 5000,
-      duration: 1000,
-      circular: true,
       newlist: [],
       recomlist: [],
       classlist: [],
@@ -92,12 +59,16 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       cityName: '通州' };
 
   },
+  components: {
+    Banner: _banner.default,
+    SearchBox: _searchBox.default,
+    ServerType: _serverType.default },
+
   onLoad: function onLoad() {
     this.static = _index.default.static;
   },
   onShow: function onShow() {
     var reload = _index.default.checkPageTime('index_build_time');
-    console.log(reload);
     if (!this.newlist.length || reload) {
       this.req_new();
     }
@@ -112,14 +83,6 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
     }
   },
   methods: {
-    bindRegionChange: function bindRegionChange(e) {
-      this.provinceName = e.target.value[0];
-      this.countyAreaName = e.target.value[1];
-      this.cityName = e.target.value[2];
-    },
-    call: function call() {
-      _index.default.call();
-    },
     go_build_build2: function go_build_build2(_id, name) {
       wx.navigateTo({
         url: "../build/build2?_id=".concat(_id, "&name=").concat(name) });
@@ -208,83 +171,20 @@ var render = function() {
   return _c(
     "view",
     [
-      _c("div", { staticClass: "header" }, [
-        _c("div", { staticClass: "adress" }, [
-          _c("image", { attrs: { src: "../../static/index/blackadress.png" } }),
-          _c("span", [_vm._v(_vm._s(_vm.cityName || "通州"))])
-        ]),
-        _c(
-          "div",
-          {
-            staticClass: "serch",
-            attrs: { eventid: "c169ad22-0" },
-            on: { click: _vm.go_build_serch }
-          },
-          [
-            _c("span", [_vm._v("请输入所需材料")]),
-            _c("image", { attrs: { src: "../../static/index/serch.png" } })
-          ]
-        ),
-        _c("div", { staticClass: "tel" }, [
-          _c("image", {
-            attrs: {
-              src: "../../static/index/blacktel.png",
-              eventid: "c169ad22-1"
-            },
-            on: { click: _vm.call }
-          })
-        ])
-      ]),
-      _c(
-        "swiper",
-        {
-          attrs: {
-            "indicator-dots": _vm.indicatorDots,
-            autoplay: _vm.autoplay,
-            interval: _vm.interval,
-            duration: _vm.duration,
-            "indicator-active-color": _vm.indicatoractivecolor,
-            "indicator-color": _vm.indicatorcolor
-          }
-        },
-        _vm._l(_vm.swipeList, function(item, index) {
-          return _c(
-            "swiper-item",
-            { key: item, attrs: { mpcomid: "c169ad22-0-" + index } },
-            [_c("image", { attrs: { src: _vm.static + item.banner } })]
-          )
-        })
-      ),
-      _c(
-        "div",
-        { staticClass: "server" },
-        _vm._l(_vm.classlist, function(list, index) {
-          return _c(
-            "div",
-            {
-              key: _vm.item,
-              attrs: { eventid: "c169ad22-2-" + index },
-              on: {
-                click: function($event) {
-                  _vm.go_build_build2(list.id, list.name)
-                }
-              }
-            },
-            [
-              _c("image", {
-                staticClass: "noimage",
-                attrs: { src: _vm.static + list.picture }
-              }),
-              _c("view", [_vm._v(_vm._s(list.name))])
-            ]
-          )
-        })
-      ),
+      _c("SearchBox", {
+        attrs: { type: "2", text: "请输入所需材料", mpcomid: "c169ad22-0" }
+      }),
+      _c("Banner", {
+        attrs: { swipeList: _vm.swipeList, type: "2", mpcomid: "c169ad22-1" }
+      }),
+      _c("ServerType", {
+        attrs: { list: _vm.classlist, type: "2", mpcomid: "c169ad22-2" }
+      }),
       _vm.newlist.length
         ? _c("div", { staticClass: "title" }, [
-            _c("span", [_vm._v("•")]),
+            _c("image", { attrs: { src: "../../static/index/line-left.png" } }),
             _c("span", { staticClass: "bg0" }, [_vm._v("最新优惠")]),
-            _c("span", [_vm._v("•")])
+            _c("image", { attrs: { src: "../../static/index/line-right.png" } })
           ])
         : _vm._e(),
       _c(
@@ -295,7 +195,7 @@ var render = function() {
             "div",
             {
               key: index,
-              attrs: { eventid: "c169ad22-3-" + index },
+              attrs: { eventid: "c169ad22-0-" + index },
               on: {
                 click: function($event) {
                   _vm.go_build_mallinf(list.id, list.name)
@@ -320,38 +220,37 @@ var render = function() {
       ),
       _vm.recomlist.length
         ? _c("div", { staticClass: "title" }, [
-            _c("span", [_vm._v("•")]),
+            _c("image", { attrs: { src: "../../static/index/line-left.png" } }),
             _c("span", { staticClass: "bg1" }, [_vm._v("最新推荐")]),
-            _c("span", [_vm._v("•")])
+            _c("image", { attrs: { src: "../../static/index/line-right.png" } })
           ])
         : _vm._e(),
       _c(
         "div",
-        { staticClass: "youhui leftright" },
+        { staticClass: "recom leftright" },
         _vm._l(_vm.recomlist, function(list, index) {
           return _c(
             "div",
             {
               key: index,
-              attrs: { eventid: "c169ad22-4-" + index },
+              attrs: { eventid: "c169ad22-1-" + index },
               on: {
                 click: function($event) {
-                  _vm.go_build_mallinf(list.id, list.name)
+                  _vm.go_build_mallinf(list.id)
                 }
               }
             },
             [
-              _c("div", [_vm._v(_vm._s(list.name))]),
-              _c("div", [
-                _c("image", {
-                  staticClass: "noimage",
-                  attrs: { src: _vm.static + list.picture }
-                })
-              ]),
-              _c("div", [
-                _c("span", [_vm._v(_vm._s(list.price))]),
-                _c("span", [_vm._v("元每套")])
-              ])
+              _c(
+                "div",
+                [
+                  _c("p", [_vm._v(_vm._s(list.name))]),
+                  _c("p", [_vm._v(_vm._s(list.price) + "元起/每套")])
+                ],
+                1
+              ),
+              _c("image", { attrs: { src: _vm.static + list.picture } }),
+              _c("image", { attrs: { src: _vm.static + list.picture } })
             ]
           )
         })

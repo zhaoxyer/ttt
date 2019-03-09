@@ -1,22 +1,6 @@
 <template>
 	<div>
-		<div class='adress'>
-			<div class="adressli" @click="go_mine_adress" v-if="adress">
-				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{adress.name}}</div>
-				<div>联系方式：{{adress.phone}}</div>
-				<div class="adressinf">
-					<div>
-						<div>
-							<image src="../../static/index/blackadress.png" />
-						</div><span>收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</span>
-					</div>
-					<image src="../../static/right.jpg" />
-				</div>
-			</div>
-			<div class="adressli center" @click="go_mine_adress" v-else>
-				请选择地址
-			</div>
-		</div>
+		<Adress></Adress>
 		<div class="bggray"></div>
 		<div class="payinf">
 			<h1>{{remakeinf.name}}</h1>
@@ -51,9 +35,10 @@
 		</div>
 		<div class="payinf remake">
 			<h1>备注</h1>
-			<textarea v-model="remark">
-				
-			</textarea>
+			<div>
+				<textarea v-model="remark" placeholder="请描述故障原因或简单问题">
+				</textarea>
+			</div>
 		</div>
 		<div class="apply" @click='req_remake'>
 			<div>立即预约</div>
@@ -63,6 +48,8 @@
 
 <script>
 	import ut from '../../utils/index.js';
+	import Adress from '../../components/common/adress.vue'
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -80,11 +67,16 @@
 				end:ut.enddate()
 			}
 		},
+		computed: {
+			...mapState(['adress'])
+		},
+		components:{
+			Adress
+		},
 		onLoad(opt) {
 			console.log(ut.date())
 			this.type=opt.type;
 			this.static = ut.static;
-			this.req_getdefaddress();
 			this.remakeinf = wx.getStorageSync('remakeinf');
 			console.log(JSON.stringify(this.remakeinf))
 			wx.setStorageSync('remakeinf', '');
@@ -177,13 +169,6 @@
 				this.y = date[0];
 				this.m = date[1];
 				this.d = date[2];
-			},
-			req_getdefaddress() {
-				ut.request({
-					url: "address/getdefaddress"
-				}).then(data => {
-					this.adress = data;
-				})
 			}
 		}
 	}
@@ -191,168 +176,169 @@
 
 <style>
 	.adressli {
-		padding: 30upx;
-		font-size: 26upx;
+		padding: 30rpx;
+		font-size: 26rpx;
 		border-bottom: 1px solid #E5E5E5;
-		line-height: 26upx;
+		line-height: 26rpx;
 	}
-
+	
 	.adressli div>div {
 		display: inline-block;
 	}
-
+	
 	.adressli>div:nth-child(1) {
-		font-size: 30upx;
-		padding: 0 30upx;
+		font-size: 30rpx;
+		padding: 0 30rpx;
 	}
-
+	
 	.adressli>div:nth-child(2) {
-		margin-bottom: 30upx;
-		margin-top: 25upx;
-		padding: 0 30upx;
+		margin-bottom: 30rpx;
+		margin-top: 25rpx;
+		padding: 0 30rpx;
 	}
-
+	
 	.adressinf {
 		display: flex;
-		font-size: 24upx;
+		font-size: 24rpx;
 		align-items: center;
 	}
-
+	
 	.adressinf image {
-		width: 20upx;
-		height: 30upx;
+		width: 20rpx;
+		height: 30rpx;
 	}
-
+	
 	.adressinf div {
 		flex: 1;
-		line-height: 30upx;
+		line-height: 30rpx;
 		display: flex;
 	}
-
+	
 	.adressinf div image {}
-
+	
 	.adressinf div span {
 		flex: 1;
-		margin-left: 10upx;
+		margin-left: 10rpx;
 	}
-
+	
 	.payinf {
-		padding: 0 30upx;
+		padding: 0 30rpx;
 	}
-
+	
 	.payinf h1 {
-		font-size: 28upx;
-		line-height: 80upx;
+		font-size: 28rpx;
+		line-height: 80rpx;
 	}
-
+	
 	.payinf>div {
 		display: flex;
-		font-size: 24upx;
+		font-size: 24rpx;
 		align-items: center;
-		margin-bottom: 20upx;
+		margin-bottom: 20rpx;
 	}
-
+	
 	.payinf>div image {
-		width: 300upx;
-		height: 200upx;
+		width: 300rpx;
+		height: 200rpx;
 	}
-
+	
 	.payinf>div div {
 		flex: 1;
 	}
-
+	
 	.payinf>div div span {
-		margin-left: 20upx;
+		margin-left: 20rpx;
 	}
-
+	
 	.payinf>div div span:last-child {
 		color: #FEC200;
 	}
-
+	
 	.tip {
 		display: flex;
-		padding: 0 30upx;
-		line-height: 40upx;
-		margin-top: 10upx;
-		font-size: 24upx;
+		padding: 0 30rpx;
+		line-height: 40rpx;
+		margin-top: 10rpx;
+		font-size: 24rpx;
+		margin-bottom: 120rpx;
 	}
-
+	
 	.tip div:last-child {
 		flex: 1;
-		margin-left: 10upx;
+		margin-left: 10rpx;
 	}
-
+	
 	.apply {
 		position: fixed;
 		bottom: 0;
 		width: 100%;
-		height: 100upx;
+		height: 100rpx;
 		text-align: center;
+		padding: 20rpx 0 0 0;
+		background: white;
 	}
-
+	
 	.apply div {
-		margin-left: 30upx;
-		margin-right: 30upx;
-		height: 100upx;
-		line-height: 100upx;
+		margin-left: 30rpx;
+		margin-right: 30rpx;
+		height: 100rpx;
+		line-height: 100rpx;
 		color: white;
 		background: #F6C11B;
-		font-size: 28upx;
+		font-size: 28rpx;
 	}
-
+	
 	.time {
 		border-bottom: 1px solid #E5E5E5;
 		border-top: 1px solid #E5E5E5;
 	}
-
+	
 	.time>p {
 		text-align: center;
 	}
-
+	
 	.time>p view {
 		display: inline-block;
 		vertical-align: top;
 		text-align: center;
-		line-height: 100upx;
-		font-size: 24upx;
-		margin-right: 20upx;
+		line-height: 100rpx;
+		font-size: 24rpx;
+		margin-right: 20rpx;
 		position: relative;
 	}
-
+	
 	.time p view:nth-child(1) span:nth-child(2n+1) {
 		color: #FEC200;
 	}
 	.center{
 		text-align: center;
 	}
-	.payinf{padding: 0 30upx;}
+	.payinf{padding: 0 30rpx;}
 	.payinf h1{
-		font-size: 28upx;
-		line-height: 80upx;
+		font-size: 28rpx;
+		line-height: 80rpx;
 	}
 	.payinf>div{
 		display: flex;
-		font-size: 24upx;
+		font-size: 24rpx;
 		align-items: center;
-		line-height: 50upx;
+		line-height: 50rpx;
 		width: 100%;
 	}
 	.payinf>div image{
-		width: 150upx;
-		height: 120upx;
+		width: 300rpx;
+		height: 200rpx;
 	}
 	.payinf>div div{
 		flex: 1;
-		text-align: right;
 		overflow: hidden;
 	}
 	.payinf>div div span:last-child{
-		float: right;
 	}
 	.payinf>div div p{
 		display: inline-block;
 		text-align: left;
-		max-width: 460upx;
+		max-width: 460rpx;
 		overflow: hidden;
 	}
 	.payinf>div div p view{
@@ -360,12 +346,18 @@
 		white-space: nowrap;
 		text-overflow:ellipsis;
 	}
+	.remake div{
+		height: 150rpx;
+		border:1px solid #C9C9C9;
+		border-radius: 10rpx;
+		margin-bottom: 30rpx;
+		padding: 20rpx;
+		width:inherit;
+	}
 	.remake textarea{
 		width: 100%;
-		height: 150upx;
-		border:1px solid #C9C9C9;
-		border-radius: 10upx;
-		margin-bottom: 30upx;
-		font-size: 24upx;
+		height: 100%;
+		font-size: 28rpx;
+		line-height: 28rpx;
 	}
 </style>

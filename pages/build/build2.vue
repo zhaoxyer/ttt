@@ -83,57 +83,58 @@
 </script>
 
 <style>
-	.serch{margin-left: 60upx;margin-right: 60upx;margin-top: 30upx;height: 54upx;line-height: 54upx;border-radius: 10upx;display: flex;border:1px solid #c8c8c8;color: #CCCCCC;font-size: 24upx;align-items: center;}
+	.serch{margin-left: 60rpx;margin-right: 60rpx;margin-top: 30rpx;height: 54rpx;line-height: 54rpx;border-radius: 10rpx;display: flex;border:1px solid #c8c8c8;color: #CCCCCC;font-size: 24rpx;align-items: center;}
 	.serch image,.serch span{display: inline-block;vertical-align: top;}
-	.serch image{width: 26upx;height: 24upx;margin-left: 30upx;margin-right: 30upx;}
-	.section{margin-top: 28upx;display: flex;}
+	.serch image{width: 26rpx;height: 24rpx;margin-left: 30rpx;margin-right: 30rpx;}
+	.section{margin-top: 28rpx;display: flex;}
 	.section .list{
 		flex: 1;
-		padding: 0 30upx;
+		padding: 0 30rpx;
 		display: flex;
 	}
 	.section nav{
-		width: 200upx;
+		width: 200rpx;
 		flex-direction: column;
 	}
 	.section nav div{
-		width: 200upx;
-		height: 60upx;
-		line-height: 60upx;
+		width: 200rpx;
+		height: 62rpx;
+		line-height: 62rpx;
 		text-align: center;
-		font-size: 24upx;
-		border-bottom-right-radius: 30upx;
-		border-top-right-radius: 30upx;
-		margin-bottom: 6upx;
+		font-size: 28rpx;
+		border-bottom-right-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		margin-bottom: 23rpx;
 		overflow: hidden;
 		text-overflow:ellipsis;
 		white-space: nowrap;
 	}
 	.section nav .active{
 		background: #fec300;
+		color: white;
 	}
 	.list{
 		display: flex;
 		flex-direction: column;
 	}
 	.list>div{
-		height: 150upx;
+		height: 150rpx;
 		align-items: center;
-		margin-bottom: 30upx;
+		margin-bottom: 30rpx;
 		flex-direction: row;
 		display: flex;
 	}
 	.list>div image{
-		width: 150upx;
-		height: 150upx;
-		border-radius: 10upx;
-		margin-right: 18upx;
+		width: 150rpx;
+		height: 150rpx;
+		border-radius: 10rpx;
+		margin-right: 18rpx;
 	}
 	.list>div div{
 		flex: 1;
-		font-size: 24upx;
+		font-size: 24rpx;
 	}
 	.list>div div p:first-child{
-		margin-bottom: 20upx;
+		line-height: 44rpx;
 	}
 </style>

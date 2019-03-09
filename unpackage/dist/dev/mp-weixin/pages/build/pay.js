@@ -89,19 +89,9 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
+var _adress = _interopRequireDefault(__webpack_require__(/*! ../../components/common/adress.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\adress.vue"));
+var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
     return {
@@ -129,6 +119,12 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       end: _index.default.enddate() };
 
   },
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['adress'])),
+
+  components: {
+    Adress: _adress.default },
+
   onLoad: function onLoad(opt) {var _this = this;
     this.static = _index.default.static;
     this.name = opt.name;
@@ -147,12 +143,6 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       item.goodsNumber = item.num;
       item.name = item.goodsSpecName ? item.goodsSpecName : item.name;
     });
-  },
-  onShow: function onShow() {
-    if (wx.getStorageSync('adress')) {
-      this.adress = wx.getStorageSync('adress');
-      wx.setStorageSync('adress', '');
-    }
   },
   methods: {
     cg_requireCarry: function cg_requireCarry(type) {
@@ -292,47 +282,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("div", { staticClass: "adress" }, [
-        _vm.adress
-          ? _c(
-              "div",
-              {
-                staticClass: "adressli",
-                attrs: { eventid: "c5bf60f6-1" },
-                on: { click: _vm.go_mine_adress }
-              },
-              [
-                _c("div", [_vm._v("姓      名：" + _vm._s(_vm.adress.name))]),
-                _c("div", [_vm._v("联系方式：" + _vm._s(_vm.adress.phone))]),
-                _c("div", { staticClass: "adressinf" }, [
-                  _c("div", [
-                    _c("div"),
-                    _c("span", [
-                      _vm._v(
-                        "收货地址：" +
-                          _vm._s(
-                            _vm.adress.provinceName +
-                              _vm.adress.countyAreaName +
-                              _vm.adress.cityName +
-                              _vm.adress.address
-                          )
-                      )
-                    ])
-                  ]),
-                  _c("image", { attrs: { src: "../../static/right.jpg" } })
-                ])
-              ]
-            )
-          : _c(
-              "div",
-              {
-                staticClass: "adressli center",
-                attrs: { eventid: "c5bf60f6-0" },
-                on: { click: _vm.go_mine_adress }
-              },
-              [_vm._v("请选择地址")]
-            )
-      ]),
+      _c("Adress", { attrs: { mpcomid: "c5bf60f6-0" } }),
       _vm._l(_vm.buildinf, function(list, index) {
         return _c("div", { key: list, staticClass: "payinf inff" }, [
           _c("div", [
@@ -377,7 +327,7 @@ var render = function() {
                           "custom-item": _vm.customItem,
                           start: _vm.start,
                           end: _vm.end,
-                          eventid: "c5bf60f6-2"
+                          eventid: "c5bf60f6-0"
                         },
                         on: { change: _vm.dateChange }
                       },
@@ -409,7 +359,7 @@ var render = function() {
                           mode: "time",
                           value: "时间",
                           "custom-item": _vm.customItem,
-                          eventid: "c5bf60f6-3"
+                          eventid: "c5bf60f6-1"
                         },
                         on: { change: _vm.timeChange }
                       },
@@ -440,7 +390,7 @@ var render = function() {
               "p",
               {
                 key: index,
-                attrs: { eventid: "c5bf60f6-4-" + index },
+                attrs: { eventid: "c5bf60f6-2-" + index },
                 on: {
                   click: function($event) {
                     _vm.cg_vehicleindex(index)
@@ -469,7 +419,7 @@ var render = function() {
               : _c("image", {
                   attrs: {
                     src: "../../static/mine/check.jpg",
-                    eventid: "c5bf60f6-5"
+                    eventid: "c5bf60f6-3"
                   },
                   on: {
                     click: function($event) {
@@ -483,7 +433,7 @@ var render = function() {
               : _c("image", {
                   attrs: {
                     src: "../../static/mine/check.jpg",
-                    eventid: "c5bf60f6-6"
+                    eventid: "c5bf60f6-4"
                   },
                   on: {
                     click: function($event) {
@@ -502,7 +452,7 @@ var render = function() {
                     "view",
                     {
                       key: index,
-                      attrs: { eventid: "c5bf60f6-7-" + index },
+                      attrs: { eventid: "c5bf60f6-5-" + index },
                       on: {
                         click: function($event) {
                           _vm.cg_carryindex(index)
@@ -533,7 +483,7 @@ var render = function() {
                   attrs: {
                     placeholder: "请输入楼层",
                     type: "number",
-                    eventid: "c5bf60f6-8"
+                    eventid: "c5bf60f6-6"
                   },
                   domProps: { value: _vm.floor },
                   on: {
@@ -568,7 +518,7 @@ var render = function() {
                 expression: "remark"
               }
             ],
-            attrs: { eventid: "c5bf60f6-9" },
+            attrs: { placeholder: "如有其它需求请写明", eventid: "c5bf60f6-7" },
             domProps: { value: _vm.remark },
             on: {
               input: function($event) {
@@ -611,7 +561,7 @@ var render = function() {
         _c(
           "span",
           {
-            attrs: { eventid: "c5bf60f6-10" },
+            attrs: { eventid: "c5bf60f6-8" },
             on: { click: _vm.req_unifiedOrder }
           },
           [_vm._v("确认支付")]

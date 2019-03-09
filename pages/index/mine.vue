@@ -54,7 +54,7 @@
 			</div>
 			<div @click="go_mine_apply(5)">
 				<image src="../../static/index/recruit4.png"/>
-				<p>定制商户</p>
+				<p>订制商户</p>
 			</div>
 			<div @click="go_mine_apply(6)">
 				<image src="../../static/index/recruit5.png"/>

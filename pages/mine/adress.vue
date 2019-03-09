@@ -39,7 +39,7 @@
 		methods: {
 			setadress(item){
 				if(this.src){
-					wx.setStorageSync('adress',item);
+					this.$store.commit('setDeflfAdress', item)
 					wx.navigateBack();
 				}
 			},

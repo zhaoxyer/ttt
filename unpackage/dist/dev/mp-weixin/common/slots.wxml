@@ -9,6 +9,7 @@
 <import src="/components/confirmModal.vue.wxml" />
 <import src="/components/orderCheck.vue.wxml" />
 <import src="/components/orderShouhou.vue.wxml" />
+<import src="/components/common/adress.vue.wxml" />
 
 <template name="360617a6-default-360617a6-1"><template data="{{...$root['0'], ...$root[$kk+'360617a6-0'],$root}}" is="70a530be"></template></template>
 

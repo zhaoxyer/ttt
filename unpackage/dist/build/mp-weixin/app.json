@@ -36,13 +36,13 @@
   "subPackages": [],
   "window": {
     "navigationBarTextStyle": "white",
-    "navigationBarTitleText": "uni-app",
-    "navigationBarBackgroundColor": "#FEC200",
-    "backgroundColor": "#FEC200"
+    "navigationBarTitleText": "木斗生活",
+    "navigationBarBackgroundColor": "#FEC300",
+    "backgroundColor": "#FEC300"
   },
   "tabBar": {
-    "color": "#7A7E83",
-    "selectedColor": "#FEC200",
+    "color": "#666666",
+    "selectedColor": "#FEC300",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "list": [

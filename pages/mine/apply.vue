@@ -88,7 +88,7 @@
 				ut.settitle('申请木斗搬运')
 			}
 			if(opt.type==5){
-				ut.settitle('申请定制商户')
+				ut.settitle('申请订制商户')
 			}
 			if(opt.type==6){
 				ut.settitle('申请地区加盟')
@@ -100,6 +100,10 @@
 				this.sex=this.sexList[e.target.value[0]].type;
 			},
 			bindRegionChange: function (e) {
+				if(e.target.value[2]!="通州区"){
+					ut.totast('现在只开通通州的服务，其他区域敬请期待！');
+					return
+				}
 				this.provinceName=e.target.value[0];
 				this.countyAreaName=e.target.value[1];
 				this.cityName=e.target.value[2];

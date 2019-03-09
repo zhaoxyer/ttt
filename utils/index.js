@@ -25,6 +25,20 @@ ut.date=function(){
 	var nowDate = year + "-" + month + "-" + day;
 	return nowDate;
 }
+ut.time=function(){
+	var date = new Date();
+	var year = date.getFullYear();
+	var hour = date.getHours();
+	var minute = date.getMinutes();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (minute < 10) {
+		minute = "0" + minute;
+	}
+	var nowDate = hour + "-" + minute;
+	return nowDate;
+}
 ut.enddate=function(){
 	var date = new Date();
 	var year = date.getFullYear()+2;
@@ -112,6 +126,12 @@ ut.createRandom = function(num, min, max) {
 ut.settitle = function(title) {
 	wx.setNavigationBarTitle({
 		title: title
+	})
+}
+//跳转页面
+ut.goto = (url)=>{
+	wx.navigateTo({
+		url: url
 	})
 }
 //弹出消息

@@ -114,16 +114,55 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__(/*! uni-pages */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\pages.json");
 var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue/index.js"));
-var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\App.vue"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
-
+var _App = _interopRequireDefault(__webpack_require__(/*! ./App */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\App.vue"));
+var _store = _interopRequireDefault(__webpack_require__(/*! ./store */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\store\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}
 _vue.default.config.productionTip = false;
+_vue.default.prototype.$store = _store.default;
 
 _App.default.mpType = 'app';
 
-var app = new _vue.default(_objectSpread({},
+var app = new _vue.default(_objectSpread({
+  store: _store.default },
 _App.default));
 
 app.$mount();
+
+/***/ }),
+
+/***/ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\store\\index.js":
+/*!*********************************************************************!*\
+  !*** C:/Users/hasee/Documents/HBuilderProjects/mall/store/index.js ***!
+  \*********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ "./node_modules/@dcloudio/vue-cli-plugin-uni/packages/mpvue/index.js"));
+var _vuex = _interopRequireDefault(__webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js"));
+var _index = _interopRequireDefault(__webpack_require__(/*! @/utils/index */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}
+_vue.default.use(_vuex.default);
+var store = new _vuex.default.Store({
+  state: {
+    adress: '' },
+
+  mutations: {
+    setDeflfAdress: function setDeflfAdress(state, provider) {
+      state.adress = provider;
+    } },
+
+  actions: {
+    req_getdefaddress: function req_getdefaddress(_ref) {var state = _ref.state,commit = _ref.commit;
+      if (state.adress) return;
+      _index.default.request({
+        url: "address/getdefaddress" }).
+      then(function (data) {
+        commit('setDeflfAdress', data || {});
+      });
+    } } });var _default =
+
+
+
+store;exports.default = _default;
 
 /***/ })
 

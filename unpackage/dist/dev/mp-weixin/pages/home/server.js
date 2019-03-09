@@ -32,23 +32,12 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-
-
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
 {
   data: function data() {
     return {
       typeindex: 0,
-      swipeList: ['../../static/index/banner.jpg', '../../static/index/banner.jpg'],
-      indicatorDots: true,
-      indicatorcolor: 'white',
-      indicatoractivecolor: '#FEC200',
-      autoplay: true,
-      interval: 5000,
-      duration: 1000,
-      circular: true,
       server: [],
-      classlist: [],
       clientServiceClasses: [],
       activeindex: 0,
       static: "" };
@@ -130,29 +119,22 @@ var render = function() {
       _c(
         "div",
         { staticClass: "yiji" },
-        [
-          _c(
-            "scroll-view",
-            { staticClass: "nav", attrs: { "scroll-x": "true" } },
-            _vm._l(_vm.server, function(item, index) {
-              return _c(
-                "span",
-                {
-                  key: index,
-                  class: { active: _vm.typeindex == index },
-                  attrs: { eventid: "d8b8e61e-0-" + index },
-                  on: {
-                    click: function($event) {
-                      _vm.cg_typeindex(index)
-                    }
-                  }
-                },
-                [_vm._v(_vm._s(item.name))]
-              )
-            })
+        _vm._l(_vm.server, function(item, index) {
+          return _c(
+            "span",
+            {
+              key: index,
+              class: { active: _vm.typeindex == index },
+              attrs: { eventid: "d8b8e61e-0-" + index },
+              on: {
+                click: function($event) {
+                  _vm.cg_typeindex(index)
+                }
+              }
+            },
+            [_vm._v(_vm._s(item.name))]
           )
-        ],
-        1
+        })
       ),
       _c("div", { staticClass: "bggray" }),
       _vm._l(_vm.clientServiceClasses, function(item, index) {

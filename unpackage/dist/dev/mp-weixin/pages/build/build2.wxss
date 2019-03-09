@@ -24,13 +24,13 @@
 }
 .section ._nav ._div{
 	width: 200rpx;
-	height: 60rpx;
-	line-height: 60rpx;
+	height: 62rpx;
+	line-height: 62rpx;
 	text-align: center;
-	font-size: 24rpx;
-	border-bottom-right-radius: 30rpx;
-	border-top-right-radius: 30rpx;
-	margin-bottom: 6rpx;
+	font-size: 28rpx;
+	border-bottom-right-radius: 20rpx;
+	border-top-right-radius: 20rpx;
+	margin-bottom: 23rpx;
 	overflow: hidden;
 	-o-text-overflow:ellipsis;
 	   text-overflow:ellipsis;
@@ -38,6 +38,7 @@
 }
 .section ._nav .active{
 	background: #fec300;
+	color: white;
 }
 .list{
 	display: -webkit-box;
@@ -81,6 +82,6 @@
 	font-size: 24rpx;
 }
 .list>._div ._div ._p:first-child{
-	margin-bottom: 20rpx;
+	line-height: 44rpx;
 }
 

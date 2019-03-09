@@ -9,6 +9,10 @@
 <import src="/components/confirmModal.vue.wxml" />
 <import src="/components/orderCheck.vue.wxml" />
 <import src="/components/orderShouhou.vue.wxml" />
+<import src="/components/common/searchBox.vue.wxml" />
+<import src="/components/common/banner.vue.wxml" />
+<import src="/components/common/serverType.vue.wxml" />
+<import src="/components/common/servers.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <import src="/components/comment.vue.wxml" />
 <import src="/components/goodsOrderItem.vue.wxml" />

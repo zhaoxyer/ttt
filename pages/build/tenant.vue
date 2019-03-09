@@ -40,11 +40,11 @@
 				</div>				
 			</scroll-view>
 		</div>
-		<!-- <div class='footer'>
+		<div class='footer'>
 			<div class="edit"><span>加入购物车</span><span @click="go_build_pay">购买</span></div>
 			<span class="mallnum" v-show='mallnum'>{{mallnum}}</span>
 			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='mallnum'>￥{{mallprice}}</span>
-		</div> -->
+		</div>
 		<div class="pop" v-if='pop' @click="cg_pop" @click.stop='cleanbar'>
 			<div class="popcont">
 				<div class='delbar'>
@@ -196,6 +196,7 @@
 	}
 	.share image{width: 45upx;height: 45upx;}
 	.footer{
+		background: white;
 		position: fixed;
 		bottom: 0;
 		width: 100%;
@@ -211,17 +212,17 @@
 	}
 	.edit{
 		position: absolute;
-		right: 30rupx;
+		right: 30upx;
 	}
-	.edit span{line-height: 60rupx;color: white;font-size: 24upx;text-align: center;width: 215upx;display: inline-block;}
+	.edit span{line-height: 60upx;color: white;font-size: 24upx;text-align: center;width: 215upx;display: inline-block;}
 	.edit span:first-child{
-		border-bottom-left-radius: 30rupx;
-		border-top-left-radius: 30rupx;
+		border-bottom-left-radius: 30upx;
+		border-top-left-radius: 30upx;
 		background: #FEC200;
 	}
 	.edit span:last-child{
-		border-bottom-right-radius: 30rupx;
-		border-top-right-radius: 30rupx;
+		border-bottom-right-radius: 30upx;
+		border-top-right-radius: 30upx;
 		background: #FF0015;
 	}
 	.section{margin-top: 28upx;display: flex;position: fixed;top:330upx;bottom: 30upx;width: 100%;}

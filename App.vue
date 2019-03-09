@@ -21,10 +21,10 @@
 	}
 	swiper image{
 		width: 100%;
-		height: 300upx;
+		height: 40vw;
 	}
 	swiper{
-		height: 300upx;
+		height: 40vw;
 	}
 	.bggray {
 		background: #e5e5e5;

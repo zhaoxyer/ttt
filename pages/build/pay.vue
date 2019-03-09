@@ -1,18 +1,6 @@
 <template>
 	<div>
-		<div class='adress'>
-			<div class="adressli" @click="go_mine_adress" v-if="adress">
-				<div>姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名：{{adress.name}}</div>
-				<div>联系方式：{{adress.phone}}</div>
-				<div class="adressinf">
-					<div><div></div><span>收货地址：{{adress.provinceName+adress.countyAreaName+adress.cityName+adress.address}}</span></div>
-					<image src="../../static/right.jpg"/>
-				</div>
-			</div>
-			<div class="adressli center" @click="go_mine_adress" v-else>
-				请选择地址
-			</div>
-		</div>
+		<Adress></Adress>
 		<div class="payinf inff" v-for="list in buildinf" :key='list'>
 			<div>
 				<image :src="static+list.picture"></image>
@@ -71,7 +59,7 @@
 		</div>
 		<div class="payinf remake">
 			<h1>订单备注</h1>
-			<textarea v-model="remark">
+			<textarea v-model="remark" placeholder="如有其它需求请写明">
 				
 			</textarea>
 		</div>
@@ -92,6 +80,8 @@
 
 <script>
 	import ut from '../../utils/index.js';
+	import Adress from '../../components/common/adress.vue'
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -119,6 +109,12 @@
 				end:ut.enddate()
 			}
 		},
+		computed: {
+			...mapState(['adress'])
+		},
+		components:{
+			Adress
+		},
 		onLoad(opt) {
 			this.static=ut.static;
 			this.name=opt.name;
@@ -137,12 +133,6 @@
 				item.goodsNumber=item.num;
 				item.name =item.goodsSpecName?item.goodsSpecName:item.name
 			})
-		},
-		onShow(){
-			if(wx.getStorageSync('adress')){
-				this.adress=wx.getStorageSync('adress');
-				wx.setStorageSync('adress','');
-			}
 		},
 		methods: {
 			cg_requireCarry(type){

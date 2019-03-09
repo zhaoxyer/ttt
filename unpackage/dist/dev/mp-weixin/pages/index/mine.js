@@ -384,7 +384,7 @@ var render = function() {
           },
           [
             _c("image", { attrs: { src: "../../static/index/recruit4.png" } }),
-            _c("p", [_vm._v("定制商户")])
+            _c("p", [_vm._v("订制商户")])
           ],
           1
         ),

@@ -49,7 +49,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   methods: {
     setadress: function setadress(item) {
       if (this.src) {
-        wx.setStorageSync('adress', item);
+        this.$store.commit('setDeflfAdress', item);
         wx.navigateBack();
       }
     },

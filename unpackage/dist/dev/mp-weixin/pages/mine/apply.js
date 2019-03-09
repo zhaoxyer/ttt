@@ -98,7 +98,7 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       _index.default.settitle('申请木斗搬运');
     }
     if (opt.type == 5) {
-      _index.default.settitle('申请定制商户');
+      _index.default.settitle('申请订制商户');
     }
     if (opt.type == 6) {
       _index.default.settitle('申请地区加盟');
@@ -110,6 +110,10 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
       this.sex = this.sexList[e.target.value[0]].type;
     },
     bindRegionChange: function bindRegionChange(e) {
+      if (e.target.value[2] != "通州区") {
+        _index.default.totast('现在只开通通州的服务，其他区域敬请期待！');
+        return;
+      }
       this.provinceName = e.target.value[0];
       this.countyAreaName = e.target.value[1];
       this.cityName = e.target.value[2];

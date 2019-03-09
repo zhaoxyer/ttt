@@ -60,6 +60,10 @@
 		},
 		methods: {
 			bindRegionChange: function (e) {
+				if(e.target.value[2]!="通州区"){
+					ut.totast('现在只开通通州的服务，其他区域敬请期待！');
+					return
+				}
 			 	this.adressinf.provinceName=e.target.value[0];
 			 	this.adressinf.countyAreaName=e.target.value[1];
 			 	this.adressinf.cityName=e.target.value[2];
