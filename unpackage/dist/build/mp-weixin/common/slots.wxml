@@ -1,19 +1,20 @@
 <import src="/components/tmodal.vue.wxml" />
 <import src="/components/orderStatus.vue.wxml" />
-<import src="/components/goodscancelModal.vue.wxml" />
-<import src="/components/goodsconfirmModal.vue.wxml" />
-<import src="/components/goodsconfirmBanyun.vue.wxml" />
-<import src="/components/goodsShouhou.vue.wxml" />
-<import src="/components/addComment.vue.wxml" />
 <import src="/components/cancelModal.vue.wxml" />
 <import src="/components/confirmModal.vue.wxml" />
 <import src="/components/orderCheck.vue.wxml" />
 <import src="/components/orderShouhou.vue.wxml" />
+<import src="/components/addComment.vue.wxml" />
+<import src="/components/goodscancelModal.vue.wxml" />
+<import src="/components/goodsconfirmModal.vue.wxml" />
+<import src="/components/goodsconfirmBanyun.vue.wxml" />
+<import src="/components/goodsShouhou.vue.wxml" />
 <import src="/components/common/searchBox.vue.wxml" />
 <import src="/components/common/banner.vue.wxml" />
 <import src="/components/common/serverType.vue.wxml" />
 <import src="/components/common/servers.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
+<import src="/components/common/adress.vue.wxml" />
 <import src="/components/comment.vue.wxml" />
 <import src="/components/goodsOrderItem.vue.wxml" />
 <import src="/components/orderItem.vue.wxml" />
@@ -34,6 +35,18 @@
 <import src="/components/mpvue-wxparse/src/components/wxParseTemplate10.vue.wxml" />
 <import src="/components/mpvue-wxparse/src/components/wxParseTemplate11.vue.wxml" />
 
+<template name="747ac242-default-747ac242-1"><template data="{{...$root['0'], ...$root[$kk+'747ac242-0'],$root}}" is="70a530be"></template></template>
+
+<template name="747ac242-default-747ac242-3"><template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'747ac242-7'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-2'],$root}}" is="9e620f9e"></template></template>
+
+<template name="747ac242-default-747ac242-5"><template bindreload="handleProxy" bindchangeb="handleProxy" data-eventid="{{'747ac242-9'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-4'],$root}}" is="5c0a37af"></template></template>
+
+<template name="747ac242-default-747ac242-7"><template bindreload="handleProxy" data-eventid="{{'747ac242-11'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-6'],$root}}" is="1b918a88"></template></template>
+
+<template name="747ac242-default-747ac242-9"><template bindreload="handleProxy" data-eventid="{{'747ac242-13'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-8'],$root}}" is="df6767b2"></template></template>
+
+<template name="747ac242-default-747ac242-11"><template bindreload="handleProxy" type="2" data-eventid="{{'747ac242-15'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-10'],$root}}" is="7114b2e0"></template></template>
+
 <template name="360617a6-default-360617a6-1"><template data="{{...$root['0'], ...$root[$kk+'360617a6-0'],$root}}" is="70a530be"></template></template>
 
 <template name="360617a6-default-360617a6-3"><template cancelUrl="goods/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'360617a6-9'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-2'],$root}}" is="f140ebc2"></template></template>
@@ -47,16 +60,4 @@
 <template name="360617a6-default-360617a6-11"><template bindreload="handleProxy" data-eventid="{{'360617a6-17'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-10'],$root}}" is="3254b9c2"></template></template>
 
 <template name="360617a6-default-360617a6-13"><template bindreload="handleProxy" type="1" data-eventid="{{'360617a6-19'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'360617a6-12'],$root}}" is="7114b2e0"></template></template>
-
-<template name="747ac242-default-747ac242-1"><template data="{{...$root['0'], ...$root[$kk+'747ac242-0'],$root}}" is="70a530be"></template></template>
-
-<template name="747ac242-default-747ac242-3"><template cancelUrl="service/order/cancelOrder" bindreload="handleProxy" data-eventid="{{'747ac242-7'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-2'],$root}}" is="9e620f9e"></template></template>
-
-<template name="747ac242-default-747ac242-5"><template bindreload="handleProxy" bindchangeb="handleProxy" data-eventid="{{'747ac242-9'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-4'],$root}}" is="5c0a37af"></template></template>
-
-<template name="747ac242-default-747ac242-7"><template bindreload="handleProxy" data-eventid="{{'747ac242-11'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-6'],$root}}" is="1b918a88"></template></template>
-
-<template name="747ac242-default-747ac242-9"><template bindreload="handleProxy" data-eventid="{{'747ac242-13'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-8'],$root}}" is="df6767b2"></template></template>
-
-<template name="747ac242-default-747ac242-11"><template bindreload="handleProxy" type="2" data-eventid="{{'747ac242-15'}}" data-comkey="{{$k}}" data="{{...$root['0'], ...$root[$kk+'747ac242-10'],$root}}" is="7114b2e0"></template></template>
 

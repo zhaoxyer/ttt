@@ -2,40 +2,34 @@
 .title{
 	text-align: center;
 	margin-top: 40rpx;
-	height: 34rpx;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+	height: 33rpx;
 }
 .title ._span{
-	display: inline-block;
-	vertical-align: top;
-	line-height: 34rpx;
-	font-size: 20rpx;
-}
-.title ._span:nth-child(1):before{
-	content: '';
-	width:70rpx;
-	height: 3rpx;
-	background: black;
-	position: absolute;
-	margin-left: -80rpx;
-	margin-top: 16rpx;
-}
-.title ._span:nth-child(3):after{
-	content: '';
-	width:70rpx;
-	height: 3rpx;
-	background: black;
-	position: absolute;
-	margin-left: 10rpx;
-	margin-top: 16rpx;
-}
-.title ._span:nth-child(2){
 	width: 123rpx;
-	font-size: 20rpx;
+	font-size: 18rpx;
 	text-align: center;
 	color: white;
 	border-radius: 16.5rpx;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
+	height: 33rpx;
+	line-height: 33rpx;
+}
+.title image{
+	width: 87rpx;
+	height: 8rpx;
 }
 .bg0{
 	background: #45c5db;
@@ -76,7 +70,7 @@
 }
 .youhui>._div ._div:nth-child(1){
 	width: 70rpx;
-	height: 168rpx;
+	height: 188rpx;
 	-webkit-writing-mode:tb-rl;
 	    -ms-writing-mode:tb-rl;
 	        writing-mode:tb-rl;
@@ -87,7 +81,6 @@
 	white-space: nowrap;
 	-o-text-overflow:ellipsis;
 	   text-overflow:ellipsis;
-	padding: 10px 0;
 }
 .youhui>._div ._div:nth-child(3) ._span:first-child{
 	-webkit-writing-mode:lr-tb;
@@ -97,7 +90,7 @@
 	letter-spacing: 0;
 }
 .youhui>._div ._div:nth-child(3){
-	width: 60rpx;
+	width: 70rpx;
 	height: 188rpx;
 	border-left: 1px solid #C8C8C8;
 	-webkit-writing-mode:tb-rl;

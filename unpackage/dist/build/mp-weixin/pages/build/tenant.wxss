@@ -20,6 +20,7 @@
 }
 .share image{width: 45rpx;height: 45rpx;}
 .footer{
+	background: white;
 	position: fixed;
 	bottom: 0;
 	width: 100%;
@@ -41,17 +42,17 @@
 }
 .edit{
 	position: absolute;
-	right: 30rupx;
+	right: 30rpx;
 }
-.edit ._span{line-height: 60rupx;color: white;font-size: 24rpx;text-align: center;width: 215rpx;display: inline-block;}
+.edit ._span{line-height: 60rpx;color: white;font-size: 24rpx;text-align: center;width: 215rpx;display: inline-block;}
 .edit ._span:first-child{
-	border-bottom-left-radius: 30rupx;
-	border-top-left-radius: 30rupx;
+	border-bottom-left-radius: 30rpx;
+	border-top-left-radius: 30rpx;
 	background: #FEC200;
 }
 .edit ._span:last-child{
-	border-bottom-right-radius: 30rupx;
-	border-top-right-radius: 30rupx;
+	border-bottom-right-radius: 30rpx;
+	border-top-right-radius: 30rpx;
 	background: #FF0015;
 }
 .section{margin-top: 28rpx;display: -webkit-box;display: -webkit-flex;display: -ms-flexbox;display: flex;position: fixed;top:330rpx;bottom: 30rpx;width: 100%;}

@@ -1,6 +1,6 @@
 
-.leftright.data-v-bae001a4{
-	padding: 0 25.5rpx 0 24.5rpx;
+.leftright.data-v-1b2ab07a{
+	padding: 0 29.58rpx 0 30.79rpx;
 	margin-top: 27rpx;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -10,27 +10,29 @@
 	-webkit-justify-content: space-between;
 	    -ms-flex-pack: justify;
 	        justify-content: space-between;
-	padding: 0 20rpx;
 	-webkit-flex-wrap: wrap;
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 }
-.fuwu ._p.data-v-bae001a4{
+.fuwu ._p.data-v-1b2ab07a{
 	font-size: 24rpx;
-	padding: 16.5rpx 0;
+	padding: 19.92rpx 0;
 	overflow: hidden;
 	-o-text-overflow:ellipsis;
 	   text-overflow:ellipsis;
 	white-space: nowrap;
 }
-.fuwu ._div.data-v-bae001a4{
-	width: 334rpx;
+.fuwu ._div.data-v-1b2ab07a{
+	width: 325.48rpx;
 	text-align: center;
 }
-.fuwu ._div image.data-v-bae001a4{
+.fuwu ._div image.data-v-1b2ab07a{
 	width: 100%;
-	height: 334rpx;
+	height: 325.48rpx;
 	display: block;
+}
+.color.data-v-1b2ab07a{
+	color: #FEC300;
 }
 
 
@@ -74,39 +76,6 @@
 .buju ._button:after{border: none;}
 .buju image{
 	width: 100%;
-	display: block;
-}
-.leftright{
-	padding: 0 25.5rpx 0 24.5rpx;
-	margin-top: 27rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	padding: 0 20rpx;
-	-webkit-flex-wrap: wrap;
-	    -ms-flex-wrap: wrap;
-	        flex-wrap: wrap;
-}
-.fuwu ._p{
-	font-size: 24rpx;
-	padding: 16.5rpx 0;
-	overflow: hidden;
-	-o-text-overflow:ellipsis;
-	   text-overflow:ellipsis;
-	white-space: nowrap;
-}
-.fuwu ._div{
-	width: 334rpx;
-	text-align: center;
-}
-.fuwu ._div image{
-	width: 100%;
-	height: 334rpx;
 	display: block;
 }
 
