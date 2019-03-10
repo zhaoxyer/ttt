@@ -41,27 +41,35 @@
 			</scroll-view>
 		</div>
 		<div class='footer'>
-			<div class="edit"><span>加入购物车</span><span @click="go_build_pay">购买</span></div>
-			<span class="mallnum" v-show='mallnum'>{{mallnum}}</span>
-			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='mallnum'>￥{{mallprice}}</span>
+			<div class="edit"><span @click="req_cartadd">加入购物车</span><span @click="go_build_pay">购买</span></div>
+			<span class="mallnum" v-show='otherGoods.num'>{{otherGoods.num}}</span>
+			<image src="../../static/logo.jpg" class="logo" @click="cg_pop"></image><span class="money"  v-show='otherGoods.num'>￥{{otherGoods.price}}</span>
 		</div>
-		<div class="pop" v-if='pop' @click="cg_pop" @click.stop='cleanbar'>
+		<div class="pop" v-if='pop' @click="cg_pop">
 			<div class="popcont">
-				<div class='delbar'>
+				<div class='delbar'@click.stop='cleanbar'>
 					<image src="../../static/mine/del.png"></image><span>清空购物车</span>
 				</div>
-				<div class='barlist'>
-					<div class="add1" v-for="(item,index) in malllist" :key="index" v-if='item.mallnum' @click.stop>
-						<div class='addedit addedit1'><image src="../../static/build/minus.png"   @click.stop="minus(index)"></image><span>{{item.mallnum}}</span><image src="../../static/build/add.png" @click.stop="add(index)"></image></div><span class="barname">{{item.name}}</span><span class="barmoney">￥{{item.price}}</span>
+				<scroll-view class='barlist'  scroll-y='true'>
+					<div class="add1" v-for="(list,_index) in goods" :key="_index" v-if='otherGoods.num' @click.stop>
+						<div v-for="(item,index) in list.guigetype" :key="index" v-if='item.num>0'>
+							<div class='addedit addedit1'><image src="../../static/build/minus.png"   @click.stop="minus(_index,index)"></image><span>{{item.num}}</span><image src="../../static/build/add.png" @click.stop="add(_index,index)"></image></div><span class="barname">{{item.name}}</span><span class="barmoney">￥{{item.price}}</span>
+						</div>
 					</div>
-				</div>
+				</scroll-view>
 			</div>
+		</div>
+		<div v-if="goodsInf" class="pop">
+			<GoodsInf :goodsInf='goodsInf' @onClose='onClose'></GoodsInf>
 		</div>
 	</div>
 </template>
 
 <script>
 	import ut from '../../utils/index.js';
+	import GoodsInf from '../../components/common/goodsInf.vue';
+	import marked from '../../components/marked';
+	import {mapState} from 'vuex';
 	export default {
 		data() {
 			return {
@@ -78,10 +86,18 @@
 				class_id:'',
 				tenant:{},
 				mallname:'',
-				mallname1:''
+				mallname1:'',
+				goodsInf:''
 			}
 		},
+		components:{
+			GoodsInf
+		},
+		computed: {
+			...mapState(['goods','otherGoods','goodsPay'])
+		},
 		onLoad(opt) {
+			this.cleanbar()
 			this.tenant=wx.getStorageSync('tenant');
 			ut.settitle(this.tenant.name||'建材城');
 			const length=this.tenant.name.split('').length;
@@ -95,9 +111,10 @@
 		},
 		methods: {
 			cg_pop(){
-				if(!this.pop&&!this.mallnum){
+				if(!this.pop&&!this.otherGoods.num){
 					return;
 				}
+				this.goodsInf=''
 				this.pop=!this.pop;
 			},
 			cg_type(type){
@@ -105,28 +122,25 @@
 				this.class_id=this.typeList[type].id;
 				this.req_goodslist();
 			},
-			go_build_pay(){
-				wx.navigateTo({
-					url: '../build/pay'
-				})
-			},
 			go_build_mallinf(id){
-				wx.navigateTo({
+				/* wx.navigateTo({
 					url: `../build/mallinf?_id=${id}`
-				})
+				}) */
+				this.req_detail(id)
 			},
-			minus(index){
-				this.malllist[index].mallnum-=1;
-				this.mallnum-=1;
-				this.mallprice=(Number(this.mallprice)-Number(this.malllist[index].price)).toFixed(2);
-				if(this.mallnum==0){
-					this.pop=false;
-				}
+			minus(_index,index){
+				const goods = this.goods;
+				this.$store.commit('minusOtherGoods',goods[_index].guigetype[index].price);
+				goods[_index].guigetype[index].num-=1;	
+				this.$store.commit('setGoods',goods)
+				this.$store.commit('setGoodsPay')
 			},
-			add(index){
-				this.malllist[index].mallnum+=1;
-				this.mallnum+=1;
-				this.mallprice=(Number(this.mallprice)+Number(this.malllist[index].price)).toFixed(2);
+			add(_index,index){
+				const goods = this.goods;
+				this.$store.commit('addOtherGoods',goods[_index].guigetype[index].price);
+				goods[_index].guigetype[index].num+=1;
+				this.$store.commit('setGoods',goods)
+				this.$store.commit('setGoodsPay')
 			},
 			malllistmap(arr){
 				return arr.map((item)=>{
@@ -136,10 +150,69 @@
 				})
 			},
 			cleanbar(){
-				this.mallnum=0;
-				this.mallprice=0;
-				this.malllist=this.malllistmap(this.malllist);
+				this.$store.commit('clean')
+				this.goodsInf=''
 				this.pop=false;
+			},
+			filterdate(barlist){
+				let parm=[];
+				for(let i=0;i<barlist.length;i++){
+					parm[i]={
+						goodsId:barlist[i].goodsId,
+						num:barlist[i].num,
+						specId:barlist[i].id
+					}
+				}
+				return parm;
+			},
+			req_cartadd(){
+				if(!wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../mine/login'
+					})
+					return
+				}
+				let barlist=this.goodsPay;
+				console.log(this.goodsPay)
+				barlist=barlist.filter(item=>{
+					console.log(item.num)
+					return item.num>0
+				})
+				if(!barlist.length){
+					ut.totast('请先选择商品');
+					return;
+				}
+				const parm=this.filterdate(barlist);
+				ut.request({
+					data:parm,
+					url: "cart/add",
+					c:true
+				}).then(data=>{
+					this.cleanbar();
+					ut.totast('加入购物车成功');
+				})
+			},
+			go_build_pay(){
+				if(!wx.getStorageSync('token')){
+					wx.navigateTo({
+						url: '../mine/login'
+					})
+					return
+				}
+				let barlist=this.goodsPay;
+				barlist=barlist.filter(item=>{
+					console.log(item.num)
+					return item.num>0
+				})
+				if(!barlist.length){
+					ut.totast('请先选择商品');
+					return;
+				}
+				this.goodsInf=''
+				wx.setStorageSync('buildinf',barlist)
+				wx.navigateTo({
+					url: '../build/pay'
+				})
 			},
 			req_storeclasslist(){
 				ut.request({
@@ -169,6 +242,49 @@
 					})
 					this.malllist=data;
 				})
+			},
+			req_detail(id){
+				console.log(this.goods)
+				const goodinf = this.goods.filter(item=>{
+					return item.clientGoods.id==id
+				})
+				console.log(goodinf)
+				if(goodinf.length>0){
+					this.goodsInf = goodinf[0]
+					return
+				}
+				ut.request({
+					data: {
+						goodsid:id
+					},
+					url: "goods/goodsdetail"
+				}).then(data=>{
+					const goodsInf = {};
+					const reg=new RegExp('/attach/download\\?filePath=','g');
+					goodsInf.clientGoods=data.clientGoods;
+					goodsInf.detailinf=marked(goodsInf.clientGoods.detail.replace(reg,ut.static));
+					if(data.clientGoodsSpecList[0]){
+						data.clientGoodsSpecList.forEach(item =>{
+							item.num=0;
+						})
+						goodsInf.mallinf =data.clientGoodsSpecList[0]
+						if(goodsInf.mallinf.picture){
+							goodsInf.swipeList=goodsInf.mallinf.picture.split(',')
+						}else{
+							goodsInf.swipeList=[goodsInf.clientGoods.picture]
+						}
+						
+					}
+					goodsInf.guigetype=data.clientGoodsSpecList;
+					goodsInf.index = this.goods.length
+					this.goodsInf = goodsInf
+					const _goodsInf = this.goods
+					_goodsInf.push(goodsInf)
+					this.$store.commit('setGoods',_goodsInf)
+				})
+			},
+			onClose(){
+				this.goodsInf = ''
 			}
 		}
 	}
@@ -176,14 +292,15 @@
 
 <style>
 	.mallinf1{position: relative;}
-	.otherinf{position: absolute;width: 100%;bottom: 0;}
+	.otherinf{position: absolute;width: 100%;bottom: 0;background:rgba(0,0,0,0.3);top:0;}
 	.otherinf>div{display: inline-block;vertical-align: bottom;}
-	.mallname{width: 150upx;height: 150upx;background: #FEC200;color: white;border-radius: 20upx;font-size: 24upx;margin-left:30upx;margin-bottom: -20upx;text-align: center;}
+	.mallname{width: 150upx;height: 150upx;background: #FEC200;color: white;border-radius: 20upx;font-size: 24upx;margin-left:30upx;bottom: -20upx;text-align: center;position: absolute;}
 	.mallname p{margin-top: 30upx;}
 	.mallname p:nth-child(2){
 		margin-top: 12upx;
 	}
-	.malladress{font-size: 26upx;color: #FEC300;line-height: 40upx;margin-bottom: 20upx;margin-left: 30upx;}
+	.malladress{font-size: 26upx;color: white;line-height: 40upx;margin-bottom: 20upx;margin-left: 200upx;position: absolute;bottom: 0;font-size: 24rpx;}
+	.malladress div:first-child{font-size: 26rpx;}
 	.mallimage{width: 100%;height: 300upx;}
 	.share{position: absolute;right: 30upx;bottom: 10upx;}
 	.share>div{
@@ -237,14 +354,17 @@
 		height: 100%;
 	}
 	.section .nav div{
-		width: 200upx;
-		height: 60upx;
-		line-height: 60upx;
+		width: 200rpx;
+		height: 62rpx;
+		line-height: 62rpx;
 		text-align: center;
-		font-size: 28upx;
-		border-bottom-right-radius: 30upx;
-		border-top-right-radius: 30upx;
-		margin-bottom: 6upx;
+		font-size: 28rpx;
+		border-bottom-right-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+		margin-bottom: 23rpx;
+		overflow: hidden;
+		text-overflow:ellipsis;
+		white-space: nowrap
 	}
 	.section .nav .active{
 		background: #fec300;
@@ -356,5 +476,6 @@
 		height: 400upx;
 		padding: 0 30upx;
 		position: relative;
+		width: auto;
 	}
 </style>

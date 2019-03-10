@@ -198,6 +198,7 @@ var render = function() {
           attrs: {
             type: "number",
             placeholder: "请输入手机号",
+            maxlength: "11",
             eventid: "3b4f3746-1"
           },
           domProps: { value: _vm.adressinf.phone },

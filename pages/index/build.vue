@@ -19,7 +19,7 @@
 			<image src="../../static/index/line-left.png"></image><span class="bg1">最新推荐</span><image src="../../static/index/line-right.png"></image>
 		</div>
 		<div class="recom leftright">
-			<div @click="go_build_mallinf(list.id)" v-for="(list,index) in recomlist" :key='index'>
+			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in recomlist" :key='index'>
 				<div>
 					<p>{{list.name}}</p>
 					<p>{{list.price}}元起/每套</p>

@@ -157,8 +157,8 @@ var _comment = _interopRequireDefault(__webpack_require__(/*! ../../components/c
 
     },
     back_index_build: function back_index_build() {
-      wx.reLaunch({
-        url: '../index/build' });
+      wx.navigateTo({
+        url: "../build/build2?source=1" });
 
     },
     cg_typeindex: function cg_typeindex(index) {

@@ -93,9 +93,9 @@
 				}
 			},
 			back_index_build(){
-				wx.reLaunch({
-					url: '../index/build'
-				});
+				wx.navigateTo({
+					url: `../build/build2?source=1`
+				})
 			},
 			cg_typeindex(index){
 				this.typeindex=index;

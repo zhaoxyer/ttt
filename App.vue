@@ -28,7 +28,7 @@
 	}
 	.bggray {
 		background: #e5e5e5;
-		height: 40upx;
+		height: 30upx;
 	}
 	::-webkit-scrollbar {
 	  width: 0;

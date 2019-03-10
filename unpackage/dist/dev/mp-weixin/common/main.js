@@ -143,11 +143,51 @@ var _index = _interopRequireDefault(__webpack_require__(/*! @/utils/index */ "C:
 _vue.default.use(_vuex.default);
 var store = new _vuex.default.Store({
   state: {
-    adress: '' },
+    adress: '',
+    goods: [],
+    otherGoods: {
+      num: 0,
+      price: 0 },
+
+    goodsPay: [] },
 
   mutations: {
     setDeflfAdress: function setDeflfAdress(state, provider) {
       state.adress = provider;
+    },
+    setGoods: function setGoods(state, provider) {
+      state.goods = provider;
+    },
+    addOtherGoods: function addOtherGoods(state, provider) {
+      state.otherGoods.num += 1;
+      state.otherGoods.price = (Number(state.otherGoods.price) + Number(provider)).toFixed(2);
+    },
+    minusOtherGoods: function minusOtherGoods(state, provider) {
+      if (state.otherGoods.num == 0) return;
+      state.otherGoods.num -= 1;
+      state.otherGoods.price = (Number(state.otherGoods.price) - Number(provider)).toFixed(2);
+    },
+    setGoodsPay: function setGoodsPay(state) {
+      var goodsPay = [];
+      state.goods.map(function (item) {
+        item.guigetype.map(function (item1) {
+
+          if (item1.num > 0) {
+            item1.goodsName = item.clientGoods.name;
+            goodsPay.push(item1);
+          }
+        });
+      });
+      console.log(goodsPay);
+      state.goodsPay = goodsPay;
+    },
+    clean: function clean(state) {
+      state.goods = [];
+      state.otherGoods = {
+        num: 0,
+        price: 0 };
+
+      state.goodsPay = [];
     } },
 
   actions: {
@@ -156,7 +196,7 @@ var store = new _vuex.default.Store({
       _index.default.request({
         url: "address/getdefaddress" }).
       then(function (data) {
-        commit('setDeflfAdress', data || {});
+        commit('setDeflfAdress', data);
       });
     } } });var _default =
 

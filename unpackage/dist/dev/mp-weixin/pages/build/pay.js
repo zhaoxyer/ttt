@@ -89,6 +89,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
 var _adress = _interopRequireDefault(__webpack_require__(/*! ../../components/common/adress.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\adress.vue"));
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
@@ -104,7 +106,6 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       y: "",
       m: '',
       d: '',
-      adress: {},
       vehicleindex: 0,
       carryindex: 0,
       allprice: '',
@@ -201,6 +202,7 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
           return;
         }
       }
+      this.$store.commit('clean');
       _index.default.request({
         data: {
           "addressId": this.adress.id,
@@ -500,7 +502,8 @@ var render = function() {
                     _vm._s(_vm.carrylist[_vm.carryindex].startPrice)
                 )
               ])
-            : _vm._e()
+            : _vm._e(),
+          _c("p", [_vm._v("50kg以下电梯7层以内包括7层免费搬运上门")])
         ],
         1
       ),
@@ -509,26 +512,31 @@ var render = function() {
         { staticClass: "payinf remake" },
         [
           _c("h1", [_vm._v("订单备注")]),
-          _c("textarea", {
-            directives: [
-              {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.remark,
-                expression: "remark"
-              }
-            ],
-            attrs: { placeholder: "如有其它需求请写明", eventid: "c5bf60f6-7" },
-            domProps: { value: _vm.remark },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
+          _c("div", [
+            _c("textarea", {
+              directives: [
+                {
+                  name: "model",
+                  rawName: "v-model",
+                  value: _vm.remark,
+                  expression: "remark"
                 }
-                _vm.remark = $event.target.value
+              ],
+              attrs: {
+                placeholder: "如有其它需求请写明",
+                eventid: "c5bf60f6-7"
+              },
+              domProps: { value: _vm.remark },
+              on: {
+                input: function($event) {
+                  if ($event.target.composing) {
+                    return
+                  }
+                  _vm.remark = $event.target.value
+                }
               }
-            }
-          })
+            })
+          ])
         ],
         1
       ),

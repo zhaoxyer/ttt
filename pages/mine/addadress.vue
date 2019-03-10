@@ -4,7 +4,7 @@
 			<span>姓名</span><input type="text" placeholder="最少2个,最多15个字" v-model="adressinf.name"/>
 		</div>
 		<div>
-			<span>电话</span><input type="number" placeholder="请输入手机号" v-model="adressinf.phone"/>
+			<span>电话</span><input type="number" placeholder="请输入手机号" v-model="adressinf.phone" maxlength="11"/>
 		</div>
 		<div>
 			<span>地区</span><div class="inputall">

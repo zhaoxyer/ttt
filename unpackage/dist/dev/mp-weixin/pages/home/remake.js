@@ -70,7 +70,6 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
       y: "",
       m: '',
       d: '',
-      adress: '',
       type: '',
       remark: '',
       start: _index.default.date(),

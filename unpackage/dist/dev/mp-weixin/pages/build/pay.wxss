@@ -254,13 +254,19 @@
 .remake,.mingxi{
 	border-bottom:1px solid #E5E5E5;
 }
-.remake ._textarea{
-	width: 100%;
+.remake ._div{
 	height: 150rpx;
 	border:1px solid #C9C9C9;
 	border-radius: 10rpx;
 	margin-bottom: 30rpx;
-	font-size: 24rpx;
+	padding: 20rpx;
+	width:inherit;
+}
+.remake ._textarea{
+	width: 100%;
+	height: 100%;
+	font-size: 28rpx;
+	line-height: 28rpx;
 }
 .bgheight{
 	height: 120rpx;

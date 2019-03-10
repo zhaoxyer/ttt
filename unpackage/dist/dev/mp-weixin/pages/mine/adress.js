@@ -32,7 +32,8 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
-var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var _default =
+var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
+var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
     return {
@@ -43,6 +44,9 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
   onLoad: function onLoad(opt) {
     this.src = opt.src;
   },
+  computed: _objectSpread({},
+  (0, _vuex.mapState)(['adress'])),
+
   onShow: function onShow() {
     this.req_getAdress();
   },
@@ -60,11 +64,11 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
     },
     req_getAdress: function req_getAdress() {var _this = this;
-      console.log(this.list);
-      _index.default.request({
+      return _index.default.request({
         url: "address/list" }).
       then(function (data) {
         _this.list = data;
+        return data;
       });
     },
     req_setDef: function req_setDef(item) {var _this2 = this;
@@ -84,7 +88,12 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
 
         url: "address/delete" }).
       then(function (data) {
-        _this3.req_getAdress();
+        _this3.req_getAdress('del').then(function (data) {
+          if (_this3.src && item.id == _this3.adress.id) {
+            _this3.$store.commit('setDeflfAdress', data ? data[0] : data);
+          }
+        });
+
       });
     } } };exports.default = _default;
 

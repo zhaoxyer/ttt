@@ -236,7 +236,7 @@ var render = function() {
               attrs: { eventid: "c169ad22-1-" + index },
               on: {
                 click: function($event) {
-                  _vm.go_build_mallinf(list.id)
+                  _vm.go_build_mallinf(list.id, list.name)
                 }
               }
             },

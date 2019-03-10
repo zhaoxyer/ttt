@@ -23,6 +23,7 @@
 
 <script>
 	import ut from '../../utils/index.js';
+	import {mapState} from 'vuex'
 	export default {
 		data() {
 			return {
@@ -32,6 +33,9 @@
 		},
 		onLoad(opt) {
 			this.src=opt.src;
+		},
+		computed: {
+			...mapState(['adress'])
 		},
 		onShow() {
 			this.req_getAdress();
@@ -50,11 +54,11 @@
 				})
 			},
 			req_getAdress(){
-				console.log(this.list)
-				ut.request({
+				return ut.request({
 					url: "address/list"
 				}).then(data => {
 					this.list=data;
+					return data
 				})
 			},
 			req_setDef(item){
@@ -73,8 +77,13 @@
 					id: item.id
 					},
 					url: "address/delete"
-				}).then(data => {
-					this.req_getAdress();
+				}).then(data => {					
+					this.req_getAdress('del').then((data)=>{
+						if(this.src && item.id==this.adress.id){
+							this.$store.commit('setDeflfAdress', data?data[0]:data)
+						}
+					});
+					
 				})
 			}
 		}

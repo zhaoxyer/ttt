@@ -56,12 +56,14 @@
 			<p class="louceng" v-if="carrylist.length&&requireCarry==1">
 				<input placeholder="请输入楼层" v-model="floor" type="number"/>层 起步价¥{{carrylist[carryindex].startPrice}}
 			</p>
+			<p>50kg以下电梯7层以内包括7层免费搬运上门</p>
 		</div>
 		<div class="payinf remake">
 			<h1>订单备注</h1>
-			<textarea v-model="remark" placeholder="如有其它需求请写明">
-				
-			</textarea>
+			<div>
+				<textarea v-model="remark" placeholder="如有其它需求请写明">
+				</textarea>
+			</div>
 		</div>
 		<div class="payinf mingxi">
 			<h1>价格明细</h1>
@@ -94,7 +96,6 @@
 				y:"",
 				m:'',
 				d:'',
-				adress:{},
 				vehicleindex:0,
 				carryindex:0,
 				allprice:'',
@@ -191,6 +192,7 @@
 						return;
 					}
 				}
+				this.$store.commit('clean')
 				ut.request({
 					data: {
 						 "addressId": this.adress.id,
@@ -440,15 +442,20 @@
 	.remake,.mingxi{
 		border-bottom:1px solid #E5E5E5;
 	}
+	.remake div{
+		height: 150rpx;
+		border:1px solid #C9C9C9;
+		border-radius: 10rpx;
+		margin-bottom: 30rpx;
+		padding: 20rpx;
+		width:inherit;
+	}
 	.remake textarea{
 		width: 100%;
-		height: 150upx;
-		border:1px solid #C9C9C9;
-		border-radius: 10upx;
-		margin-bottom: 30upx;
-		font-size: 24upx;
+		height: 100%;
+		font-size: 28rpx;
+		line-height: 28rpx;
 	}
-	
 	.bgheight{
 		height: 120upx;
 	}

@@ -60,7 +60,6 @@
 				y: "",
 				m: '',
 				d: '',
-				adress: '',
 				type:'',
 				remark: '',
 				start:ut.date(),
