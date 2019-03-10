@@ -13,9 +13,12 @@
 <import src="/components/common/banner.vue.wxml" />
 <import src="/components/common/serverType.vue.wxml" />
 <import src="/components/common/servers.vue.wxml" />
+<import src="/components/order/checkOrder.vue.wxml" />
+<import src="/components/order/buildingGoods.vue.wxml" />
+<import src="/components/order/orderComment.vue.wxml" />
 <import src="/components/common/buildServer.vue.wxml" />
-<import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <import src="/components/common/adress.vue.wxml" />
+<import src="/components/mpvue-wxparse/src/wxParse.vue.wxml" />
 <import src="/components/common/goodsInf.vue.wxml" />
 <import src="/components/comment.vue.wxml" />
 <import src="/components/goodsOrderItem.vue.wxml" />
