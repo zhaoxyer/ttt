@@ -102,6 +102,10 @@
 					ut.totast('请选择时间');
 					return;
 				}
+				if(!ut.timespace(this.date+' '+this.time)){
+					ut.totast('请选择两小时后');
+					return
+				}
 				ut.request({
 					data: {
 						"addressId": this.adress.id,

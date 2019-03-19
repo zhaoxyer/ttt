@@ -25,8 +25,8 @@
 		},
 		methods: {
 			goInf(item){
-				if(this.type==1)ut.goto(`../home/serverinf?_id=${item.id}&title=${item.name||''}`)
-				if(this.type==2)ut.goto(`../build/mallinf?_id=${item.id}&&title=${item.name||''}`)
+				if(this.type==1)ut.goto(`../home/serverinf?_id=${item.linkId}&title=${item.linkName||''}`)
+				if(this.type==2)ut.goto(`../build/mallinf?_id=${item.linkId}&&title=${item.linkName||''}`)
 			}
 		}
 	}

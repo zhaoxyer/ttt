@@ -112,6 +112,10 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
         _index.default.totast('请选择时间');
         return;
       }
+      if (!_index.default.timespace(this.date + ' ' + this.time)) {
+        _index.default.totast('请选择两小时后');
+        return;
+      }
       _index.default.request({
         data: {
           "addressId": this.adress.id,

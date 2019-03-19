@@ -95,9 +95,9 @@ var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js
         }
       });
     },
-    go_build_mallinf: function go_build_mallinf(_id) {
+    go_build_mallinf: function go_build_mallinf(_id, name) {
       wx.navigateTo({
-        url: "../build/mallinf?_id=".concat(_id) });
+        url: "../build/mallinf?_id=".concat(_id, "&&title=").concat(name) });
 
     } } };exports.default = _default;
 
@@ -173,7 +173,7 @@ var render = function() {
             attrs: { eventid: "5312e73c-2-" + index },
             on: {
               click: function($event) {
-                _vm.go_build_mallinf(list.classId)
+                _vm.go_build_mallinf(list.id, list.name)
               }
             }
           },

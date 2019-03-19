@@ -186,7 +186,11 @@ var _wxParse = _interopRequireDefault(__webpack_require__(/*! ../../components/m
 
         url: "goods/goodsdetail" }).
       then(function (data) {
-        _this.clientGoods = data.clientGoods;
+        if (!data.clientGoods) {
+          _index.default.totast('商品信息不全');
+          return;
+        }
+        _this.clientGoods = data.clientGoods || {};
         var reg = new RegExp('/attach/download\\?filePath=', 'g');
         _this.detailinf = (0, _marked.default)(_this.clientGoods.detail.replace(reg, _index.default.static));
         if (data.clientGoodsSpecList[0]) {

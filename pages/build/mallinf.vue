@@ -176,7 +176,11 @@
 					},
 					url: "goods/goodsdetail"
 				}).then(data=>{
-					this.clientGoods=data.clientGoods;
+					if(!data.clientGoods){
+						ut.totast('商品信息不全')
+						return
+					}
+					this.clientGoods=data.clientGoods||{};
 					const reg=new RegExp('/attach/download\\?filePath=','g');
 					this.detailinf=marked(this.clientGoods.detail.replace(reg,ut.static));
 					if(data.clientGoodsSpecList[0]){

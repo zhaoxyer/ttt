@@ -6406,8 +6406,8 @@ var _index = _interopRequireDefault(__webpack_require__(/*! @/utils/index */ "C:
   },
   methods: {
     goInf: function goInf(item) {
-      if (this.type == 1) _index.default.goto("../home/serverinf?_id=".concat(item.id, "&title=").concat(item.name || ''));
-      if (this.type == 2) _index.default.goto("../build/mallinf?_id=".concat(item.id, "&&title=").concat(item.name || ''));
+      if (this.type == 1) _index.default.goto("../home/serverinf?_id=".concat(item.linkId, "&title=").concat(item.linkName || ''));
+      if (this.type == 2) _index.default.goto("../build/mallinf?_id=".concat(item.linkId, "&&title=").concat(item.linkName || ''));
     } } };exports.default = _default;
 
 /***/ }),
@@ -20230,6 +20230,9 @@ ut.time = function (timestamp) {
   h = date.getHours() < 10 ? '0' + date.getHours() : date.getHours() + ' :',
   m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
   return Y + M + D + " " + h + m;
+};
+ut.timespace = function (time) {
+  return new Date(time).getTime() - new Date().getTime() > 60 * 1000 * 60 * 2;
 };
 ut.reloaadTime = 600;
 ut.checkPageTime = function (name) {

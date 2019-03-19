@@ -67,6 +67,9 @@ ut.time = function(timestamp) {
 		m = date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes();
 	return Y + M + D + " " + h + m;
 };
+ut.timespace = (time)=>{
+	return (new Date(time).getTime()-new Date().getTime())>60*1000*60*2
+}
 ut.reloaadTime = 600;
 ut.checkPageTime=function(name){
 	const monttime = new Date().getTime();

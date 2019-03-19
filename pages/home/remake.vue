@@ -152,6 +152,10 @@
 					ut.totast('请选择时间');
 					return;
 				}
+				if(!ut.timespace(this.date+' '+this.time)){
+					ut.totast('请选择两小时后');
+					return
+				}
 				if(this.type){
 					this.whole()
 				}else{
