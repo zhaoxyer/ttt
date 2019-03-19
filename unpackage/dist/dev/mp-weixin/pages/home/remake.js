@@ -57,8 +57,10 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
 var _index = _interopRequireDefault(__webpack_require__(/*! ../../utils/index.js */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\utils\\index.js"));
 var _adress = _interopRequireDefault(__webpack_require__(/*! ../../components/common/adress.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\adress.vue"));
+var _precautions = _interopRequireDefault(__webpack_require__(/*! ../../components/common/precautions.vue */ "C:\\Users\\hasee\\Documents\\HBuilderProjects\\mall\\components\\common\\precautions.vue"));
 var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.js");function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}function _objectSpread(target) {for (var i = 1; i < arguments.length; i++) {var source = arguments[i] != null ? arguments[i] : {};var ownKeys = Object.keys(source);if (typeof Object.getOwnPropertySymbols === 'function') {ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {return Object.getOwnPropertyDescriptor(source, sym).enumerable;}));}ownKeys.forEach(function (key) {_defineProperty(target, key, source[key]);});}return target;}function _defineProperty(obj, key, value) {if (key in obj) {Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true });} else {obj[key] = value;}return obj;}var _default =
 {
   data: function data() {
@@ -80,7 +82,8 @@ var _vuex = __webpack_require__(/*! vuex */ "./node_modules/vuex/dist/vuex.esm.j
   (0, _vuex.mapState)(['adress'])),
 
   components: {
-    Adress: _adress.default },
+    Adress: _adress.default,
+    precautions: _precautions.default },
 
   onLoad: function onLoad(opt) {
     console.log(_index.default.date());
@@ -335,6 +338,7 @@ var render = function() {
         ],
         1
       ),
+      _c("precautions", { attrs: { type: "2", mpcomid: "dc27bf62-1" } }),
       _c(
         "div",
         {

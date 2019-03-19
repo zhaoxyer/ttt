@@ -39,13 +39,7 @@
 				<textarea v-model="remark" placeholder="请描述故障原因或简单问题"></textarea>
 			</div>
 		</div>
-		<div class="tip">
-			<div>注意事项:</div>
-			<div>
-				<p>1.本次付款为部分定金支付；</p>
-				<p>2.生活邦服务完工后，需进行尾款支付；</p>
-			</div>
-		</div>
+		<precautions type='2'></precautions>
 		<div class="apply" @click='req_unifiedOrder'>
 			<div>确认支付</div>
 		</div>
@@ -55,6 +49,7 @@
 <script>
 	import ut from '../../utils/index.js';
 	import Adress from '../../components/common/adress.vue'
+	import precautions from '../../components/common/precautions.vue'
 	import {mapState} from 'vuex'
 	export default {
 		data() {
@@ -75,7 +70,8 @@
 			...mapState(['adress'])
 		},
 		components:{
-			Adress
+			Adress,
+			precautions
 		},
 		onLoad() {
 			this.static = ut.static;

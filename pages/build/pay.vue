@@ -73,7 +73,7 @@
 				<p v-if='requireCarry==1'>搬运费：¥{{carryprice}}</p>
 			</div>
 		</div>
-		<div class="bgheight"></div>
+		<precautions type='1'></precautions>
 		<div class="apply" >
 			<span>合计：<span>¥{{allprice}}</span></span><span @click='req_unifiedOrder'>确认支付</span>
 		</div>					
@@ -83,6 +83,7 @@
 <script>
 	import ut from '../../utils/index.js';
 	import Adress from '../../components/common/adress.vue'
+	import precautions from '../../components/common/precautions.vue'
 	import {mapState} from 'vuex'
 	export default {
 		data() {
@@ -114,7 +115,8 @@
 			...mapState(['adress'])
 		},
 		components:{
-			Adress
+			Adress,
+			precautions
 		},
 		onLoad(opt) {
 			this.static=ut.static;

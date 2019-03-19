@@ -40,6 +40,7 @@
 				</textarea>
 			</div>
 		</div>
+		<precautions type='2'></precautions>
 		<div class="apply" @click='req_remake'>
 			<div>立即预约</div>
 		</div>
@@ -49,6 +50,7 @@
 <script>
 	import ut from '../../utils/index.js';
 	import Adress from '../../components/common/adress.vue'
+	import precautions from '../../components/common/precautions.vue'
 	import {mapState} from 'vuex'
 	export default {
 		data() {
@@ -70,7 +72,8 @@
 			...mapState(['adress'])
 		},
 		components:{
-			Adress
+			Adress,
+			precautions
 		},
 		onLoad(opt) {
 			console.log(ut.date())

@@ -383,6 +383,19 @@ swiper.data-v-6e6b6c9d {
 }	
 
 
+.cont-tip.data-v-0c2fe1ea{
+	display:-webkit-box;
+	display:-webkit-flex;
+	display:-ms-flexbox;
+	display:flex;
+	padding:0 30rpx;
+	line-height:40rpx;
+	margin-top:10rpx;
+	font-size:24rpx;
+	margin-bottom:120rpx;
+}
+
+
 .login{height: 100%;width: 100%;background: transparent;position: absolute;z-index: 1500;}
 .login ._button{background: transparent;width: 100%;height: 100%;color: transparent;position: absolute;}
 .login ._button:after{border: none;}
