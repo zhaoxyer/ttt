@@ -7,7 +7,7 @@
 	display: flex;
 	position: relative;
 }
-.setinput>._div>._span,.setinput>._div>._input,.setinput>._div>._textarea,.setinput>._div>.inputall{
+.setinput>._div>._span,.setinput>._div>input,.setinput>._div>textarea,.setinput>._div>.inputall{
 	font-size: 24rpx;
 	line-height: 80rpx;
 	min-height: 80rpx;
@@ -15,7 +15,7 @@
 	height: 80rpx;
 	padding: 0!important;
 }
-.setinput>._div>._input,.setinput>._div>._textarea,.setinput>._div>.inputall{
+.setinput>._div>input,.setinput>._div>textarea,.setinput>._div>.inputall{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	    -ms-flex: 1;
@@ -27,12 +27,12 @@
 .setinput>._div>._span{
 	width: 80rpx;
 }
-.setinput>._div>._textarea{
+.setinput>._div>textarea{
 	width: 500rpx;
 	margin-top: 38rpx;
 	line-height: 40rpx;
 }
-.setinput>._div>._input{
+.setinput>._div>input{
 	width: 300rpx;
 }
 .submit{

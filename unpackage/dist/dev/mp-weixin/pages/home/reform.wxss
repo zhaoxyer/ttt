@@ -62,7 +62,7 @@
 	float: right;
 	margin-top: 5rpx;
 }
-.inf>._div ._div ._input {
+.inf>._div ._div input {
 	width: 100%;
 	height: 30rpx;
 	line-height: 30rpx;

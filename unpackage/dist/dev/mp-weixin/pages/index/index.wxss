@@ -1,5 +1,5 @@
 
-.leftright.data-v-b1c2e322{
+.leftright.data-v-192dc0cd{
 	padding: 0 29.58rpx 0 30.79rpx;
 	margin-top: 27rpx;
 	display: -webkit-box;
@@ -14,7 +14,7 @@
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 }
-.fuwu ._p.data-v-b1c2e322{
+.fuwu ._p.data-v-192dc0cd{
 	font-size: 24rpx;
 	padding: 19.92rpx 0;
 	overflow: hidden;
@@ -22,16 +22,16 @@
 	   text-overflow:ellipsis;
 	white-space: nowrap;
 }
-.fuwu ._div.data-v-b1c2e322{
+.fuwu ._div.data-v-192dc0cd{
 	width: 325.48rpx;
 	text-align: center;
 }
-.fuwu ._div image.data-v-b1c2e322{
+.fuwu ._div image.data-v-192dc0cd{
 	width: 100%;
 	height: 325.48rpx;
 	display: block;
 }
-.color.data-v-b1c2e322{
+.color.data-v-192dc0cd{
 	color: #FEC300;
 }
 
@@ -61,7 +61,7 @@
 	margin-bottom: 23.5rpx;
 	margin-top: 27rpx;
 }
-.buju ._button{
+.buju button{
 	position: absolute;
 	background: transparent;
 	width: 122rpx;
@@ -69,11 +69,11 @@
 	left: 128rpx;
 	border: none;
 }
-.buju ._button:nth-child(2){
+.buju button:nth-child(2){
 	right: 128rpx;
 	left: inherit;
 }
-.buju ._button:after{border: none;}
+.buju button:after{border: none;}
 .buju image{
 	width: 100%;
 	display: block;

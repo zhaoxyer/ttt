@@ -1,1 +1,1 @@
-<template name="24926472"><view class="_div 24926472 login"><button open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'24926472-0'}}" data-comkey="{{$k}}" class="_button 24926472"></button></view></template>
+<template name="8a5263a0"><view class="_div 8a5263a0 login"><button open-type="getUserInfo" bindgetuserinfo="handleProxy" data-eventid="{{'8a5263a0-0'}}" data-comkey="{{$k}}" class="_button 8a5263a0"></button></view></template>

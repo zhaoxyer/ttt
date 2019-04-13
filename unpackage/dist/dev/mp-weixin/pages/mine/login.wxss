@@ -26,7 +26,7 @@
 	width: 250rpx;
 	height: 250rpx;
 }
-.setinput>._div>._input{
+.setinput>._div>input{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	    -ms-flex: 1;
@@ -39,7 +39,7 @@
 	display: flex;
 	border-bottom: 1px solid #C8C8C8;
 }
-.setinput>._div>._input{
+.setinput>._div>input{
 	line-height: 90rpx;
 	height: 90rpx;
 	font-size: 24rpx;

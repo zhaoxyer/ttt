@@ -1,6 +1,7 @@
 <template>
 	<div class="cont-tip">
-		<wxParse :content="precautions"/>
+		<!-- <wxParse :content="precautions"/> -->
+		<text>{{precautions}}</text>
 	</div>
 </template>
 
@@ -27,9 +28,9 @@
 					},
 					url: "precautions/list"
 				}).then(data=>{
-					const msg = data?data[0].content: ''
-					const reg=new RegExp('/attach/download\\?filePath=','g');
-					this.precautions=marked(msg.replace(reg,ut.static));
+					this.precautions = data?data[0].content: ''
+// 					const reg=new RegExp('/attach/download\\?filePath=','g');
+// 					this.precautions=marked(msg.replace(reg,ut.static));
 				})
 			}
 		},

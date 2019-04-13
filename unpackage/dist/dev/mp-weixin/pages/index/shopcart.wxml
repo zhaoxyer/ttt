@@ -1,2 +1,2 @@
 <import src="./shopcart.vue.wxml" />
-    <template is="6c641c75" data="{{ ...$root['0'], $root }}"/>
+    <template is="a1687f44" data="{{ ...$root['0'], $root }}"/>

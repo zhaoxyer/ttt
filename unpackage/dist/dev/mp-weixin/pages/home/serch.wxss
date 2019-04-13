@@ -16,7 +16,7 @@
 	color: #5d5c5c;
 }
 .serch image{width: 26rpx;height: 24rpx;margin-left: 30rpx;margin-right: 30rpx;}
-.serch ._input{
+.serch input{
 	-webkit-box-flex: 1;
 	-webkit-flex: 1;
 	    -ms-flex: 1;

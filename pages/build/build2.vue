@@ -61,7 +61,7 @@
 			go_build_tenant(storeid,item){
 				wx.setStorageSync('tenant',item)
 				wx.navigateTo({
-					url: `../build/tenant?storeid=${storeid}&classid=${this.classlist[this.activeindex].id}`
+					url: `../build/tenant_new?storeid=${storeid}&classid=${this.classlist[this.activeindex].id}`
 				})
 			},
 			cg_activeindex(index,classid){

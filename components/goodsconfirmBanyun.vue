@@ -10,6 +10,18 @@
 						<span class="cancel-radio"></span>
 						<span class="cancel-label">{{list.name +"：¥"+list.price+" "+list.unit+' * '+list.number}}</span>
 					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlan.taxRate != 0">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">税率 {{confirmPlan.taxRate}}</span>
+					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlan.storeDiscount != -1">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">搬运折扣 {{confirmPlan.carryDiscount}}折</span>
+					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlan.mudouDiscount != -1">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">木斗工匠折扣 {{confirmPlan.mudouDiscount}}折</span>
+					</div>
 				</div>
 				<div class="cancel-statement-wrap">
 					<div class="cancel-radio-wrap">

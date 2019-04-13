@@ -39,6 +39,20 @@ ut.time=function(){
 	var nowDate = hour + "-" + minute;
 	return nowDate;
 }
+ut.startTime=function(){
+	let timestamp = new Date().getTime();//当前的时间戳
+	timestamp = timestamp + 2 * 60 * 60 * 1000;
+	let date = new Date(timestamp);
+	let hour = date.getHours();
+	let minute = date.getMinutes();
+	if (hour < 10) {
+		hour = "0" + hour;
+	}
+	if (minute < 10) {
+		minute = "0" + minute;
+	}
+	return hour + ":" + minute;
+}
 ut.enddate=function(){
 	var date = new Date();
 	var year = date.getFullYear()+2;
@@ -68,6 +82,8 @@ ut.time = function(timestamp) {
 	return Y + M + D + " " + h + m;
 };
 ut.timespace = (time)=>{
+	// iOS需要把 - 替换成 / 才能正常解析
+	time = time.replace(/-/g,'/');
 	return (new Date(time).getTime()-new Date().getTime())>60*1000*60*2
 }
 ut.reloaadTime = 600;

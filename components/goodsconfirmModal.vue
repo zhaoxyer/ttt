@@ -10,6 +10,18 @@
 						<span class="cancel-radio"></span>
 						<span class="cancel-label">{{confirmPlanlist.expressType+' ¥'+confirmPlanlist.startPrice}}</span>
 					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlanlist.taxRate != 0">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">税率 {{confirmPlanlist.taxRate}}</span>
+					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlanlist.storeDiscount != -1">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">速递折扣 {{confirmPlanlist.expressDiscount}}折</span>
+					</div>
+					<div class="cancel-radio-wrap" v-if="confirmPlanlist.mudouDiscount != -1">
+						<span class="cancel-radio"></span>
+						<span class="cancel-label">木斗工匠折扣 {{confirmPlanlist.mudouDiscount}}折</span>
+					</div>
 				</div>
 				<div class="cancel-statement-wrap">
 					<div class="cancel-radio-wrap">

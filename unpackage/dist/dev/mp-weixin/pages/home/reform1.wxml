@@ -1,2 +1,2 @@
 <import src="./reform1.vue.wxml" />
-    <template is="a98884a8" data="{{ ...$root['0'], $root }}"/>
+    <template is="9f457056" data="{{ ...$root['0'], $root }}"/>

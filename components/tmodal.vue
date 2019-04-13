@@ -32,7 +32,7 @@ export default {
 		position: fixed;
 		top: 0upx;
 		left: 0upx;
-		z-index: 99;
+		z-index: 9999;
 	}
 	.action-main-wrap {
 		width: 100%;

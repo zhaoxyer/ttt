@@ -9,6 +9,7 @@
     "pages/build/serch",
     "pages/build/mallinf",
     "pages/build/tenant",
+    "pages/build/tenant_new",
     "pages/build/pay",
     "pages/mine/infchange",
     "pages/mine/updatephone",
@@ -31,7 +32,10 @@
     "pages/home/reform1",
     "pages/home/pay",
     "pages/order/checkOrder",
-    "pages/order/buildingGoods"
+    "pages/order/buildingGoods",
+    "pages/build/custominf",
+    "pages/build/custom_pay",
+    "pages/order/customOrder"
   ],
   "subPackages": [],
   "window": {
@@ -40,6 +44,7 @@
     "navigationBarBackgroundColor": "#FEC300",
     "backgroundColor": "#FEC300"
   },
+  "usingComponents": {},
   "tabBar": {
     "color": "#666666",
     "selectedColor": "#FEC300",
@@ -77,5 +82,6 @@
         "selectedIconPath": "static/_tabbar4.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

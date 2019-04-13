@@ -7,24 +7,24 @@
 				<div class="listcom" v-for="list in list" :key="list">
 					<div class="commentlist">
 						<div class="userinf">
-							<image src="/static/logo.jpg"></image><span>炸啊实打实</span>
+							<image :src="list.photo?list.photo:'../../static/logo.jpg'"></image><span>{{list.account}}</span>
 						</div>
 						<div class="date">
-							<span>2018-10-22</span><span>规格：啊实打实大所</span>
+							<span>{{list.create_time}}</span><span>规格：{{list.name}}</span>
 						</div>
 						<div class="cont">
-							一大早礼物就收到了
+							{{list.commentBox}}
 						</div>
-						<div class="imgcont">
-							<image src="/static/build/cailiao.png"></image><image src="/static/build/cailiao.png"></image><image src="/static/build/cailiao.png"></image>
+						<div class="imgcont" v-if="list.pictures&&list.pictures.length">
+							<image :src="static+item" v-for="(item,itemindex) in list.pictures" :key="item" v-if="item"></image>
 						</div>
-						<div class="cont">
-							客服回复：卡萨丁卡卡是贷款卡刷卡单卡
-						</div>
+						<!-- <div class="cont" v-if="list.reply">
+							客服回复：{{list.reply}}
+						</div> -->
 					</div>
-					<div class="cont1 zhuiping">
-						追评：卡萨丁卡卡是贷款卡刷卡单卡
-					</div>
+					<!-- <div class="cont1 zhuiping" v-if="list.review">
+						追评：{{list.review}}
+					</div> -->
 				</div>
 			</scroll-view>
 			
@@ -32,10 +32,13 @@
 </template>
 
 <script>
+import ut from '@/utils/index'
 export default {
   props: ["list"],
   data() { 
-		return {}
+		return {
+			static: ut.static
+		}
   },
   methods: {
 		colose(){
@@ -46,6 +49,9 @@ export default {
 </script>
 
 <style scoped="true">
+	.list{
+		height: 400rpx;
+	}
 	.comment{
 		left: 10upx;
 		right: 10upx;

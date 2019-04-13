@@ -1,81 +1,3 @@
-
-.comment.data-v-ccf18128{
-	left: 10rpx;
-	right: 10rpx;
-	height: 600rpx;
-	background: white;
-	-webkit-box-shadow: 1px 2px 3px 4px #ccc inset;
-	        box-shadow: 1px 2px 3px 4px #ccc inset;
-	border-radius: 10rpx;
-	top:300rpx;
-	position: absolute;
-}
-.close.data-v-ccf18128{
-	padding: 20px 30rpx;
-	text-align: right;
-}
-.close image.data-v-ccf18128{
-	display: inline-block;
-	vertical-align: top;
-	width: 40rpx;
-	height: 40rpx;
-}
-.cont.data-v-ccf18128{
-	line-height: 60rpx;
-}
-.listcom.data-v-ccf18128{
-	border-bottom: 1px solid #e8e8e8;
-}
-.commentlist.data-v-ccf18128{
-	font-size: 24rpx;
-	padding: 0 30rpx;
-}
-.zhuiping.data-v-ccf18128{
-	border-top: 1px solid #e8e8e8;
-}
-.commentlist .list.data-v-ccf18128{
-	height: 520rpx;
-}
-.commentlist .userinf.data-v-ccf18128{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	height: 70rpx;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	line-height: 50rpx;
-}
-.commentlist .userinf image.data-v-ccf18128{
-	width: 60rpx;
-	height: 60rpx;
-	border-radius: 50%;
-	margin-right: 10rpx;
-}
-.cont1.data-v-ccf18128{
-	line-height: 60rpx;
-	font-size: 24rpx;
-	padding:0 30rpx;
-}
-.imgcont.data-v-ccf18128{
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-}
-.imgcont image.data-v-ccf18128{
-	width: 200rpx;
-	height: 150rpx;
-	margin-top: 15rpx;
-	margin-left:30px ;
-	margin-bottom: 15rpx;
-}
-.imgcont image.data-v-ccf18128:nth-child(3n+1){
-	margin-left: 0;
-}
-
 /**
  * author: Di (微信小程序开发工程师)
  * organization: WeAppDev(微信小程序开发论坛)(http://weappdev.com)
@@ -299,143 +221,144 @@
   border-top: 2rpx solid #e0e0e0;
 }
 .servertype{
-	padding: 0 30px 10px 30rpx;
-	border-bottom: 1px solid #E5E5E5;
+		padding: 0 30px 10px 30rpx;
+		border-bottom: 1px solid #E5E5E5;
 }
 .serverinf{
-	line-height: 30rpx;
-	font-size: 28rpx;
-	padding: 30px 0;
-	position: relative;
+		line-height: 30rpx;
+		font-size: 28rpx;
+		padding: 30px 0;
+		position: relative;
 }
 .serverinf>._div:first-child{
-	position: absolute;
-	right: 0;
+		position: absolute;
+		right: 0;
 }
-.serverinf>._div:last-child ._span:nth-child(2){
-	color: #FEC300;
+.serverinf>._div:last-child ._span:nth-child(1){
+		color: #FEC300;
 }
 .serverinf>._div ._span,.serverinf>._div image{
-	display: inline-block;
-	vertical-align: top;
+		display: inline-block;
+		vertical-align: top;
 }
 .serverinf>._div image{
-	width: 25rpx;
-	height: 30rpx;
+		width: 25rpx;
+		height: 30rpx;
 }
-.serverinf>._div ._span:last-child{
-	margin-left: 20rpx;
-}
+
+/* 	.serverinf>div span:last-child{
+		margin-left: 20upx;
+	} */
 .typelist>._div{
-	width: 30%;
-	font-size: 24rpx;
-	background: #C9C9C9;
-	color: white;
-	text-align: center;
-	line-height: 40rpx;
-	display: inline-block;
-	vertical-align: top;
-	margin-bottom: 20rpx;
+		width: 30%;
+		font-size: 24rpx;
+		background: #C9C9C9;
+		color: white;
+		text-align: center;
+		line-height: 40rpx;
+		display: inline-block;
+		vertical-align: top;
+		margin-bottom: 20rpx;
 }
 .typelist>._div ._div{
-	padding: 10px 0;
+		padding: 10px 0;
 }
 .typelist>._div.active ._div{
-	color: #FEC300;
-	border: 1px solid #FEC300;
-	background: white;
+		color: #FEC300;
+		border: 1px solid #FEC300;
+		background: white;
 }
 .typelist>._div:nth-child(3n-1){
-	margin: 0 5%;
+		margin: 0 5%;
 }
 .evaluate{
-	padding: 0 30rpx;
+		padding: 0 30rpx;
 }
 .evanum{
-	height: 80rpx;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-webkit-align-items: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-	-webkit-box-pack: justify;
-	-webkit-justify-content: space-between;
-	    -ms-flex-pack: justify;
-	        justify-content: space-between;
-	font-size: 24rpx;
+		height: 80rpx;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		-webkit-box-pack: justify;
+		-webkit-justify-content: space-between;
+		    -ms-flex-pack: justify;
+		        justify-content: space-between;
+		font-size: 24rpx;
 }
 .evanum image{
-	width: 20rpx;
-	height: 20rpx;
-	margin-left: 20rpx;
+		width: 20rpx;
+		height: 20rpx;
+		margin-left: 20rpx;
 }
 .evanum>._div:first-child{
-	font-size: 28rpx;
+		font-size: 28rpx;
 }
 .gobuild{
-	text-align: center;
-	font-size: 24rpx;
+		text-align: center;
+		font-size: 24rpx;
 }
 .gobuild ._span{
-	width: 200rpx;
-	line-height: 50rpx;
-	display: inline-block;
-	background: #FEC200;
-	color: white;
-	border-radius: 25rpx;
+		width: 200rpx;
+		line-height: 50rpx;
+		display: inline-block;
+		background: #FEC200;
+		color: white;
+		border-radius: 25rpx;
 }
 .evaluate .tip{
-	color: #b4b4b4;
-	line-height: 80rpx;
-	text-align: center;
-	font-size: 24rpx;
+		color: #b4b4b4;
+		line-height: 80rpx;
+		text-align: center;
+		font-size: 24rpx;
 }
 .bggray {
-	background: #e5e5e5;
-	height: 40rpx;
+		background: #e5e5e5;
+		height: 40rpx;
 }
 .liucheng{
-	width: 100%;
+		width: 100%;
 }
 .footer{
-	position: fixed;
-	display: -webkit-box;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	width: 100%;
-	height: 100rpx;
-	bottom: 0;
-	line-height: 100rpx;
-	background: white;
-	border-top:1px solid #dadada;
-	font-size: 24rpx;
+		position: fixed;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		width: 100%;
+		height: 100rpx;
+		bottom: 0;
+		line-height: 100rpx;
+		background: white;
+		border-top:1px solid #dadada;
+		font-size: 24rpx;
 }
 .footer>._div:first-child{
-	-webkit-box-flex: 1;
-	-webkit-flex: 1;
-	    -ms-flex: 1;
-	        flex: 1;
-	text-align: right;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		    -ms-flex: 1;
+		        flex: 1;
+		text-align: right;
 }
 .footer>._div:first-child ._span{
-	display: inline-block;
-	vertical-align: top;
+		display: inline-block;
+		vertical-align: top;
 }
 .footer>._div:first-child ._span:last-child{
-	padding: 0 30px 0 20rpx;
-	color: #FEC200;
+		padding: 0 30px 0 20rpx;
+		color: #FEC200;
 }
 .footer>._div:last-child{
-	width: 250rpx;
-	color: white;
-	background: #FEC200;
-	text-align: center;
+		width: 250rpx;
+		color: white;
+		background: #FEC200;
+		text-align: center;
 }
 .detail{
-	padding: 0 30rpx;
+		padding: 0 30rpx;
 }
 

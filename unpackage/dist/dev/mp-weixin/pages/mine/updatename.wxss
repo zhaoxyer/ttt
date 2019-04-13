@@ -9,7 +9,7 @@
 	line-height: 60rpx;
 	height: 60rpx;
 }
-.updatecont ._input{
+.updatecont input{
 	width: 100%;
 	border-bottom: 2px solid #FEC200;
 	line-height: 60rpx;

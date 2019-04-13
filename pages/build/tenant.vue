@@ -219,12 +219,13 @@
 					data: {
 						storeid:this.storeid
 					},
-					url: "goods/storeclasslist"
+					url: "goods/storeclasslist1"
 				}).then(data=>{
 					this.typeList=data;
 					if(data[0]){
 						this.class_id=data[0].id;
 					}
+					console.log(data)
 				}).then(data=>{
 					this.req_goodslist();
 				})

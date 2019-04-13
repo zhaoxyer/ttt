@@ -53,6 +53,7 @@
 	import ut from '../../utils/index.js';
 	import marked from '../../components/marked'
 	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
+	import comment from '../../components/comment'
 	export default {
 		data() {
 			return {
@@ -74,7 +75,8 @@
 			}
 		},
 		components: {
-			wxParse
+			wxParse,
+			comment
 		},
 		onLoad(opt) {
 			this.static=ut.static;
@@ -239,11 +241,15 @@
 				ut.request({
 					data: {
 						proId:id,
-						type:2
+						type:1
 					},
+					method:"GET",
 					url: "comment/list"
 				}).then(data=>{
-					this.comlist=data;
+					data.forEach(item=>{
+						item.pictures =item.pictures.split(',')
+					})
+					this.comlist=data
 				})
 			}
 		}

@@ -1,2 +1,2 @@
 <import src="./mallinf.vue.wxml" />
-    <template is="63085cac" data="{{ ...$root['0'], $root }}"/>
+    <template is="6d8b8ca1" data="{{ ...$root['0'], $root }}"/>

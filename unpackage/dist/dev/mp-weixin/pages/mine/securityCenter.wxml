@@ -1,2 +1,2 @@
 <import src="./securityCenter.vue.wxml" />
-    <template is="a163ed22" data="{{ ...$root['0'], $root }}"/>
+    <template is="4f6521b4" data="{{ ...$root['0'], $root }}"/>

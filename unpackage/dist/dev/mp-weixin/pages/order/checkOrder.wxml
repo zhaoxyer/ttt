@@ -1,2 +1,2 @@
 <import src="./checkOrder.vue.wxml" />
-    <template is="7012e8c9" data="{{ ...$root['0'], $root }}"/>
+    <template is="d0bd931c" data="{{ ...$root['0'], $root }}"/>

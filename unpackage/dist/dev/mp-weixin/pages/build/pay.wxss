@@ -15,7 +15,7 @@
 	height: 60rpx;
 	font-size: 24rpx;
 }
-.louceng ._input{
+.louceng input{
 	border: 1px solid #999999;
 	border-radius: 10rpx;
 }
@@ -262,7 +262,7 @@
 	padding: 20rpx;
 	width:inherit;
 }
-.remake ._textarea{
+.remake textarea{
 	width: 100%;
 	height: 100%;
 	font-size: 28rpx;

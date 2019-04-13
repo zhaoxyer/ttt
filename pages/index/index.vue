@@ -114,9 +114,10 @@
 			req_banner(){
 				ut.request({
 					allurl: ut.uploadimgurl+"common/banner",
-					data:{type:1},
+					data:{type:2},
 					method:'GET'
 				}).then(data=>{
+					console.log(data);
 					this.swipeList=data;
 					wx.setStorageSync('banderindex',this.swipeList);
 				})

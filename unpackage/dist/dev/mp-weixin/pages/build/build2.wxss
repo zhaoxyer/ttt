@@ -1,5 +1,5 @@
 
-.server.data-v-6dcb6830{
+.server.data-v-061e3b8e{
 	padding:0 0 26rpx 0;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -9,7 +9,7 @@
 	    -ms-flex-wrap: wrap;
 	        flex-wrap: wrap;
 }
-.server ._div.data-v-6dcb6830{
+.server ._div.data-v-061e3b8e{
 	margin-top: 26rpx;
 	background: #C9C9C9;
 	color: white;
@@ -20,7 +20,7 @@
 	text-align: center;
 	border-radius: 8rpx;
 }
-.server ._div.active.data-v-6dcb6830{
+.server ._div.active.data-v-061e3b8e{
 	background: #FEC300;
 }
 

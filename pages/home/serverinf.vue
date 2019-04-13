@@ -7,7 +7,7 @@
 		</swiper>
 		<div class="servertype">
 			<div class="serverinf">
-				<div><button type="primary" bindtap="onShareAppMessage" open-type="share" class="shareFriend"></button><image src="../../static/home/share.png"/><span>分享</span></div><div><span>质保期：</span><span>{{serverinf.qualityGuaPeriod}}天</span></div>
+				<div><button type="primary" bindtap="onShareAppMessage" open-type="share" class="shareFriend"></button><image src="../../static/home/share.png"/><span>分享</span></div><div><span>{{serverinf.qualityGuaPeriod}}天无理由退货</span></div>
 			</div>
 			<div class="typelist">
 				<div v-for="(list,index) in typelist" :key="index" :class="{'active':typeindex==index}" @click="cg_typeindex(index)">
@@ -137,11 +137,15 @@
 				ut.request({
 					data: {
 						proId:id,
-						type:1
+						type:2
 					},
+					method:"GET",
 					url: "comment/list"
 				}).then(data=>{
-					this.comlist=data;
+					data.forEach(item=>{
+						item.pictures =item.pictures.split(',')
+					})
+					this.comlist=data
 				})
 			}
 		}
@@ -164,7 +168,7 @@
 		position: absolute;
 		right: 0;
 	}
-	.serverinf>div:last-child span:nth-child(2){
+	.serverinf>div:last-child span:nth-child(1){
 		color: #FEC300;
 	}
 	.serverinf>div span,.serverinf>div image{
@@ -175,9 +179,9 @@
 		width: 25upx;
 		height: 30upx;
 	}
-	.serverinf>div span:last-child{
+/* 	.serverinf>div span:last-child{
 		margin-left: 20upx;
-	}
+	} */
 	.typelist>div{
 		width: 30%;
 		font-size: 24upx;

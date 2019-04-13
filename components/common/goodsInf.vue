@@ -36,22 +36,35 @@
 	import ut from '@/utils/index'
 	import GoodsInf from '../../components/common/goodsInf.vue'
 	import wxParse from '../../components/mpvue-wxparse/src/wxParse.vue'
+	import comment from '../../components/comment'
 	import {mapState} from 'vuex';
 	export default {
-		props: ['goodsInf'],
+		props: ['goodsInf','comlist'],
 		data() {
 			return {
 				static: ut.static,
-				type:0
+				type:0,
+				pop1:0
 			}
 		},
 		components:{
-			wxParse
+			wxParse,
+			comment
 		},
 		computed: {
 			...mapState(['goods'])
 		},
 		methods: {
+			cgpop(){
+				this.cg_pop1();
+			},
+			cg_pop1(){
+				if(!this.comlist.length){
+					ut.totast('暂无评价');
+					return;
+				}
+				this.pop1=!this.pop1;
+			},
 			close(){
 				this.$emit('onClose')
 			},

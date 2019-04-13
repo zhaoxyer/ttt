@@ -122,7 +122,7 @@
 			req_banner(){
 				ut.request({
 					allurl: ut.uploadimgurl+"common/banner",
-					data:{type:2},
+					data:{type:1},
 					method:'GET'
 				}).then(data=>{
 					this.swipeList=data;

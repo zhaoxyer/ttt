@@ -10,7 +10,7 @@
 .inf>._div>._span{width: 104rpx;}
 .inf>._div ._div{width: 340rpx;border: 1px solid #5d5c5c;height:60rpx;margin-left: 70rpx;padding: 0 10rpx;}
 .inf>._div ._div image{width: 20rpx;height: 20rpx;float: right;margin-top: 20rpx;}
-.inf>._div ._div ._input{width: 100%;height: 60rpx;line-height: 60rpx;font-size: 24rpx;}
+.inf>._div ._div input{width: 100%;height: 60rpx;line-height: 60rpx;font-size: 24rpx;}
 .tip{text-align: center;font-size: 24rpx;color: #999999;line-height: 60rpx;margin-top: 20rpx;}
 .apply{
 	position: fixed;

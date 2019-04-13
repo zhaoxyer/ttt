@@ -8,7 +8,7 @@
 		</div>
 		<div v-if="order_list.length>0">
 			<div v-for="(item, index) in order_list" :key="index">
-				<goods-order-item :data="item" :reason="cancel_reason" @reload="init"></goods-order-item>
+				<goods-order-item :data="item" :reason="cancel_reason" @reload="init" type="1"></goods-order-item>
 			</div>
 		</div>
 		<div v-else  class="nomall">

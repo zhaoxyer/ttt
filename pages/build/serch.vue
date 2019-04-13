@@ -1,60 +1,37 @@
 <template>
 	<div>
-		<div class="serch"><image src="../../static/index/serch.png" @click="req_goodslist"></image><input type="text" placeholder="寻找商品、店铺" v-model="name" confirm-type='search' @confirm='req_goodslist'/></div>
-		<!-- <nav><span>筛选</span><span>销量</span><span>价格</span></nav> -->
-		<div class="fuwu leftright">
-			<div @click="go_build_mallinf(list.id,list.name)" v-for="(list,index) in list" :key='index'>
-				<image :src="static +list.picture" class="noimage"></image>
-				<p>{{list.name}}：<span>¥{{list.price}}</span>起</p>
-			</div>
+		<div class="serch">
+			<image src="../../static/index/serch.png" @click="req_goodslist"></image><input type="text" placeholder="寻找商品、店铺"
+			 v-model="name" confirm-type='search' @confirm='req_goodslist' />
 		</div>
-	<!-- 	<div class="section">
+		<nav>
+			<span @click="onSortClick('monthSell')">销量{{sortField == 'monthSell' ? (sortType == 1 ? '↑':'↓') : ''}}</span>
+			<span @click="onSortClick('price')">价格{{sortField == 'price' ? (sortType == 1 ? '↑':'↓') : ''}}</span>
+		</nav>
+		<div class="section">
 			<div class="list">
-				<div>
-					<image src="../../static/build/tetant.png" ></image>
+				<div v-for="(store,index) in list" :key='index' @click="go_build_tenant(store)">
+					<image class="store_img" :src="static + store.picture"></image>
 					<div class="inf">
-						<div class="tetantinf">
-							<p>盛丰五金建材器铺</p>
-							<p>地址：通州区建材城二层</p>
+						<div class="storeinf">
+							<p>{{store.name ? store.name : "--"}}</p>
+							<p>地址: {{store.address}}</p>
 						</div>
-						<div class="mallinf leftright">
-							<div>
-								<image src="../../static/build/cailiao.png"></image>
-								<div>
-									<p>不锈钢字幕也</p>
-									<p>月销 300 笔</p>
-									<p class="color">￥39.00</p>
+						<scroll-view class="goodslist" scroll-x>
+							<div @click.stop="go_build_tenant(store,goods.id)" class="goodsinf" v-for="(goods,childIndex) in store.storeGoods"
+							 :key='childIndex'>
+								<image class="goods_img" :src="static + goods.picture"></image>
+								<div class="goods_intro">
+									<p>{{goods.name ? goods.name : "--"}}</p>
+									<p>月销{{goods.monthSell}}笔</p>
+									<p style="color: #FEC300;">¥{{goods.price ? goods.price : "  "}}起</p>
 								</div>
 							</div>
-							<div>
-								<image src="../../static/build/cailiao.png"></image>
-								<div>
-									<p>不锈钢字幕也</p>
-									<p>月销 300 笔</p>
-									<p class="color">￥39.00</p>
-								</div>
-							</div>
-							<div>
-								<image src="../../static/build/cailiao.png"></image>
-								<div>
-									<p>不锈钢字幕也</p>
-									<p>月销 300 笔</p>
-									<p class="color">￥39.00</p>
-								</div>
-							</div>
-							<div>
-								<image src="../../static/build/cailiao.png"></image>
-								<div>
-									<p>不锈钢字幕也</p>
-									<p>月销 300 笔</p>
-									<p class="color">￥39.00</p>
-								</div>
-							</div>
-						</div>
+						</scroll-view>
 					</div>
 				</div>
 			</div>
-		</div> -->
+		</div>
 	</div>
 </template>
 
@@ -63,144 +40,177 @@
 	export default {
 		data() {
 			return {
-				static:'',
-				name:'',
-				list:[]
+				static: '',
+				name: '',
+				sortField: 'monthSell', // 排序字段,
+				sortType: 2, // 排序类型，1正序，2倒序
+				list: []
 			}
 		},
 		onLoad() {
-			this.static=ut.static;
+			this.static = ut.static;
 		},
 		methods: {
-			req_goodslist(){
+			onSortClick(sortField){
+				if(this.sortField == sortField){
+					this.sortType = this.sortType == 1 ? 2 : 1;
+				}else {
+					this.sortField = sortField;
+					this.sortType = 2;
+				}
+				this.req_goodslist();
+			},
+			req_goodslist() {
 				ut.request({
 					data: {
-						name:this.name
+						name: this.name,
+						sortField: this.sortField,
+						sortType: this.sortType
 					},
 					url: "class/goods/list"
-				}).then(data=>{
-					this.list=data;
-					if(!this.list.length){
+				}).then(data => {
+					this.list = data;
+					console.log(data)
+					if (!this.list.length) {
 						ut.totast('暂无相关商品')
 					}
 				})
 			},
-			go_build_mallinf(_id,name){
+			go_build_mallinf(_id) {
 				wx.navigateTo({
-					url: `../build/mallinf?_id=${_id}&&title=${name}`
+					url: `../build/mallinf?_id=${_id}`
 				})
-			}
+			},
+			go_build_tenant(item, goodsId) {
+				if(!item){
+					return;
+				}
+				console.log('click');
+				console.log(item);
+				wx.setStorageSync('tenant', item)
+				wx.navigateTo({
+					url: `../build/tenant_new?storeid=${item.id}&goodsId=${goodsId}`
+				})
+			},
 		}
 	}
 </script>
 
 <style>
-	.serch{margin-left: 60upx;margin-right: 60upx;margin-top: 30upx;height: 54upx;line-height: 54upx;border-radius: 10upx;display: flex;border:1px solid #c8c8c8;font-size: 24upx;align-items: center;}
-	nav{
+	.serch {
+		margin-left: 60upx;
+		margin-right: 60upx;
+		margin-top: 30upx;
+		height: 54upx;
+		line-height: 54upx;
+		border-radius: 10upx;
+		display: flex;
+		border: 1px solid #c8c8c8;
+		font-size: 24upx;
+		align-items: center;
+	}
+
+	nav {
 		margin-bottom: 42upx;
 		margin-top: 29upx;
 		font-size: 30upx;
 	}
-	nav span{
+
+	nav span {
 		margin-left: 152upx;
 		display: inline-block;
 		vertical-align: top;
 		color: #FEC300;
 	}
-	nav span:first-child{
-		margin-left: 81upx;
-		color: #5d5c5c;
+
+	.serch image {
+		width: 26upx;
+		height: 24upx;
+		margin-left: 30upx;
+		margin-right: 30upx;
 	}
-	.serch image{width: 26upx;height: 24upx;margin-left: 30upx;margin-right: 30upx;}
-	.serch input{
+
+	.serch input {
 		flex: 1;
 	}
-	.section{display: flex;}
-	.section .list{
-		flex: 1;
-		padding: 0 30upx;
+
+	.section {
 		display: flex;
 	}
-	.list{
+
+	.section .list {
+		flex: 1;
+		margin-left: 30upx;
+		display: flex;
+	}
+
+	.list {
 		display: flex;
 		flex-direction: column;
+		font-size: 24upx;
 	}
-	.list>div{
+
+	.list>div {
 		margin-bottom: 30upx;
 		flex-direction: row;
 		display: flex;
 	}
-	.list>div image{
-		width: 150upx;
-		height: 150upx;
-		border-radius: 10upx;
-		margin-right: 18upx;
+
+	.store_img {
+		width: 140upx;
+		height: 140upx;
+		margin-top: 10upx;
+		margin-right: 20upx;
+		border-radius: 5px;
+		background: #EFEFEF;
 	}
-	.list>div>div{
-		flex: 1;
-		font-size: 24upx;
+
+	.inf {
+		width: 560upx;
 	}
-	.tetantinf{
+
+	.storeinf {
 		justify-content: center;
-		height: 150upx;
+		height: 160upx;
 		display: flex;
 		flex-direction: column;
 		border-bottom: 1px dashed #CCCCCC;
 	}
-	.tetantinf p:first-child{
-		margin-bottom: 20upx;
+
+	.storeinf p:first-child {
+		margin-bottom: 5upx;
+		font-size: 24upx;
 	}
-	.leftright{
-		margin-top: 27upx;
-		display: flex;
-		justify-content: space-between;
-		flex-wrap: wrap;
+
+	.goodslist {
+		overflow: hidden;
+		white-space: nowrap;
+		margin-top: 20upx;
 	}
-	.mallinf{
+
+	.goods_img {
+		width: 80upx;
+		height: 70upx;
+		background: #EFEFEF;
+	}
+
+	.goodslist .goodsinf {
+		height: 70upx;
+		width: 280upx;
+		display: inline-flex;
 		flex-direction: row;
-		font-size: 13upx;
-		display: flex;
-		margin-top: 34upx;
 	}
-	.mallinf>div{
-		width: 50%;
-		display: flex;
-		flex-direction: row;
-		margin-bottom: 34upx;
-	}
-	.mallinf>div image{
-		width: 72upx;
-		height: 65upx;
-		margin-right: 0;
-	}
-	.mallinf>div div{
+
+	.goods_intro {
+		height: 100%;
 		margin-left: 10upx;
 	}
-	.mallinf>div div p:nth-child(2){
-		margin-bottom: 10upx;
-		margin-top: 10upx;
-	}
-	.mallinf .color{
-		color: #FEC300;
-	}
-	
-	.leftright{
-		padding: 0 20upx;
-		margin-top: 27upx;
-		display: flex;
-		justify-content: space-between;
-		padding: 0 20upx;
-		flex-wrap: wrap;
-	}
-	.fuwu div{
-		width: 326upx;
-		font-size: 22upx;
-		text-align: center;
-		line-height: 50upx;
-		margin-bottom: 30upx;
-	}
-	.fuwu div image{
-		width: 100%;
-		height: 300upx;
+
+	.goods_intro p {
+		height: 33.3%;
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		font-size: 16upx;
 	}
 </style>

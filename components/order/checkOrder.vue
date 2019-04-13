@@ -8,12 +8,12 @@
 		</div>
 		<div v-if="goods_list.length">
 			<div v-for="(item, index) in goods_list" :key="index">
-				<goods-order-item :data="item" :reason="cancel_reason" :comment="comment" @reload="init"></goods-order-item>
+				<goods-order-item :data="item" :reason="cancel_reason" :comment="comment" @reload="refresh"></goods-order-item>
 			</div>
 		</div>
 		<div v-if="order_list.length">
 			<div v-for="(item, index) in order_list" :key="index">
-				<order-item :type="type" :data="item" :reason="cancel_reason" :comment="comment" @reload="init"></order-item>
+				<order-item :type="type" :data="item" :reason="cancel_reason" :comment="comment" @reload="refresh"></order-item>
 			</div>
 		</div>
 		<div v-else  class="nomall">
@@ -27,7 +27,7 @@
 	import goodsOrderItem from '../../components/goodsOrderItem.vue'
 	import ut from '../../utils/index.js';
 	export default {
-		props:['type','comment','show'],
+		props:['type','comment','show','refreshStatus'],
 		components: {
             orderItem,
 			goodsOrderItem
@@ -42,13 +42,12 @@
 		watch:{
 			type(){
 				this.init();
+				this.order_list=[]
+				this.goods_list=[]
 			},
 			show(){
 				if(this.show&&wx.getStorageSync('token')){
 					this.init();
-				}else{
-					this.order_list=[]
-					this.goods_list=[]
 				}
 			}
 		},
@@ -74,6 +73,14 @@
 				}else{
 					this.getOrderList();
 				}
+			},
+			refresh() {
+				if(this.comment==2){
+					this.getOrderList1();
+				}else{
+					this.getOrderList();
+				}
+				this.$emit('refreshStatus');
 			},
 			getOrderList() {
 				ut.request({
@@ -101,6 +108,10 @@
 							if(item.picture)item.picture=item.picture.split(',')[0];
 						})
 					})
+					// 返回数据与当前数据相同，不处理
+					if(JSON.stringify(data) == JSON.stringify(this.goods_list)){
+						return;
+					}
 					this.goods_list = data;
 				})
 			}

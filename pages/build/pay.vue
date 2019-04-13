@@ -27,7 +27,7 @@
 					<view v-else><span>{{y}}</span><span>年</span><span>{{m}}</span><span>月</span><span>{{d}}</span><span>日</span></view>
 				</view>
 				<view>
-					<picker mode="time"  value="时间" :custom-item="customItem" class='regionpicker'  v-if="!disabled" @change="timeChange">
+					<picker mode="time"  :value="startTime" :custom-item="customItem" :start="startTime" end="23:59" class='regionpicker'  v-if="!disabled" @change="timeChange">
 						<view class="picker">
 							时间
 						</view>
@@ -108,7 +108,8 @@
 				floor:'',
 				static:'',
 				start:ut.date(),
-				end:ut.enddate()
+				end:ut.enddate(),
+				startTime:'00:00'
 			}
 		},
 		computed: {
@@ -127,15 +128,16 @@
 			});
 			console.log(this.buildinf)
 			wx.setStorageSync('buildinf','');
-			this.req_vehiclelist();
-			this.req_carrylist();
-			this.req_getdefaddress();
 			this.buildinf.forEach(item=>{
 				this.mallprice=(item.price*item.num.toFixed(2)+Number(this.mallprice)).toFixed(2);
 				item.goodsSpecId=item.specId?item.specId:item.id;
 				item.goodsNumber=item.num;
 				item.name =item.goodsSpecName?item.goodsSpecName:item.name
 			})
+			this.req_vehiclelist();
+			this.req_carrylist();
+			this.req_getdefaddress();
+			
 		},
 		methods: {
 			cg_requireCarry(type){
@@ -174,6 +176,11 @@
 				this.y=date[0];
 				this.m=date[1];
 				this.d=date[2];
+				if(this.date == ut.date()){
+					this.startTime = ut.startTime();
+				} else {
+					this.startTime = '00:00';
+				}
 			},
 			req_unifiedOrder(){
 				if (!this.adress) {
@@ -224,8 +231,17 @@
 				})
 			},
 			req_vehiclelist(){
+				let specArray = [];
+				for(let goods of this.buildinf){
+					specArray.push({
+						specId:goods.goodsSpecId,
+						number:goods.num
+					})
+				}
 				ut.request({
-					url: "order/vehiclelist"
+					data:specArray,
+					url: 'order/vehiclelist',
+					c:true
 				}).then(data=>{
 					this.vehiclelist=data;
 					this.sendprice=this.vehiclelist[0].startPrice;

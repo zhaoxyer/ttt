@@ -18,8 +18,6 @@
 	page{
 		color: #5d5c5c;
 		font-family: PingFangSC-Regular, sans-serif;
-		height: 100vh;
-		overflow-y: auto!important;
 	}
 	swiper image{
 		width: 100%;
